@@ -1,65 +1,173 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>PORTFOLIO</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Oswald" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/smooth.js"></script>
 </head>
 <body>
 <nav>
-    <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">O MNIE</a></li>
-        <li><a href="#work">USŁUGI</a></li>
-        <li><a href="#contact">KONTAKT</a></li>
-    </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">GK Portfolio</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#home" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-handshake-o" aria-hidden="true"></i>Witaj!</a></li>
+                    <li><a href="#about" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-user" aria-hidden="true"></i>O mnie</a></li>
+                    <li><a href="#work" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-folder-open" aria-hidden="true"></i>Projekty</a></li>
+                    <li><a href="#contact" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-envelope" aria-hidden="true"></i>Kontakt</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
 </nav>
 <main>
+    <div class="container-fluid">
+        <div class="darkoverlay"></div>
+        <div id="home">
+            <div class="row">
+                <div class="col-md-12"><p><h1>Cieszę się, że tutaj jesteś!</h1><br><br><p>Zachęcam Cię do zapoznania się z moimi umiejętnościami.<br><br></p>
+                    <div class="text-center">
+                        <i class="fa fa-html5" aria-hidden="true"></i>
+                        <i class="fa fa-css3" aria-hidden="true"></i>
+                        <i class="fa fa-wordpress" aria-hidden="true"></i>
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                    </div>
 
-    <section id="home">
-        <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis pretium nisi a imperdiet.
-            Pellentesque urna libero, maximus vel felis rutrum, porta finibus neque. Nullam condimentum felis id urna
-            rhoncus, in volutpat mauris bibendum. Donec consectetur nisi in erat maximus, id sollicitudin ex tristique.
-            Fusce condimentum massa at tortor rhoncus congue. Proin auctor sem eu nisi varius facilisis. Sed dignissim
-            at velit vitae vulputate. Nulla at rhoncus mauris, ut placerat est. Curabitur euismod volutpat placerat.</p>
+                </div>
+                </div>
+
         </div>
-    </section>
+    </div>
 
-    <section id="about">
-        <h2>O mnie</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis pretium nisi a imperdiet.
-            Pellentesque urna libero, maximus vel felis rutrum, porta finibus neque. Nullam condimentum felis id urna
-            rhoncus, in volutpat mauris bibendum. Donec consectetur nisi in erat maximus, id sollicitudin ex tristique.
-            Fusce condimentum massa at tortor rhoncus congue. Proin auctor sem eu nisi varius facilisis. Sed dignissim
-            at velit vitae vulputate. Nulla at rhoncus mauris, ut placerat est. Curabitur euismod volutpat placerat.</p>
-        <div class="darkoverlay"></div>
-    </section>
+    <div class="container-fluid">
+        <div id="about">
+            <div class="row">
+                <div class="col-md-7 col-xs-12"><h1>Grzegorz Klimek</h1><br><p>Student pierwszego roku studiów magisterskich kierunku Historia na Uniwersytecie Gdańskim oraz słuchacz InfoShare Academy w Gdańsku. Pasjonat programowania webowego i grafiki komputerowej. Prywatnie modelarz i wielbiciel kotów.
+                    </p>
+                </div>
+                <div class="text-center"><div class="col-md-5 col-xs-12"><img src="img/foto.jpg"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section id="work">
-        <h2>Usługi</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis pretium nisi a imperdiet.
-            Pellentesque urna libero, maximus vel felis rutrum, porta finibus neque. Nullam condimentum felis id urna
-            rhoncus, in volutpat mauris bibendum. Donec consectetur nisi in erat maximus, id sollicitudin ex tristique.
-            Fusce condimentum massa at tortor rhoncus congue. Proin auctor sem eu nisi varius facilisis. Sed dignissim
-            at velit vitae vulputate. Nulla at rhoncus mauris, ut placerat est. Curabitur euismod volutpat placerat.</p>
-    </section>
+    <div class="container-fluid">
+        <div id="work">
+            <div class="text-center">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="row">
+                    <div class="col-md-9 col-xs-9"><h3>Strona służbowa</h3></div>
+                    <div class="col-md-3 col-xs-3"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    </div>
+                    <a class="project one" href="http://grzegorzklimek.com" target="_blank"><img class="img-responsive" src="img/portfolio_th.png"/></a><hr>
+                    <h4>Użyte technologie:</h4>
+                    <div class="icons">
+                    <i class="fa fa-html5" aria-hidden="true"></i><span>HTML</span><br>
+                    <i class="fa fa-css3" aria-hidden="true"></i><span>CSS</span><br>
+                    <i class="fa fa-wordpress" aria-hidden="true"></i><span>Wordpress</span><br>
+                    <i class="fa fa-code" aria-hidden="true"></i><span>Javascript</span>
+                    </div>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis pretium nisi a imperdiet.
-            Pellentesque urna libero, maximus vel felis rutrum, porta finibus neque. Nullam condimentum felis id urna
-            rhoncus, in volutpat mauris bibendum. Donec consectetur nisi in erat maximus, id sollicitudin ex tristique.
-            Fusce condimentum massa at tortor rhoncus congue. Proin auctor sem eu nisi varius facilisis. Sed dignissim
-            at velit vitae vulputate. Nulla at rhoncus mauris, ut placerat est. Curabitur euismod volutpat placerat.</p>
-        <div class="darkoverlay"></div>
-    </section>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="row">
+                    <div class="col-md-9 col-xs-9"><h3>Strona prywatna</h3></div>
+                    <div class="col-md-3 col-xs-3"><i class="fa fa-paint-brush" aria-hidden="true"></i></div>
+                    </div>
+                    <a class="project one" href="img/hobby.png" target="_blank"><img class="img-responsive" src="img/hobby_th.png"/></a><hr>
+                    <h4>Użyte technologie:</h4>
+                    <div class="icons">
+                        <i class="fa fa-html5" aria-hidden="true"></i><span>HTML</span><br>
+                        <i class="fa fa-css3" aria-hidden="true"></i><span>CSS</span><br>
+                        <i class="fa fa-code" aria-hidden="true"></i><span>Javascript</span>
+                    </div>
 
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="row">
+                    <div class="col-md-9 col-xs-9"><h3>Projekt pizzerii</h3></div>
+                    <div class="col-md-3 col-xs-3"><i class="fa fa-cutlery" aria-hidden="true"></i></div>
+                    </div>
+                    <a class="project one" href="img/pizzeria.png" target="_blank"><img class="img-responsive" src="img/pizzeria_th.png"/></a><hr>
+                    <h4>Użyte technologie:</h4>
+                    <div class="icons">
+                        <i class="fa fa-html5" aria-hidden="true"></i><span>HTML</span><br>
+                        <i class="fa fa-css3" aria-hidden="true"></i><span>CSS</span><br>
+                    </div>
 
-</main>
-<footer>
-    Copyright © <a href="www.grzegorzklimek.com">Grzegorz Klimek</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div id="contact">
+
+            <div class="row">
+                <h1>Zapraszam do kontaktu!</h1><br><br>
+                <a href="https://www.linkedin.com/in/grzegorz-klimek-1165b6137/" class="btn btn-primary col-md-2 col-xs-10" role="button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/Grzegorz-Klimek" class="btn btn-primary col-md-2 col-xs-10" role="button"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="footer">
+            <div class="text-center">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <i class="fa fa-html5" aria-hidden="true"></i>
+                    <i class="fa fa-css3" aria-hidden="true"></i>
+                    <i class="fa fa-wordpress" aria-hidden="true"></i>
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                </div>
+                <div class="footer_second col-md-4 col-xs-12">
+
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4">
+                            <a class="footer_project" href="http://www.grzegorzklimek.com" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-4 col-xs-4">
+                            <a class="footer_project" href="img/pizzeria.png" target="_blank"><i class="fa fa-cutlery" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-4 col-xs-4">
+                            <a class="footer_project" href="img/hobby.png" target="_blank"><i class="fa fa-paint-brush" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <p>grzegorzkklimek@gmail.com<br>505 550 861<br>81-404 Gdynia
+                    </p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid">
+        <div id="footer2">
+            <div class="col-md-10 col-xs-12">Coded & designed in 2017 by <a href="http://www.grzegorzklimek.com/" target="_blank">Grzegorz Klimek</a><br><br>
+                </div>
+
+    </div>
+
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
