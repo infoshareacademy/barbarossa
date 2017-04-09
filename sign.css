@@ -23,12 +23,16 @@ form.premiere input{
     height: 50px;
     text-align: center;
     background-color: #FBEAD0;
-    color: #ba4436;
+    color: #6a271a;
     font-size: 20px;
     font-weight: bold;
     border: none;
+    outline: none;
 }
 
+form.premiere input:hover{
+    cursor: pointer;
+}
 
 form.premiere input:active{
     border: none;
@@ -38,18 +42,32 @@ form.premiere input[type=text]{
     width: 30%;
 }
 
+form.premiere input[type=text]:focus{
+    box-shadow: 0 0 15px #742b1d;
+    background-color: #f2e2ca;
+}
+
 form.premiere input[type=email]{
     width: 20%;
+}
+
+form.premiere input[type=email]:focus{
+    box-shadow: 0 0 15px #742b1d;
 }
 
 form.premiere input[type=submit]{
     width: 20%;
     background-color: #742b1d;
     margin: 40px;
+    color: #FBEAD0;
+}
+
+form.premiere input[type=submit]:hover{
+    background-color: #6a271a;
 }
 
 form.premiere input[type=submit]:active{
-    border: none;
+    background-color: #742b1d;
 }
 
 form.premiere p{
@@ -60,6 +78,7 @@ form.premiere p{
 
 form.premiere i{
     margin-right: 10px;
+    box-shadow: 0 0 2px #742b1d;
 }
 
 
