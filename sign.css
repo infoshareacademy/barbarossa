@@ -1,0 +1,100 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #FBEAD0;
+    font-family: Roboto, sans-serif;
+}
+
+form.premiere{
+    padding: 30px;
+    text-align: center;
+    background-color: #ba4436;
+    color: #FBEAD0;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+form.premiere input{
+    border-radius: 5px;
+    height: 50px;
+    text-align: center;
+    background-color: #FBEAD0;
+    color: #6a271a;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+form.premiere input:hover{
+    cursor: pointer;
+}
+
+form.premiere input:active{
+    border: none;
+}
+
+form.premiere input[type=text]{
+    width: 90%;
+}
+
+form.premiere input[type=text]:focus{
+    box-shadow: 0 0 15px #742b1d;
+    background-color: #f2e2ca;
+}
+
+form.premiere input[type=email]{
+    width: 80%;
+}
+
+form.premiere input[type=email]:focus{
+    box-shadow: 0 0 15px #742b1d;
+}
+
+form.premiere input[type=submit]{
+    width: 80%;
+    background-color: #742b1d;
+    color: #FBEAD0;
+    margin: auto;
+    margin-top: 40px;
+
+}
+
+form.premiere input[type=submit]:hover{
+    background-color: #6a271a;
+}
+
+form.premiere input[type=submit]:active{
+    background-color: #742b1d;
+}
+
+form.premiere p{
+    margin-bottom: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+form.premiere p.info{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+form.premiere i{
+    margin-right: 10px;
+    box-shadow: 0 0 2px #742b1d;
+}
+
+
+@media only screen and (min-width: 768px) {
+    form.premiere input[type=text]{
+        width: 30%;
+    }
+    form.premiere input[type=email]{
+        width: 20%;
+    }
+    form.premiere input[type=submit]{
+        width: 20%;
+    }
+}
