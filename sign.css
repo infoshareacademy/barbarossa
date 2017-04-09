@@ -74,6 +74,13 @@ form.premiere p{
     text-transform: uppercase;
 }
 
+form.premiere p.info{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
 form.premiere i{
     margin-right: 10px;
     box-shadow: 0 0 2px #742b1d;
