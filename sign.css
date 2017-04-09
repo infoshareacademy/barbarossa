@@ -1,3 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #FBEAD0;
+    font-family: Roboto, sans-serif;
+}
+
 #sign{
+
+}
+
+form.premiere{
+    padding: 30px;
+    text-align: center;
+    background-color: #ba4436;
+    color: #FBEAD0;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+form.premiere input{
+    border-radius: 5px;
+    height: 50px;
+    text-align: center;
+    background-color: #FBEAD0;
+    color: #ba4436;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+
+
+form.premiere input:active{
+    border: none;
+}
+
+form.premiere input[type=text]{
+    width: 30%;
+}
+
+form.premiere input[type=email]{
+    width: 20%;
+}
+
+form.premiere input[type=submit]{
+    width: 20%;
+    background-color: #742b1d;
+    margin: 40px;
+}
+
+form.premiere input[type=submit]:active{
+    border: none;
+}
+
+form.premiere p{
+    margin-bottom: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+form.premiere i{
+    margin-right: 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
 
 }

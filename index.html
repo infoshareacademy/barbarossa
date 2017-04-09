@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sign.css"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -32,8 +35,16 @@
     </section>
     <!--Spot for TASK 7: "Zapis na premierę"-->
     <section id="sign">
-        <form>
-            <input type="text">
+
+        <form class="premiere">
+            <p><i class="fa fa-address-book" aria-hidden="true"></i>Imię:</p><br>
+            <input type="text" name="firstname"><br>
+            <p><i class="fa fa-address-book-o" aria-hidden="true"></i>Nazwisko</p><br>
+            <input type="text" name="lastname"><br>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i>E-mail</p><br>
+            <input type="email" name="email"><br>
+            <input class="submit" type="submit" name="email" value="WYŚLIJ" >
+
         </form>
 
     </section>
