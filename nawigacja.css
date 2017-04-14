@@ -48,4 +48,6 @@ div.container_main {
     flex-direction: column;
     justify-content: center;
 }
-
+footer {
+    bottom:0;
+}
