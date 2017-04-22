@@ -1,9 +1,3 @@
-body {
-    margin: 0;
-    padding: calc(1.5em + 40px) 0 0 0;
-    font-family: Roboto, sans-serif;
-    background-color: #FBEAD0;
-}
 ul.navigation {
     display: flex;
     flex-direction: row;
@@ -21,10 +15,8 @@ ul.navigation  li{
     display: flex;
     background-color: #ba4436;
     margin: 0;
-    padding: 20px 40px;
     text-align: center;
     font-size: 1.5em;
-    border-radius: 5px;
 }
 ul.navigation  i{
     margin-right: 10px;
@@ -33,20 +25,15 @@ ul.navigation  a{
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
+    padding: 20px 40px;
+    border-radius: 5px;
 }
-ul.navigation  li:hover{
-    box-shadow: inset 0 0 5px #742b1d;
-}
-ul.navigation  li:active{
+ul.navigation  a:active{
     background-color: #000000;
 }
 ul.navigation a:hover {
     cursor: pointer;
     color: #FBEAD0;
 }
-div.container_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 

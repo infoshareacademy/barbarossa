@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: calc(1.5em + 40px) 0 0 0;
+    font-family: Roboto, sans-serif;
+    background-color: #FBEAD0;
+}
+div.container_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
