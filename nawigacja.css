@@ -35,13 +35,14 @@ ul.navigation  a{
     text-transform: uppercase;
 }
 ul.navigation  li:hover{
-    background-color: #FBEAD0;
-    cursor: pointer;
-    box-sizing: border-box;
     box-shadow: inset 0 0 5px #742b1d;
 }
 ul.navigation  li:active{
-    background-color: #ba4436;
+    background-color: #000000;
+}
+ul.navigation a:hover {
+    cursor: pointer;
+    color: #FBEAD0;
 }
 div.container_main {
     display: flex;
