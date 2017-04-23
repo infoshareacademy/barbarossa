@@ -1,8 +1,5 @@
-body {
-    margin: 0;
-    padding: calc(1.5em + 40px) 0 0 0;
-    font-family: Roboto, sans-serif;
-    background-color: #FBEAD0;
+#nav_640 {
+    display: none;
 }
 ul.navigation {
     display: flex;
@@ -10,44 +7,54 @@ ul.navigation {
     justify-content: center;
     flex-wrap: wrap;
     position: fixed;
+    top:0;
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: #ba4436;
     box-shadow: 0 5px 10px #742b1d;
-    top:0;
-    }
+}
 ul.navigation  li{
     display: flex;
-    background-color: #ba4436;
     margin: 0;
-    padding: 20px 40px;
+    background-color: #ba4436;
     text-align: center;
-    font-size: 1.5em;
-    border-radius: 5px;
+    font-size: 1.2em;
 }
 ul.navigation  i{
     margin-right: 10px;
 }
 ul.navigation  a{
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
     text-transform: uppercase;
+    padding: 20px 40px;
 }
-ul.navigation  li:hover{
-    background-color: #FBEAD0;
+ul.navigation  a:active{
+    background-color: #742b1d;
+}
+ul.navigation a:hover {
     cursor: pointer;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 5px #742b1d;
+    color: #FBEAD0;
 }
-ul.navigation  li:active{
-    background-color: #ba4436;
+@media only screen and (min-width: 1366px) {
+    ul.navigation li {
+        font-size: 1.5em;
+    }
 }
-div.container_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media only screen and (max-width: 640px) {
+    #nav_640 {
+        display: flex;
+    }
+    #nav_1024 {
+        display: none;
+    }
+    ul.navigation  i{
+        margin-right: 0;
+    }
+    ul.navigation  a{
+        padding: 10px 20px;
+        font-size: 2em;
+    }
 }
-footer {
-    bottom:0;
-}
+
