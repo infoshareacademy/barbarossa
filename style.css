@@ -1,12 +1,46 @@
 body{
-    height: 1000px;
-}
+     height: 1000px;
+ }
 
 .zajawkaImg {
     width: 100%;
     background-image: url("pictures/zajawka.jpg");
-    background-position: 3px 0px;
+    background-position: 3px 40%;
     height: 500px;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    flex-direction: column;
+    display: flex;
+}
+.zajawka {
+    font-size: 60px;
+    font-weight: 800;
+    color: #FBEAD0;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    display: block;
+    margin: -10px 0 0 0;
+    text-shadow: 0 0 0.2em rgb(10, 74,118);
+    padding-top: 200px;
+}
+.zajawka-txt {
+    font-size: 20px;
+    font-weight: 400;
+    color:#FBEAD0;
+    display: block;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    margin: -5px 0 0 0;
+}
+.zajawka-sign {
+    background-color: crimson;
+    border: dashed;
+}
+.zajawka-sign-text {
+    font-size: 30px;
+    font-weight: 400;
+    color:#FBEAD0;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    padding-top: 20px;
 }
