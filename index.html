@@ -13,19 +13,6 @@
 </head>
 <body>
 <div class="container_main">
-<header>
-    <!--Spot for TASK 8: "Nawigacja w obrębie strony"-->
-    <!--Menu bar at top of the page-->
-    <nav>
-        <ul class="navigation">
-            <li><i class="fa fa-home" aria-hidden="true"></i><a href="#home">Home</a></li>
-            <li><i class="fa fa-cogs" aria-hidden="true"></i><a href="#function">Funkcje</a></li>
-            <li><i class="fa fa-users" aria-hidden="true"></i><a href="#team">Zespół</a></li>
-            <li><i class="fa fa-book" aria-hidden="true"></i><a href="#extras">Specifikacja</a></li>
-            <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="#sign">Zapisz się</a></li>
-        </ul>
-    </nav>
-</header>
 <main>
     <!--Spot for TASK 5: "Zajawka"-->
     <section id="home">
@@ -39,18 +26,31 @@
     <section id="sign">
 
         <form class="premiere" action="js/form.js" method="post">
-            <div class="premiere-top">
-            <div class="premiere-left">
-                <span><i class="fa fa-address-book" aria-hidden="true"></i>Imię:</span>
-                <span><i class="fa fa-address-book-o" aria-hidden="true"></i>Nazwisko</span>
-                <span><i class="fa fa-envelope" aria-hidden="true"></i>E-mail</span>
+
+            <div class="bar">
+                <div class="icon-box">
+                    <div class="icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
+                    <span>Imię:</span>
+                </div>
+                <div class="text-info"><input type="text" name="firstname"></div>
             </div>
-            <div class="premiere-right">
-                <input type="text" name="firstname">
-                <input type="text" name="lastname">
-                <input type="email" name="email">
+
+            <div class="bar">
+                <div class="icon-box">
+                    <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
+                    <span>Nazwisko</span>
+                </div>
+                <div class="text-info"><input type="text" name="lastname"></div>
             </div>
+
+            <div class="bar">
+                <div class="icon-box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <span>E-mail</span>
+                </div>
+                <div class="text-info"><input type="email" name="email"></div>
             </div>
+
             <input class="submit" type="submit" name="email" value="WYŚLIJ" >
             <p class="info">Twoje dane są bezpieczne.<br><br>Nie wykorzystujemy ich do innych celów niż rejestracyjne.</p>
         </form>

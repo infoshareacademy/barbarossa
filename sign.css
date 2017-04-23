@@ -14,36 +14,27 @@ form.premiere{
     font-weight: bold;
 }
 
-.premiere-top{
+form.premiere .bar{
     display: flex;
     flex-direction: row;
+    justify-content: stretch;
 }
 
-.premiere-left{
+form.premiere .icon-box{
     display: flex;
-    flex-direction: column;
-    text-align: justify;
+    padding: 30px;
     width: 30%;
 }
-.premiere-right{
+
+form.premiere .text-info{
     display: flex;
-    flex-direction: column;
-    text-align: justify;
-    width: 60%;
+    width: 70%;
+    flex: auto;
 }
+
 
 
 form.premiere input{
-    border-radius: 5px;
-    height: 50px;
-    text-align: center;
-    background-color: #FBEAD0;
-    color: #6a271a;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    margin: 10px;
 }
 
 form.premiere input:hover{
@@ -88,7 +79,27 @@ form.premiere input[type=submit]:active{
     background-color: #742b1d;
 }
 
+form.premiere .fa{
+    font-size: 34px;
+}
+
+form.premiere .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+}
+
 form.premiere span{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
     margin-bottom: 0;
     font-size: 20px;
     text-transform: uppercase;
@@ -101,20 +112,6 @@ form.premiere p.info{
     text-transform: uppercase;
 }
 
-form.premiere i{
-    color: #ba4436;
-    margin-right: 10px;
-    box-shadow: 0 0 2px #742b1d;
-    background-color: #f2e2ca;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    box-sizing: border-box;
-    padding: 1px 0 0 2px;
-    line-height: 180%;
-    border-radius: 100%;
-    font-size: 28px;;
-}
 
 
 @media only screen and (min-width: 768px) {
