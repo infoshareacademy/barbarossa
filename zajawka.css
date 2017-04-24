@@ -4,13 +4,14 @@ body{
 
 .zajawkaImg {
     width: 100%;
-    background-image: url("pictures/zajawka.jpg");
-    background-position: 3px 40%;
-    height: 500px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: url("pictures/zajawka.jpg") no-repeat center center fixed;
+    height: 700px;
     flex-direction: column;
     display: flex;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .zajawka {
     font-size: 60px;
@@ -20,7 +21,7 @@ body{
     text-align: center;
     display: block;
     margin: -10px 0 0 0;
-    text-shadow: 0 0 0.2em rgb(10, 74,118);
+    text-shadow: 0 0 0.2em rgb(156, 0,0);
     padding-top: 200px;
 }
 .zajawka-txt {
@@ -35,10 +36,16 @@ body{
 .zajawkaSign {
     background-color: #FBEAD0;
     border: double;
+    border-color:#ba4436;
     width: 200px;
-    height: 80px;
+    line-height: 80px;
     margin: auto;
     margin-top: 40px;
+    border-radius: 10px;
+
+}
+.zajawkaSign:hover {
+    background-color: #ba4436;
 }
 .zajawka-sign-text {
     font-size: 20px;
@@ -46,4 +53,6 @@ body{
     font-family: 'Viga', sans-serif;
     justify-content: center;
     padding: 70px 5px 10px 30px;
+    text-decoration: none;
+    font-weight: 800;
 }
