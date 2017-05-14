@@ -46,6 +46,8 @@ form.premiere{
 
 form.premiere input{
   margin-top: 2em;
+  border: none;
+  outline: none;
   &[type=text]{
     width: 100%;
   }
@@ -54,6 +56,15 @@ form.premiere input{
   }
   &:active{
     border: none;
+  &:focus{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+    color: #742b1d;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &:visited{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+    color: #742b1d;
   }
 }
 

@@ -43,6 +43,22 @@ form.premiere input {
     cursor: pointer; }
   form.premiere input:active {
     border: none; }
+form.premiere input {
+  margin-top: 2em;
+  border: none;
+  outline: none; }
+  form.premiere input[type=text] {
+    width: 100%; }
+  form.premiere input:hover {
+    cursor: pointer; }
+  form.premiere input:focus {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #742b1d;
+    font-weight: bold;
+    text-transform: uppercase; }
+  form.premiere input:visited {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #742b1d; }
 
 form.premiere input[type=submit] {
   background-color: #742b1d;
@@ -50,4 +66,4 @@ form.premiere input[type=submit] {
   border: none;
   padding: 1em 6em; }
 
-/*# sourceMappingURL=sign.css.map */
+}
