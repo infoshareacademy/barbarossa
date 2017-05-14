@@ -5,51 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>BARBAROSSA PUBLIC TRANSPORT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css"/>
-    <link rel="stylesheet" type="text/css" href="nawigacja.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nav.css"/>
     <link rel="stylesheet" type="text/css" href="sign.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="zajawka.css"/>
 </head>
 <body>
-<div class="container_main">
-<header>
-    <!--Spot for TASK 8: "Nawigacja w obrębie strony"-->
-    <!--Menu horizontal bar at top of the page-->
-    <nav id="nav_1024">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i>Home</a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
-        </ul>
-    </nav>
-    <nav id="nav_640">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i></a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i></a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i></a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <!--Spot for TASK 5: "Zajawka"-->
-    <section id="home">
-        <div class="zajawkaImg">
-            <span class="zajawka">Barbarrosa Travel</span>
-            <span class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.
-                Z nami dojedziesz do celu. Szybko, sprawnie o każdej porze.</span>
-             <span class="zajawka sign">
-              <a class="zajawka-sign-text" href="#sign">Zarejestruj się!</a>
-              </span>
-        </div>
+<div class="container">
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top header_menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">
+                        <img class="header_menu_brand_img"alt="Brand" src="images/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i>Home</a></li>
+                        <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
+                        <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
+                        <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
+                        <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
+    </header>
+    <main>
+        <!--Spot for TASK 5: "Zajawka"-->
+        <section id="home">
 
     </section>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
@@ -109,50 +107,204 @@
     </section>
     <!--Spot for TASK 7: "Zapis na premierę"-->
     <section id="sign">
-
-        <form class="premiere" action="js/form.js" method="post">
-
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
-                    <span>Imię:</span>
+        <div class="container">
+            <form class="premiere" action="js/form.js" method="post">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">
+                        <div class="icon-box">
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                            <div class="label">Imię:</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-info"><input type="text" name="firstname"></div>
+                    </div>
                 </div>
-                <div class="text-info"><input type="text" name="firstname"></div>
-            </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
-                    <span>Nazwisko</span>
-                </div>
-                <div class="text-info"><input type="text" name="lastname"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <div class="label">Nazwisko:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-info"><input type="text" name="secondname"></div>
+                        </div>
+                    </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    <span>E-mail</span>
-                </div>
-                <div class="text-info"><input type="email" name="email"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <div class="label">E-mail:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-info"><input type="email" name="email"></div>
+                        </div>
+                    </div>
 
-            <input class="submit" type="submit" name="email" value="WYŚLIJ" >
-            <p class="info">Twoje dane są bezpieczne.<br><br>Nie wykorzystujemy ich do innych celów niż rejestracyjne.</p>
-        </form>
+                    <div class="row">
+                        <div class="">
+                            <input class="submit" type="submit" name="submit" value="Wyślij">
+                        </div>
+                    </div>
 
+                <p class="info">Twoje dane są bezpieczne.<br>Nie wykorzystujemy ich do celów nikczemnych.</p>
+            </form>
+        </div>
     </section>
     <!--Spot for TASK 9: "Informacje o zespole"-->
     <section id="team">
+        <div class="team">
+            <span class="team-txt">Poznaj nasz zespół</span>
 
+            <div class="team-members">
+                <div class="member">
+                    <div class="member-img">
+                        <img class="member-picture" src="pictures/AdamMazur-60156be2.webp"/>
+                    </div>
+                    <div class="member-name">Grzegorz Klimek</div>
+                    <div class="member-description"> tata, pasjonat gór, nauczyciel lubi wino</div>
+                </div>
+
+                <div class="all-socials">
+                    <div class="socialMedia-box">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
+                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="member">
+                    <div class="member-img">
+                        <img class="member-picture" src="pictures/JustynaWardzinska-60156be2.webp">
+                    </div>
+                    <div class="member-name">Kamil Richert</div>
+                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
+                    <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank"></a>
+                </div>
+
+                <div class="all-socials">
+                    <div class="socialMedia-box">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
+                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member">
+                    <div class="member-img">
+                        <img class="member-picture" src="pictures/PrzemekKonopko-60156be2.webp">
+                    </div>
+                    <div class="member-name">Anna Ostrowska</div>
+                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
+                </div>
+
+                <div class="all-socials">
+                    <div class="socialMedia-box">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
+                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-img">
+                        <img class="member-picture" src="pictures/MichalKakol-60156be2.webp">
+                    </div>
+                    <div class="member-name">Paweł Paczkowski</div>
+                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
+                </div>
+
+                <div class="all-socials">
+                    <div class="socialMedia-box">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
+                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!--Spot for TASK 11: "Dodatkowe inforamcje o produkcie"-->
     <section id="extras">
 
-    </section>
-</main>
-<footer>
-    <p>Copyright © BARBAROSSA</p>
-</footer>
+        </section>
+    </main>
+    <footer class="navbar-fixed-bottom container-fluid">
+        <div class="container">
+            <div class="footer_up row">
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a href="https://github.com/infoshareacademy/jfdz5-barbarossa"><i class="fa fa-github"
+                                                                                      aria-hidden="true"></i></a>
+                </div>
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a href="https://github.com/infoshareacademy/jfdz5-barbarossa"><i class="fa fa-github"
+                                                                                      aria-hidden="true"></i></a>
+                </div>
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a  class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a  class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer_down">
+                <p>Copyright © TEAM BARBAROSSA</p>
+            </div>
+        </div>
+    </footer>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
