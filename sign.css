@@ -5,7 +5,29 @@ body {
   font-family: Roboto, sans-serif; }
 
 section#sign {
-  background-color: #ba4436; }
+  background-color: #ba4436;
+  text-align: center;
+  padding: 5em 0; }
+  section#sign .icon-box {
+    display: flex;
+    align-items: center; }
+  section#sign .row {
+    padding: 1em 0; }
+  section#sign i {
+    font-size: 3em;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #FBEAD0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  section#sign .label {
+    font-size: 1.3em;
+    margin-left: 1em; }
+  section#sign p {
+    margin-top: 3em; }
 
 form.premiere {
   text-align: center;
@@ -13,14 +35,19 @@ form.premiere {
   letter-spacing: 2px;
   font-weight: bold; }
 
-form.premiere input:hover {
-  cursor: pointer; }
-form.premiere input:active {
-  border: none; }
+form.premiere input {
+  margin-top: 2em; }
+  form.premiere input[type=text] {
+    width: 100%; }
+  form.premiere input:hover {
+    cursor: pointer; }
+  form.premiere input:active {
+    border: none; }
 
 form.premiere input[type=submit] {
   background-color: #742b1d;
   color: #FBEAD0;
-  border: none; }
+  border: none;
+  padding: 1em 6em; }
 
 /*# sourceMappingURL=sign.css.map */

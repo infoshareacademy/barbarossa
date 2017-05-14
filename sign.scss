@@ -7,7 +7,35 @@ body{
 
 section#sign{
   background-color: #ba4436;
+  text-align: center;
+  padding: 5em 0;
+  .icon-box{
+    display: flex;
+    align-items: center;
+  }
+  .row{
+    padding: 1em 0;
+  }
+  i{
+    font-size: 3em;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #FBEAD0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .label{
+    font-size: 1.3em;
+    margin-left: 1em;
+  }
+  p{
+    margin-top: 3em;
+  }
 }
+
 
 form.premiere{
   text-align: center;
@@ -17,6 +45,10 @@ form.premiere{
 }
 
 form.premiere input{
+  margin-top: 2em;
+  &[type=text]{
+    width: 100%;
+  }
   &:hover{
     cursor: pointer;
   }
@@ -29,4 +61,5 @@ form.premiere input[type=submit]{
   background-color: #742b1d;
   color: #FBEAD0;
   border: none;
+  padding: 1em 6em;
 }
