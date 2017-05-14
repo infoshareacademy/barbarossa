@@ -1,4 +1,5 @@
-#nav_640 {
+/* Style of navigation bar */
+#nav_small {
     display: none;
 }
 ul.navigation {
@@ -7,54 +8,64 @@ ul.navigation {
     justify-content: center;
     flex-wrap: wrap;
     position: fixed;
-    top:0;
+    top: 0;
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: #ba4436;
     box-shadow: 0 5px 10px #742b1d;
 }
-ul.navigation  li{
+
+ul.navigation li {
     display: flex;
     margin: 0;
     background-color: #ba4436;
     text-align: center;
     font-size: 1.2em;
 }
-ul.navigation  i{
+
+ul.navigation i {
     margin-right: 10px;
 }
-ul.navigation  a{
+
+ul.navigation a {
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
     padding: 20px 40px;
 }
-ul.navigation  a:active{
+
+ul.navigation a:active {
     background-color: #742b1d;
 }
+
 ul.navigation a:hover {
     cursor: pointer;
     color: #FBEAD0;
 }
-@media only screen and (min-width: 1366px) {
+@media only screen and (max-width: 640px) {
+    #nav_small {
+        display: flex;
+    }
+
+    #nav_big {
+        display: none;
+    }
+    ul.navigation i {
+        margin-right: 0;
+    }
+    ul.navigation a {
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+}
+@media only screen and (min-width: 640px) and (max-width:1024px) {
+
+}
+@media only screen and (min-width: 1280px) {
     ul.navigation li {
         font-size: 1.5em;
     }
 }
-@media only screen and (max-width: 640px) {
-    #nav_640 {
-        display: flex;
-    }
-    #nav_1024 {
-        display: none;
-    }
-    ul.navigation  i{
-        margin-right: 0;
-    }
-    ul.navigation  a{
-        padding: 10px 20px;
-        font-size: 2em;
-    }
-}
+
 

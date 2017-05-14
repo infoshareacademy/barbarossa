@@ -8,53 +8,50 @@
     <title>BARBAROSSA PUBLIC TRANSPORT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css"/>
-    <link rel="stylesheet" type="text/css" href="nawigacja.css"/>
-    <link rel="stylesheet" type="text/css" href="sign.css"/>
-    <link rel="stylesheet" type="text/css" href="zajawka.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nav.css"/>
 </head>
 <body>
-<div class="container_main">
-<header>
-    <!--Spot for TASK 8: "Nawigacja w obrębie strony"-->
-    <!--Menu horizontal bar at top of the page-->
-    <nav id="nav_1024">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i>Home</a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
-        </ul>
-    </nav>
-    <nav id="nav_640">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i></a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i></a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i></a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <!--Spot for TASK 5: "Zajawka"-->
-    <section id="home">
-        <div class="zajawkaImg">
-            <span class="zajawka">Barbarrosa Travel</span>
-            <span class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.
-                Z nami dojedziesz do celu. Szybko, sprawnie o każdej porze.</span>
-             <span class="zajawka sign">
-              <a class="zajawka-sign-text" href="#sign">Zarejestruj się!</a>
-              </span>
-        </div>
-    </section>
-    <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
-    <section id="function">
+<div class="container">
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top header_menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">
+                        <img class="header_menu_brand_img"alt="Brand" src="images/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i>Home</a></li>
+                        <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
+                        <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
+                        <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
+                        <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    </section>
-    <!--Spot for TASK 7: "Zapis na premierę"-->
-    <section id="sign">
+    </header>
+    <main>
+        <!--Spot for TASK 5: "Zajawka"-->
+        <section id="home">
+
+        </section>
+        <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
+        <section id="function">
+
+        </section>
+        <!--Spot for TASK 7: "Zapis na premierę"-->
+        <section id="sign">
 
         <form class="premiere" action="js/form.js" method="post">
 
@@ -90,15 +87,57 @@
     <!--Spot for TASK 9: "Informacje o zespole"-->
     <section id="team">
 
-    </section>
-    <!--Spot for TASK 11: "Dodatkowe inforamcje o produkcie"-->
-    <section id="extras">
+        </section>
+        <!--Spot for TASK 11: "Dodatkowe inforamcje o produkcie"-->
+        <section id="extras">
 
-    </section>
-</main>
-<footer>
-    <p>Copyright © BARBAROSSA</p>
-</footer>
+        </section>
+    </main>
+    <footer class="navbar-fixed-bottom container-fluid">
+        <div class="container">
+            <div class="footer_up row">
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a href="https://github.com/infoshareacademy/jfdz5-barbarossa"><i class="fa fa-github"
+                                                                                      aria-hidden="true"></i></a>
+                </div>
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a href="https://github.com/infoshareacademy/jfdz5-barbarossa"><i class="fa fa-github"
+                                                                                      aria-hidden="true"></i></a>
+                </div>
+                <div class="footer_up_aside col-md-4 col-sm-12">
+                    <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a  class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                    <a  class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        Github
+                        <div class="footer_up_aside_button">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer_down">
+                <p>Copyright © TEAM BARBAROSSA</p>
+            </div>
+        </div>
+    </footer>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
