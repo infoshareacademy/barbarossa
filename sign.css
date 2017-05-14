@@ -6,6 +6,7 @@ body {
 
 section#sign {
   background-color: #ba4436;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 5em 0; }
   section#sign .icon-box {
@@ -27,7 +28,8 @@ section#sign {
     font-size: 1.3em;
     margin-left: 1em; }
   section#sign p {
-    margin-top: 3em; }
+    margin-top: 3em;
+    line-height: 1.8em; }
 
 form.premiere {
   text-align: center;
@@ -36,34 +38,37 @@ form.premiere {
   font-weight: bold; }
 
 form.premiere input {
-  margin-top: 2em; }
-  form.premiere input[type=text] {
+  margin-top: 2em;
+  border: none;
+  outline: none;
+  transition: 0.3s all;
+  text-transform: uppercase;
+  text-align: center; }
+  form.premiere input[type=text], form.premiere input[type=email] {
     width: 100%; }
   form.premiere input:hover {
     cursor: pointer; }
   form.premiere input:active {
     border: none; }
-form.premiere input {
-  margin-top: 2em;
-  border: none;
-  outline: none; }
-  form.premiere input[type=text] {
-    width: 100%; }
-  form.premiere input:hover {
-    cursor: pointer; }
   form.premiere input:focus {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     color: #742b1d;
-    font-weight: bold;
-    text-transform: uppercase; }
-  form.premiere input:visited {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-    color: #742b1d; }
+    font-weight: bold; }
+  form.premiere input[type=submit] {
+    background-color: #742b1d;
+    font-family: 'Pacifico', cursive;
+    border: none;
+    padding: 1.1em 6em;
+    letter-spacing: 0.2em;
+    font-size: 1.4em;
+    border-radius: 3em;
+    transition: 0.3s all;
+    text-transform: none; }
+    form.premiere input[type=submit]:hover {
+      background-color: #FBEAD0;
+      color: #742b1d;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+    form.premiere input[type=submit]:active {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
-form.premiere input[type=submit] {
-  background-color: #742b1d;
-  color: #FBEAD0;
-  border: none;
-  padding: 1em 6em; }
-
-}
+/*# sourceMappingURL=sign.css.map */
