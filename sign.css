@@ -43,7 +43,8 @@ form.premiere input {
   outline: none;
   transition: 0.3s all;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  color: #742b1d; }
   form.premiere input[type=text], form.premiere input[type=email] {
     width: 100%; }
   form.premiere input:hover {
@@ -63,7 +64,8 @@ form.premiere input {
     font-size: 1.4em;
     border-radius: 3em;
     transition: 0.3s all;
-    text-transform: none; }
+    text-transform: none;
+    color: #FBEAD0; }
     form.premiere input[type=submit]:hover {
       background-color: #FBEAD0;
       color: #742b1d;

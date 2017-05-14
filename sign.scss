@@ -53,6 +53,7 @@ form.premiere input{
   transition: 0.3s all;
   text-transform: uppercase;
   text-align: center;
+  color: #742b1d;
   &[type=text], &[type=email]{
     width: 100%;
   }
@@ -77,6 +78,7 @@ form.premiere input{
       border-radius: 3em;
       transition: 0.3s all;
       text-transform: none;
+      color: #FBEAD0;
       &:hover{
         background-color: #FBEAD0;
         color: #742b1d;
