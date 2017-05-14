@@ -7,9 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BARBAROSSA PUBLIC TRANSPORT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="nav.css"/>
+    <link rel="stylesheet" type="text/css" href="sign.css"/>
+    <link rel="stylesheet" type="text/css" href="zajawka.css"/>
 </head>
 <body>
 <div class="container">
@@ -49,40 +53,56 @@
         <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
         <section id="function">
 
-        </section>
-        <!--Spot for TASK 7: "Zapis na premierę"-->
-        <section id="sign">
-
-        <form class="premiere" action="js/form.js" method="post">
-
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
-                    <span>Imię:</span>
+    </section>
+    <!--Spot for TASK 7: "Zapis na premierę"-->
+    <section id="sign">
+        <div class="container">
+            <form class="premiere" action="js/form.js" method="post">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">
+                        <div class="icon-box">
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                            <div class="label">Imię:</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-info"><input type="text" name="firstname"></div>
+                    </div>
                 </div>
-                <div class="text-info"><input type="text" name="firstname"></div>
-            </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
-                    <span>Nazwisko</span>
-                </div>
-                <div class="text-info"><input type="text" name="lastname"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <div class="label">Nazwisko:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-info"><input type="text" name="secondname"></div>
+                        </div>
+                    </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    <span>E-mail</span>
-                </div>
-                <div class="text-info"><input type="email" name="email"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <div class="label">E-mail:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-info"><input type="email" name="email"></div>
+                        </div>
+                    </div>
 
-            <input class="submit" type="submit" name="email" value="WYŚLIJ" >
-            <p class="info">Twoje dane są bezpieczne.<br><br>Nie wykorzystujemy ich do innych celów niż rejestracyjne.</p>
-        </form>
+                    <div class="row">
+                        <div class="">
+                            <input class="submit" type="submit" name="submit" value="Wyślij">
+                        </div>
+                    </div>
 
+                <p class="info">Twoje dane są bezpieczne.<br>Nie wykorzystujemy ich do celów nikczemnych.</p>
+            </form>
+        </div>
     </section>
     <!--Spot for TASK 9: "Informacje o zespole"-->
     <section id="team">
