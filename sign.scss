@@ -70,14 +70,13 @@ form.premiere input{
   }
     &[type=submit] {
       background-color: #742b1d;
-      font-family: 'Pacifico', cursive;
       border: none;
-      padding: 1.1em 6em;
+      font-family: "Arial Black", sans-serif;
+      padding: 0.7em 6em;
       letter-spacing: 0.2em;
-      font-size: 1.4em;
+      font-size: 1.5em;
       border-radius: 3em;
       transition: 0.3s all;
-      text-transform: none;
       color: #FBEAD0;
       &:hover{
         background-color: #FBEAD0;
