@@ -1,0 +1,32 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #FBEAD0;
+  font-family: Roboto, sans-serif;
+}
+
+section#sign{
+  background-color: #ba4436;
+}
+
+form.premiere{
+  text-align: center;
+  color: #FBEAD0;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+form.premiere input{
+  &:hover{
+    cursor: pointer;
+  }
+  &:active{
+    border: none;
+  }
+}
+
+form.premiere input[type=submit]{
+  background-color: #742b1d;
+  color: #FBEAD0;
+  border: none;
+}
