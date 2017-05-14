@@ -80,17 +80,17 @@ body{
     display: block;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 .member {
     min-width: 50%;
     height: 300px;
 }
 .member-img {
-    height: 120px;
+    height: 180px;
     margin: 0 auto 16px;
     overflow: hidden;
-    width: 120px;
+    width: 180px;
 }
 .member-picture {
     width: 100%;
@@ -100,7 +100,39 @@ body{
 }
 .member-name {
     text-align: center;
+    font-family: 'Viga', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+
 }
 .member-description {
     text-align: center;
+    font-family: 'Viga', sans-serif;
+
+}
+.socialMedia-box {
+    max-height: 50px;
+    /*max-width: 200px;*/
+
+}
+.all-socials {
+    display: flex;
+    /*min-width: 50%;*/
+    height: 80px;
+    font-size: 50px;
+
+}
+
+.socialMedia-box a {
+    text-decoration: none;
+}
+/*.social-first {*/
+    /*max-width: 100px;*/
+    /*max-height: 100px;*/
+/*}*/
+.social-icons
+{
+    /*width: 50px;*/
+    color: #ba4436;
+    /*font-size: 500px;*/
 }
