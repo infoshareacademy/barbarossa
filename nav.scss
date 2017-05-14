@@ -15,14 +15,11 @@ body {
 }
 .header_menu_brand_img {
   max-width:100px;
-  top: 0;
-  left: 0;
 }
 .navbar-brand {
   height: auto;
   padding: 0;
   margin-left: 20px;
-  margin-bottom: 10px;
 }
 
 .navbar-default {
@@ -37,7 +34,7 @@ body {
       & > a {
         color: #FBEAD0;
         font-family: Roboto, sans-serif;
-        margin-top: 12px;
+        margin-top: 6px;
         &:hover {
           cursor: pointer;
           color: #ba4436;
@@ -53,11 +50,19 @@ body {
     font-size: 1.2em;
   }
 }
-
+@media screen and (max-width:991px) {
+  .header_menu_brand_img {
+    max-width:90px;
+  }
+  .navbar-default .navbar-nav > li > a {
+    margin-top: 2.5px;
+  }
+}
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
 .navbar-default .navbar-toggle {
   border-color: #FBEAD0;
+  margin-top: 12px;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #FBEAD0;
@@ -77,9 +82,7 @@ body {
 footer {
   background-color: #ba4436;
   box-shadow: 0 -5px 10px #742b1d;
-  display: none;
 }
-
 .footer_up_aside {
   padding: 10px 0;
   a {
@@ -91,6 +94,7 @@ footer {
     text-decoration: none;
     background-color: #FBEAD0;
     color: #ba4436;
+    border: 5px solid #ba4436;
   }
   a i {
     font-size: 2em;
