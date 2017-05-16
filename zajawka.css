@@ -10,7 +10,7 @@
     /*-o-background-size: cover;*/
     /*background-size: cover;*/
 /*}*/
-/*.zajawka {*/
+/*!*.zajawka {*!*/
     /*font-size: 60px;*/
     /*font-weight: 800;*/
     /*color: #FBEAD0;*/
@@ -41,11 +41,10 @@
     /*margin-top: 20px;*/
     /*!*border-radius: 40px;*!*/
     /*text-align: center;*/
-
 /*}*/
 /*.zajawkaSign:hover {*/
     /*background-color: #ba4436;*/
-/*}*/
+/*!*}*!*/
 /*.zajawka-sign-text {*/
     /*font-size: 20px;*/
     /*color:#FBEAD0;*/
@@ -55,6 +54,69 @@
     /*text-decoration: none;*/
     /*font-weight: 800;*/
 /*}*/
+/*#home {*/
+    /*!*padding-top: 92px;*!*/
+/*!*}*!*/
+.zajawka {
+    padding-top: 230px;
+    background: url("pictures/zajawka.jpg") no-repeat center center fixed;
+    height: 830px;
+
+}
+.zajawka-head {
+    font-size: 70px;
+    font-weight: 800;
+    color: #FBEAD0;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    display: block;
+    margin: -10px 0 0 0;
+    /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
+    padding-top: 92px;
+}
+.zajawka-txt {
+    font-size: 20px;
+    font-weight: 600;
+    color:#FBEAD0;
+    display: block;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    margin: -5px 0 0 0;
+    padding-top: 20px;
+}
+
+.button {
+    background-color: transparent;
+    border: solid;
+    border-color:#FBEAD0;
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.button:hover {
+    background-color: #ba4436;
+    border-color: #ba4436;
+}
+.button-txt {
+    text-align: center;
+    text-decoration: none;
+    color: #FBEAD0;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Viga', sans-serif;
+}
+
+/*.zajawka-sign-txt {*/
+    /*font-size: 20px;*/
+    /*color:#FBEAD0;*/
+    /*font-family: 'Viga', sans-serif;*/
+    /*justify-content: center;*/
+    /*padding: 70px 5px 10px 10px;*/
+    /*text-decoration: none;*/
+    /*font-weight: 800;*/
+/*}*/
+
 .team-txt {
     font-size: 50px;
     font-weight: 600;
