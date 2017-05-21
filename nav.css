@@ -63,13 +63,17 @@ footer {
   background-color: #ba4436;
   box-shadow: 0 -5px 10px #742b1d; }
 
+.navbar-fixed-bottom {
+  z-index: 0; }
+
 .footer_up_aside {
   padding: 10px 0; }
   .footer_up_aside a {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    padding: 0;
     font-size: 1.4em;
     text-decoration: none;
     background-color: #FBEAD0;
@@ -77,17 +81,58 @@ footer {
     border: 5px solid #ba4436; }
   .footer_up_aside a i {
     font-size: 2em; }
+  .footer_up_aside a:hover {
+    background-color: #ba4436;
+    color: #FBEAD0;
+    cursor: pointer;
+    font-weight: bold; }
+
+.footer_up_aside_team {
+  color: #FBEAD0;
+  font-size: 1.4em;
+  text-align: center; }
+  .footer_up_aside_team ul {
+    list-style-type: none;
+    padding: 0; }
+  .footer_up_aside_team ul li {
+    padding: 5px 0; }
+  .footer_up_aside_team img {
+    width: 50px; }
+  .footer_up_aside_team span {
+    margin-left: 30px; }
+
+.footer_up_aside_text {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
 
 .footer_up_aside_button {
-  margin-left: 10px;
+  display: flex;
+  justify-content: center;
   padding: 10px;
-  border-left: 1px solid #ba4436; }
+  border-left: 3px solid #ba4436;
+  width: 50px; }
 
+.footer_up_aside_telephone_number {
+  font-size: 0.8em; }
+
+@media screen and (max-width: 1199px) {
+  .footer_up_aside a {
+    font-size: 1.1em; }
+
+  .footer_up_aside_telephone_number {
+    font-size: 0.8em; } }
+@media screen and (max-width: 991px) {
+  .footer_up_aside_team {
+    display: none; }
+
+  .footer_up_aside_list {
+    display: none; } }
 .footer_down {
   color: #FBEAD0;
   font-size: 1.2em;
   text-align: center;
   font-weight: bold;
-  border-bottom: 2px solid #FBEAD0; }
+  display: none; }
 
 /*# sourceMappingURL=nav.css.map */
