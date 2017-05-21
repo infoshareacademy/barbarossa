@@ -10,12 +10,12 @@ body {
     }
 }
 /*Main structure for whole page - style of "one page" */
-div.container_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 100%;
-}
+/*div.container_main {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*justify-content: center;*/
+/*flex: 1 100%;*/
+/*}*/
 /*Footer*/
 footer {
     display: flex;
@@ -45,37 +45,4 @@ div.footer_down {
     justify-content: center;
     font-size: 1.0em;
 }
-#function {
 
-}
-.container  {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row ;
-    font-size: 1.5em;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px;
-    width: 100%;
-    background-color: #ba4436;
-    box-shadow: 0 5px 10px #742b1d;
-}
-
-.long-info{
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 1.3em;
-
-}
-.column
-{
-   text-align: justify;
-    padding: 10px;
-}
-.abc {
-padding: 10px 60px 0 10px;
-
-}
-}
