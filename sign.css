@@ -18,7 +18,7 @@ section#sign {
     font-size: 3em;
     width: 2em;
     height: 2em;
-    border: 2px solid #FBEAD0;
+    border: 2px solid #eee;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@ section#sign {
 
 form.premiere {
   text-align: center;
-  color: #FBEAD0;
+  color: #eee;
   letter-spacing: 2px;
   font-weight: bold; }
 
@@ -64,10 +64,10 @@ form.premiere input {
     font-size: 1.3em;
     border-radius: 3em;
     transition: 0.5s all;
-    color: #FBEAD0;
+    color: #eee;
     font-weight: 900; }
     form.premiere input[type=submit]:hover {
-      background-color: #FBEAD0;
+      background-color: #eee;
       color: #742b1d;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
     form.premiere input[type=submit]:active {
