@@ -10,6 +10,10 @@ body {
   background-color: $yellow;
 }
 
+#sign, #function, #team, #extras {
+  padding-top: 90px; /* padding to pass over navigation bar */
+}
+
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
 
 .header-menu {

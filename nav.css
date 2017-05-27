@@ -5,6 +5,10 @@ body {
   font-family: Roboto, sans-serif;
   background-color: #FBEAD0; }
 
+#sign, #function, #team, #extras {
+  padding-top: 90px;
+  /* padding to pass over navigation bar */ }
+
 .header-menu {
   background-color: #ba4436;
   box-shadow: 0 5px 10px #742b1d;
