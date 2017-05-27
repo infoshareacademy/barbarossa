@@ -49,15 +49,14 @@
     <main>
         <!--Spot for TASK 5: "Zajawka"-->
         <section id="home">
-            <div class="zajawkaImg">
-                <span class="zajawka">Barbarossa Travel</span>
-                <span class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.<br>
-                Z nami dojedziesz do celu. Szybko, sprawnie o każdej porze.</span>
-                <span class="zajawkaSign">
-              <a class="zajawka-sign-text" href="#sign">ZAREJESTRUJ SIĘ</a>
-              </span>
-            </div>
-
+                <div class=" zajawka container">
+                    <h1 class="zajawka-head">Barbarossa Travel</h1>
+                    <p class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.<br> Z nami dojedziesz do celu szybko, sprawnie i o każdej porze.</p>
+                    <div class="text-center">
+                    <a class="button btn btn-default btn-lg" href="#sign" role="button">
+                        <p class="button-txt">ZAREJESTRUJ SIĘ!</p></a>
+                    </div>
+                </div>
     </section>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
     <section id="function">
@@ -111,47 +110,47 @@
     </section>
     <!--Spot for TASK 7: "Zapis na premierę"-->
     <section id="sign">
-        <div class="container">
+        <div class="container-fluid">
             <form class="premiere" action="js/form.js" method="post">
                 <div class="row">
-                    <div class="col-md-3 col-md-offset-3">
+                    <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
                         <div class="icon-box">
                             <i class="fa fa-address-book-o" aria-hidden="true"></i>
                             <div class="label">Imię:</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xs-offset-2 col-xs-8 col-md-3 col-md-offset-0">
                         <div class="text-info"><input type="text" name="firstname"></div>
                     </div>
                 </div>
 
                     <div class="row">
-                        <div class="col-md-3 col-md-offset-3">
+                        <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
                             <div class="icon-box">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <div class="label">Nazwisko:</div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
                             <div class="text-info"><input type="text" name="secondname"></div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3 col-md-offset-3">
+                        <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
                             <div class="icon-box">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <div class="label">E-mail:</div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
                             <div class="text-info"><input type="email" name="email"></div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="">
-                            <input class="submit" type="submit" name="submit" value="Wyślij">
+                            <input class="submit" type="submit" name="submit" value="Zapisz się teraz!">
                         </div>
                     </div>
 
@@ -161,101 +160,71 @@
     </section>
     <!--Spot for TASK 9: "Informacje o zespole"-->
     <section id="team">
-        <div class="team">
-            <span class="team-txt">Poznaj nasz zespół</span>
-
-            <div class="team-members">
-                <div class="member">
-                    <div class="member-img">
-                        <img class="member-picture" src="pictures/AdamMazur-60156be2.webp"/>
+        <h1 class="team-txt">Poznaj nasz zespół</h1>
+        <div class="row">
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/donald.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Grzegorz Klimek</h2>
+                <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/SoothsayerGKL" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/grzegorz-klimek-1165b6137/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/Grzegorz-Klimek"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="member-name">Grzegorz Klimek</div>
-                    <div class="member-description"> tata, pasjonat gór, nauczyciel lubi wino</div>
-                </div>
-
-                <div class="all-socials">
-                    <div class="socialMedia-box">
-                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
-                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/ania.JPG" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Anna Ostrowska</h2>
+                <p class="member-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
-                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/AniaOstrowska"  target="_blank">
-                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
                         </a>
                     </div>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/kamil.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Kamil Richert</h2>
+                <p class="member-description">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/kamil.richert.5" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kamil-richert/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/krichert"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
                 </div>
-
-
-
-
-
-                <div class="member">
-                    <div class="member-img">
-                        <img class="member-picture" src="pictures/JustynaWardzinska-60156be2.webp">
-                    </div>
-                    <div class="member-name">Kamil Richert</div>
-                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
-                    <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank"></a>
-                </div>
-
-                <div class="all-socials">
-                    <div class="socialMedia-box">
-                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
-                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/pooh10.gif" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Paweł Paczkowski</h2>
+                <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
-                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/AniaOstrowska"  target="_blank">
-                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
                         </a>
                     </div>
-                </div>
-
-                <div class="member">
-                    <div class="member-img">
-                        <img class="member-picture" src="pictures/PrzemekKonopko-60156be2.webp">
-                    </div>
-                    <div class="member-name">Anna Ostrowska</div>
-                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
-                </div>
-
-                <div class="all-socials">
-                    <div class="socialMedia-box">
-                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
-                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
-                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/AniaOstrowska"  target="_blank">
-                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-img">
-                        <img class="member-picture" src="pictures/MichalKakol-60156be2.webp">
-                    </div>
-                    <div class="member-name">Paweł Paczkowski</div>
-                    <div class="member-description">tata, pasjonat gór, nauczyciel lubi wino</div>
-                </div>
-
-                <div class="all-socials">
-                    <div class="socialMedia-box">
-                        <a href="https://www.facebook.com/anna.kalinowska.731" class="social-first" target="_blank">
-                            <i class="fa fa-facebook-square social-icons" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
-                            <i class="fa fa-linkedin social-icons" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/AniaOstrowska"  target="_blank">
-                            <i  class="fa fa-github social-icons" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
