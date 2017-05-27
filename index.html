@@ -5,99 +5,100 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>BARBAROSSA PUBLIC TRANSPORT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css"/>
-    <link rel="stylesheet" type="text/css" href="nawigacja.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nav.css"/>
     <link rel="stylesheet" type="text/css" href="sign.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="zajawka.css"/>
+    <link rel="stylesheet" type="text/css" href="info.css"/>
 </head>
 <body>
-<div class="container_main">
-<header>
-    <!--Spot for TASK 8: "Nawigacja w obrębie strony"-->
-    <!--Menu horizontal bar at top of the page-->
-    <nav id="nav_1024">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i>Home</a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
-        </ul>
-    </nav>
-    <nav id="nav_640">
-        <ul class="navigation">
-            <li><a href="#home"><i class="fa fa-home" aria-hiden="true"></i></a></li>
-            <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
-            <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i></a></li>
-            <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i></a></li>
-            <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <!--Spot for TASK 5: "Zajawka"-->
-    <section id="home">
-        <div class="zajawkaImg">
-            <span class="zajawka">Barbarrosa Travel</span>
-            <span class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.
-                Z nami dojedziesz do celu. Szybko, sprawnie o każdej porze.</span>
-             <span class="zajawka sign">
-              <a class="zajawka-sign-text" href="#sign">Zarejestruj się!</a>
-              </span>
-        </div>
+<div class="container">
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top header_menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">
+                        <img class="header_menu_brand_img" alt="Brand" src="images/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                        <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
+                        <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
+                        <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
+                        <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-
+    </header>
+    <main>
+        <!--Spot for TASK 5: "Zajawka"-->
+        <section id="home">
+                <div class=" zajawka container">
+                    <h1 class="zajawka-head">Barbarossa Travel</h1>
+                    <p class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.<br> Z nami dojedziesz do celu szybko, sprawnie i o każdej porze.</p>
+                    <div class="text-center">
+                    <a class="button btn btn-default btn-lg" href="#sign" role="button">
+                        <p class="button-txt">ZAREJESTRUJ SIĘ!</p></a>
+                    </div>
+                </div>
     </section>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
     <section id="function">
-        <div class="container short-info">
-
-            <div class="abc">
-            <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
-            <span>Znajdź przystanek</span>
-            </div>
-            <div class="abc">
-            <i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
-            <span>Wyszukaj trasę</span>
-            </div>
-            <div class="abc">
-            <i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
-            <span>Sprawdź rozkład</span>
-            </div>
-            <div class="abc" >
-            <i class="fa fa-download fa-3x" aria-hidden="true"></i>
-            <span>Pobierz</span>
-            </div>
-
-
-        </div>
-        <div class="container long-info col-md-12">
-            <div class="column col-md-3">
+        <div class="long-info">
+            <div class="container col-xs-12 col-sm-6 col-md-3">
+                <div class="short-info">
+                    <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
+                    <span>Znajdź przystanek</span>
+                </div>
                 <ul>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada ullamcorper enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis tincidunt velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium. Fusce pulvinar accumsan lacus quis sagittis. Nullam id nisi in nisl interdum convallis. Pellentesque elit metus, tempor eu molestie vitae, pretium at tortor. </li>
                     <li>Nam eu ligula porta odio tempus fringilla. Donec quis laoreet sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec turpis sapien, rhoncus non urna eu, consequat hendrerit leo. Aliquam sodales sit amet lectus ut semper. Duis id pretium arcu. Mauris non tortor bibendum neque sagittis gravida ac a massa. In vitae imperdiet nunc. Maecenas ex urna, accumsan sit amet finibus ut, placerat ut justo. Fusce condimentum interdum arcu quis mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu quam purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis eget libero quis elit tempor auctor.</li>
                     <li>Donec ac nibh vitae urna sollicitudin ullamcorper. Vestibulum nec ex et erat varius tempor. Donec semper sit amet erat et egestas. Suspendisse maximus turpis nunc, ut pharetra tortor commodo eget. Nam arcu nisi, porta ac sollicitudin quis, lacinia ac nisl. Sed porta vulputate fermentum. Phasellus non tincidunt magna. Pellentesque rutrum elit eget tortor consequat rutrum.</li>
                 </ul>
             </div>
-            <div class="column col-md-3">
+            <div class="container col-xs-12 col-sm-6 col-md-3">
+                <div class="short-info">
+                    <i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
+                    <span>Wyszukaj trasę</span>
+                </div>
 <ul>
     <li> Phasellus at dictum sapien, a imperdiet mi. Etiam dignissim auctor nibh, ac ornare orci condimentum eget. Fusce aliquam nunc massa, sed bibendum turpis mattis id. Ut vehicula neque ligula, quis gravida nunc bibendum non. Aliquam sit amet ligula id augue fermentum mattis. In consequat magna eros, non vestibulum enim iaculis ut. Etiam scelerisque nisi eget turpis sagittis elementum. Sed quis ante ex. Mauris elementum ullamcorper orci, ut gravida nibh tristique vel. Integer eleifend quam sed tortor auctor blandit. Mauris non odio quis lacus efficitur semper. Nunc turpis felis, varius auctor mauris ac, gravida lobortis lorem. Praesent laoreet diam a nisi sagittis egestas. Vestibulum ultrices maximus tincidunt. Donec tempus scelerisque bibendum.</li>
     <li> Pellentesque enim augue, semper et varius quis, egestas ut nisi. Phasellus dapibus faucibus augue quis scelerisque. Donec faucibus ut sem in suscipit. Vestibulum consequat ultricies turpis, sed molestie massa. Quisque tortor nunc, egestas a hendrerit vel, mattis pharetra turpis. Phasellus congue quam dui, eget pulvinar arcu egestas a. Maecenas convallis tellus eu finibus commodo. Proin commodo imperdiet sapien, ac rhoncus justo tristique placerat. Nullam et risus vel lectus dignissim condimentum. Duis pharetra placerat orci. Fusce vel metus id sapien dignissim consectetur id eget diam. Pellentesque sagittis cursus sem, vitae pretium metus maximus nec. Mauris finibus ullamcorper ligula, ac lacinia massa egestas vitae. Pellentesque maximus tortor nec nibh efficitur, ac placerat risus faucibus.</li>
 </ul>
 
             </div>
-            <div class="column col-md-3">
+            <div class="container col-xs-12 col-sm-6 col-md-3">
+                <div class="short-info">
+                    <i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
+                    <span>Sprawdź rozkład</span>
+                </div>
                 <ul>
                     <li> Phasellus at dictum sapien, a imperdiet mi. Etiam dignissim auctor nibh, ac ornare orci condimentum eget. Fusce aliquam nunc massa, sed bibendum turpis mattis id. Ut vehicula neque ligula, quis gravida nunc bibendum non. Aliquam sit amet ligula id augue fermentum mattis. In consequat magna eros, non vestibulum enim iaculis ut. Etiam scelerisque nisi eget turpis sagittis elementum. Sed quis ante ex. Mauris elementum ullamcorper orci, ut gravida nibh tristique vel. Integer eleifend quam sed tortor auctor blandit. Mauris non odio quis lacus efficitur semper. Nunc turpis felis, varius auctor mauris ac, gravida lobortis lorem. Praesent laoreet diam a nisi sagittis egestas. Vestibulum ultrices maximus tincidunt. Donec tempus scelerisque bibendum.</li>
                     <li> Pellentesque enim augue, semper et varius quis, egestas ut nisi. Phasellus dapibus faucibus augue quis scelerisque. Donec faucibus ut sem in suscipit. Vestibulum consequat ultricies turpis, sed molestie massa. Quisque tortor nunc, egestas a hendrerit vel, mattis pharetra turpis. Phasellus congue quam dui, eget pulvinar arcu egestas a. Maecenas convallis tellus eu finibus commodo. Proin commodo imperdiet sapien, ac rhoncus justo tristique placerat. Nullam et risus vel lectus dignissim condimentum. Duis pharetra placerat orci. Fusce vel metus id sapien dignissim consectetur id eget diam. Pellentesque sagittis cursus sem, vitae pretium metus maximus nec. Mauris finibus ullamcorper ligula, ac lacinia massa egestas vitae. Pellentesque maximus tortor nec nibh efficitur, ac placerat risus faucibus.</li>
                 </ul>
 
             </div>
-            <div class="column col-md-3">
+            <div class="container col-xs-12 col-sm-6 col-md-3">
+                <div class="short-info" >
+                    <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                    <span>Pobierz</span>
+                </div>
                 <ul>
                     <li> Phasellus at dictum sapien, a imperdiet mi. Etiam dignissim auctor nibh, ac ornare orci condimentum eget. Fusce aliquam nunc massa, sed bibendum turpis mattis id. Ut vehicula neque ligula, quis gravida nunc bibendum non. Aliquam sit amet ligula id augue fermentum mattis. In consequat magna eros, non vestibulum enim iaculis ut. Etiam scelerisque nisi eget turpis sagittis elementum. Sed quis ante ex. Mauris elementum ullamcorper orci, ut gravida nibh tristique vel. Integer eleifend quam sed tortor auctor blandit. Mauris non odio quis lacus efficitur semper. Nunc turpis felis, varius auctor mauris ac, gravida lobortis lorem. Praesent laoreet diam a nisi sagittis egestas. Vestibulum ultrices maximus tincidunt. Donec tempus scelerisque bibendum.</li>
                     <li> Pellentesque enim augue, semper et varius quis, egestas ut nisi. Phasellus dapibus faucibus augue quis scelerisque. Donec faucibus ut sem in suscipit. Vestibulum consequat ultricies turpis, sed molestie massa. Quisque tortor nunc, egestas a hendrerit vel, mattis pharetra turpis. Phasellus congue quam dui, eget pulvinar arcu egestas a. Maecenas convallis tellus eu finibus commodo. Proin commodo imperdiet sapien, ac rhoncus justo tristique placerat. Nullam et risus vel lectus dignissim condimentum. Duis pharetra placerat orci. Fusce vel metus id sapien dignissim consectetur id eget diam. Pellentesque sagittis cursus sem, vitae pretium metus maximus nec. Mauris finibus ullamcorper ligula, ac lacinia massa egestas vitae. Pellentesque maximus tortor nec nibh efficitur, ac placerat risus faucibus.</li>
@@ -109,50 +110,198 @@
     </section>
     <!--Spot for TASK 7: "Zapis na premierę"-->
     <section id="sign">
-
-        <form class="premiere" action="js/form.js" method="post">
-
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
-                    <span>Imię:</span>
+        <div class="container-fluid">
+            <form class="premiere" action="js/form.js" method="post">
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
+                        <div class="icon-box">
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                            <div class="label">Imię:</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-offset-2 col-xs-8 col-md-3 col-md-offset-0">
+                        <div class="text-info"><input type="text" name="firstname"></div>
+                    </div>
                 </div>
-                <div class="text-info"><input type="text" name="firstname"></div>
-            </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
-                    <span>Nazwisko</span>
-                </div>
-                <div class="text-info"><input type="text" name="lastname"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <div class="label">Nazwisko:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
+                            <div class="text-info"><input type="text" name="secondname"></div>
+                        </div>
+                    </div>
 
-            <div class="bar">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    <span>E-mail</span>
-                </div>
-                <div class="text-info"><input type="email" name="email"></div>
-            </div>
+                    <div class="row">
+                        <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <div class="label">E-mail:</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
+                            <div class="text-info"><input type="email" name="email"></div>
+                        </div>
+                    </div>
 
-            <input class="submit" type="submit" name="email" value="WYŚLIJ" >
-            <p class="info">Twoje dane są bezpieczne.<br><br>Nie wykorzystujemy ich do innych celów niż rejestracyjne.</p>
-        </form>
+                    <div class="row">
+                        <div class="">
+                            <input class="submit" type="submit" name="submit" value="Zapisz się teraz!">
+                        </div>
+                    </div>
 
+                <p class="info">Twoje dane są bezpieczne.<br>Nie wykorzystujemy ich do celów nikczemnych.</p>
+            </form>
+        </div>
     </section>
     <!--Spot for TASK 9: "Informacje o zespole"-->
     <section id="team">
-
+        <h1 class="team-txt">Poznaj nasz zespół</h1>
+        <div class="row">
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/donald.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Grzegorz Klimek</h2>
+                <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/SoothsayerGKL" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/grzegorz-klimek-1165b6137/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/Grzegorz-Klimek"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/ania.JPG" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Anna Ostrowska</h2>
+                <p class="member-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/kamil.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Kamil Richert</h2>
+                <p class="member-description">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/kamil.richert.5" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kamil-richert/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/krichert"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                </div>
+            </div>
+            <div class="col-md-6 member-box">
+                <img class="img-circle center-block" src="pictures/pooh10.gif" alt="Generic placeholder image" width="140" height="140">
+                <h2 class="member-name text-center">Paweł Paczkowski</h2>
+                <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <div class="socialMedia-box text-center">
+                        <a href="https://www.facebook.com/anna.kalinowska.731" target="_blank">
+                            <i class="fa fa-3x fa-facebook-square social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anna-ostrowska-97677a61/"  target="_blank">
+                            <i class="fa fa-3x fa-linkedin social-icons" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/AniaOstrowska"  target="_blank">
+                            <i  class="fa fa-3x fa-github social-icons" aria-hidden="true"></i>
+                        </a>
+                    </div>
+            </div>
+        </div>
     </section>
     <!--Spot for TASK 11: "Dodatkowe inforamcje o produkcie"-->
     <section id="extras">
 
-    </section>
-</main>
-<footer>
-    <p>Copyright © BARBAROSSA</p>
-</footer>
+        </section>
+    </main>
 </div>
+<footer class="container-fluid">
+    <div class="container">
+        <div class="footer_up">
+            <div class="col-md-4 col-sm-12 footer_up_team">
+                <ul>
+                    <li><img src="images/logo.png"><span>Kamil Richert</span></li>
+                    <li><img src="images/logo.png"><span>Grzegorz Klimek</span></li>
+                    <li><img src="images/logo.png"><span>Anna Ostrowska</span></li>
+                    <li><img src="images/logo.png"><span>Paweł Paczkowski</span></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 footer_up_list">
+                <ul>
+                    <li><img src="images/logo.png">Rozkłady jazdy</li>
+                    <li><img src="images/logo.png">Przystanki</li>
+                    <li><img src="images/logo.png">Trasy</li>
+                    <li><img src="images/logo.png">Czas dojazdu</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 footer_up_contact">
+                <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                    <div class="footer_up_text col-xs-9">
+                        <span>Github</span>
+                    </div>
+                    <div class="footer_up_button col-xs-3">
+                        <div class="row">
+                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </a>
+                <a class="col-xs-6" href="">
+                    <div class="footer_up_text col-xs-9">
+                        <span>Facebook</span>
+                    </div>
+                    <div class="footer_up_button col-xs-3">
+                        <div class="row">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </a>
+                <a class="col-xs-6" href="">
+                    <div class="footer_up_text col-xs-9">
+                        <span>Mail</span>
+                    </div>
+                    <div class="footer_up_button col-xs-3">
+                        <div class="row">
+                            <i class=".footer_up_telephone_number fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </a>
+                <a class="col-xs-6" href="">
+                    <div class="footer_up_text col-xs-9">
+                        <span class="footer_up_telephone_number">999-999-999</span>
+                    </div>
+                    <div class="footer_up_button col-xs-3">
+                        <div class="row">
+                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="footer_down col-xs-12">
+            <img src="images/logo.png"><span>Copyright © TEAM BARBAROSSA</span><img src="images/logo.png">
+        </div>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

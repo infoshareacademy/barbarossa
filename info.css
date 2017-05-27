@@ -1,0 +1,22 @@
+
+
+.long-info {
+    padding-top: 20px;
+    justify-content: space-between;
+    font-size: 1.3em;
+    text-align: justify;
+}
+.short-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #FBEAD0;
+
+}
+.short-info span {
+    font-size: 1.4em;
+    font-family: Roboto, sans-serif;
+}
+.short-info div {
+    padding: 20px 0 10px 70px;
+}
