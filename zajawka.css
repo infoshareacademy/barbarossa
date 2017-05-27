@@ -1,62 +1,4 @@
 
-/*.zajawkaImg {*/
-    /*width: 100%;*/
-    /*background: url("pictures/zajawka.jpg") no-repeat center center fixed;*/
-    /*height: 700px;*/
-    /*flex-direction: column;*/
-    /*display: flex;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
-/*}*/
-/*!*.zajawka {*!*/
-    /*font-size: 60px;*/
-    /*font-weight: 800;*/
-    /*color: #FBEAD0;*/
-    /*font-family: 'Viga', sans-serif;*/
-    /*text-align: center;*/
-    /*display: block;*/
-    /*margin: -10px 0 0 0;*/
-    /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
-    /*padding-top: 200px;*/
-/*}*/
-/*.zajawka-txt {*/
-    /*font-size: 20px;*/
-    /*font-weight: 600;*/
-    /*color:#FBEAD0;*/
-    /*display: block;*/
-    /*font-family: 'Viga', sans-serif;*/
-    /*text-align: center;*/
-    /*margin: -5px 0 0 0;*/
-/*}*/
-/*.zajawkaSign {*/
-    /*background-color: transparent;*/
-    /*border: solid;*/
-    /*border-color:#FBEAD0;*/
-    /*width: 300px;*/
-    /*height: 60px;*/
-    /*line-height: 60px;*/
-    /*margin: auto;*/
-    /*margin-top: 20px;*/
-    /*!*border-radius: 40px;*!*/
-    /*text-align: center;*/
-/*}*/
-/*.zajawkaSign:hover {*/
-    /*background-color: #ba4436;*/
-/*!*}*!*/
-/*.zajawka-sign-text {*/
-    /*font-size: 20px;*/
-    /*color:#FBEAD0;*/
-    /*font-family: 'Viga', sans-serif;*/
-    /*justify-content: center;*/
-    /*padding: 70px 5px 10px 10px;*/
-    /*text-decoration: none;*/
-    /*font-weight: 800;*/
-/*}*/
-/*#home {*/
-    /*!*padding-top: 92px;*!*/
-/*!*}*!*/
 .zajawka {
     padding-top: 230px;
     background: url("pictures/zajawka.jpg") no-repeat center center fixed;
@@ -106,17 +48,6 @@
     font-weight: 800;
     font-family: 'Viga', sans-serif;
 }
-
-/*.zajawka-sign-txt {*/
-    /*font-size: 20px;*/
-    /*color:#FBEAD0;*/
-    /*font-family: 'Viga', sans-serif;*/
-    /*justify-content: center;*/
-    /*padding: 70px 5px 10px 10px;*/
-    /*text-decoration: none;*/
-    /*font-weight: 800;*/
-/*}*/
-
 .team-txt {
     font-size: 50px;
     font-weight: 600;
