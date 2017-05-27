@@ -51,7 +51,6 @@ form.premiere input{
   border: none;
   outline: none;
   transition: 0.3s all;
-  text-transform: uppercase;
   text-align: center;
   color: #742b1d;
   &[type=text], &[type=email]{
@@ -71,13 +70,15 @@ form.premiere input{
     &[type=submit] {
       background-color: darken(#ba4436, 10%);
       border: none;
-      font-family: "Arial Black", sans-serif;
-      padding: 0.7em 6em;
-      letter-spacing: 0.2em;
-      font-size: 1.5em;
+      width: 14em;
+      height: 2.6em;
+      font-family: "Arial", sans-serif;
+      letter-spacing: 0.1em;
+      font-size: 1.3em;
       border-radius: 3em;
-      transition: 0.3s all;
+      transition: 0.5s all;
       color: #FBEAD0;
+      font-weight: 900;
       &:hover{
         background-color: #FBEAD0;
         color: #742b1d;

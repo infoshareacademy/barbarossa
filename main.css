@@ -8,6 +8,9 @@ body {
     body {
         padding: calc(2em + 2*10px) 0 0 0; /* padding to pass over navigation bar - 2x height of bar */
     }
+    .icon-box{
+        margin-left: 3em;
+      }
 }
 /*Main structure for whole page - style of "one page" */
 div.container_main {
