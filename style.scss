@@ -1,21 +1,24 @@
 ///////////////////////////////////////////// Main /////////////////////////////////////////////////
 
+$red : #ba4436;
+$yellow : #FBEAD0;
+
 body {
   margin: 0;
   padding-top: 90px; /* padding to pass over navigation bar */
   font-family: Roboto, sans-serif;
-  background-color: #FBEAD0;
+  background-color: $yellow;
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
 
-.header_menu {
-  background-color: #ba4436;
+.header-menu {
+  background-color: $red;
   box-shadow: 0 5px 10px #742b1d;
   padding: 10px 0;
 }
 
-.header_menu_brand_img {
+.header-menu-brand-img {
   max-width: 100px;
 }
 
@@ -35,13 +38,13 @@ body {
         margin-right: 10px;
       }
       & > a {
-        color: #FBEAD0;
+        color: #eee;
         font-family: Roboto, sans-serif;
         margin-top: 6px;
         &:hover {
           cursor: pointer;
-          color: #ba4436;
-          background-color: #FBEAD0;
+          color: $red;
+          background-color: $yellow;
           font-weight: bold;
         }
       }
@@ -56,7 +59,7 @@ body {
 }
 
 @media screen and (max-width: 991px) {
-  .header_menu_brand_img {
+  .header-menu-brand-img {
     max-width: 90px;
   }
   .navbar-default .navbar-nav > li > a {
@@ -67,26 +70,77 @@ body {
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
 .navbar-default .navbar-toggle {
-  border-color: #FBEAD0;
+  border-color: $yellow;
   margin-top: 12px;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #FBEAD0;
+  background-color: $yellow;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-  background-color: #FBEAD0;
+  background-color: $yellow;
+  transform: rotate(360deg);
+  transition: all 0.5s;
   .icon-bar {
-    background-color: #ba4436;
+    background-color: $red;
   }
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: #FBEAD0;
+  border-color: $yellow;
 }
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
+
+
+.zajawka {
+  background: url("pictures/zajawka.jpg") no-repeat center center fixed;
+  height: 830px;
+}
+.zajawka-head {
+  font-size: 70px;
+  font-weight: 800;
+  color: #FBEAD0;
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+  display: block;
+  margin: -10px 0 0 0;
+  /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
+  padding-top: 92px;
+}
+.zajawka-txt {
+  font-size: 20px;
+  font-weight: 600;
+  color:#FBEAD0;
+  display: block;
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+  margin: -5px 0 0 0;
+  padding-top: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: solid;
+  border-color:#FBEAD0;
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  text-align: center;
+}
+.button:hover {
+  background-color: #ba4436;
+  border-color: #ba4436;
+}
+.button-txt {
+  text-align: center;
+  text-decoration: none;
+  color: #FBEAD0;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Viga', sans-serif;
+}
 
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
@@ -181,73 +235,118 @@ form.premiere input{
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
 
+.team-txt {
+  font-size: 50px;
+  font-weight: 600;
+  color: #ba4436;
+  font-family: 'Viga', sans-serif;
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.member-name {
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+
+}
+.member-description {
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+
+}
+.socialMedia-box i {
+  margin: 0 10px;
+  color: #ba4436;
+}
+.socialMedia-box a {
+  text-decoration: none;
+
+}
+#team {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.member-box {
+  padding-bottom: 60px;
+}
+
 ///////////////////////////////////////////// Extras //////////////////////////////////////////////
 
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 footer {
-  background-color: #ba4436;
+  background-color: $red;
   box-shadow: 0 -5px 10px #742b1d;
 }
 
-.footer_up {
-  padding: 10px 0;
+.footer-up {
+  padding: 20px 0;
 }
 
-.footer_up_contact {
+.footer-up-contact {
   margin-top: 25px;
   a {
     padding: 0;
     font-size: 1.2em;
     text-decoration: none;
-    background-color: #FBEAD0;
-    color: #ba4436;
-    border: 5px solid #ba4436;
+    background-color: $yellow;
+    box-sizing: border-box;
+    color: $red;
+    border: 5px solid $red;
+    border-radius: 2px;
   }
   a i {
     font-size: 2em;
   }
   a:hover {
-    background-color: #ba4436;
-    color: #FBEAD0;
+    background-color: lighten($red,7%);
+    color: $yellow;
     cursor: pointer;
     font-weight: bold;
-    .footer_up_button {
-      border-left: 3px solid #FBEAD0;
+    .footer-up-button {
+      border-left: 3px solid transparent;
     }
+  }
+  a.disabled:hover {
+    cursor: auto;
   }
 }
 
-.footer_up_text {
+.footer-up-text {
   height: 2em;
   line-height: 2em;
-  padding: 5px 15px;
+  padding: 5px 10px;
 }
 
-.footer_up_button {
-  border-left: 3px solid #ba4436;
+.footer-up-button {
+  border-left: 3px solid $red;
   text-align: center;
   padding: 5px 0;
 }
 
-.footer_up_telephone_number {
+.footer-up-telephone-number {
   font-size: 0.9em;
 }
 
-.footer_up_team {
-  color: #ba4436;
+.footer-up-team {
+  color: $red;
   font-size: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 10px;
   ul {
     list-style-type: none;
   }
   ul li {
     padding: 5px 10px;
-    background-color: #FBEAD0;
-    border-top: 5px solid #ba4436;
-    border-bottom: 5px solid #ba4436;
+    background-color: $yellow;
+    border-top: 5px solid $red;
+    border-bottom: 5px solid $red;
+    border-radius: 2px;
   }
   img {
     height: 20px;
@@ -257,18 +356,24 @@ footer {
   }
 }
 
-.footer_up_list {
-  color: #FBEAD0;
+.footer-up-list {
+  color: #eee;
   font-size: 1em;
   display: flex;
+  padding-bottom: 10px;
   flex-direction: row;
   justify-content: center;
+  text-transform: uppercase;
   ul {
     list-style-type: none;
     padding: 0;
   }
   ul li {
-    padding: 10px 0;
+    padding: 5px 30px;
+    background-color: lighten($red,7%);
+    border-top: 5px solid $red;
+    border-bottom: 5px solid $red;
+    text-align: center;
   }
   img {
     height: 20px;
@@ -276,31 +381,27 @@ footer {
   }
 }
 
-.footer_down {
-  color: #FBEAD0;
+.footer-down {
+  color: #eee;
   font-size: 1.2em;
   text-align: center;
   font-weight: bold;
-  padding: 10px;
-  border-top: 2px solid #FBEAD0;
-  img {
-    height: 2em;
-    margin: 0 30px;
-  }
+  padding: 15px;
+  background-color: darken($red,15%);
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .footer_up_contact {
+  .footer-up-contact {
     a i {
       font-size: 1.5em;
     }
   }
-  .footer_up_text {
+  .footer-up-text {
     height: 1.5em;
     line-height: 1.5em;
   }
-  .footer_up_telephone_number {
-    font-size: 0.7em;
+  .footer-up-telephone-number {
+    font-size: 0.8em;
   }
   section#sign {
     i{
@@ -310,16 +411,16 @@ footer {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .footer_up_team {
+  .footer-up-team {
     display: none;
   }
-  .footer_up_list {
+  .footer-up-list {
     display: none;
   }
-  .footer_up_contact {
+  .footer-up-contact {
     margin-top: 5px;
   }
-  .footer_down {
+  .footer-down {
     margin-top:5px;
   }
   section#sign {
@@ -330,21 +431,34 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-  .footer_up_team {
+  .footer-up-team {
     display: none;
   }
-  .footer_up_list {
+  .footer-up-list {
     display: none;
   }
-  .footer_up_contact {
+  .footer-up-contact {
     margin-top: 5px;
   }
-  .footer_down {
-    img {
-      height: 1.5em;
-      margin: 0 10px;
+}
+
+@media screen and (max-width:425px) {
+  .footer-up-contact {
+    margin-top: 25px;
+    a {
+      font-size: 0.9em;
     }
-    margin-top:5px;
+    a i {
+      font-size: 1.5em;
+    }
+    .footer-up-text {
+      height: 1.5em;
+      line-height: 1.5em;
+      padding: 5px 5px;
+    }
+    .footer-up-telephone-number {
+      font-size: 0.8em;
+    }
   }
   section#sign {
     i{
