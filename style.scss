@@ -93,11 +93,98 @@ body {
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
 
+
+.zajawka {
+  background: url("pictures/zajawka.jpg") no-repeat center center fixed;
+  height: 830px;
+}
+.zajawka-head {
+  font-size: 70px;
+  font-weight: 800;
+  color: #FBEAD0;
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+  display: block;
+  margin: -10px 0 0 0;
+  /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
+  padding-top: 92px;
+}
+.zajawka-txt {
+  font-size: 20px;
+  font-weight: 600;
+  color:#FBEAD0;
+  display: block;
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+  margin: -5px 0 0 0;
+  padding-top: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: solid;
+  border-color:#FBEAD0;
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  text-align: center;
+}
+.button:hover {
+  background-color: #ba4436;
+  border-color: #ba4436;
+}
+.button-txt {
+  text-align: center;
+  text-decoration: none;
+  color: #FBEAD0;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Viga', sans-serif;
+}
+
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
+
+.team-txt {
+  font-size: 50px;
+  font-weight: 600;
+  color: #ba4436;
+  font-family: 'Viga', sans-serif;
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.member-name {
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+
+}
+.member-description {
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+
+}
+.socialMedia-box i {
+  margin: 0 10px;
+  color: #ba4436;
+}
+.socialMedia-box a {
+  text-decoration: none;
+
+}
+#team {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.member-box {
+  padding-bottom: 60px;
+}
 
 ///////////////////////////////////////////// Extras //////////////////////////////////////////////
 
