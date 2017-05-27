@@ -1,0 +1,135 @@
+
+.zajawkaImg {
+    width: 100%;
+    background: url("pictures/zajawka.jpg") no-repeat center center fixed;
+    height: 700px;
+    flex-direction: column;
+    display: flex;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.zajawka {
+    font-size: 60px;
+    font-weight: 800;
+    color: #FBEAD0;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    display: block;
+    margin: -10px 0 0 0;
+    text-shadow: 0 0 0.2em rgb(156, 0,0);
+    padding-top: 200px;
+}
+.zajawka-txt {
+    font-size: 20px;
+    font-weight: 600;
+    color:#FBEAD0;
+    display: block;
+    font-family: 'Viga', sans-serif;
+    text-align: center;
+    margin: -5px 0 0 0;
+}
+.zajawkaSign {
+    background-color: transparent;
+    border: solid;
+    border-color:#FBEAD0;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    margin: auto;
+    margin-top: 20px;
+    /*border-radius: 40px;*/
+    text-align: center;
+
+}
+.zajawkaSign:hover {
+    background-color: #ba4436;
+}
+.zajawka-sign-text {
+    font-size: 20px;
+    color:#FBEAD0;
+    font-family: 'Viga', sans-serif;
+    justify-content: center;
+    padding: 70px 5px 10px 10px;
+    text-decoration: none;
+    font-weight: 800;
+}
+.team {
+    width: 100%;
+    background: #FBEAD0;
+    flex-direction: column;
+    display: flex;
+}
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 200px;
+    margin-right: 200px;
+    align-items: center;
+    flex:none;
+}
+.team-txt {
+    font-size: 50px;
+    font-weight: 600;
+    color: #ba4436;
+    font-family: 'Viga', sans-serif;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.member {
+    min-width: 50%;
+    height: 300px;
+}
+.member-img {
+    height: 180px;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    width: 180px;
+}
+.member-picture {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+.member-name {
+    text-align: center;
+    font-family: 'Viga', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+
+}
+.member-description {
+    text-align: center;
+    font-family: 'Viga', sans-serif;
+
+}
+.socialMedia-box {
+    max-height: 50px;
+    /*max-width: 200px;*/
+
+}
+.all-socials {
+    display: flex;
+    /*min-width: 50%;*/
+    height: 80px;
+    font-size: 50px;
+
+}
+
+.socialMedia-box a {
+    text-decoration: none;
+}
+/*.social-first {*/
+    /*max-width: 100px;*/
+    /*max-height: 100px;*/
+/*}*/
+.social-icons
+{
+    /*width: 50px;*/
+    color: #ba4436;
+    /*font-size: 500px;*/
+}

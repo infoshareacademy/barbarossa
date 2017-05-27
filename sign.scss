@@ -1,0 +1,92 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #FBEAD0;
+  font-family: Roboto, sans-serif;
+}
+
+section#sign{
+  background-color: #ba4436;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+  text-align: center;
+  padding: 5em 0;
+  .icon-box{
+    display: flex;
+    align-items: center;
+  }
+  .row{
+    padding: 1em 0;
+  }
+  i{
+    font-size: 3em;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #FBEAD0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .label{
+    font-size: 1.3em;
+    margin-left: 1em;
+  }
+  p{
+    margin-top: 3em;
+    line-height: 1.8em;
+  }
+}
+
+
+form.premiere{
+  text-align: center;
+  color: #FBEAD0;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+form.premiere input{
+  margin-top: 2em;
+  border: none;
+  outline: none;
+  transition: 0.3s all;
+  text-transform: uppercase;
+  text-align: center;
+  color: #742b1d;
+  &[type=text], &[type=email]{
+    width: 100%;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  &:active {
+    border: none;
+  }
+  &:focus {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+      color: #742b1d;
+      font-weight: bold
+  }
+    &[type=submit] {
+      background-color: #742b1d;
+      font-family: 'Pacifico', cursive;
+      border: none;
+      padding: 1.1em 6em;
+      letter-spacing: 0.2em;
+      font-size: 1.4em;
+      border-radius: 3em;
+      transition: 0.3s all;
+      text-transform: none;
+      color: #FBEAD0;
+      &:hover{
+        background-color: #FBEAD0;
+        color: #742b1d;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+      }
+      &:active{
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+      }
+    }
+}
+
