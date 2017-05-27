@@ -42,7 +42,6 @@ form.premiere input {
   border: none;
   outline: none;
   transition: 0.3s all;
-  text-transform: uppercase;
   text-align: center;
   color: #742b1d; }
   form.premiere input[type=text], form.premiere input[type=email] {
@@ -56,16 +55,17 @@ form.premiere input {
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    background-color: #742b1d;
-    font-family: 'Pacifico', cursive;
+    background-color: #92362b;
     border: none;
-    padding: 1.1em 6em;
-    letter-spacing: 0.2em;
-    font-size: 1.4em;
+    width: 14em;
+    height: 2.6em;
+    font-family: "Arial", sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.3em;
     border-radius: 3em;
-    transition: 0.3s all;
-    text-transform: none;
-    color: #FBEAD0; }
+    transition: 0.5s all;
+    color: #FBEAD0;
+    font-weight: 900; }
     form.premiere input[type=submit]:hover {
       background-color: #FBEAD0;
       color: #742b1d;
