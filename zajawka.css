@@ -1,9 +1,8 @@
 
 .zajawka {
-    padding-top: 230px;
+    padding-top:230px;
     background: url("pictures/zajawka.jpg") no-repeat center center fixed;
     height: 830px;
-
 }
 .zajawka-head {
     font-size: 70px;
