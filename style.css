@@ -147,7 +147,21 @@ section#sign {
   background-color: #ba4436;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 5em 0; }
+  padding: 5em 0;
+  margin-top: 5em; }
+  section#sign .divider-flat {
+    display: block;
+    width: 20%;
+    height: 0.6em;
+    border-radius: 100%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to bottom right, #7BAB32, #81b334, #7BAB32); }
+  section#sign h2 {
+    margin-bottom: 1.7em;
+    font-weight: bold;
+    letter-spacing: 0.1em; }
   section#sign .icon-box {
     display: flex;
     align-items: center; }
@@ -196,21 +210,20 @@ form.premiere input {
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    background-color: #ba4436;
-    border: 2px solid #eee;
+    background-image: linear-gradient(to bottom right, #7BAB32, #6d972c, #7BAB32);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     width: 14em;
     height: 3em;
     font-family: "Arial", sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.3em;
-    border-radius: 3em;
+    border-radius: 1em 0;
     transition: 0.5s all;
     color: #eee;
     font-weight: 900; }
     form.premiere input[type=submit]:hover {
-      background-color: #eee;
-      color: #742b1d;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+      background-image: linear-gradient(to bottom left, #7BAB32, #5f8426, #7BAB32);
+      color: #fff; }
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
