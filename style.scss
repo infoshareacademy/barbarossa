@@ -5,9 +5,12 @@ $yellow : #FBEAD0;
 
 body {
   margin: 0;
-  padding-top: 90px; /* padding to pass over navigation bar */
+  padding-top: 82px; /* padding to pass over navigation bar */
   font-family: Roboto, sans-serif;
   background-color: $yellow;
+}
+#sign, #function, #team, #extras {
+  padding-top: 82px; /* padding to pass over navigation bar */
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
@@ -146,7 +149,6 @@ body {
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
 #function{
-  padding-top: 80px;
   background-color: $red;
 }
 #function img {
@@ -165,6 +167,7 @@ body {
 }
 
 .long-info {
+  margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
 }
@@ -175,15 +178,11 @@ body {
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
 }
+.short-info img {
+  margin-right: 10px;
+}
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
-
-body{
-  padding: 0;
-  margin: 0;
-  background-color: $yellow;
-  font-family: Roboto, sans-serif;
-}
 
 section#sign{
   background-color: $red;
