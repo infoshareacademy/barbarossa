@@ -5,9 +5,12 @@ $yellow : #FBEAD0;
 
 body {
   margin: 0;
-  padding-top: 90px; /* padding to pass over navigation bar */
+  padding-top: 82px; /* padding to pass over navigation bar */
   font-family: Roboto, sans-serif;
   background-color: $yellow;
+}
+#sign, #function, #team, #extras {
+  padding-top: 82px; /* padding to pass over navigation bar */
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
@@ -95,13 +98,14 @@ body {
 
 
 .zajawka {
+  padding-top:230px;
   background: url("pictures/zajawka.jpg") no-repeat center center fixed;
   height: 830px;
 }
 .zajawka-head {
   font-size: 70px;
   font-weight: 800;
-  color: #FBEAD0;
+  color: $yellow;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
@@ -112,7 +116,7 @@ body {
 .zajawka-txt {
   font-size: 20px;
   font-weight: 600;
-  color:#FBEAD0;
+  color:$yellow;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -123,20 +127,20 @@ body {
 .button {
   background-color: transparent;
   border: solid;
-  border-color:#FBEAD0;
+  border-color:$yellow;
   width: 300px;
   height: 50px;
   margin-top: 20px;
   text-align: center;
 }
 .button:hover {
-  background-color: #ba4436;
-  border-color: #ba4436;
+  background-color: $red;
+  border-color: $red;
 }
 .button-txt {
   text-align: center;
   text-decoration: none;
-  color: #FBEAD0;
+  color: $yellow;
   font-size: 20px;
   font-weight: 800;
   font-family: 'Viga', sans-serif;
@@ -144,14 +148,134 @@ body {
 
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
+#function{
+  background-color: $red;
+}
+#function img {
+  height: 35px;
+}
+#function ul{
+  color: $yellow;
+  margin: 0;
+  padding: 0;
+}
+
+#function ul li{
+  font-size: 0.6em;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.long-info {
+  margin-top: 10px;
+  font-size: 1.3em;
+  text-align: justify;
+}
+.short-info{
+  color: $yellow;
+}
+.short-info span {
+  font-size: 1.4em;
+  font-family: Roboto, sans-serif;
+}
+.short-info img {
+  margin-right: 10px;
+}
+
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
+
+section#sign{
+  background-color: $red;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+  text-align: center;
+  padding: 5em 0;
+  .icon-box{
+    display: flex;
+    align-items: center;
+  }
+  .row{
+    padding: 1em 0;
+  }
+  i{
+    font-size: 3em;
+    width: 2em;
+    height: 2em;
+    border: 2px solid $yellow;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .label{
+    font-size: 1.3em;
+    margin-left: 1em;
+  }
+  p{
+    margin-top: 3em;
+    line-height: 1.8em;
+  }
+}
+
+
+form.premiere{
+  text-align: center;
+  color: $yellow;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+form.premiere input{
+  margin-top: 2em;
+  border: none;
+  outline: none;
+  transition: 0.3s all;
+  text-align: center;
+  color: #742b1d;
+  &[type=text], &[type=email]{
+    width: 100%;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  &:active {
+    border: none;
+  }
+  &:focus {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+    color: #742b1d;
+    font-weight: bold
+  }
+  &[type=submit] {
+    background-color: darken($red, 10%);
+    border: none;
+    width: 14em;
+    height: 2.6em;
+    font-family: "Arial", sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.3em;
+    border-radius: 3em;
+    transition: 0.5s all;
+    color: $yellow;
+    font-weight: 900;
+    &:hover{
+      background-color: $yellow;
+      color: #742b1d;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+    }
+    &:active{
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+    }
+  }
+}
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
 
 .team-txt {
   font-size: 50px;
   font-weight: 600;
-  color: #ba4436;
+  color: $red;
   font-family: 'Viga', sans-serif;
   display: block;
   text-align: center;
@@ -172,7 +296,7 @@ body {
 }
 .socialMedia-box i {
   margin: 0 10px;
-  color: #ba4436;
+  color: $red;
 }
 .socialMedia-box a {
   text-decoration: none;
@@ -263,6 +387,7 @@ footer {
   }
   img {
     height: 20px;
+    border-radius: 50%;
   }
   span {
     margin-left: 30px;
@@ -316,6 +441,11 @@ footer {
   .footer-up-telephone-number {
     font-size: 0.8em;
   }
+  section#sign {
+    i{
+      font-size: 2em;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -330,6 +460,11 @@ footer {
   }
   .footer-down {
     margin-top:5px;
+  }
+  section#sign {
+    i{
+      font-size: 2em;
+    }
   }
 }
 
@@ -361,6 +496,11 @@ footer {
     }
     .footer-up-telephone-number {
       font-size: 0.8em;
+    }
+  }
+  section#sign {
+    i{
+      font-size: 2em;
     }
   }
 }
