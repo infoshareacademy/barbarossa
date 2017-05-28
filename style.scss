@@ -76,16 +76,21 @@ body {
 .navbar-default .navbar-toggle {
   border-color: $yellow;
   margin-top: 12px;
+  transition: all 0.5s;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
   background-color: $yellow;
 }
-
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+.navbar-default .navbar-toggle:focus{
+  background-color: $red;
+  .icon-bar {
+    background-color: $yellow;
+  }
+}
+.navbar-default .navbar-toggle:hover {
   background-color: $yellow;
   transform: rotate(360deg);
-  transition: all 0.5s;
   .icon-bar {
     background-color: $red;
   }
