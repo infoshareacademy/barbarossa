@@ -200,7 +200,7 @@ section#sign{
     font-size: 3em;
     width: 2em;
     height: 2em;
-    border: 2px solid $yellow;
+    border: 2px solid #eee;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -220,14 +220,14 @@ section#sign{
 
 form.premiere{
   text-align: center;
-  color: $yellow;
+  color: #eee;
   letter-spacing: 2px;
   font-weight: bold;
   margin-top: 1em;
 }
 
 form.premiere input{
-  margin-top: 2em;
+  margin-top: 1.5em;
   border: none;
   outline: none;
   transition: 0.3s all;
@@ -235,6 +235,7 @@ form.premiere input{
   color: #742b1d;
   &[type=text], &[type=email]{
     width: 100%;
+    height: 3em;
   }
   &:hover{
     cursor: pointer;
@@ -248,19 +249,19 @@ form.premiere input{
     font-weight: bold
   }
   &[type=submit] {
-    background-color: darken($red, 10%);
-    border: none;
+    background-color: $red;
+    border: 2px solid #eee;
     width: 14em;
-    height: 2.6em;
+    height: 3em;
     font-family: "Arial", sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.3em;
     border-radius: 3em;
     transition: 0.5s all;
-    color: $yellow;
+    color: #eee;
     font-weight: 900;
     &:hover{
-      background-color: $yellow;
+      background-color:#eee;
       color: #742b1d;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
     }
