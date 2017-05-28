@@ -153,7 +153,21 @@ section#sign {
   background-color: #ba4436;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 5em 0; }
+  padding: 5em 0;
+  margin-top: 5em; }
+  section#sign .divider-flat {
+    display: block;
+    width: 20%;
+    height: 0.6em;
+    border-radius: 100%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to bottom right, #7BAB32, #81b334, #7BAB32); }
+  section#sign h2 {
+    margin-bottom: 1.7em;
+    font-weight: bold;
+    letter-spacing: 0.1em; }
   section#sign .icon-box {
     display: flex;
     align-items: center; }
@@ -163,7 +177,7 @@ section#sign {
     font-size: 3em;
     width: 2em;
     height: 2em;
-    border: 2px solid #FBEAD0;
+    border: 2px solid #eee;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -178,20 +192,21 @@ section#sign {
 
 form.premiere {
   text-align: center;
-  color: #FBEAD0;
+  color: #eee;
   letter-spacing: 2px;
   font-weight: bold;
   margin-top: 1em; }
 
 form.premiere input {
-  margin-top: 2em;
+  margin-top: 1.5em;
   border: none;
   outline: none;
   transition: 0.3s all;
   text-align: center;
   color: #742b1d; }
   form.premiere input[type=text], form.premiere input[type=email] {
-    width: 100%; }
+    width: 100%;
+    height: 3em; }
   form.premiere input:hover {
     cursor: pointer; }
   form.premiere input:active {
@@ -201,21 +216,20 @@ form.premiere input {
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    background-color: #92362b;
-    border: none;
+    background-image: linear-gradient(to bottom right, #7BAB32, #6d972c, #7BAB32);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     width: 14em;
-    height: 2.6em;
+    height: 3em;
     font-family: "Arial", sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.3em;
-    border-radius: 3em;
+    border-radius: 1em 0;
     transition: 0.5s all;
-    color: #FBEAD0;
+    color: #eee;
     font-weight: 900; }
     form.premiere input[type=submit]:hover {
-      background-color: #FBEAD0;
-      color: #742b1d;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+      background-image: linear-gradient(to bottom left, #7BAB32, #5f8426, #7BAB32);
+      color: #fff; }
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
