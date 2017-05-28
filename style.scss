@@ -44,6 +44,7 @@ body {
         color: #eee;
         font-family: Roboto, sans-serif;
         margin-top: 6px;
+        border-radius: 2px;
         &:hover {
           cursor: pointer;
           color: $red;
@@ -333,18 +334,18 @@ footer {
     box-sizing: border-box;
     color: $red;
     border: 5px solid $red;
-    border-radius: 2px;
-  }
-  a i {
-    font-size: 2em;
-  }
-  a:hover {
-    background-color: lighten($red,7%);
-    color: $yellow;
-    cursor: pointer;
-    font-weight: bold;
-    .footer-up-button {
-      border-left: 3px solid transparent;
+    border-radius: 7px;
+    i {
+      font-size: 2em;
+    }
+    &:hover {
+      background-color: lighten($red, 7%);
+      color: $yellow;
+      cursor: pointer;
+      font-weight: bold;
+      .footer-up-button {
+        border-left: 3px solid transparent;
+      }
     }
   }
   a.disabled:hover {
@@ -377,13 +378,13 @@ footer {
   padding-bottom: 10px;
   ul {
     list-style-type: none;
-  }
-  ul li {
-    padding: 5px 10px;
-    background-color: $yellow;
-    border-top: 5px solid $red;
-    border-bottom: 5px solid $red;
-    border-radius: 2px;
+    li {
+      padding: 5px 10px;
+      background-color: $yellow;
+      border-top: 5px solid $red;
+      border-bottom: 5px solid $red;
+      border-radius: 2px;
+    }
   }
   img {
     height: 20px;
@@ -405,13 +406,13 @@ footer {
   ul {
     list-style-type: none;
     padding: 0;
-  }
-  ul li {
-    padding: 5px 30px;
-    background-color: lighten($red,7%);
-    border-top: 5px solid $red;
-    border-bottom: 5px solid $red;
-    text-align: center;
+    li {
+      padding: 5px 30px;
+      background-color: lighten($red, 7%);
+      border-top: 5px solid $red;
+      border-bottom: 5px solid $red;
+      text-align: center;
+    }
   }
   img {
     height: 20px;
@@ -441,14 +442,9 @@ footer {
   .footer-up-telephone-number {
     font-size: 0.8em;
   }
-  section#sign {
-    i{
-      font-size: 2em;
-    }
-  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .footer-up-team {
     display: none;
   }
@@ -461,33 +457,17 @@ footer {
   .footer-down {
     margin-top:5px;
   }
-  section#sign {
-    i{
-      font-size: 2em;
-    }
-  }
 }
 
-@media screen and (max-width: 767px) {
-  .footer-up-team {
-    display: none;
-  }
-  .footer-up-list {
-    display: none;
-  }
-  .footer-up-contact {
-    margin-top: 5px;
-  }
-}
 
 @media screen and (max-width:425px) {
   .footer-up-contact {
     margin-top: 25px;
     a {
       font-size: 0.9em;
-    }
-    a i {
-      font-size: 1.5em;
+      i {
+        font-size: 1.5em;
+      }
     }
     .footer-up-text {
       height: 1.5em;
@@ -496,11 +476,6 @@ footer {
     }
     .footer-up-telephone-number {
       font-size: 0.8em;
-    }
-  }
-  section#sign {
-    i{
-      font-size: 2em;
     }
   }
 }
