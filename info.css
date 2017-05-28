@@ -1,7 +1,6 @@
 
 
 #function{
-    padding-top: 80px;
     background-color: #ba4436;
 }
 #function img {
@@ -29,3 +28,7 @@
 .short-info span {
     font-size: 1.4em;
     font-family: Roboto, sans-serif;
+}
+.short-info img {
+    margin-right: 10px;
+}
