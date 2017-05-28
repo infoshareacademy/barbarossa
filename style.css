@@ -174,7 +174,8 @@ form.premiere {
   text-align: center;
   color: #FBEAD0;
   letter-spacing: 2px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 1em; }
 
 form.premiere input {
   margin-top: 2em;
