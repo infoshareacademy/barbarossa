@@ -6,23 +6,23 @@ $green: #7BAB32;
 
 body {
   margin: 0;
-  padding-top: 82px; /* padding to pass over navigation bar */
+  padding-top: 76px; /* padding to pass over navigation bar */
   font-family: Roboto, sans-serif;
   background-color: $yellow;
 }
 #sign, #function, #team, #extras {
-  padding-top: 82px; /* padding to pass over navigation bar */
+  padding-top: 76px; /* padding to pass over navigation bar */
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
 
-.header-menu {
+.nav-menu {
+  padding: 10px 0;
   background-color: $red;
   box-shadow: 0 5px 10px #742b1d;
-  padding: 10px 0;
 }
 
-.header-menu-brand-img {
+.navbar-brand__image {
   max-width: 100px;
 }
 
@@ -44,7 +44,7 @@ body {
       & > a {
         color: #eee;
         font-family: Roboto, sans-serif;
-        margin-top: 6px;
+        margin-top: 6px; // center vertically in navbar
         border-radius: 2px;
         &:hover {
           cursor: pointer;
@@ -64,11 +64,11 @@ body {
 }
 
 @media screen and (max-width: 991px) {
-  .header-menu-brand-img {
+  .navbar-brand__image {
     max-width: 90px;
   }
   .navbar-default .navbar-nav > li > a {
-    margin-top: 2.5px;
+    margin-top: 2.5px; // center vertically in navbar
   }
 }
 
@@ -76,8 +76,8 @@ body {
 
 .navbar-default .navbar-toggle {
   border-color: $yellow;
-  margin-top: 12px;
   transition: all 0.5s;
+  margin-top: 12px; // center vertically in navbar
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -97,17 +97,21 @@ body {
   }
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: $yellow;
+.navbar-collapse {
+    border: 0;
 }
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
 
 
 .zajawka {
-  padding-top:230px;
-  background: url("pictures/zajawka.jpg") no-repeat center center fixed;
-  height: 830px;
+  background: url("pictures/zajawka.jpg") no-repeat;
+  background-size: cover;
+  height: 453px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .zajawka-head {
   font-size: 70px;
@@ -118,7 +122,6 @@ body {
   display: block;
   margin: -10px 0 0 0;
   /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
-  padding-top: 92px;
 }
 .zajawka-txt {
   font-size: 20px;
@@ -342,12 +345,8 @@ footer {
   box-shadow: 0 -5px 10px #742b1d;
 }
 
-.footer-up {
-  padding: 20px 0;
-}
-
-.footer-up-contact {
-  margin-top: 25px;
+.footer-contact {
+  padding: 10px 0;
   a {
     padding: 0;
     font-size: 1.2em;
@@ -355,7 +354,6 @@ footer {
     background-color: $yellow;
     box-sizing: border-box;
     color: $red;
-    border: 5px solid $red;
     border-radius: 7px;
     i {
       font-size: 2em;
@@ -363,41 +361,41 @@ footer {
     &:hover {
       background-color: lighten($red, 7%);
       color: $yellow;
-      cursor: pointer;
       font-weight: bold;
-      .footer-up-button {
+      cursor: pointer;
+      .footer-contact__btn {
         border-left: 3px solid transparent;
       }
     }
   }
-  a.disabled:hover {
+  a.footer-contact__btn--disabled:hover {
     cursor: auto;
   }
 }
 
-.footer-up-text {
+.footer-contact__text {
   height: 2em;
   line-height: 2em;
   padding: 5px 10px;
 }
 
-.footer-up-button {
+.footer-contact__btn {
   border-left: 3px solid $red;
   text-align: center;
   padding: 5px 0;
 }
 
-.footer-up-telephone-number {
+.footer-contact__telephonenumber {
   font-size: 0.9em;
 }
 
-.footer-up-team {
-  color: $red;
-  font-size: 1em;
+.footer-team {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 10px;
+  padding: 10px 0;
+  color: $red;
+  font-size: 1em;
   ul {
     list-style-type: none;
     li {
@@ -417,13 +415,13 @@ footer {
   }
 }
 
-.footer-up-list {
-  color: #eee;
-  font-size: 1em;
+.footer-list {
   display: flex;
-  padding-bottom: 10px;
   flex-direction: row;
   justify-content: center;
+  padding: 10px 0;
+  color: #eee;
+  font-size: 1em;
   text-transform: uppercase;
   ul {
     list-style-type: none;
@@ -442,7 +440,7 @@ footer {
   }
 }
 
-.footer-down {
+.footer-caption {
   color: #eee;
   font-size: 1.2em;
   text-align: center;
@@ -452,51 +450,41 @@ footer {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .footer-up-contact {
+  .footer-contact {
     a i {
       font-size: 1.5em;
     }
   }
-  .footer-up-text {
+  .footer-contact__text {
     height: 1.5em;
     line-height: 1.5em;
   }
-  .footer-up-telephone-number {
+  .footer-contact__telephonenumber {
     font-size: 0.8em;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .footer-up-team {
+  .footer-team, .footer-list {
     display: none;
-  }
-  .footer-up-list {
-    display: none;
-  }
-  .footer-up-contact {
-    margin-top: 5px;
-  }
-  .footer-down {
-    margin-top:5px;
   }
 }
 
 
-@media screen and (max-width:425px) {
-  .footer-up-contact {
-    margin-top: 25px;
+@media screen and (max-width:425px) { // changed size of text in button for small phones
+  .footer-contact__text {
     a {
       font-size: 0.9em;
       i {
         font-size: 1.5em;
       }
     }
-    .footer-up-text {
+    .footer-contact__text {
       height: 1.5em;
       line-height: 1.5em;
       padding: 5px 5px;
     }
-    .footer-up-telephone-number {
+    .footer-contact__telephonenumber {
       font-size: 0.8em;
     }
   }

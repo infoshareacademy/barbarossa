@@ -14,27 +14,27 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-default navbar-fixed-top header-menu">
+    <nav class="navbar navbar-default navbar-fixed-top nav-menu">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        data-target="#navbar-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#home">
-                    <img class="header-menu-brand-img" alt="Brand" src="images/logo.png">
+                    <img class="navbar-brand__image" alt="Barbarossa-Travel-Logo" src="images/logo.png">
                 </a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-collapse collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-                    <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
-                    <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
-                    <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
-                    <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
+                    <li><a href="#home" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="#function" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
+                    <li><a href="#team" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
+                    <li><a href="#extras" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
+                    <li><a href="#sign" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
                 </ul>
             </div>
         </div>
@@ -43,8 +43,6 @@
 <main>
     <!--Spot for TASK 5: "Zajawka"-->
     <section id="home">
-        <div class="container">
-            <div class="row">
                 <div class="zajawka">
                     <h1 class="zajawka-head">Barbarossa Travel</h1>
                     <p class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.<br>
@@ -54,8 +52,6 @@
                         <a class="button btn btn-default btn-lg" href="#sign" role="button">
                             <p class="button-txt">ZAREJESTRUJ SIĘ!</p></a>
                     </div>
-                </div>
-            </div>
         </div>
     </section>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
@@ -301,8 +297,8 @@
 <footer class="container-fluid">
     <div class="row">
         <div class="container">
-            <div class="footer-up">
-                <div class="col-md-4 col-sm-12 footer-up-team">
+            <div class="footer-content">
+                <div class="col-md-4 col-sm-12 footer-team">
                     <ul>
                         <li><img src="pictures/kamil.jpg"><span>Kamil Richert</span></li>
                         <li><img src="pictures/donald.jpg"><span>Grzegorz Klimek</span></li>
@@ -310,7 +306,7 @@
                         <li><img src="pictures/pooh10.gif"><span>Paweł Paczkowski</span></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-12 footer-up-list">
+                <div class="col-md-4 col-sm-12 footer-list">
                     <ul>
                         <li>Rozkłady jazdy</li>
                         <li>Przystanki</li>
@@ -318,42 +314,42 @@
                         <li>Czas dojazdu</li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-12 footer-up-contact">
-                    <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
-                        <div class="footer-up-text col-xs-9">
+                <div class="col-md-4 col-sm-12 footer-contact">
+                    <a href="https://github.com/infoshareacademy/jfdz5-barbarossa">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Github</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
+                        <div class="footer-contact__btn col-xs-3">
                             <div class="row">
                                 <i class="fa fa-github-square" aria-hidden="true"></i>
                             </div>
                         </div>
                     </a>
-                    <a class="col-xs-6" href="">
-                        <div class="footer-up-text col-xs-9">
+                    <a href="">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Facebook</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
+                        <div class="footer-contact__btn col-xs-3">
                             <div class="row">
                                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
                             </div>
                         </div>
                     </a>
-                    <a class="col-xs-6" href="mailto:contact@barbarossa-travel.pl">
-                        <div class="footer-up-text col-xs-9">
+                    <a href="mailto:contact@barbarossa-travel.pl">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Mail</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
+                        <div class="footer-contact__btn col-xs-3">
                             <div class="row">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </div>
                         </div>
                     </a>
-                    <a class="col-xs-6 disabled">
-                        <div class="footer-up-text col-xs-9">
-                            <span class="footer-up-telephone-number">999-999-999</span>
+                    <a class="footer-contact__btn--disabled">
+                        <div class="footer-contact__text col-xs-9">
+                            <span class="footer-contact__telephonenumber">999-999-999</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
+                        <div class="footer-contact__btn col-xs-3">
                             <div class="row">
                                 <i class="fa fa-phone-square" aria-hidden="true"></i>
                             </div>
@@ -362,7 +358,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-down col-xs-12">
+        <div class="footer-caption">
             <span>Copyright © <b>Team Barbarossa</b></span>
         </div>
     </div>
