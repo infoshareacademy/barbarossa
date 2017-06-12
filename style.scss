@@ -22,19 +22,19 @@ body {
   box-shadow: 0 5px 10px #742b1d;
 }
 
-.navbar-brand__image {
+.nav-menu__brand-img {
   max-width: 100px;
 }
 
-.navbar-brand {
+.nav-menu__brand {
   height: auto;
   padding: 0;
   margin-left: 20px;
 }
 
-.navbar-default {
+.nav-menu {
   border: none;
-  .navbar-nav {
+  .nav-menu__list {
     & > li {
       text-align: center;
       font-size: 1.5em;
@@ -58,38 +58,38 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .navbar-default .navbar-nav > li {
+  .nav-menu .nav-menu__list > li {
     font-size: 1.2em;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .navbar-brand__image {
+  .nav-menu__brand {
     max-width: 90px;
   }
-  .navbar-default .navbar-nav > li > a {
+  .nav-menu .nav-menu__list > li > a {
     margin-top: 2.5px; // center vertically in navbar
   }
 }
 
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
-.navbar-default .navbar-toggle {
+.nav-menu .nav-menu__btn {
   border-color: $yellow;
   transition: all 0.5s;
   margin-top: 12px; // center vertically in navbar
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.nav-menu .nav-menu__btn .icon-bar {
   background-color: $yellow;
 }
-.navbar-default .navbar-toggle:focus{
+.nav-menu .nav-menu__btn:focus{
   background-color: $red;
   .icon-bar {
     background-color: $yellow;
   }
 }
-.navbar-default .navbar-toggle:hover {
+.nav-menu .nav-menu__btn:hover {
   background-color: $yellow;
   transform: rotate(360deg);
   .icon-bar {
@@ -97,7 +97,7 @@ body {
   }
 }
 
-.navbar-collapse {
+.nav-menu .navbar-collapse {
     border: 0;
 }
 
