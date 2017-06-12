@@ -14,61 +14,61 @@ body {
   background-color: #ba4436;
   box-shadow: 0 5px 10px #742b1d; }
 
-.navbar-brand__image {
+.nav-menu__brand-img {
   max-width: 100px; }
 
-.navbar-brand {
+.nav-menu__brand {
   height: auto;
   padding: 0;
   margin-left: 20px; }
 
-.navbar-default {
+.nav-menu {
   border: none; }
-  .navbar-default .navbar-nav > li {
+  .nav-menu .nav-menu__list > li {
     text-align: center;
     font-size: 1.5em; }
-    .navbar-default .navbar-nav > li i {
+    .nav-menu .nav-menu__list > li i {
       margin-right: 10px; }
-    .navbar-default .navbar-nav > li > a {
+    .nav-menu .nav-menu__list > li > a {
       color: #eee;
       font-family: Roboto, sans-serif;
       margin-top: 6px;
       border-radius: 2px; }
-      .navbar-default .navbar-nav > li > a:hover {
+      .nav-menu .nav-menu__list > li > a:hover {
         cursor: pointer;
         color: #ba4436;
         background-color: #FBEAD0;
         font-weight: bold; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .navbar-default .navbar-nav > li {
+  .nav-menu .nav-menu__list > li {
     font-size: 1.2em; } }
 @media screen and (max-width: 991px) {
-  .navbar-brand__image {
+  .nav-menu__brand {
     max-width: 90px; }
 
-  .navbar-default .navbar-nav > li > a {
+  .nav-menu .nav-menu__list > li > a {
     margin-top: 2.5px; } }
-.navbar-default .navbar-toggle {
+.nav-menu .nav-menu__btn {
   border-color: #FBEAD0;
   transition: all 0.5s;
   margin-top: 12px; }
 
-.navbar-default .navbar-toggle .icon-bar {
+.nav-menu .nav-menu__btn .icon-bar {
   background-color: #FBEAD0; }
 
-.navbar-default .navbar-toggle:focus {
+.nav-menu .nav-menu__btn:focus {
   background-color: #ba4436; }
-  .navbar-default .navbar-toggle:focus .icon-bar {
+  .nav-menu .nav-menu__btn:focus .icon-bar {
     background-color: #FBEAD0; }
 
-.navbar-default .navbar-toggle:hover {
+.nav-menu .nav-menu__btn:hover {
   background-color: #FBEAD0;
   transform: rotate(360deg); }
-  .navbar-default .navbar-toggle:hover .icon-bar {
+  .nav-menu .nav-menu__btn:hover .icon-bar {
     background-color: #ba4436; }
 
-.navbar-collapse {
+.nav-menu .navbar-collapse {
   border: 0; }
 
 .zajawka {
