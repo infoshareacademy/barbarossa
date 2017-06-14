@@ -161,15 +161,16 @@ body {
 
 #function{
   background-color: $red;
+  border: darkblue;
 }
 #function img {
   height: 35px;
-}
+ }
 #function ul{
   color: $yellow;
   margin: 0;
   padding: 0;
-}
+ }
 
 #function ul li{
   font-size: 0.6em;
@@ -181,17 +182,17 @@ body {
   margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
-}
+  }
 .short-info{
   color: $yellow;
-}
+  }
 .short-info span {
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-}
+ }
 .short-info img {
   margin-right: 10px;
-}
+ }
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
