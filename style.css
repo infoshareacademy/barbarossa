@@ -82,7 +82,7 @@ body {
 .zajawka-head {
   font-size: 70px;
   font-weight: 800;
-  color: #FBEAD0;
+  color: #cccccc;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
@@ -92,7 +92,7 @@ body {
 .zajawka-txt {
   font-size: 20px;
   font-weight: 600;
-  color: #FBEAD0;
+  color: #cccccc;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -102,7 +102,7 @@ body {
 .button {
   background-color: transparent;
   border: solid;
-  border-color: #FBEAD0;
+  border-color: #cccccc;
   width: 300px;
   height: 50px;
   margin-top: 20px;
@@ -115,20 +115,17 @@ body {
 .button-txt {
   text-align: center;
   text-decoration: none;
-  color: #FBEAD0;
+  color: #cccccc;
   font-size: 20px;
   font-weight: 800;
   font-family: 'Viga', sans-serif; }
 
 #function {
-  background-color: #FBEAD0;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+  background-color: #ba4436;
+  border: darkblue; }
 
 #function img {
-  height: 100px;
-  }
+  height: 35px; }
 
 #function ul {
   color: #FBEAD0;
@@ -136,33 +133,24 @@ body {
   padding: 0; }
 
 #function ul li {
-  font-size: 1em;
+  font-size: 0.6em;
   list-style-type: none;
   margin-top: 10px; }
-
 
 .long-info {
   margin-top: 10px;
   font-size: 1.3em;
-  text-align: justify;
-}
-#function .col-md-3 div:hover {
-  background-color: black;
- }
-.short-info {
-  color:#FBEAD0 ;
-  background-color: #ba4436;
-  padding: 25px;
-}
+  text-align: justify; }
 
-.function_title {
- text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 30px;
-  padding-top: 20px;
+.short-info {
+  color: #FBEAD0; }
+
+.short-info span {
   font-size: 1.4em;
-  font-family: Roboto, sans-serif;
-}
+  font-family: Roboto, sans-serif; }
+
+.short-info img {
+  margin-right: 10px; }
 
 section#sign {
   background-color: #ba4436;
@@ -258,19 +246,39 @@ form.premiere input {
   margin-top: 50px;
   margin-bottom: 60px; }
 
+.box {
+  background-color: #ba4436;
+  border: 30px solid #FBEAD0;
+  position: relative;
+  border-bottom: 20px; }
+
+.img-responsive {
+  border: 10px solid #FBEAD0;
+  position: absolute;
+  top: -25px;
+  right: -20px; }
+
 .member-name {
   text-align: center;
   font-family: 'Viga', sans-serif;
   font-size: 25px;
-  font-weight: 800; }
+  font-weight: 800;
+  color: #cccccc;
+  border: 10px solid black;
+  background-color: black;
+  border-radius: 30px 0px;
+  position: absolute; }
 
 .member-description {
-  text-align: center;
-  font-family: 'Viga', sans-serif; }
+  text-align: justify;
+  font-family: 'Viga', sans-serif;
+  color: #cccccc;
+  padding-right: 150px;
+  padding-left: 50px; }
 
 .socialMedia-box i {
   margin: 0 10px;
-  color: #ba4436; }
+  color: black; }
 
 .socialMedia-box a {
   text-decoration: none; }
