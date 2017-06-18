@@ -8,9 +8,9 @@ body {
   padding-top: 73px; }
 
 .nav-menu {
-  padding: 10px 0;
-  background-color: #ba4436;
-  box-shadow: 0 5px 10px #742b1d; }
+  padding: 15px 0;
+  background-color: #222;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
 .nav-menu__brand-img {
   max-width: 100px; }
@@ -31,11 +31,12 @@ body {
       color: #eee;
       font-family: Roboto, sans-serif;
       margin-top: 6px;
-      border-radius: 2px; }
+      margin-left: 30px;
+      transition: all 1s; }
       .nav-menu .nav-menu__list > li > a:hover {
         cursor: pointer;
-        color: #ba4436;
-        background-color: #FBEAD0;
+        color: #222;
+        background-color: #eee;
         font-weight: bold; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -48,24 +49,24 @@ body {
   .nav-menu .nav-menu__list > li > a {
     margin: 1.5px 0; } }
 .nav-menu .nav-menu__btn {
-  border-color: #FBEAD0;
+  border-color: #eee;
   transition: all 0.5s;
   margin-top: 9.5px;
   margin-bottom: 9.5px; }
 
 .nav-menu .nav-menu__btn .icon-bar {
-  background-color: #FBEAD0; }
+  background-color: #eee; }
 
 .nav-menu .nav-menu__btn:focus {
-  background-color: #ba4436; }
+  background-color: #222; }
   .nav-menu .nav-menu__btn:focus .icon-bar {
-    background-color: #FBEAD0; }
+    background-color: #eee; }
 
 .nav-menu .nav-menu__btn:hover {
-  background-color: #FBEAD0;
+  background-color: #eee;
   transform: rotate(360deg); }
   .nav-menu .nav-menu__btn:hover .icon-bar {
-    background-color: #ba4436; }
+    background-color: #222; }
 
 .nav-menu .navbar-collapse {
   border: 0; }
@@ -272,19 +273,20 @@ form.premiere input {
   padding-bottom: 60px; }
 
 footer {
-  background-color: #ba4436;
-  box-shadow: 0 -5px 10px #742b1d; }
+  background-color: #ba4436; }
 
 .footer-contact {
   padding: 30px 0; }
   .footer-contact a {
     padding: 0;
     text-decoration: none;
+    text-align: center;
     color: #eee; }
     .footer-contact a i {
-      font-size: 3em; }
+      font-size: 3em;
+      transition: all 0.5s; }
     .footer-contact a:hover {
-      color: #FBEAD0; }
+      color: #222; }
 
 .footer-caption {
   color: #eee;
