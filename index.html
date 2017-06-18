@@ -14,27 +14,27 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-default navbar-fixed-top header-menu">
+    <nav class="navbar navbar-default navbar-fixed-top nav-menu">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed nav-menu__btn" data-toggle="collapse"
+                        data-target="#navbar-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#home">
-                    <img class="header-menu-brand-img" alt="Brand" src="images/logo.png">
+                <a class="navbar-brand nav-menu__brand" href="#home">
+                    <img class="nav-menu__brand-img" alt="Barbarossa-Travel-Logo" src="images/logo.png">
                 </a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-                    <li><a href="#function"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
-                    <li><a href="#team"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
-                    <li><a href="#extras"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
-                    <li><a href="#sign"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right nav-menu__list">
+                    <li><a href="#home" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="#function" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a></li>
+                    <li><a href="#team" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-users" aria-hidden="true"></i>Zespół</a></li>
+                    <li><a href="#extras" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-book" aria-hidden="true"></i>Specifikacja</a></li>
+                    <li><a href="#sign" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a></li>
                 </ul>
             </div>
         </div>
@@ -43,8 +43,6 @@
 <main>
     <!--Spot for TASK 5: "Zajawka"-->
     <section id="home">
-        <div class="container">
-            <div class="row">
                 <div class="zajawka">
                     <h1 class="zajawka-head">Barbarossa Travel</h1>
                     <p class="zajawka-txt">Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku.<br>
@@ -54,8 +52,6 @@
                         <a class="button btn btn-default btn-lg" href="#sign" role="button">
                             <p class="button-txt">ZAREJESTRUJ SIĘ!</p></a>
                     </div>
-                </div>
-            </div>
         </div>
     </section>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
@@ -64,96 +60,88 @@
             <div class="long-info">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="short-info">
-                            <span><img src="images/logo.png">Rozkłady jazdy</span>
-                        </div>
+                        <div class="short-info first_info">
+                            <div class="function_title"><span>Rozkłady jazdy</span></div>
+                            <div class="function_title"><span><img src="pictures/rozklad.png"></span></div>
+
+
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                         </ul>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="short-info">
-                            <span><img src="images/logo.png">Przystanki</span>
-                        </div>
+                            <div class="function_title"><span>Przystanki</span></div>
+                            <div class="function_title"><span><img src="pictures/przystanek.png"></span></div>
+
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
-                            </li>
+
                         </ul>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="short-info">
-                            <span><img src="images/logo.png">Trasy</span>
-                        </div>
+                            <div class="function_title"><span>Trasy</span></div>
+                            <div class="function_title"><span><img src="pictures/trasy.png"></span></div>
+
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                         </ul>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="short-info">
-                            <span><img src="images/logo.png">Czas dojazdu</span>
-                        </div>
+                            <div class="function_title"><span>Czas dojazdu</span></div>
+                            <div class="function_title"><span><img src="pictures/czas.png"></span></div>
+
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
                                 ullamcorper
                                 enim, sit amet consequat sapien porta vel. Fusce vel faucibus augue, quis
                                 tincidunt
-                                velit. Proin tempus nec neque nec cursus. Ut tristique sed est eget pretium.
-                                Fusce
-                                pulvinar accumsan lacus quis sagittis.
+
                             </li>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,7 +207,7 @@
             <h1 class="team-txt">Poznaj nasz zespół</h1>
             <div class="row">
                 <div class="col-md-6 member-box">
-                    <img class="img-circle center-block" src="pictures/donald.jpg" alt="Generic placeholder image"
+                    <img class="img-circle center-block" src="pictures/grzesiu.jpg" alt="Generic placeholder image"
                          width="140" height="140">
                     <h2 class="member-name text-center">Grzegorz Klimek</h2>
                     <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
@@ -276,7 +264,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 member-box">
-                    <img class="img-circle center-block" src="pictures/pooh10.gif" alt="Generic placeholder image"
+                    <img class="img-circle center-block" src="pictures/pawel.gif" alt="Generic placeholder image"
                          width="140" height="140">
                     <h2 class="member-name text-center">Paweł Paczkowski</h2>
                     <p class="member-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
@@ -301,16 +289,16 @@
 <footer class="container-fluid">
     <div class="row">
         <div class="container">
-            <div class="footer-up">
-                <div class="col-md-4 col-sm-12 footer-up-team">
+            <div class="footer-content">
+                <div class="col-md-4 col-sm-12 footer-team">
                     <ul>
                         <li><img src="pictures/kamil.jpg"><span>Kamil Richert</span></li>
-                        <li><img src="pictures/donald.jpg"><span>Grzegorz Klimek</span></li>
+                        <li><img src="pictures/grzesiu.jpg"><span>Grzegorz Klimek</span></li>
                         <li><img src="pictures/ania.JPG"><span>Anna Ostrowska</span></li>
-                        <li><img src="pictures/pooh10.gif"><span>Paweł Paczkowski</span></li>
+                        <li><img src="pictures/pawel.gif"><span>Paweł Paczkowski</span></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-12 footer-up-list">
+                <div class="col-md-4 col-sm-12 footer-list">
                     <ul>
                         <li>Rozkłady jazdy</li>
                         <li>Przystanki</li>
@@ -318,51 +306,44 @@
                         <li>Czas dojazdu</li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-12 footer-up-contact">
+                <div class="col-md-4 col-sm-12 footer-contact">
                     <a class="col-xs-6" href="https://github.com/infoshareacademy/jfdz5-barbarossa">
-                        <div class="footer-up-text col-xs-9">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Github</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
-                            <div class="row">
+                        <div class="footer-contact__btn col-xs-3">
                                 <i class="fa fa-github-square" aria-hidden="true"></i>
-                            </div>
                         </div>
+
                     </a>
                     <a class="col-xs-6" href="">
-                        <div class="footer-up-text col-xs-9">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Facebook</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
-                            <div class="row">
+                        <div class="footer-contact__btn col-xs-3">
                                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                            </div>
                         </div>
                     </a>
                     <a class="col-xs-6" href="mailto:contact@barbarossa-travel.pl">
-                        <div class="footer-up-text col-xs-9">
+                        <div class="footer-contact__text col-xs-9">
                             <span>Mail</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
-                            <div class="row">
+                        <div class="footer-contact__btn col-xs-3">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>
                         </div>
                     </a>
-                    <a class="col-xs-6 disabled">
-                        <div class="footer-up-text col-xs-9">
-                            <span class="footer-up-telephone-number">999-999-999</span>
+                    <a class="col-xs-6 footer-contact__btn--disabled">
+                        <div class="footer-contact__text col-xs-9">
+                            <span class="footer-contact__text--phone">999-999-999</span>
                         </div>
-                        <div class="footer-up-button col-xs-3">
-                            <div class="row">
+                        <div class="footer-contact__btn col-xs-3">
                                 <i class="fa fa-phone-square" aria-hidden="true"></i>
-                            </div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="footer-down col-xs-12">
+        <div class="footer-caption">
             <span>Copyright © <b>Team Barbarossa</b></span>
         </div>
     </div>
