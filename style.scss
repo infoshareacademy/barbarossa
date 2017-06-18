@@ -169,40 +169,54 @@ body {
 
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
-#function{
-  background-color: $colorMain;
-  border: darkblue;
+#function {
+  background-color: #FBEAD0;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 #function img {
-  height: 35px;
- }
-#function ul{
-  color: #eeeeee;
+  height: 100px;
+}
+
+#function ul {
+  color: #eee;
   margin: 0;
   padding: 0;
- }
 
-#function ul li{
-  font-size: 0.6em;
-  list-style-type: none;
-  margin-top: 10px;
 }
+
+#function ul li {
+  font-size: 1em;
+  list-style-type: none;
+
+  margin-top: 10px; }
+
 
 .long-info {
   margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
-  }
-.short-info{
-  color: #eee;
-  }
-.short-info span {
+}
+#function .first_info {
+  background-color: black;
+}
+.short-info {
+  color:#eee ;
+  background-color: #ba4436;
+  padding: 40px;
+  padding-bottom: 90px;
+  text-align: justify;
+}
+
+.function_title {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 20px;
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
- }
-.short-info img {
-  margin-right: 10px;
- }
+}
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
