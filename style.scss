@@ -6,35 +6,35 @@ $green: #7BAB32;
 
 body {
   margin: 0;
-  padding-top: 82px; /* padding to pass over navigation bar */
+  padding-top: 73px; // padding to pass over navigation bar
   font-family: Roboto, sans-serif;
   background-color: $yellow;
 }
 #sign, #function, #team, #extras {
-  padding-top: 82px; /* padding to pass over navigation bar */
+  padding-top: 73px; // padding to pass over navigation bar
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
 
-.header-menu {
+.nav-menu {
+  padding: 10px 0;
   background-color: $red;
   box-shadow: 0 5px 10px #742b1d;
-  padding: 10px 0;
 }
 
-.header-menu-brand-img {
+.nav-menu__brand-img {
   max-width: 100px;
 }
 
-.navbar-brand {
+.nav-menu__brand {
   height: auto;
   padding: 0;
   margin-left: 20px;
 }
 
-.navbar-default {
+.nav-menu {
   border: none;
-  .navbar-nav {
+  .nav-menu__list {
     & > li {
       text-align: center;
       font-size: 1.5em;
@@ -44,7 +44,7 @@ body {
       & > a {
         color: #eee;
         font-family: Roboto, sans-serif;
-        margin-top: 6px;
+        margin-top: 6px; // center vertically in navbar
         border-radius: 2px;
         &:hover {
           cursor: pointer;
@@ -58,38 +58,39 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .navbar-default .navbar-nav > li {
+  .nav-menu .nav-menu__list > li {
     font-size: 1.2em;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .header-menu-brand-img {
-    max-width: 90px;
+  .nav-menu__brand-img {
+    max-width: 85px;
   }
-  .navbar-default .navbar-nav > li > a {
-    margin-top: 2.5px;
+  .nav-menu .nav-menu__list > li > a {
+    margin: 1.5px 0; // center vertically in navbar
   }
 }
 
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
-.navbar-default .navbar-toggle {
+.nav-menu .nav-menu__btn {
   border-color: $yellow;
-  margin-top: 12px;
   transition: all 0.5s;
+  margin-top: 9.5px; // center vertically in navbar
+  margin-bottom: 9.5px; // center vertically in navbar
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.nav-menu .nav-menu__btn .icon-bar {
   background-color: $yellow;
 }
-.navbar-default .navbar-toggle:focus{
+.nav-menu .nav-menu__btn:focus{
   background-color: $red;
   .icon-bar {
     background-color: $yellow;
   }
 }
-.navbar-default .navbar-toggle:hover {
+.nav-menu .nav-menu__btn:hover {
   background-color: $yellow;
   transform: rotate(360deg);
   .icon-bar {
@@ -97,17 +98,21 @@ body {
   }
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: $yellow;
+.nav-menu .navbar-collapse {
+    border: 0;
 }
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
 
 
 .zajawka {
-  padding-top:230px;
-  background: url("pictures/zajawka.jpg") no-repeat center center fixed;
-  height: 830px;
+  background: url("pictures/zajawka.jpg") no-repeat;
+  background-size: cover;
+  height: 453px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .zajawka-head {
   font-size: 70px;
@@ -118,7 +123,6 @@ body {
   display: block;
   margin: -10px 0 0 0;
   /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
-  padding-top: 92px;
 }
 .zajawka-txt {
   font-size: 20px;
@@ -157,15 +161,16 @@ body {
 
 #function{
   background-color: $red;
+  border: darkblue;
 }
 #function img {
   height: 35px;
-}
+ }
 #function ul{
   color: $yellow;
   margin: 0;
   padding: 0;
-}
+ }
 
 #function ul li{
   font-size: 0.6em;
@@ -177,17 +182,17 @@ body {
   margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
-}
+  }
 .short-info{
   color: $yellow;
-}
+  }
 .short-info span {
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-}
+ }
 .short-info img {
   margin-right: 10px;
-}
+ }
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
@@ -342,63 +347,15 @@ footer {
   box-shadow: 0 -5px 10px #742b1d;
 }
 
-.footer-up {
-  padding: 20px 0;
-}
-
-.footer-up-contact {
-  margin-top: 25px;
-  a {
-    padding: 0;
-    font-size: 1.2em;
-    text-decoration: none;
-    background-color: $yellow;
-    box-sizing: border-box;
-    color: $red;
-    border: 5px solid $red;
-    border-radius: 7px;
-    i {
-      font-size: 2em;
-    }
-    &:hover {
-      background-color: lighten($red, 7%);
-      color: $yellow;
-      cursor: pointer;
-      font-weight: bold;
-      .footer-up-button {
-        border-left: 3px solid transparent;
-      }
-    }
-  }
-  a.disabled:hover {
-    cursor: auto;
-  }
-}
-
-.footer-up-text {
-  height: 2em;
-  line-height: 2em;
-  padding: 5px 10px;
-}
-
-.footer-up-button {
-  border-left: 3px solid $red;
-  text-align: center;
-  padding: 5px 0;
-}
-
-.footer-up-telephone-number {
-  font-size: 0.9em;
-}
-
-.footer-up-team {
-  color: $red;
-  font-size: 1em;
+.footer-team {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 10px;
+  padding: 10px 0;
+  color: $red;
+  font-size: 1em;
   ul {
+    margin: 0;
     list-style-type: none;
     li {
       padding: 5px 10px;
@@ -417,17 +374,18 @@ footer {
   }
 }
 
-.footer-up-list {
-  color: #eee;
-  font-size: 1em;
+.footer-list {
   display: flex;
-  padding-bottom: 10px;
   flex-direction: row;
   justify-content: center;
+  padding: 10px 0;
+  color: #eee;
+  font-size: 1em;
   text-transform: uppercase;
   ul {
-    list-style-type: none;
     padding: 0;
+    margin: 0;
+    list-style-type: none;
     li {
       padding: 5px 30px;
       background-color: lighten($red, 7%);
@@ -442,7 +400,54 @@ footer {
   }
 }
 
-.footer-down {
+.footer-contact {
+  padding: 10px 0;
+  margin-top: 33px; // center vertically
+  a {
+    padding: 0;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: 5px solid $red;
+    border-radius: 5px;
+    background-color: $yellow;
+    color: $red;
+    i {
+      font-size: 1.5em;
+    }
+    &:hover {
+      background-color: lighten($red, 7%);
+      color: $yellow;
+      font-weight: bold;
+      cursor: pointer;
+      .footer-contact__btn {
+        border-left: 3px solid transparent;
+      }
+    }
+  }
+  a.footer-contact__btn--disabled:hover {
+    cursor: auto;
+  }
+}
+
+.footer-contact__text {
+  height: 1.5em;
+  line-height: 2.25em;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-contact__btn {
+  padding: 5px 0;
+  border-left: 3px solid $red;
+  text-align: center;
+}
+
+.footer-contact__text--phone{
+  font-size: 0.9em;
+}
+
+.footer-caption {
   color: #eee;
   font-size: 1.2em;
   text-align: center;
@@ -451,53 +456,12 @@ footer {
   background-color: darken($red,15%);
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .footer-up-contact {
-    a i {
-      font-size: 1.5em;
-    }
-  }
-  .footer-up-text {
-    height: 1.5em;
-    line-height: 1.5em;
-  }
-  .footer-up-telephone-number {
-    font-size: 0.8em;
-  }
-}
-
 @media screen and (max-width: 991px) {
-  .footer-up-team {
+  .footer-team, .footer-list {
     display: none;
   }
-  .footer-up-list {
-    display: none;
-  }
-  .footer-up-contact {
-    margin-top: 5px;
-  }
-  .footer-down {
-    margin-top:5px;
+  .footer-contact {
+    margin: 0; // delete margin to vertically align on large screen
   }
 }
 
-
-@media screen and (max-width:425px) {
-  .footer-up-contact {
-    margin-top: 25px;
-    a {
-      font-size: 0.9em;
-      i {
-        font-size: 1.5em;
-      }
-    }
-    .footer-up-text {
-      height: 1.5em;
-      line-height: 1.5em;
-      padding: 5px 5px;
-    }
-    .footer-up-telephone-number {
-      font-size: 0.8em;
-    }
-  }
-}
