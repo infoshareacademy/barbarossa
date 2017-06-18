@@ -1,14 +1,24 @@
 ///////////////////////////////////////////// Main /////////////////////////////////////////////////
 
-$red : #ba4436;
-$yellow : #FBEAD0;
-$green: #7BAB32;
+$colorMain: #ba4436;
+$colorSecondary: #FBEAD0;
+$colorAccent: #222;
+
+@mixin shadow-content(){
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+}
+
+@mixin flex-align(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 body {
   margin: 0;
   padding-top: 73px; // padding to pass over navigation bar
   font-family: Roboto, sans-serif;
-  background-color: $yellow;
+  background-color: $colorSecondary;
 }
 #sign, #function, #team, #extras {
   padding-top: 73px; // padding to pass over navigation bar
@@ -18,7 +28,7 @@ body {
 
 .nav-menu {
   padding: 10px 0;
-  background-color: $red;
+  background-color: $colorMain;
   box-shadow: 0 5px 10px #742b1d;
 }
 
@@ -48,8 +58,8 @@ body {
         border-radius: 2px;
         &:hover {
           cursor: pointer;
-          color: $red;
-          background-color: $yellow;
+          color: $colorMain;
+          background-color: $colorSecondary;
           font-weight: bold;
         }
       }
@@ -75,26 +85,26 @@ body {
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
 .nav-menu .nav-menu__btn {
-  border-color: $yellow;
+  border-color: $colorSecondary;
   transition: all 0.5s;
   margin-top: 9.5px; // center vertically in navbar
   margin-bottom: 9.5px; // center vertically in navbar
 }
 
 .nav-menu .nav-menu__btn .icon-bar {
-  background-color: $yellow;
+  background-color: $colorSecondary;
 }
 .nav-menu .nav-menu__btn:focus{
-  background-color: $red;
+  background-color: $colorMain;
   .icon-bar {
-    background-color: $yellow;
+    background-color: $colorSecondary;
   }
 }
 .nav-menu .nav-menu__btn:hover {
-  background-color: $yellow;
+  background-color: $colorSecondary;
   transform: rotate(360deg);
   .icon-bar {
-    background-color: $red;
+    background-color: $colorMain;
   }
 }
 
@@ -117,7 +127,7 @@ body {
 .zajawka-head {
   font-size: 70px;
   font-weight: 800;
-  color: $yellow;
+  color: $colorSecondary;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
@@ -127,7 +137,7 @@ body {
 .zajawka-txt {
   font-size: 20px;
   font-weight: 600;
-  color:$yellow;
+  color: $colorSecondary;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -138,20 +148,20 @@ body {
 .button {
   background-color: transparent;
   border: solid;
-  border-color:$yellow;
+  border-color: $colorSecondary;
   width: 300px;
   height: 50px;
   margin-top: 20px;
   text-align: center;
 }
 .button:hover {
-  background-color: $red;
-  border-color: $red;
+  background-color: $colorMain;
+  border-color: $colorMain;
 }
 .button-txt {
   text-align: center;
   text-decoration: none;
-  color: $yellow;
+  color: $colorSecondary;
   font-size: 20px;
   font-weight: 800;
   font-family: 'Viga', sans-serif;
@@ -159,74 +169,49 @@ body {
 
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
-#function {
-  background-color: #FBEAD0;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#function{
+  background-color: $colorMain;
+  border: darkblue;
 }
-
 #function img {
-  height: 100px;
-}
-
-#function ul {
-  color: #eee;
+  height: 35px;
+ }
+#function ul{
+  color: #eeeeee;
   margin: 0;
   padding: 0;
+ }
 
-}
-
-#function ul li {
-  font-size: 1em;
+#function ul li{
+  font-size: 0.6em;
   list-style-type: none;
-
-  margin-top: 10px; }
-
+  margin-top: 10px;
+}
 
 .long-info {
   margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
-}
-#function .first_info {
-  background-color: black;
-}
-.short-info {
-  color:#eee ;
-  background-color: #ba4436;
-  padding: 40px;
-  padding-bottom: 90px;
-  text-align: justify;
-}
-
-.function_title {
-  text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 30px;
-  padding-top: 20px;
+  }
+.short-info{
+  color: #eee;
+  }
+.short-info span {
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-}
-
+ }
+.short-info img {
+  margin-right: 10px;
+ }
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
 section#sign{
-  background-color: $red;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+  background-color: $colorMain;
+  @include shadow-content();
   text-align: center;
   padding: 5em 0;
   margin-top: 5em;
-  .divider-flat{
-    display: block;
-    width: 20%;
-    height: 0.6em;
-    border-radius: 100%;
-    margin: 0 auto;
-    margin-bottom: 4em;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background-image: linear-gradient(to bottom right, $green, lighten($green, 2%), $green);
-  }
   h2{
     margin-bottom: 1.7em;
     font-weight: bold;
@@ -240,15 +225,13 @@ section#sign{
     padding: 1em 0;
   }
   i{
+    @include flex-align();
+    @include shadow-content();
     font-size: 3em;
     width: 2em;
     height: 2em;
     border: 2px solid #eee;
     border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
   .label{
     font-size: 1.3em;
@@ -287,28 +270,29 @@ form.premiere input{
     border: none;
   }
   &:focus {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+    @include shadow-content();
     color: #742b1d;
     font-weight: bold
   }
   &[type=submit] {
-    background-image: linear-gradient(to bottom right, $green, darken($green, 5%), $green);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+    @include shadow-content();
+    background: $colorAccent;
     width: 14em;
     height: 3em;
     font-family: "Arial", sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.3em;
-    border-radius: 1em 0;
+    border-radius: 1.5em 0;
     transition: 0.5s all;
     color: #eee;
     font-weight: 900;
     &:hover{
-      background-image: linear-gradient(to bottom left, $green, darken($green, 10%), $green);
+      background: darken($colorAccent, 10%);
       color: #fff;
+      border-radius: 0 1.5em;
     }
     &:active{
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+      @include shadow-content();
     }
   }
 }
@@ -318,7 +302,7 @@ form.premiere input{
 .team-txt {
   font-size: 50px;
   font-weight: 600;
-  color: $red;
+  color: $colorMain;
   font-family: 'Viga', sans-serif;
   display: block;
   text-align: center;
@@ -339,7 +323,7 @@ form.premiere input{
 }
 .socialMedia-box i {
   margin: 0 10px;
-  color: $red;
+  color: $colorMain;
 }
 .socialMedia-box a {
   text-decoration: none;
@@ -353,10 +337,12 @@ form.premiere input{
   padding-bottom: 60px;
 }
 
+///////////////////////////////////////////// Extras //////////////////////////////////////////////
+
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 footer {
-  background-color: $red;
+  background-color: $colorMain;
   box-shadow: 0 -5px 10px #742b1d;
 }
 
