@@ -121,53 +121,36 @@ body {
   font-family: 'Viga', sans-serif; }
 
 #function {
-  background-color: #FBEAD0;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+  background-color: #ba4436;
+  border: darkblue; }
 
 #function img {
-  height: 100px;
-  }
+  height: 35px; }
 
 #function ul {
-  color: #eee;
+  color: #eeeeee;
   margin: 0;
-  padding: 0;
-
-}
+  padding: 0; }
 
 #function ul li {
-  font-size: 1em;
+  font-size: 0.6em;
   list-style-type: none;
-
   margin-top: 10px; }
-
 
 .long-info {
   margin-top: 10px;
   font-size: 1.3em;
-  text-align: justify;
-}
-#function .first_info {
-  background-color: black;
- }
-.short-info {
-  color:#eee ;
-  background-color: #ba4436;
-  padding: 40px;
-  padding-bottom: 90px;
-  text-align: justify;
-}
+  text-align: justify; }
 
-.function_title {
- text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 30px;
-  padding-top: 20px;
+.short-info {
+  color: #eee; }
+
+.short-info span {
   font-size: 1.4em;
-  font-family: Roboto, sans-serif;
-}
+  font-family: Roboto, sans-serif; }
+
+.short-info img {
+  margin-right: 10px; }
 
 section#sign {
   background-color: #ba4436;
@@ -183,7 +166,7 @@ section#sign {
     margin: 0 auto;
     margin-bottom: 4em;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background-image: linear-gradient(to bottom right, #7BAB32, #81b334, #7BAB32); }
+    background-image: linear-gradient(to bottom right, #222, #272727, #222); }
   section#sign h2 {
     margin-bottom: 1.7em;
     font-weight: bold;
@@ -236,7 +219,7 @@ form.premiere input {
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    background-image: linear-gradient(to bottom right, #7BAB32, #6d972c, #7BAB32);
+    background-image: linear-gradient(to bottom right, #222, #151515, #222);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     width: 14em;
     height: 3em;
@@ -248,7 +231,7 @@ form.premiere input {
     color: #eee;
     font-weight: 900; }
     form.premiere input[type=submit]:hover {
-      background-image: linear-gradient(to bottom left, #7BAB32, #5f8426, #7BAB32);
+      background-image: linear-gradient(to bottom left, #222, #090909, #222);
       color: #fff; }
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }

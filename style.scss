@@ -2,7 +2,7 @@
 
 $red : #ba4436;
 $yellow : #FBEAD0;
-$green: #7BAB32;
+$accent: #222;
 
 body {
   margin: 0;
@@ -210,7 +210,7 @@ section#sign{
     margin: 0 auto;
     margin-bottom: 4em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background-image: linear-gradient(to bottom right, $green, lighten($green, 2%), $green);
+    background-image: linear-gradient(to bottom right, $accent, lighten($accent, 2%), $accent);
   }
   h2{
     margin-bottom: 1.7em;
@@ -277,7 +277,7 @@ form.premiere input{
     font-weight: bold
   }
   &[type=submit] {
-    background-image: linear-gradient(to bottom right, $green, darken($green, 5%), $green);
+    background-image: linear-gradient(to bottom right, $accent, darken($accent, 5%), $accent);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
     width: 14em;
     height: 3em;
@@ -289,7 +289,7 @@ form.premiere input{
     color: #eee;
     font-weight: 900;
     &:hover{
-      background-image: linear-gradient(to bottom left, $green, darken($green, 10%), $green);
+      background-image: linear-gradient(to bottom left, $accent, darken($accent, 10%), $accent);
       color: #fff;
     }
     &:active{
