@@ -338,8 +338,6 @@ form.premiere input{
   padding-bottom: 60px;
 }
 
-///////////////////////////////////////////// Extras //////////////////////////////////////////////
-
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 footer {
@@ -347,121 +345,41 @@ footer {
   box-shadow: 0 -5px 10px #742b1d;
 }
 
-.footer-team {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px 0;
-  color: $red;
-  font-size: 1em;
-  ul {
-    margin: 0;
-    list-style-type: none;
-    li {
-      padding: 5px 10px;
-      background-color: $yellow;
-      border-top: 5px solid $red;
-      border-bottom: 5px solid $red;
-      border-radius: 2px;
-    }
-  }
-  img {
-    height: 20px;
-    border-radius: 50%;
-  }
-  span {
-    margin-left: 30px;
-  }
-}
-
-.footer-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px 0;
-  color: #eee;
-  font-size: 1em;
-  text-transform: uppercase;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    li {
-      padding: 5px 30px;
-      background-color: lighten($red, 7%);
-      border-top: 5px solid $red;
-      border-bottom: 5px solid $red;
-      text-align: center;
-    }
-  }
-  img {
-    height: 20px;
-    margin-right: 30px;
-  }
-}
-
 .footer-contact {
-  padding: 10px 0;
-  margin-top: 33px; // center vertically
+  padding: 30px 0;
   a {
     padding: 0;
-    font-size: 1.2em;
     text-decoration: none;
-    border: 5px solid $red;
-    border-radius: 5px;
-    background-color: $yellow;
-    color: $red;
+    color: #eee;
     i {
-      font-size: 1.5em;
+      font-size: 3em;
     }
     &:hover {
-      background-color: lighten($red, 7%);
       color: $yellow;
-      font-weight: bold;
-      cursor: pointer;
-      .footer-contact__btn {
-        border-left: 3px solid transparent;
-      }
     }
   }
-  a.footer-contact__btn--disabled:hover {
-    cursor: auto;
-  }
-}
-
-.footer-contact__text {
-  height: 1.5em;
-  line-height: 2.25em;
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.footer-contact__btn {
-  padding: 5px 0;
-  border-left: 3px solid $red;
-  text-align: center;
-}
-
-.footer-contact__text--phone{
-  font-size: 0.9em;
 }
 
 .footer-caption {
   color: #eee;
   font-size: 1.2em;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
-  padding: 15px;
-  background-color: darken($red,15%);
+  padding: 30px 0;
+
+  //margin: 6px 0; // center vertically (the same height as footer-contact)
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 42px;
+  }
+  i {
+    margin-right:10px;
+    font-size: 1.6em;
+  }
 }
 
-@media screen and (max-width: 991px) {
-  .footer-team, .footer-list {
-    display: none;
-  }
-  .footer-contact {
-    margin: 0; // delete margin to vertically align on large screen
-  }
-}
+
+
 
