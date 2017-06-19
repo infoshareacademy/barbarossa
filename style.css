@@ -277,21 +277,25 @@ footer {
 
 .footer-contact {
   padding: 30px 0; }
-  .footer-contact a {
-    padding: 0;
-    text-decoration: none;
-    text-align: center;
-    color: #eee; }
-    .footer-contact a i {
-      font-size: 3em;
+  .footer-contact div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; }
+    .footer-contact div a {
+      padding: 0 5px;
+      text-decoration: none;
+      text-align: center;
+      color: #eee;
       transition: all 0.5s; }
-    .footer-contact a:hover {
-      color: #222; }
+      .footer-contact div a i {
+        font-size: 3em; }
+      .footer-contact div a:hover {
+        color: #222; }
 
 .footer-caption {
   color: #eee;
   font-size: 1.2em;
-  text-align: left;
   font-weight: bold;
   padding: 30px 0; }
   .footer-caption div {
@@ -302,5 +306,18 @@ footer {
   .footer-caption i {
     margin-right: 15px;
     font-size: 1.6em; }
+
+@media screen and (max-width: 767px) {
+  .footer-caption {
+    padding: 15px 0; }
+    .footer-caption div {
+      justify-content: center; }
+
+  .footer-contact {
+    padding: 15px 0; }
+    .footer-contact div {
+      justify-content: center; }
+      .footer-contact div a {
+        padding: 0 15px; } }
 
 /*# sourceMappingURL=style.css.map */
