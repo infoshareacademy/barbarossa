@@ -55,8 +55,7 @@ body {
       & > a {
         color: #eee;
         font-family: Roboto, sans-serif;
-        margin-top: 6px; // center vertically in navbar
-        margin-left: 30px;
+        margin: 5.5px 0 5.5px 30px; // center vertically in navbar, space between items
         transition: all 1s;
         &:hover {
           cursor: pointer;
@@ -71,7 +70,7 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
@@ -80,7 +79,7 @@ body {
     max-width: 85px;
   }
   .nav-menu .nav-menu__list > li > a {
-    margin: 1.5px 0; // center vertically in navbar
+    margin: 3px 0 3px 10px; // center vertically in navbar, space between items
   }
 }
 
@@ -118,7 +117,7 @@ body {
 
 
 .zajawka {
-  background: url("pictures/zajawka.jpg") fixed center no-repeat;
+  background: url("pictures/homeBackground.jpg") fixed center no-repeat;
   background-size: cover;
   height: 453px;
   display: flex;

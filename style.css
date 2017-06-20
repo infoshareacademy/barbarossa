@@ -30,8 +30,7 @@ body {
     .nav-menu .nav-menu__list > li > a {
       color: #eee;
       font-family: Roboto, sans-serif;
-      margin-top: 6px;
-      margin-left: 30px;
+      margin: 5.5px 0 5.5px 30px;
       transition: all 1s; }
       .nav-menu .nav-menu__list > li > a:hover {
         cursor: pointer;
@@ -41,13 +40,13 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
-    font-size: 1.2em; } }
+    font-size: 1.3em; } }
 @media screen and (max-width: 991px) {
   .nav-menu__brand-img {
     max-width: 85px; }
 
   .nav-menu .nav-menu__list > li > a {
-    margin: 1.5px 0; } }
+    margin: 3px 0 3px 10px; } }
 .nav-menu .nav-menu__btn {
   border-color: #eee;
   transition: all 0.5s;
@@ -72,7 +71,7 @@ body {
   border: 0; }
 
 .zajawka {
-  background: url("pictures/zajawka.jpg") fixed center no-repeat;
+  background: url("pictures/homeBackground.jpg") fixed center no-repeat;
   background-size: cover;
   height: 453px;
   display: flex;
