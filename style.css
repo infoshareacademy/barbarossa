@@ -4,7 +4,7 @@ body {
   font-family: Roboto, sans-serif;
   background-color: #FBEAD0; }
 
-#sign, #function, #team, #extras {
+#sign, #function, #team {
   padding-top: 73px; }
 
 .nav-menu {
@@ -72,7 +72,7 @@ body {
   border: 0; }
 
 .zajawka {
-  background: url("pictures/zajawka.jpg") no-repeat;
+  background: url("pictures/zajawka.jpg") fixed center no-repeat;
   background-size: cover;
   height: 453px;
   display: flex;
@@ -277,20 +277,20 @@ footer {
 
 .footer-contact {
   padding: 30px 0; }
-  .footer-contact div {
+  .footer-contact div.footer-contact-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end; }
-    .footer-contact div a {
+    .footer-contact div.footer-contact-container a {
       padding: 0 5px;
       text-decoration: none;
       text-align: center;
       color: #eee;
       transition: all 0.5s; }
-      .footer-contact div a i {
+      .footer-contact div.footer-contact-container a i {
         font-size: 3em; }
-      .footer-contact div a:hover {
+      .footer-contact div.footer-contact-container a:hover {
         color: #222; }
 
 .footer-caption {
@@ -298,7 +298,7 @@ footer {
   font-size: 1.2em;
   font-weight: bold;
   padding: 30px 0; }
-  .footer-caption div {
+  .footer-caption div.footer-caption-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -310,14 +310,14 @@ footer {
 @media screen and (max-width: 767px) {
   .footer-caption {
     padding: 15px 0; }
-    .footer-caption div {
+    .footer-caption div.footer-caption-container {
       justify-content: center; }
 
   .footer-contact {
     padding: 15px 0; }
-    .footer-contact div {
+    .footer-contact div.footer-contact-container {
       justify-content: center; }
-      .footer-contact div a {
+      .footer-contact div.footer-contact-container a {
         padding: 0 15px; } }
 
 /*# sourceMappingURL=style.css.map */
