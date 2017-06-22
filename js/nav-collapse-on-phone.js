@@ -1,6 +1,5 @@
 (function()  {
-    $(window).resize(function() {
-        function addAttribute() {
+    $(window).resize(function addAttribute() {
             var mq = window.matchMedia("(max-width: 767px)");
             var i;
             if (mq.matches) {
@@ -11,11 +10,9 @@
             }
             else {
                 for (i = 0; i <= 3; i += 1) {
-                    document.getElementsByClassName("nav-menu__item")[i].setAttribute("data-toggle", "");
-                    document.getElementsByClassName("nav-menu__item")[i].setAttribute("data-target", "");
+                    document.getElementsByClassName("nav-menu__item")[i].removeAttribute("data-toggle");
+                    document.getElementsByClassName("nav-menu__item")[i].removeAttribute("data-target");
                 }
             }
-        }
-        addAttribute();
     });
 }) ();
