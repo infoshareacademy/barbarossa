@@ -8,6 +8,7 @@ body {
   padding-top: 73px; }
 
 .nav-menu {
+  transition: all 1s;
   padding: 15px 0;
   background-color: #222;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
@@ -37,6 +38,10 @@ body {
         color: #222;
         background-color: #eee;
         font-weight: bold; }
+
+.top-nav-collapse {
+  padding-top: 0;
+  padding-bottom: 0; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
