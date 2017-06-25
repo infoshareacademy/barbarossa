@@ -14,22 +14,23 @@ $colorAccent: #222;
   justify-content: center;
 }
 
+
 body {
   margin: 0;
   padding-top: 73px; // padding to pass over navigation bar
   font-family: Roboto, sans-serif;
   background-color: $colorSecondary;
 }
-#sign, #function, #team, #extras {
+#sign, #function, #team {
   padding-top: 73px; // padding to pass over navigation bar
 }
 
 ///////////////////////////////////////////// Navbar //////////////////////////////////////////////
 
 .nav-menu {
-  padding: 10px 0;
-  background-color: $colorMain;
-  box-shadow: 0 5px 10px #742b1d;
+  padding: 15px 0;
+  background-color: $colorAccent;
+  @include shadow-content();
 }
 
 .nav-menu__brand-img {
@@ -54,12 +55,12 @@ body {
       & > a {
         color: #eee;
         font-family: Roboto, sans-serif;
-        margin-top: 6px; // center vertically in navbar
-        border-radius: 2px;
+        margin: 5.5px 0 5.5px 30px; // center vertically in navbar, space between items
+        transition: all 1s;
         &:hover {
           cursor: pointer;
-          color: $colorMain;
-          background-color: $colorSecondary;
+          color: $colorAccent;
+          background-color: #eee;
           font-weight: bold;
         }
       }
@@ -69,7 +70,7 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
@@ -78,33 +79,33 @@ body {
     max-width: 85px;
   }
   .nav-menu .nav-menu__list > li > a {
-    margin: 1.5px 0; // center vertically in navbar
+    margin: 3px 0 3px 10px; // center vertically in navbar, space between items
   }
 }
 
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
 .nav-menu .nav-menu__btn {
-  border-color: $colorSecondary;
+  border-color: #eee;
   transition: all 0.5s;
   margin-top: 9.5px; // center vertically in navbar
   margin-bottom: 9.5px; // center vertically in navbar
 }
 
 .nav-menu .nav-menu__btn .icon-bar {
-  background-color: $colorSecondary;
+  background-color: #eee;
 }
 .nav-menu .nav-menu__btn:focus{
-  background-color: $colorMain;
+  background-color: $colorAccent;
   .icon-bar {
-    background-color: $colorSecondary;
+    background-color: #eee;
   }
 }
 .nav-menu .nav-menu__btn:hover {
-  background-color: $colorSecondary;
+  background-color: #eee;
   transform: rotate(360deg);
   .icon-bar {
-    background-color: $colorMain;
+    background-color: $colorAccent;
   }
 }
 
@@ -125,7 +126,7 @@ body {
 
 
 .zajawka {
-  background: url("pictures/zajawka.jpg") no-repeat;
+  background: url("pictures/homeBackground.jpg") fixed center no-repeat;
   background-size: cover;
   height: 453px;
   display: flex;
@@ -366,124 +367,65 @@ form.premiere input{
 
 footer {
   background-color: $colorMain;
-  box-shadow: 0 -5px 10px #742b1d;
-}
-
-.footer-team {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px 0;
-  color: $colorMain;
-  font-size: 1em;
-  ul {
-    margin: 0;
-    list-style-type: none;
-    li {
-      padding: 5px 10px;
-      background-color: $colorSecondary;
-      border-top: 5px solid $colorMain;
-      border-bottom: 5px solid $colorMain;
-      border-radius: 2px;
-    }
-  }
-  img {
-    height: 20px;
-    border-radius: 50%;
-  }
-  span {
-    margin-left: 30px;
-  }
-}
-
-.footer-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px 0;
-  color: #eee;
-  font-size: 1em;
-  text-transform: uppercase;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    li {
-      padding: 5px 30px;
-      background-color: lighten($colorMain, 7%);
-      border-top: 5px solid $colorMain;
-      border-bottom: 5px solid $colorMain;
-      text-align: center;
-    }
-  }
-  img {
-    height: 20px;
-    margin-right: 30px;
-  }
 }
 
 .footer-contact {
-  padding: 10px 0;
-  margin-top: 33px; // center vertically
-  a {
-    padding: 0;
-    font-size: 1.2em;
-    text-decoration: none;
-    border: 5px solid $colorMain;
-    border-radius: 5px;
-    background-color: $colorSecondary;
-    color: $colorMain;
-    i {
-      font-size: 1.5em;
-    }
-    &:hover {
-      background-color: lighten($colorMain, 7%);
-      color: $colorSecondary;
-      font-weight: bold;
-      cursor: pointer;
-      .footer-contact__btn {
-        border-left: 3px solid transparent;
+  padding: 30px 0;
+  div.footer-contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+      padding: 0 5px;
+      text-decoration: none;
+      text-align: center;
+      color: #eee;
+      transition: all 0.5s;
+      i {
+        font-size: 3em;
+      }
+      &:hover {
+        color: $colorAccent;
       }
     }
   }
-  a.footer-contact__btn--disabled:hover {
-    cursor: auto;
-  }
-}
 
-.footer-contact__text {
-  height: 1.5em;
-  line-height: 2.25em;
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.footer-contact__btn {
-  padding: 5px 0;
-  border-left: 3px solid $colorMain;
-  text-align: center;
-}
-
-.footer-contact__text--phone{
-  font-size: 0.9em;
 }
 
 .footer-caption {
   color: #eee;
   font-size: 1.2em;
-  text-align: center;
   font-weight: bold;
-  padding: 15px;
-  background-color: darken($colorMain,15%);
+  padding: 30px 0;
+  div.footer-caption-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 42px;
+  }
+  i {
+    margin-right:15px;
+    font-size: 1.6em;
+  }
 }
 
-@media screen and (max-width: 991px) {
-  .footer-team, .footer-list {
-    display: none;
+@media screen and (max-width: 767px) {
+  .footer-caption {
+    padding: 15px 0;
+    div.footer-caption-container {
+      justify-content: center;
+    }
   }
   .footer-contact {
-    margin: 0; // delete margin to vertically align on large screen
+    padding: 15px 0;
+    div.footer-contact-container {
+      justify-content: center;
+      a {
+        padding: 0 15px;
+      }
+    }
   }
 }
+
 
