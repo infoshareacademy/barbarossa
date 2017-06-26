@@ -30,19 +30,19 @@
             <div class="navbar-collapse collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right nav-menu__list">
                     <li>
-                        <a href="#">
+                        <a class="smooth-scroll" href="#home">
                             <i class="fa fa-home" aria-hidden="true"></i>Home</a>
                     </li>
                     <li>
-                        <a href="#function">
+                        <a class="smooth-scroll" href="#function">
                             <i class="fa fa-cogs" aria-hidden="true"></i>Funkcje</a>
                     </li>
                     <li>
-                        <a href="#team">
+                        <a class="smooth-scroll" href="#team">
                             <i class="fa fa-users" aria-hidden="true"></i>Zespół</a>
                     </li>
                     <li>
-                        <a href="#sign">
+                        <a class="smooth-scroll" href="#sign">
                             <i class="fa fa-sign-in" aria-hidden="true"></i>Zapisz się</a>
                     </li>
                 </ul>
@@ -52,7 +52,7 @@
 </header>
 <main>
     <!--Spot for TASK 5: "Zajawka"-->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="home" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <div class="col-xs-offset-2 col-xs-8 col-md-3 col-md-offset-0">
-                        <div class="text-info"><input type="text" name="firstname"></div>
+                        <div class="text-info"><input id="firstName" type="text" name="firstname"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -378,5 +378,7 @@ nie będą zbierane żadne informacje.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/nav-collapse-on-phone.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script src="js/scroll.js"></script>
 </body>
 </html>
