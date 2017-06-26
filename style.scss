@@ -48,6 +48,7 @@ body {
 .nav-menu {
   border: none;
   .nav-menu__list {
+    margin: 0;
     & > li {
       text-align: center;
       font-size: 1.5em;
@@ -106,6 +107,20 @@ body {
   margin: 0 0 0 10px;
 }
 
+//// Style for button to switch language
+
+.nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+  padding: 9.5px 0;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 767px) { //delete padding on phones
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+    padding-bottom: 0;
+  }
+}
 ///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
 
 .nav-menu .nav-menu__btn {
