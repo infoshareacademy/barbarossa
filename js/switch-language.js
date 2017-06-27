@@ -1,32 +1,21 @@
 (function()  {
     var switchButton = $('a.nav-menu__item--lang');
-    var polandFlag = '<img src="pictures/langPoland.png">';
-    var englandFlag = '<img src="pictures/langEngland.png">';
 
-    var $linksToTranslate = $('[data-lang]');
+    var $elementsToTranslate = $('[data-lang]');
     var inputButtonToTranslate = $('form.premiere input[type=submit]');
-    var oldLinksValue;
+    var previousLang;
+    var previousInput;
 
-    switchButton.click( function () {
-        var previousFlag = switchButton.html();
+    function switchLanguage() {
+        $elementsToTranslate.each(function () {
+            previousLang = $(this).html();
+            $(this).html($(this).attr('data-lang'));
+            $(this).attr('data-lang', previousLang);
+        });
+        previousInput = inputButtonToTranslate.val();
+        inputButtonToTranslate.val(inputButtonToTranslate.attr('data-lang--val'));
+        inputButtonToTranslate.attr('data-lang--val', previousInput);
+    }
 
-        if (previousFlag === polandFlag) {
-            $linksToTranslate.each(function () {
-                oldLinksValue = $(this).html();
-                $(this).html($(this).attr('data-lang'));
-                $(this).attr('data-lang', oldLinksValue);
-                inputButtonToTranslate.val('Zapisz się teraz!'); // text of button in value
-            });
-            switchButton.html(englandFlag);
-        }
-        else {
-            $linksToTranslate.each(function () {
-                oldLinksValue = $(this).html();
-                $(this).html($(this).attr('data-lang'));
-                $(this).attr('data-lang', oldLinksValue);
-                inputButtonToTranslate.val('Sign up now!'); // text of button in value
-            });
-            switchButton.html(polandFlag);
-        }
-    })
+    switchButton.click(switchLanguage);
 }) ();
