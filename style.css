@@ -10,10 +10,12 @@ body {
 .nav-menu {
   padding: 15px 0;
   background-color: #222;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: all 1s; }
 
 .nav-menu__brand-img {
-  max-width: 100px; }
+  max-width: 100px;
+  transition: all 1s; }
 
 .nav-menu__brand {
   height: auto;
@@ -22,21 +24,27 @@ body {
 
 .nav-menu {
   border: none; }
-  .nav-menu .nav-menu__list > li {
-    text-align: center;
-    font-size: 1.5em; }
-    .nav-menu .nav-menu__list > li i {
-      margin-right: 10px; }
-    .nav-menu .nav-menu__list > li > a {
-      color: #eee;
-      font-family: Roboto, sans-serif;
-      margin: 5.5px 0 5.5px 30px;
-      transition: all 1s; }
-      .nav-menu .nav-menu__list > li > a:hover {
-        cursor: pointer;
-        color: #222;
-        background-color: #eee;
-        font-weight: bold; }
+  .nav-menu .nav-menu__list {
+    margin: 0; }
+    .nav-menu .nav-menu__list > li {
+      text-align: center;
+      font-size: 1.5em; }
+      .nav-menu .nav-menu__list > li i {
+        margin-right: 10px; }
+      .nav-menu .nav-menu__list > li > a {
+        color: #eee;
+        font-family: Roboto, sans-serif;
+        margin: 5.5px 0 5.5px 30px;
+        transition: all 1s; }
+        .nav-menu .nav-menu__list > li > a:hover {
+          cursor: pointer;
+          color: #222;
+          background-color: #eee;
+          font-weight: bold; }
+        .nav-menu .nav-menu__list > li > a:focus {
+          color: #eee;
+          background-color: #222;
+          font-weight: normal; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
@@ -47,6 +55,36 @@ body {
 
   .nav-menu .nav-menu__list > li > a {
     margin: 3px 0 3px 10px; } }
+.nav-menu--collapse-on-scroll {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.nav-menu--collapse-on-scroll .nav-menu__brand-img {
+  max-width: 80px; }
+
+.nav-menu--collapse-on-scroll .nav-menu__list > li > a {
+  font-size: 0.8em;
+  margin: 0 0 0 10px; }
+
+.nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+  padding: 9.5px 0; }
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang:hover {
+    background-color: transparent; }
+
+.nav-menu .navbar-header a.nav-menu__item--lang {
+  display: none;
+  float: right;
+  margin: 10.5px 20px 10.5px 0; }
+  .nav-menu .navbar-header a.nav-menu__item--lang:hover {
+    background-color: transparent;
+    cursor: pointer; }
+
+@media screen and (max-width: 767px) {
+  .nav-menu .navbar-header a.nav-menu__item--lang {
+    display: block; }
+
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+    display: none; } }
 .nav-menu .nav-menu__btn {
   border-color: #eee;
   transition: all 0.5s;
@@ -69,32 +107,6 @@ body {
 
 .nav-menu .navbar-collapse {
   border: 0; }
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-    /*height: 500px;*/
-    margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-    z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-    /*height: 500px;*/
-    background-color: #777;
-}
-/*.carousel-inner > .item > img {*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*min-width: 100%;*/
-    /*height: 500px;*/
-/*}*/
 
 .zajawka {
   background: url("pictures/homeBackground.jpg") fixed center no-repeat;

@@ -31,10 +31,12 @@ body {
   padding: 15px 0;
   background-color: $colorAccent;
   @include shadow-content();
+  transition: all 1s;
 }
 
 .nav-menu__brand-img {
   max-width: 100px;
+  transition: all 1s;
 }
 
 .nav-menu__brand {
@@ -46,6 +48,7 @@ body {
 .nav-menu {
   border: none;
   .nav-menu__list {
+    margin: 0;
     & > li {
       text-align: center;
       font-size: 1.5em;
@@ -62,6 +65,11 @@ body {
           color: $colorAccent;
           background-color: #eee;
           font-weight: bold;
+        }
+        &:focus {
+          color: #eee;
+          background-color: $colorAccent;
+          font-weight: normal;
         }
       }
     }
@@ -83,7 +91,49 @@ body {
   }
 }
 
-///////////////////////////////////////////// Nav - button //////////////////////////////////////////////
+////////////////// Style for nav while collapse on scroll //////////////////
+
+.nav-menu--collapse-on-scroll {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-menu--collapse-on-scroll .nav-menu__brand-img {
+  max-width: 80px;
+}
+
+.nav-menu--collapse-on-scroll .nav-menu__list > li > a {
+  font-size: 0.8em;
+  margin: 0 0 0 10px;
+}
+
+////////////////// Style for button to switch language //////////////////
+
+.nav-menu .nav-menu__list > li > a.nav-menu__item--lang { // button for large device
+   padding: 9.5px 0;
+   &:hover {
+     background-color: transparent;
+   }
+ }
+.nav-menu .navbar-header a.nav-menu__item--lang { // button for small device
+  display: none;
+  float: right;
+  margin: 10.5px 20px 10.5px 0;
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav-menu .navbar-header a.nav-menu__item--lang {
+    display: block;
+  }
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+    display: none;
+  }
+}
+
+////////////////// Nav - button //////////////////
 
 .nav-menu .nav-menu__btn {
   border-color: #eee;

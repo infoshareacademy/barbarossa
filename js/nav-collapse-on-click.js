@@ -1,7 +1,8 @@
 (function()  {
-    $(window).resize(function addAttribute() {
+    $(window).resize(function () {
         var mq = window.matchMedia("(max-width: 767px)");
         var $navMenuItems = $('.nav-menu__list  a');
+
         if (mq.matches) {
             $navMenuItems.attr("data-toggle", "collapse").attr("data-target", "#navbar-collapse");
         }
