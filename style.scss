@@ -80,6 +80,11 @@ body {
   .nav-menu .nav-menu__list > li {
     font-size: 1.3em;
   }
+  #team {
+    .team-single {
+      min-height: 200px;
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -88,6 +93,11 @@ body {
   }
   .nav-menu .nav-menu__list > li > a {
     margin: 3px 0 3px 10px; // center vertically in navbar, space between items
+  }
+  #team {
+    .team-single {
+      min-height: 200px;
+    }
   }
 }
 
@@ -259,7 +269,7 @@ body {
   text-align: justify;
 }
 #function .first_info {
-  background-color: black;
+  background-color: $colorAccent;
 }
 .short-info {
   color:#eee ;
@@ -267,6 +277,7 @@ body {
   padding: 40px;
   padding-bottom: 90px;
   text-align: justify;
+  margin-bottom: 1em;
 }
 
 .function_title {
@@ -373,46 +384,70 @@ form.premiere input{
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
 
-.team-txt {
-  font-size: 50px;
-  font-weight: 600;
-  color: $colorMain;
-  font-family: 'Viga', sans-serif;
-  display: block;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 60px;
-}
-.member-name {
-  text-align: center;
-  font-family: 'Viga', sans-serif;
-  font-size: 25px;
-  font-weight: 800;
-
-}
-.member-description {
-  text-align: center;
-  font-family: 'Viga', sans-serif;
-
-}
-.socialMedia-box i {
-  margin: 0 10px;
-  color: $colorMain;
-}
-.socialMedia-box a {
-  text-decoration: none;
-
-}
 #team {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.member-box {
-  padding-bottom: 60px;
-}
+  color: #eee;
+  padding-bottom: 80px;
+  .team-single {
+    background-color: $colorMain;
+    min-height: 500px;
+    margin: 0.5em;
+    margin-top: 4em;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    .photo{
+      padding: 0;
+      width: 100%;
+      margin: 0;
+      @include flex-align();
+      img {
+        @include shadow-content();
+        width: 200px;
+        height: 200px;
+        margin-top: -30px;
+        padding: 15px;
+        background-color: lighten($colorMain, 5%);
+      }
+    }
+    .icons{
+      @include flex-align();
+      padding-top: 3em;
+      a {
+        text-decoration: none;
+        &:hover > i {
+          background-color: $colorAccent;
+        }
+        i {
+          @include flex-align();
+          @include shadow-content();
+          border-radius: 100%;
+          transition: all 0.5s;
+          width: 1.7em;
+          height: 1.7em;
+          font-size: 2.5em;
+          margin: 0.1em;
+          color: #ddd;
+          background-color: lighten($colorMain, 5%);
+        }
+      }
 
-///////////////////////////////////////////// Extras //////////////////////////////////////////////
-
+    }
+  }
+  .description {
+    padding: 2em;
+    h3 {
+      text-align: center;
+      margin-bottom: 1em;
+      letter-spacing: 0.07em;
+      font-weight: bold;
+    }
+    p {
+      text-align: justify;
+      font-size: 1.1em;
+    }
+  }
+}
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 footer {
@@ -474,6 +509,11 @@ footer {
       a {
         padding: 0 15px;
       }
+    }
+  }
+  #team {
+    .team-single {
+      min-height: 200px;
     }
   }
 }
