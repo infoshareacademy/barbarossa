@@ -123,6 +123,7 @@ body {
    padding: 9.5px 0;
    &:hover {
      background-color: transparent;
+     cursor: pointer;
    }
  }
 .nav-menu .navbar-header a.nav-menu__item--lang { // button for small device
