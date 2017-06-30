@@ -288,7 +288,7 @@ form.premiere input {
   padding-bottom: 80px; }
   #team .team-single {
     background-color: #ba4436;
-    min-height: 500px;
+    min-height: 550px;
     margin: 0.5em;
     margin-top: 4em; }
   #team .content {
@@ -393,23 +393,3 @@ footer {
     min-height: 200px; } }
 
 /*# sourceMappingURL=style.css.map */
-/*/////////////////////////////Scroll Top//////////////////////////////////////////////*/
-
-#scrollToTop {
-  width: 25px;
-  height: 25px;
-  background: red;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  color: black;
-  font-size: 2em;
-  text-align: center;
-  cursor: pointer;
-  display: none;
- }
-#scrollToTop:hover {
-background: green }
-
-
