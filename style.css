@@ -421,10 +421,6 @@ footer {
       justify-content: center; }
       .footer-contact div.footer-contact-container a {
         padding: 0 15px; } }
-
-/*# sourceMappingURL=style.css.map */
-/*/////////////////////////////Scroll Top//////////////////////////////////////////////*/
-
 #scrollToTop {
   width: 25px;
   height: 25px;
@@ -437,7 +433,9 @@ footer {
   font-size: 2em;
   text-align: center;
   cursor: pointer;
-  display: none;
-}
+  display: none; }
+
 #scrollToTop:hover {
-  background: green }
+  background: green; }
+
+/*# sourceMappingURL=style.css.map */

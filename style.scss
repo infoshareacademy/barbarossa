@@ -569,5 +569,21 @@ footer {
   }
 }
 
+///////////////////////////////////////////// Scroll Top //////////////////////////////////////////////
 
-
+#scrollToTop {
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+#scrollToTop:hover {
+  background: green }
