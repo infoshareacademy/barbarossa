@@ -14,3 +14,12 @@ $('.Ostrowska').hover(function(){
 $('.Paczkowski').hover(function(){
     $('#team').toggleClass('background-paczkowski');
 });
+
+$("team").scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 800) {
+        $('.team-single').fadeIn();
+    } else {
+        $('.team-single').fadeOut();
+    }
+});
