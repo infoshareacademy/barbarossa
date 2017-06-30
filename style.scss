@@ -4,16 +4,15 @@ $colorMain: #ba4436;
 $colorSecondary: #FBEAD0;
 $colorAccent: #222;
 
-@mixin shadow-content(){
+@mixin shadow-content() {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
 }
 
-@mixin flex-align(){
+@mixin flex-align() {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 body {
   margin: 0;
@@ -21,6 +20,7 @@ body {
   font-family: Roboto, sans-serif;
   background-color: $colorSecondary;
 }
+
 #sign, #function, #team {
   padding-top: 73px; // padding to pass over navigation bar
 }
@@ -120,12 +120,13 @@ body {
 ////////////////// Style for button to switch language //////////////////
 
 .nav-menu .nav-menu__list > li > a.nav-menu__item--lang { // button for large device
-   padding: 9.5px 0;
-   &:hover {
-     background-color: transparent;
-     cursor: pointer;
-   }
- }
+  padding: 9.5px 0;
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
 .nav-menu .navbar-header a.nav-menu__item--lang { // button for small device
   display: none;
   float: right;
@@ -135,6 +136,7 @@ body {
     cursor: pointer;
   }
 }
+
 @media screen and (max-width: 767px) {
   .nav-menu .navbar-header a.nav-menu__item--lang {
     display: block;
@@ -156,12 +158,14 @@ body {
 .nav-menu .nav-menu__btn .icon-bar {
   background-color: #eee;
 }
-.nav-menu .nav-menu__btn:focus{
+
+.nav-menu .nav-menu__btn:focus {
   background-color: $colorAccent;
   .icon-bar {
     background-color: #eee;
   }
 }
+
 .nav-menu .nav-menu__btn:hover {
   background-color: #eee;
   transform: rotate(360deg);
@@ -171,7 +175,7 @@ body {
 }
 
 .nav-menu .navbar-collapse {
-    border: 0;
+  border: 0;
 }
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
@@ -185,7 +189,6 @@ body {
 //  background-color: #777;
 //}
 
-
 .zajawka {
   background: url("pictures/homeBackground.jpg") fixed center no-repeat;
   background-size: cover;
@@ -195,6 +198,7 @@ body {
   justify-content: center;
   text-align: center;
 }
+
 .zajawka-head {
   font-size: 70px;
   font-weight: 800;
@@ -205,6 +209,7 @@ body {
   margin: -10px 0 0 0;
   /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/
 }
+
 .zajawka-txt {
   font-size: 20px;
   font-weight: 600;
@@ -225,10 +230,12 @@ body {
   margin-top: 20px;
   text-align: center;
 }
+
 .button:hover {
   background-color: $colorMain;
   border-color: $colorMain;
 }
+
 .button-txt {
   text-align: center;
   text-decoration: none;
@@ -261,19 +268,21 @@ body {
   font-size: 1em;
   list-style-type: none;
 
-  margin-top: 10px; }
-
+  margin-top: 10px;
+}
 
 .long-info {
   margin-top: 10px;
   font-size: 1.3em;
   text-align: justify;
 }
+
 #function .first_info {
   background-color: $colorAccent;
 }
+
 .short-info {
-  color:#eee ;
+  color: #eee;
   background-color: #ba4436;
   padding: 40px;
   padding-bottom: 90px;
@@ -292,25 +301,25 @@ body {
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
 
-section#sign{
+section#sign {
   background-color: $colorMain;
   @include shadow-content();
   text-align: center;
   padding: 5em 0;
   margin-top: 5em;
-  h2{
+  h2 {
     margin-bottom: 1.7em;
     font-weight: bold;
     letter-spacing: 0.1em;
   }
-  .icon-box{
+  .icon-box {
     display: flex;
     align-items: center;
   }
-  .row{
+  .row {
     padding: 1em 0;
   }
-  i{
+  i {
     @include flex-align();
     @include shadow-content();
     font-size: 3em;
@@ -319,18 +328,17 @@ section#sign{
     border: 2px solid #eee;
     border-radius: 100%;
   }
-  .label{
+  .label {
     font-size: 1.3em;
     margin-left: 1em;
   }
-  p{
+  p {
     margin-top: 3em;
     line-height: 1.8em;
   }
 }
 
-
-form.premiere{
+form.premiere {
   text-align: center;
   color: #eee;
   letter-spacing: 2px;
@@ -338,18 +346,18 @@ form.premiere{
   margin-top: 1em;
 }
 
-form.premiere input{
+form.premiere input {
   margin-top: 1.5em;
   border: none;
   outline: none;
   transition: 0.3s all;
   text-align: center;
   color: #742b1d;
-  &[type=text], &[type=email]{
+  &[type=text], &[type=email] {
     width: 100%;
     height: 3em;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
   &:active {
@@ -372,18 +380,21 @@ form.premiere input{
     transition: 0.5s all;
     color: #eee;
     font-weight: 900;
-    &:hover{
+    &:hover {
       background: darken($colorAccent, 10%);
       color: #fff;
       border-radius: 0 1.5em;
     }
-    &:active{
+    &:active {
       @include shadow-content();
     }
   }
 }
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
+@mixin teamAnimateEffect(){
+  filter: brightness(30%) blur(2px);
+}
 
 #team {
   color: #eee;
@@ -394,10 +405,10 @@ form.premiere input{
     margin: 0.5em;
     margin-top: 4em;
   }
-  .content{
+  .content {
     display: flex;
     flex-direction: column;
-    .photo{
+    .photo {
       padding: 0;
       width: 100%;
       margin: 0;
@@ -411,7 +422,7 @@ form.premiere input{
         background-color: lighten($colorMain, 5%);
       }
     }
-    .icons{
+    .icons {
       @include flex-align();
       padding-top: 3em;
       a {
@@ -449,6 +460,56 @@ form.premiere input{
     }
   }
 }
+
+.Klimek, .Richert, .Ostrowska, .Paczkowski {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.background-klimek {
+  background: url("pictures/secondworldwar.jpg") fixed;
+  background-size: cover;
+  .Klimek {
+    transform: scale(1.05);
+  }
+  .Richert, .Paczkowski, .Ostrowska {
+    @include teamAnimateEffect();
+  }
+}
+
+.background-richert {
+  background: url("pictures/football.jpg") fixed;
+  background-size: cover;
+  .Richert {
+    transform: scale(1.05);
+  }
+  .Klimek, .Paczkowski, .Ostrowska {
+    @include teamAnimateEffect();
+  }
+}
+
+.background-ostrowska {
+  background: url("pictures/traveling.jpg") fixed;
+  background-size: cover;
+  .Ostrowska {
+    transform: scale(1.05);
+  }
+  .Klimek, .Richert, .Paczkowski {
+    @include teamAnimateEffect();
+  }
+}
+
+.background-paczkowski {
+  background: url("pictures/oldcar.jpg") fixed;
+  background-size: cover;
+  .Paczkowski {
+    transform: scale(1.05);
+  }
+  .Klimek, .Richert, .Ostrowska {
+    @include teamAnimateEffect();
+  }
+}
+
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
 
 footer {
@@ -491,7 +552,7 @@ footer {
     min-height: 42px;
   }
   i {
-    margin-right:15px;
+    margin-right: 15px;
     font-size: 1.6em;
   }
 }

@@ -341,6 +341,42 @@ form.premiere input {
       text-align: justify;
       font-size: 1.1em; }
 
+.Klimek, .Richert, .Ostrowska, .Paczkowski {
+  transition: all 0.5s;
+  cursor: pointer; }
+
+.background-klimek {
+  background: url("pictures/secondworldwar.jpg") fixed;
+  background-size: cover; }
+  .background-klimek .Klimek {
+    transform: scale(1.05); }
+  .background-klimek .Richert, .background-klimek .Paczkowski, .background-klimek .Ostrowska {
+    filter: brightness(30%) blur(2px); }
+
+.background-richert {
+  background: url("pictures/football.jpg") fixed;
+  background-size: cover; }
+  .background-richert .Richert {
+    transform: scale(1.05); }
+  .background-richert .Klimek, .background-richert .Paczkowski, .background-richert .Ostrowska {
+    filter: brightness(30%) blur(2px); }
+
+.background-ostrowska {
+  background: url("pictures/traveling.jpg") fixed;
+  background-size: cover; }
+  .background-ostrowska .Ostrowska {
+    transform: scale(1.05); }
+  .background-ostrowska .Klimek, .background-ostrowska .Richert, .background-ostrowska .Paczkowski {
+    filter: brightness(30%) blur(2px); }
+
+.background-paczkowski {
+  background: url("pictures/oldcar.jpg") fixed;
+  background-size: cover; }
+  .background-paczkowski .Paczkowski {
+    transform: scale(1.05); }
+  .background-paczkowski .Klimek, .background-paczkowski .Richert, .background-paczkowski .Ostrowska {
+    filter: brightness(30%) blur(2px); }
+
 footer {
   background-color: #ba4436; }
 
