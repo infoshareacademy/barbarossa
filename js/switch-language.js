@@ -1,5 +1,5 @@
 (function()  {
-    var switchButton = $('a.nav-menu__item--lang');
+    var switchButton = $('a.nav-menu__item--btnlang');
 
     var $elementsToTranslate = $('[data-lang]');
     var inputButtonToTranslate = $('form.premiere input[type=submit]');

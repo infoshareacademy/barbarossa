@@ -16,12 +16,11 @@ $colorAccent: #222;
 
 body {
   margin: 0;
-  padding-top: 73px; // padding to pass over navigation bar
   font-family: Roboto, sans-serif;
   background-color: $colorSecondary;
 }
 
-#sign, #function, #team {
+#home, #sign, #function, #team {
   padding-top: 73px; // padding to pass over navigation bar
 }
 
@@ -72,6 +71,11 @@ body {
           font-weight: normal;
         }
       }
+      a.nav-menu__item--active {
+        color: $colorAccent;
+        background-color: #eee;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -79,11 +83,6 @@ body {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
     font-size: 1.3em;
-  }
-  #team {
-    .team-single {
-      min-height: 200px;
-    }
   }
 }
 
@@ -93,11 +92,6 @@ body {
   }
   .nav-menu .nav-menu__list > li > a {
     margin: 3px 0 3px 10px; // center vertically in navbar, space between items
-  }
-  #team {
-    .team-single {
-      min-height: 200px;
-    }
   }
 }
 
@@ -119,7 +113,7 @@ body {
 
 ////////////////// Style for button to switch language //////////////////
 
-.nav-menu .nav-menu__list > li > a.nav-menu__item--lang { // button for large device
+.nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang { // button for large device
   padding: 9.5px 0;
   &:hover {
     background-color: transparent;
@@ -127,7 +121,7 @@ body {
   }
 }
 
-.nav-menu .navbar-header a.nav-menu__item--lang { // button for small device
+.nav-menu .navbar-header a.nav-menu__item--btnlang { // button for small device
   display: none;
   float: right;
   margin: 10.5px 20px 10.5px 0;
@@ -138,10 +132,10 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  .nav-menu .navbar-header a.nav-menu__item--lang {
+  .nav-menu .navbar-header a.nav-menu__item--btnlang {
     display: block;
   }
-  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+  .nav-menu .nav-menu__list > li > a.nav-menu__btnitem--lang {
     display: none;
   }
 }
@@ -571,11 +565,6 @@ footer {
       a {
         padding: 0 15px;
       }
-    }
-  }
-  #team {
-    .team-single {
-      min-height: 200px;
     }
   }
 }

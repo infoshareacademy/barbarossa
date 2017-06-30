@@ -1,10 +1,9 @@
 body {
   margin: 0;
-  padding-top: 73px;
   font-family: Roboto, sans-serif;
   background-color: #FBEAD0; }
 
-#sign, #function, #team {
+#home, #sign, #function, #team {
   padding-top: 73px; }
 
 .nav-menu {
@@ -45,22 +44,20 @@ body {
           color: #eee;
           background-color: #222;
           font-weight: normal; }
+      .nav-menu .nav-menu__list > li a.nav-menu__item--active {
+        color: #222;
+        background-color: #eee;
+        font-weight: bold; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .nav-menu .nav-menu__list > li {
-    font-size: 1.3em; }
-
-  #team .team-single {
-    min-height: 200px; } }
+    font-size: 1.3em; } }
 @media screen and (max-width: 991px) {
   .nav-menu__brand-img {
     max-width: 85px; }
 
   .nav-menu .nav-menu__list > li > a {
-    margin: 3px 0 3px 10px; }
-
-  #team .team-single {
-    min-height: 200px; } }
+    margin: 3px 0 3px 10px; } }
 .nav-menu--collapse-on-scroll {
   padding-top: 0;
   padding-bottom: 0; }
@@ -72,25 +69,25 @@ body {
   font-size: 0.8em;
   margin: 0 0 0 10px; }
 
-.nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+.nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang {
   padding: 9.5px 0; }
-  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang:hover {
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang:hover {
     background-color: transparent;
     cursor: pointer; }
 
-.nav-menu .navbar-header a.nav-menu__item--lang {
+.nav-menu .navbar-header a.nav-menu__item--btnlang {
   display: none;
   float: right;
   margin: 10.5px 20px 10.5px 0; }
-  .nav-menu .navbar-header a.nav-menu__item--lang:hover {
+  .nav-menu .navbar-header a.nav-menu__item--btnlang:hover {
     background-color: transparent;
     cursor: pointer; }
 
 @media screen and (max-width: 767px) {
-  .nav-menu .navbar-header a.nav-menu__item--lang {
+  .nav-menu .navbar-header a.nav-menu__item--btnlang {
     display: block; }
 
-  .nav-menu .nav-menu__list > li > a.nav-menu__item--lang {
+  .nav-menu .nav-menu__list > li > a.nav-menu__btnitem--lang {
     display: none; } }
 .nav-menu .nav-menu__btn {
   border-color: #eee;
@@ -423,9 +420,6 @@ footer {
     .footer-contact div.footer-contact-container {
       justify-content: center; }
       .footer-contact div.footer-contact-container a {
-        padding: 0 15px; }
-
-  #team .team-single {
-    min-height: 200px; } }
+        padding: 0 15px; } }
 
 /*# sourceMappingURL=style.css.map */
