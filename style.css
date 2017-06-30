@@ -351,7 +351,7 @@ form.premiere input {
   .background-klimek .Klimek {
     transform: scale(1.05); }
   .background-klimek .Richert, .background-klimek .Paczkowski, .background-klimek .Ostrowska {
-    filter: brightness(30%) blur(2px) grayscale(50%); }
+    filter: brightness(30%) blur(2px); }
 
 .background-richert {
   background: url("pictures/football.jpg") fixed;
@@ -359,7 +359,7 @@ form.premiere input {
   .background-richert .Richert {
     transform: scale(1.05); }
   .background-richert .Klimek, .background-richert .Paczkowski, .background-richert .Ostrowska {
-    filter: brightness(30%) blur(2px) grayscale(50%); }
+    filter: brightness(30%) blur(2px); }
 
 .background-ostrowska {
   background: url("pictures/traveling.jpg") fixed;
@@ -367,7 +367,7 @@ form.premiere input {
   .background-ostrowska .Ostrowska {
     transform: scale(1.05); }
   .background-ostrowska .Klimek, .background-ostrowska .Richert, .background-ostrowska .Paczkowski {
-    filter: brightness(30%) blur(2px) grayscale(50%); }
+    filter: brightness(30%) blur(2px); }
 
 .background-paczkowski {
   background: url("pictures/oldcar.jpg") fixed;
@@ -375,7 +375,7 @@ form.premiere input {
   .background-paczkowski .Paczkowski {
     transform: scale(1.05); }
   .background-paczkowski .Klimek, .background-paczkowski .Richert, .background-paczkowski .Ostrowska {
-    filter: brightness(30%) blur(2px) grayscale(50%); }
+    filter: brightness(30%) blur(2px); }
 
 footer {
   background-color: #ba4436; }
