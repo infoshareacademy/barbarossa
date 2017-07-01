@@ -3,13 +3,13 @@ body {
   font-family: Roboto, sans-serif;
   background-color: #FBEAD0; }
 
-#home, #sign, #function, #team {
+#sign, #function, #team {
   padding-top: 73px; }
 
 .nav-menu {
   padding: 15px 0;
   background-color: #222;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   transition: all 1s; }
 
 .nav-menu__brand-img {
@@ -58,14 +58,14 @@ body {
 
   .nav-menu .nav-menu__list > li > a {
     margin: 3px 0 3px 10px; } }
-.nav-menu--collapse-on-scroll {
+.nav-menu--collapse {
   padding-top: 0;
   padding-bottom: 0; }
 
-.nav-menu--collapse-on-scroll .nav-menu__brand-img {
+.nav-menu--collapse .nav-menu__brand-img {
   max-width: 80px; }
 
-.nav-menu--collapse-on-scroll .nav-menu__list > li > a {
+.nav-menu--collapse .nav-menu__list > li > a {
   font-size: 0.8em;
   margin: 0 0 0 10px; }
 
@@ -206,7 +206,7 @@ body {
 
 section#sign {
   background-color: #ba4436;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 5em 0;
   margin-top: 5em; }
@@ -223,7 +223,7 @@ section#sign {
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     font-size: 3em;
     width: 2em;
     height: 2em;
@@ -258,11 +258,11 @@ form.premiere input {
   form.premiere input:active {
     border: none; }
   form.premiere input:focus {
-    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     background: #222;
     width: 14em;
     height: 3em;
@@ -278,7 +278,7 @@ form.premiere input {
       color: #fff;
       border-radius: 0 1.5em; }
     form.premiere input[type=submit]:active {
-      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
 #team {
   color: #eee;
@@ -299,7 +299,7 @@ form.premiere input {
       align-items: center;
       justify-content: center; }
       #team .content .photo img {
-        -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
         width: 200px;
         height: 200px;
         margin-top: -30px;
@@ -318,7 +318,7 @@ form.premiere input {
           display: flex;
           align-items: center;
           justify-content: center;
-          -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
           border-radius: 100%;
           transition: all 0.5s;
           width: 1.7em;

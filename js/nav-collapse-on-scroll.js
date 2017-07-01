@@ -1,15 +1,14 @@
-(function()  {
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            var navbar = $(".nav-menu");
+(function () {
+    var navbar = $(".nav-menu");
 
-            navbar.addClass("nav-menu--collapse-on-scroll");
+    $(document).scroll(function () {
 
-            clearTimeout($.data(this, 'scrollTimer'));
+        navbar.addClass("nav-menu--collapse");
 
-            $.data(this, 'scrollTimer', setTimeout(function () {
-                navbar.removeClass("nav-menu--collapse-on-scroll");
-            }, 1000));
-        });
+        clearTimeout($.data(this, 'scrollTimer'));
+
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            navbar.removeClass("nav-menu--collapse");
+        }, 500));
     });
-}) ();
+})();
