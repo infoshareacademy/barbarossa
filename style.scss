@@ -5,7 +5,7 @@ $colorSecondary: #FBEAD0;
 $colorAccent: #222;
 
 @mixin shadow-content() {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
 }
 
 @mixin flex-align() {
@@ -135,7 +135,7 @@ body {
   .nav-menu .navbar-header a.nav-menu__item--btnlang {
     display: block;
   }
-  .nav-menu .nav-menu__list > li > a.nav-menu__btnitem--lang {
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang {
     display: none;
   }
 }
@@ -461,7 +461,7 @@ form.premiere input {
 }
 
 .background-klimek {
-  background: url("pictures/secondworldwar.jpg") fixed;
+  background: url("pictures/teamSecondWorldWar.jpg") fixed;
   background-size: cover;
   .Klimek {
     transform: scale(1.05);
@@ -472,7 +472,7 @@ form.premiere input {
 }
 
 .background-richert {
-  background: url("pictures/football.jpg") fixed;
+  background: url("pictures/teamFootball.jpg") fixed;
   background-size: cover;
   .Richert {
     transform: scale(1.05);
@@ -483,7 +483,7 @@ form.premiere input {
 }
 
 .background-ostrowska {
-  background: url("pictures/traveling.jpg") fixed;
+  background: url("pictures/teamTraveling.jpg") fixed;
   background-size: cover;
   .Ostrowska {
     transform: scale(1.05);
@@ -494,7 +494,7 @@ form.premiere input {
 }
 
 .background-paczkowski {
-  background: url("pictures/oldcar.jpg") fixed;
+  background: url("pictures/teamOldCar.jpg") fixed;
   background-size: cover;
   .Paczkowski {
     transform: scale(1.05);

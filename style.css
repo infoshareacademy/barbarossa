@@ -9,7 +9,7 @@ body {
 .nav-menu {
   padding: 15px 0;
   background-color: #222;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   transition: all 1s; }
 
 .nav-menu__brand-img {
@@ -87,7 +87,7 @@ body {
   .nav-menu .navbar-header a.nav-menu__item--btnlang {
     display: block; }
 
-  .nav-menu .nav-menu__list > li > a.nav-menu__btnitem--lang {
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang {
     display: none; } }
 .nav-menu .nav-menu__btn {
   border-color: #eee;
@@ -206,7 +206,7 @@ body {
 
 section#sign {
   background-color: #ba4436;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 5em 0;
   margin-top: 5em; }
@@ -223,7 +223,7 @@ section#sign {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     font-size: 3em;
     width: 2em;
     height: 2em;
@@ -258,11 +258,11 @@ form.premiere input {
   form.premiere input:active {
     border: none; }
   form.premiere input:focus {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     color: #742b1d;
     font-weight: bold; }
   form.premiere input[type=submit] {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     background: #222;
     width: 14em;
     height: 3em;
@@ -278,7 +278,7 @@ form.premiere input {
       color: #fff;
       border-radius: 0 1.5em; }
     form.premiere input[type=submit]:active {
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
 #team {
   color: #eee;
@@ -299,7 +299,7 @@ form.premiere input {
       align-items: center;
       justify-content: center; }
       #team .content .photo img {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
         width: 200px;
         height: 200px;
         margin-top: -30px;
@@ -318,7 +318,7 @@ form.premiere input {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
           border-radius: 100%;
           transition: all 0.5s;
           width: 1.7em;
@@ -343,7 +343,7 @@ form.premiere input {
   cursor: pointer; }
 
 .background-klimek {
-  background: url("pictures/secondworldwar.jpg") fixed;
+  background: url("pictures/teamSecondWorldWar.jpg") fixed;
   background-size: cover; }
   .background-klimek .Klimek {
     transform: scale(1.05); }
@@ -351,7 +351,7 @@ form.premiere input {
     filter: brightness(30%) blur(2px); }
 
 .background-richert {
-  background: url("pictures/football.jpg") fixed;
+  background: url("pictures/teamFootball.jpg") fixed;
   background-size: cover; }
   .background-richert .Richert {
     transform: scale(1.05); }
@@ -359,7 +359,7 @@ form.premiere input {
     filter: brightness(30%) blur(2px); }
 
 .background-ostrowska {
-  background: url("pictures/traveling.jpg") fixed;
+  background: url("pictures/teamTraveling.jpg") fixed;
   background-size: cover; }
   .background-ostrowska .Ostrowska {
     transform: scale(1.05); }
@@ -367,7 +367,7 @@ form.premiere input {
     filter: brightness(30%) blur(2px); }
 
 .background-paczkowski {
-  background: url("pictures/oldcar.jpg") fixed;
+  background: url("pictures/teamOldCar.jpg") fixed;
   background-size: cover; }
   .background-paczkowski .Paczkowski {
     transform: scale(1.05); }
