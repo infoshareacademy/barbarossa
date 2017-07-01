@@ -4,7 +4,7 @@
             var mq = window.matchMedia("(max-width: 767px)");
             var $navMenuItems = $('.nav-menu__list  a');
 
-            if (mq.matches) {
+            if (mq) {
                 $navMenuItems.attr("data-toggle", "collapse").attr("data-target", "#navbar-collapse");
             }
             else {

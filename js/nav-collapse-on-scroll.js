@@ -3,12 +3,12 @@
         $(window).scroll(function () {
             var navbar = $(".nav-menu");
 
-            navbar.addClass("nav-menu--collapse-on-scroll");
+            navbar.addClass("nav-menu--collapse");
 
             clearTimeout($.data(this, 'scrollTimer'));
 
             $.data(this, 'scrollTimer', setTimeout(function () {
-                navbar.removeClass("nav-menu--collapse-on-scroll");
+                navbar.removeClass("nav-menu--collapse");
             }, 1000));
         });
     });
