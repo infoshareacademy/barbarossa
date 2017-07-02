@@ -1,17 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('a[href^="#"]').on('click', function(event) {
+    $('a[href^="#"]').on('click', function (event) {
 
-        var target = $( $(this).attr('href') );
+        var target = $($(this).attr('href'));
 
-        if( target.length ) {
+        $('.nav-menu__list  a').each(function () {
+            $(this).removeClass('nav-menu__item--active');
+        });
+        $(this).addClass('nav-menu__item--active');
+
+        if (target.length) {
             event.preventDefault();
             $('html, body').animate({
-                scrollTop: target.offset().top
+                scrollTop: target.offset().top + 2
             }, 1000);
         }
     });
 
-});/**
- * Created by GKL on 03.04.2017.
- */
+});
+
