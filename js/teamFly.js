@@ -5,7 +5,7 @@ $(document).ready(function test() {
     var heightSign = $('#sign').height();
 
     $(window).scroll(function () {
-        if ($(document).scrollTop() > (heightZajawka + heightFunction + heightSign)) {
+        if ($(document).scrollTop() > (heightZajawka + heightFunction + heightSign - 100)) {
         $('.team-single').removeClass('animation-hidden').addClass('animation-visible');
         } else{}
     })

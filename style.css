@@ -356,12 +356,12 @@ form.premiere input {
 
 .animation-hidden {
   opacity: 0;
-  transition: all 2s;
+  transition: all 1s;
   overflow: hidden;
-  transform: translateY(200%); }
+  transform: translateX(-200%); }
 
 .animation-visible {
-  transition: all 2s;
+  transition: all 1s;
   opacity: 1; }
 
 footer {
