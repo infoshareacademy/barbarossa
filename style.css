@@ -112,24 +112,23 @@ body {
 .nav-menu .navbar-collapse {
   border: 0; }
 
-.zajawka {
-  background: url("pictures/homeBackground.jpg") fixed center no-repeat;
-  background-size: cover;
-  height: 453px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center; }
+.carousel {
+  margin-bottom: 60px; }
+
+.carousel-caption {
+  z-index: 10; }
+
+.carousel .item {
+  background-color: #777; }
 
 .zajawka-head {
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 800;
   color: #FBEAD0;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
-  margin: -10px 0 0 0;
-  /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/ }
+  margin: -10px 0 0 0; }
 
 .zajawka-txt {
   font-size: 20px;
@@ -139,14 +138,13 @@ body {
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
-  padding-top: 20px; }
+  padding-top: 10px;
+  padding-bottom: 20px; }
 
 .button {
   background-color: transparent;
   border: solid;
   border-color: #FBEAD0;
-  width: 300px;
-  height: 50px;
   margin-top: 20px;
   text-align: center; }
 
@@ -162,6 +160,15 @@ body {
   font-weight: 800;
   font-family: 'Viga', sans-serif; }
 
+@media screen and (max-width: 600px) {
+  .button {
+    display: none; }
+
+  .zajawka-head {
+    font-size: 30px; }
+
+  .zajawka-txt {
+    font-size: 10px; } }
 #function {
   background-color: #FBEAD0;
   font-weight: bold;
@@ -430,12 +437,15 @@ footer {
   bottom: 25px;
   right: 25px;
   color: black;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
   cursor: pointer;
   display: none; }
 
 #scrollToTop:hover {
   background: green; }
+
+.cookies {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
