@@ -2,7 +2,7 @@
     var switchButton = $('a.nav-menu__item--btnlang');
 
     var $elementsToTranslate = $('[data-lang]');
-    var inputButtonToTranslate = $('form.premiere input[type=submit]');
+    var $inputButtonToTranslate = $('form.premiere input[type=submit]');
     var previousLang;
     var previousInput;
 
@@ -12,9 +12,9 @@
             $(this).html($(this).attr('data-lang'));
             $(this).attr('data-lang', previousLang);
         });
-        previousInput = inputButtonToTranslate.val();
-        inputButtonToTranslate.val(inputButtonToTranslate.attr('data-lang--val'));
-        inputButtonToTranslate.attr('data-lang--val', previousInput);
+        previousInput = $inputButtonToTranslate.val();
+        $inputButtonToTranslate.val($inputButtonToTranslate.attr('data-lang--val'));
+        $inputButtonToTranslate.attr('data-lang--val', previousInput);
     }
 
     switchButton.click(switchLanguage);

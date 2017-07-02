@@ -1,14 +1,17 @@
 (function () {
-    var navbar = $(".nav-menu");
+    var $navbar = $(".nav-menu");
+    var lastKnownScrollPosition = 0;
 
-    $(document).scroll(function () {
+    $(window).scroll(function () {
+        var scrollPosition = $(this).scrollTop();
 
-        navbar.addClass("nav-menu--collapse");
+        if (scrollPosition > lastKnownScrollPosition) {
+            $navbar.addClass("nav-menu--collapse");
+        }
+        else {
+            $navbar.removeClass("nav-menu--collapse");
+        }
 
-        clearTimeout($.data(this, 'scrollTimer'));
-
-        $.data(this, 'scrollTimer', setTimeout(function () {
-            navbar.removeClass("nav-menu--collapse");
-        }, 500));
+        lastKnownScrollPosition = scrollPosition;
     });
 })();
