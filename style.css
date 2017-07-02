@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding-top: 73px;
   font-family: Roboto, sans-serif;
   background-color: #FBEAD0; }
 
@@ -10,10 +9,12 @@ body {
 .nav-menu {
   padding: 15px 0;
   background-color: #222;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: all 1s; }
 
 .nav-menu__brand-img {
-  max-width: 100px; }
+  max-width: 100px;
+  transition: all 1s; }
 
 .nav-menu__brand {
   height: auto;
@@ -22,18 +23,28 @@ body {
 
 .nav-menu {
   border: none; }
-  .nav-menu .nav-menu__list > li {
-    text-align: center;
-    font-size: 1.5em; }
-    .nav-menu .nav-menu__list > li i {
-      margin-right: 10px; }
-    .nav-menu .nav-menu__list > li > a {
-      color: #eee;
-      font-family: Roboto, sans-serif;
-      margin: 5.5px 0 5.5px 30px;
-      transition: all 1s; }
-      .nav-menu .nav-menu__list > li > a:hover {
-        cursor: pointer;
+  .nav-menu .nav-menu__list {
+    margin: 0; }
+    .nav-menu .nav-menu__list > li {
+      text-align: center;
+      font-size: 1.5em; }
+      .nav-menu .nav-menu__list > li i {
+        margin-right: 10px; }
+      .nav-menu .nav-menu__list > li > a {
+        color: #eee;
+        font-family: Roboto, sans-serif;
+        margin: 5.5px 0 5.5px 30px;
+        transition: all 1s; }
+        .nav-menu .nav-menu__list > li > a:hover {
+          cursor: pointer;
+          color: #222;
+          background-color: #eee;
+          font-weight: bold; }
+        .nav-menu .nav-menu__list > li > a:focus {
+          color: #eee;
+          background-color: #222;
+          font-weight: normal; }
+      .nav-menu .nav-menu__list > li a.nav-menu__item--active {
         color: #222;
         background-color: #eee;
         font-weight: bold; }
@@ -47,6 +58,37 @@ body {
 
   .nav-menu .nav-menu__list > li > a {
     margin: 3px 0 3px 10px; } }
+.nav-menu--collapse {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.nav-menu--collapse .nav-menu__brand-img {
+  max-width: 80px; }
+
+.nav-menu--collapse .nav-menu__list > li > a {
+  font-size: 0.8em;
+  margin: 0 0 0 10px; }
+
+.nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang {
+  padding: 9.5px 0; }
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang:hover {
+    background-color: transparent;
+    cursor: pointer; }
+
+.nav-menu .navbar-header a.nav-menu__item--btnlang {
+  display: none;
+  float: right;
+  margin: 10.5px 20px 10.5px 0; }
+  .nav-menu .navbar-header a.nav-menu__item--btnlang:hover {
+    background-color: transparent;
+    cursor: pointer; }
+
+@media screen and (max-width: 767px) {
+  .nav-menu .navbar-header a.nav-menu__item--btnlang {
+    display: block; }
+
+  .nav-menu .nav-menu__list > li > a.nav-menu__item--btnlang {
+    display: none; } }
 .nav-menu .nav-menu__btn {
   border-color: #eee;
   transition: all 0.5s;
@@ -70,23 +112,24 @@ body {
 .nav-menu .navbar-collapse {
   border: 0; }
 
-.carousel {
-  margin-bottom: 60px; }
-
-.carousel-caption {
-  z-index: 10; }
-
-.carousel .item {
-  background-color: #777; }
+.zajawka {
+  background: url("pictures/homeBackground.jpg") fixed center no-repeat;
+  background-size: cover;
+  height: 453px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
 
 .zajawka-head {
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 800;
   color: #FBEAD0;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
-  margin: -10px 0 0 0; }
+  margin: -10px 0 0 0;
+  /*text-shadow: 0 0 0.2em rgb(156, 0,0);*/ }
 
 .zajawka-txt {
   font-size: 20px;
@@ -96,13 +139,14 @@ body {
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
-  padding-top: 10px;
-  padding-bottom: 20px; }
+  padding-top: 20px; }
 
 .button {
   background-color: transparent;
   border: solid;
   border-color: #FBEAD0;
+  width: 300px;
+  height: 50px;
   margin-top: 20px;
   text-align: center; }
 
@@ -118,15 +162,6 @@ body {
   font-weight: 800;
   font-family: 'Viga', sans-serif; }
 
-@media screen and (max-width: 600px) {
-  .button {
-    display: none; }
-
-  .zajawka-head {
-    font-size: 30px; }
-
-  .zajawka-txt {
-    font-size: 10px; } }
 #function {
   background-color: #FBEAD0;
   font-weight: bold;
@@ -151,14 +186,15 @@ body {
   text-align: justify; }
 
 #function .first_info {
-  background-color: black; }
+  background-color: #222; }
 
 .short-info {
   color: #eee;
   background-color: #ba4436;
   padding: 40px;
   padding-bottom: 90px;
-  text-align: justify; }
+  text-align: justify;
+  margin-bottom: 1em; }
 
 .function_title {
   text-transform: uppercase;
@@ -244,39 +280,99 @@ form.premiere input {
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
-.team-txt {
-  font-size: 50px;
-  font-weight: 600;
-  color: #ba4436;
-  font-family: 'Viga', sans-serif;
-  display: block;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 60px; }
-
-.member-name {
-  text-align: center;
-  font-family: 'Viga', sans-serif;
-  font-size: 25px;
-  font-weight: 800; }
-
-.member-description {
-  text-align: center;
-  font-family: 'Viga', sans-serif; }
-
-.socialMedia-box i {
-  margin: 0 10px;
-  color: #ba4436; }
-
-.socialMedia-box a {
-  text-decoration: none; }
-
 #team {
-  padding-top: 50px;
-  padding-bottom: 50px; }
+  color: #eee;
+  padding-bottom: 80px; }
+  #team .team-single {
+    background-color: #ba4436;
+    min-height: 550px;
+    margin: 0.5em;
+    margin-top: 4em; }
+  #team .content {
+    display: flex;
+    flex-direction: column; }
+    #team .content .photo {
+      padding: 0;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #team .content .photo img {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+        width: 200px;
+        height: 200px;
+        margin-top: -30px;
+        padding: 15px;
+        background-color: #c85042; }
+    #team .content .icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 3em; }
+      #team .content .icons a {
+        text-decoration: none; }
+        #team .content .icons a:hover > i {
+          background-color: #222; }
+        #team .content .icons a i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+          border-radius: 100%;
+          transition: all 0.5s;
+          width: 1.7em;
+          height: 1.7em;
+          font-size: 2.5em;
+          margin: 0.1em;
+          color: #ddd;
+          background-color: #c85042; }
+  #team .description {
+    padding: 2em; }
+    #team .description h3 {
+      text-align: center;
+      margin-bottom: 1em;
+      letter-spacing: 0.07em;
+      font-weight: bold; }
+    #team .description p {
+      text-align: justify;
+      font-size: 1.1em; }
 
-.member-box {
-  padding-bottom: 60px; }
+.Klimek, .Richert, .Ostrowska, .Paczkowski {
+  transition: all 0.5s;
+  cursor: pointer; }
+
+.background-klimek {
+  background: url("pictures/teamSecondWorldWar.jpg") fixed;
+  background-size: cover; }
+  .background-klimek .Klimek {
+    transform: scale(1.05); }
+  .background-klimek .Richert, .background-klimek .Paczkowski, .background-klimek .Ostrowska {
+    filter: brightness(30%) blur(2px); }
+
+.background-richert {
+  background: url("pictures/teamFootball.jpg") fixed;
+  background-size: cover; }
+  .background-richert .Richert {
+    transform: scale(1.05); }
+  .background-richert .Klimek, .background-richert .Paczkowski, .background-richert .Ostrowska {
+    filter: brightness(30%) blur(2px); }
+
+.background-ostrowska {
+  background: url("pictures/teamTraveling.jpg") fixed;
+  background-size: cover; }
+  .background-ostrowska .Ostrowska {
+    transform: scale(1.05); }
+  .background-ostrowska .Klimek, .background-ostrowska .Richert, .background-ostrowska .Paczkowski {
+    filter: brightness(30%) blur(2px); }
+
+.background-paczkowski {
+  background: url("pictures/teamOldCar.jpg") fixed;
+  background-size: cover; }
+  .background-paczkowski .Paczkowski {
+    transform: scale(1.05); }
+  .background-paczkowski .Klimek, .background-paczkowski .Richert, .background-paczkowski .Ostrowska {
+    filter: brightness(30%) blur(2px); }
 
 footer {
   background-color: #ba4436; }
@@ -325,5 +421,21 @@ footer {
       justify-content: center; }
       .footer-contact div.footer-contact-container a {
         padding: 0 15px; } }
+#scrollToTop {
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+  display: none; }
+
+#scrollToTop:hover {
+  background: green; }
 
 /*# sourceMappingURL=style.css.map */
