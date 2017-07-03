@@ -20,7 +20,7 @@ body {
   background-color: $colorSecondary;
 }
 
-#sign, #function, #team {
+#home, #sign, #function, #team {
   padding-top: 73px; // padding to pass over navigation bar
 }
 
@@ -98,8 +98,8 @@ body {
 ////////////////// Style for nav while collapse on scroll //////////////////
 
 .nav-menu--collapse {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .nav-menu--collapse .nav-menu__brand-img {
