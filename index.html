@@ -63,7 +63,7 @@
 <main>
     <!--Spot for TASK 5: "Zajawka"-->
     <section id="home">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide teaser" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -122,7 +122,7 @@
         </div>
     </section>
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" data-backdrop="true">Modal with Overlay (true)</button>
+    <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#game-instruction" data-backdrop="true">Modal with Overlay (true)</button>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
     <section id="function">
         <div class="container-fluid">
@@ -410,8 +410,8 @@
 
 </section>
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+<div class="modal fade" id="game-instruction" role="dialog">
+    <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
         <div class="modal-content">
@@ -420,7 +420,63 @@
                 <h4 class="modal-title">Modal with Dark Overlay</h4>
             </div>
             <div class="modal-body">
-                <p>This modal has a dark overlay.</p>
+                <div id="game-instruction-slider" class="carousel slide game-instruction" data-ride="carousel" data-interval="false" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#game-instruction-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#game-instruction-slider" data-slide-to="1"></li>
+                        <li data-target="#game-instruction-slider" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active" style="max-width: 100%; height: 500px">
+                            <!--<img class="" src="pictures/carusel1.jpg" alt="First slide" >-->
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1 class="zajawka-head">Barbarossa Travel</h1>
+                                    <p class="zajawka-txt"
+                                       data-lang="Barbarossa Travel is an innovative urban transport system in Gdansk. <br> With us you will get to the place quickly, cheaply and safely.">
+                                        Barbarossa Travel to innowacyjny system komunikacji miejskiej w Gdańsku. <br> Z nami
+                                        dojedziesz na miejsce szybko, tanio i bezpiecznie.</p>
+                                    <p><a class=" button button-txt btn btn-sm btn-default" href="#sign" role="button"
+                                          data-lang="Sign up now!">Zapisz się teraz!</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="" src="pictures/carusel2.jpg" alt="Second slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1 class="zajawka-head" data-lang="Schedules">Rozkład jazdy</h1>
+                                    <p class="zajawka-txt" data-lang="Plan your trip with our mobile app.">Zaplanuj swoją podróż
+                                        z naszą aplikacją mobilną.</p>
+                                    <p><a class=" button button-txt btn btn-sm btn-default" href="#sign" role="button"
+                                          data-lang="Check how to arrive">Sprawdź jak dojechać</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="" src="pictures/carusel3.jpg" alt="Third slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1 class="zajawka-head" data-lang="Time of arrival">Czas dojazdu</h1>
+                                    <p class="zajawka-txt"
+                                       data-lang="Our application shows the shortest driving time, see how it works!">Nasza
+                                        aplikacja pokazuje najkrótszy czas dojazdu, sprawdź jak to działa!</p>
+                                    <p><a class=" button button-txt btn btn-sm btn-default" href="#sign" role="button"
+                                          data-lang="Find out more">Dowiedz się więcej</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#game-instruction-slider" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#game-instruction-slider" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -432,7 +488,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModalNew" role="dialog">
+<div class="modal fade" id="game" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -463,10 +519,6 @@
 <script src="js/team-fly-in.js"></script>
 <script src="js/team-animate-effects.js"></script>
 <script src="js/smooth.js"></script>
-<script>$('#myModal').on('hidden.bs.modal', function () {
-    // Load up a new modal...
-    console.log('dfgdfg');
-    $('#myModalNew').modal('show')
-})</script>
+<script src="js/load-game.js"></script>
 </body>
 </html>
