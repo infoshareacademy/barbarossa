@@ -1,14 +1,14 @@
 
 var todayDate = (new Date().getTime())/1000;
 var expireTime = todayDate - localStorage.getItem('data ciasteczka');
-console.log('data ciasteczka ', localStorage.getItem('data ciasteczka'));
-console.log('data dzisiejsza ', todayDate);
-console.log('mineło ', expireTime);
+// console.log('data ciasteczka ', localStorage.getItem('data ciasteczka'));
+// console.log('data dzisiejsza ', todayDate);
+// console.log('mineło ', expireTime);
 
 if (expireTime > 10) {
     $('div#div-cookies').removeClass('cookies');
     $(localStorage.setItem('ciastko','puste'));
-    console.log(localStorage);
+    // console.log(localStorage);
 }
 
     $('a#cookies').click(function () {
