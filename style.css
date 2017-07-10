@@ -287,14 +287,6 @@ form.premiere input {
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
-#game {
-  display: none; }
-
-#game td {
-  height: 50px;
-  width: 50px;
-  border: 1px solid #000; }
-
 #team {
   color: #eee;
   padding: 8em 0; }

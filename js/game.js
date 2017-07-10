@@ -26,5 +26,13 @@
         });
 
         game.append(table);
+
+        function moveCar () {
+            $(this).addClass('car');
+        }
+
+        $('table').click( function () {
+            console.log($(this).index())
+        });
     });
 })();
