@@ -1,19 +1,17 @@
 // Moving vehicle
 
 (function () {
-    $(document).ready(function() {
-        $('main').hide();
-        $('nav').hide();
-        $('footer').hide();
+    $(document).ready(function () {
+
         var game = $('#game');
-        game.show();
 
         function times(n, callback) {
             for (var i = 0; i < n; i += 1) {
                 callback(i);
             }
         }
-        var table = $('<table>');
+
+        var gameBoard = $('<table>');
         var size = 10;
 
         times(size, function () {
@@ -22,17 +20,50 @@
                 var td = $('<td>');
                 tr.append(td)
             });
-            table.append(tr)
+            gameBoard.append(tr).attr('tabindex', 0)
         });
 
-        game.append(table);
+        game.append(gameBoard);
+        gameBoard.focus();
 
-        function moveCar () {
-            $(this).addClass('car');
+        function startPositionOfCar () {
+            $('tr:nth-child(10) td:nth-child(1)').addClass('car');
         }
 
-        $('table').click( function () {
-            console.log($(this).index())
-        });
+        function moveCar () {
+            gameBoard.keydown(function (event) {
+                var lastPositionOfCar =  $(this).find('td.car');
+
+                var whatKeyIsPressed = event.which || event.keyCode;
+
+                switch (whatKeyIsPressed) {
+                    case 37:
+                        $(this).find('td.car').prev().addClass('car');
+                        break;
+                    case 38:
+                        $(this).find('td.car').parent().prev().find(':nth-child('+ (lastPositionOfCar.index() + 1) +')').addClass('car');
+                        break;
+                    case 39:
+                        $(this).find('td.car').next().addClass('car');
+                        break;
+                    case 40:
+                        $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')').addClass('car');
+                        break;
+                }
+
+
+
+
+                lastPositionOfCar.removeClass('car');
+            });
+        }
+
+        startPositionOfCar();
+        moveCar();
+
+
+
+
+
     });
 })();
