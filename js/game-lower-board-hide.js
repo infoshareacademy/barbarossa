@@ -1,4 +1,4 @@
 $('.game-button--exit').click(function() {
-    $('.game-all-boards').removeClass('game-board-visible');
-    $('.game-all-boards').addClass('game-board-hidden');
+    $('.game-all-boards').children().removeClass('game-board-visible');
+    $('.game-all-boards').children().addClass('game-board-hidden');
 });
