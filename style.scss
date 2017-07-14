@@ -3,6 +3,7 @@
 $colorMain: #ba4436;
 $colorSecondary: #FBEAD0;
 $colorAccent: #222;
+$colorFont: #eee;
 
 @mixin shadow-content() {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
@@ -55,25 +56,25 @@ body {
         margin-right: 10px;
       }
       & > a {
-        color: #eee;
+        color: $colorFont;
         font-family: Roboto, sans-serif;
         margin: 5.5px 0 5.5px 30px; // center vertically in navbar, space between items
         transition: all 1s;
         &:hover {
           cursor: pointer;
           color: $colorAccent;
-          background-color: #eee;
+          background-color: $colorFont;
           font-weight: bold;
         }
         &:focus {
-          color: #eee;
+          color: $colorFont;
           background-color: $colorAccent;
           font-weight: normal;
         }
       }
       a.nav-menu__item--active {
         color: $colorAccent;
-        background-color: #eee;
+        background-color: $colorFont;
         font-weight: bold;
       }
     }
@@ -143,25 +144,25 @@ body {
 ////////////////// Nav - button //////////////////
 
 .nav-menu .nav-menu__btn {
-  border-color: #eee;
+  border-color: $colorFont;
   transition: all 0.5s;
   margin-top: 9.5px; // center vertically in navbar
   margin-bottom: 9.5px; // center vertically in navbar
 }
 
 .nav-menu .nav-menu__btn .icon-bar {
-  background-color: #eee;
+  background-color: $colorFont;
 }
 
 .nav-menu .nav-menu__btn:focus {
   background-color: $colorAccent;
   .icon-bar {
-    background-color: #eee;
+    background-color: $colorFont;
   }
 }
 
 .nav-menu .nav-menu__btn:hover {
-  background-color: #eee;
+  background-color: $colorFont;
   transform: rotate(360deg);
   .icon-bar {
     background-color: $colorAccent;
@@ -247,7 +248,7 @@ body {
 }
 
 #function ul {
-  color: #eee;
+  color: $colorFont;
   margin: 0;
   padding: 0;
 
@@ -271,7 +272,7 @@ body {
 }
 
 .short-info {
-  color: #eee;
+  color: $colorFont;
   background-color: #ba4436;
   padding: 40px;
   padding-bottom: 90px;
@@ -314,7 +315,7 @@ section#sign {
     font-size: 3em;
     width: 2em;
     height: 2em;
-    border: 2px solid #eee;
+    border: 2px solid $colorFont;
     border-radius: 100%;
   }
   .label {
@@ -329,7 +330,7 @@ section#sign {
 
 form.premiere {
   text-align: center;
-  color: #eee;
+  color: $colorFont;
   letter-spacing: 2px;
   font-weight: bold;
   margin-top: 1em;
@@ -367,7 +368,7 @@ form.premiere input {
     font-size: 1.3em;
     border-radius: 1.5em 0;
     transition: 0.5s all;
-    color: #eee;
+    color: $colorFont;
     font-weight: 900;
     &:hover {
       background: darken($colorAccent, 10%);
@@ -386,7 +387,7 @@ form.premiere input {
 }
 
 #team {
-  color: #eee;
+  color: $colorFont;
   padding: 8em 0;
   .team-single {
     background-color: $colorMain;
@@ -507,7 +508,7 @@ footer {
       padding: 0 5px;
       text-decoration: none;
       text-align: center;
-      color: #eee;
+      color: $colorFont;
       transition: all 0.5s;
       i {
         font-size: 3em;
@@ -521,7 +522,7 @@ footer {
 }
 
 .footer-caption {
-  color: #eee;
+  color: $colorFont;
   font-size: 1.2em;
   font-weight: bold;
   padding: 30px 0;
@@ -596,13 +597,30 @@ footer {
 }
 
 .game-begin-board {
+  position: relative;
   width: 500px;
   height: 500px;
   display: block;
-  background-color: $colorAccent;
-  @include shadow-content();
+  background: linear-gradient(to right, $colorAccent, darken($colorAccent, 10%), $colorAccent);
+  padding-top: 130px;
+  border: 30px dashed $colorMain;
   border-radius: 10px;
+  text-align: center;
   @include flex-align();
+  img {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+  }
+  p {
+    margin-top: 30px;
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Caveat', cursive;
+    color: $colorFont;
+    text-shadow: 0 0 15px #000;
+  }
 }
 
 .game-button {
@@ -615,7 +633,7 @@ footer {
   outline: none;
   border: none;
   cursor: pointer;
-  color: #eee;
+  color: #ddd;
   font-size: 1.3em;
   font-weight: bold;
   letter-spacing: 1px;
@@ -624,18 +642,18 @@ footer {
   text-shadow: 0 0 15px #000;
 }
 .game-button--entry {
-  background-color: forestgreen;
+  background-color: darken(forestgreen, 10%);
   &:hover {
-    background-color: darken(forestgreen, 10%);
-    transform: scale(1.05);
+    background-color: forestgreen;
+    color: $colorFont;
   }
 }
 
 .game-button--exit {
-  background-color: darkred;
+  background-color: darken(darkred, 10%);
   &:hover {
-    background-color: darken(darkred, 10%);
-    transform: scale(1.05);
+    background-color: darkred;
+    color: $colorFont;
   }
 }
 

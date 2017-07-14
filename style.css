@@ -453,15 +453,30 @@ footer {
   justify-content: center; }
 
 .game-begin-board {
+  position: relative;
   width: 500px;
   height: 500px;
   display: block;
-  background-color: #222;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #222, #090909, #222);
+  padding-top: 130px;
+  border: 30px dashed #ba4436;
   border-radius: 10px;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center; }
+  .game-begin-board img {
+    width: 150px;
+    position: absolute;
+    top: 50px; }
+  .game-begin-board p {
+    margin-top: 30px;
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Caveat', cursive;
+    color: #eee;
+    text-shadow: 0 0 15px #000; }
 
 .game-button {
   display: flex;
@@ -475,7 +490,7 @@ footer {
   outline: none;
   border: none;
   cursor: pointer;
-  color: #eee;
+  color: #ddd;
   font-size: 1.3em;
   font-weight: bold;
   letter-spacing: 1px;
@@ -484,16 +499,16 @@ footer {
   text-shadow: 0 0 15px #000; }
 
 .game-button--entry {
-  background-color: forestgreen; }
+  background-color: #186218; }
   .game-button--entry:hover {
-    background-color: #186218;
-    transform: scale(1.05); }
+    background-color: forestgreen;
+    color: #eee; }
 
 .game-button--exit {
-  background-color: darkred; }
+  background-color: #580000; }
   .game-button--exit:hover {
-    background-color: #580000;
-    transform: scale(1.05); }
+    background-color: darkred;
+    color: #eee; }
 
 .game-board-visible {
   display: block !important; }
