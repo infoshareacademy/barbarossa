@@ -20,7 +20,7 @@ body {
   background-color: $colorSecondary;
 }
 
-#sign, #function, #team {
+#home, #sign, #function, #team {
   padding-top: 73px; // padding to pass over navigation bar
 }
 
@@ -98,8 +98,8 @@ body {
 ////////////////// Style for nav while collapse on scroll //////////////////
 
 .nav-menu--collapse {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .nav-menu--collapse .nav-menu__brand-img {
@@ -382,15 +382,15 @@ form.premiere input {
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
 @mixin teamAnimateEffect(){
-  filter: brightness(30%) blur(2px);
+  filter: brightness(40%) blur(2px) grayscale(10%);
 }
 
 #team {
   color: #eee;
-  padding-bottom: 80px;
+  padding: 8em 0;
   .team-single {
     background-color: $colorMain;
-    min-height: 550px;
+    min-height: 580px;
     margin: 0.5em;
     margin-top: 4em;
   }
@@ -451,52 +451,43 @@ form.premiere input {
 }
 
 .Klimek, .Richert, .Ostrowska, .Paczkowski {
-  transition: all 0.5s;
+  transition: all 0.7s;
   cursor: pointer;
 }
 
 .background-klimek {
-  background: url("pictures/teamSecondWorldWar.jpg") fixed;
-  background-size: cover;
-  .Klimek {
-    transform: scale(1.05);
-  }
   .Richert, .Paczkowski, .Ostrowska {
     @include teamAnimateEffect();
   }
 }
 
 .background-richert {
-  background: url("pictures/teamFootball.jpg") fixed;
-  background-size: cover;
-  .Richert {
-    transform: scale(1.05);
-  }
   .Klimek, .Paczkowski, .Ostrowska {
     @include teamAnimateEffect();
   }
 }
 
 .background-ostrowska {
-  background: url("pictures/teamTraveling.jpg") fixed;
-  background-size: cover;
-  .Ostrowska {
-    transform: scale(1.05);
-  }
   .Klimek, .Richert, .Paczkowski {
     @include teamAnimateEffect();
   }
 }
 
 .background-paczkowski {
-  background: url("pictures/teamOldCar.jpg") fixed;
-  background-size: cover;
-  .Paczkowski {
-    transform: scale(1.05);
-  }
   .Klimek, .Richert, .Ostrowska {
     @include teamAnimateEffect();
   }
+}
+
+.animation-hidden {
+  opacity: 0;
+  transition: all 1s;
+  overflow: hidden;
+  transform: translateX(-200%)
+}
+.animation-visible {
+  transition: all 1s;
+  opacity: 1;
 }
 
 ///////////////////////////////////////////// Footer //////////////////////////////////////////////
