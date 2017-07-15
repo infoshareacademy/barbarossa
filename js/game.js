@@ -29,17 +29,6 @@
         game.append(gameBoard);
         gameBoard.focus();
 
-        (function addPassengers() {
-            var counter = 0;
-            var interval = setInterval(function() {
-                counter++;
-                var x = (Math.floor(Math.random() * size - 1) + 1);
-                var y = (Math.floor(Math.random() * size - 1) + 1);
-                $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').addClass('passenger');
-                if (counter > 10)
-                    clearInterval(interval);
-                },2000)
-        })();
 
         (function startPositionOfCarAndBuildings() {
             $('tr:nth-child(10) td:nth-child(1)').addClass('car');
@@ -50,7 +39,19 @@
 
         // Passengers
 
-        // Game
+        (function addPassengers() {
+            var counter = 0;
+            var interval = setInterval(function() {
+                counter++;
+                var x = (Math.floor(Math.random() * size - 1) + 1);
+                var y = (Math.floor(Math.random() * size - 1) + 1);
+                $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').addClass('passenger');
+                if (counter > 10)
+                    clearInterval(interval);
+            },2000)
+        })();
+
+        // Car
 
         gameBoard.keydown(function moveCar(event) {
             event.preventDefault();
