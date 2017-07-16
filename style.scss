@@ -186,40 +186,42 @@ body {
 .zajawka-head {
   font-size: 60px;
   font-weight: 800;
-  color: $colorSecondary;
+  color: $colorFont;
   font-family: 'Viga', sans-serif;
   text-align: center;
   display: block;
   margin: -10px 0 0 0;
+  text-shadow: 0 0 50px #000;
 }
 .zajawka-txt {
   font-size: 20px;
   font-weight: 600;
-  color: $colorSecondary;
+  color: $colorFont;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
   padding-top: 10px;
   padding-bottom: 20px;
+  text-shadow: 0 0 50px #000;
 }
 
 .button {
   background-color: $colorMain;
   border: none;
-  margin-top: 20px;
+  margin: 20px;
   padding: 0.8em 1.3em;
   text-align: center;
   border-radius: 5px;
   transition: all 0.5s;
-}
-.button-txt {
-  text-align: center;
-  text-decoration: none;
-  color: $colorSecondary;
-  font-size: 20px;
-  font-weight: 800;
+  color: $colorFont;
+  font-size: 1.5em;
+  font-weight: bold;
   font-family: 'Viga', sans-serif;
+  &:hover {
+    background-color: $colorAccent;
+    color: $colorFont;
+  }
 }
 @media screen and (max-width: 600px ){
   .button {
