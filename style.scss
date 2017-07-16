@@ -558,27 +558,49 @@ footer {
 
 ///////////////////////////////////////////// Scroll Top //////////////////////////////////////////////
 
-#scrollToTop {
-  width: 25px;
-  height: 25px;
-  background: red;
-  border-radius: 50%;
+.scrollToTop {
+  width: 75px;
+  height: 75px;
+  padding-top: 8px;
+  background: $colorAccent;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  color: black;
-  font-size: 1em;
+  bottom: 15px;
+  right: 15px;
+  font-size: 3em;
   text-align: center;
   cursor: pointer;
   display: none;
+  transition: all 0.5s;
+  color: $colorFont;
+  border-radius: 5px;
+  &:hover {
+    background: lighten($colorAccent,5%);
+    padding-top: 4px;
+  }
 }
-#scrollToTop:hover {
-  background: green }
 
 ///////////////////////////////////////////// Cookies //////////////////////////////////////////////
 
 .cookies {
   display: none;
+}
+.cookies-styles {
+  position: fixed;
+  bottom: 0;
+  background-color: $colorAccent;
+  padding: 1em 3em;
+  text-align: justify;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  color: $colorFont;
+  a {
+    text-decoration: none;
+    color: $colorFont;
+    transition: all 0.5s;
+    &:hover {
+      color: $colorMain;
+    }
+  }
 }
 
 ///////////////////////////////////////////// The Game //////////////////////////////////////////////

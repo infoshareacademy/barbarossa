@@ -418,25 +418,43 @@ footer {
       justify-content: center; }
       .footer-contact div.footer-contact-container a {
         padding: 0 15px; } }
-#scrollToTop {
-  width: 25px;
-  height: 25px;
-  background: red;
-  border-radius: 50%;
+.scrollToTop {
+  width: 75px;
+  height: 75px;
+  padding-top: 8px;
+  background: #222;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  color: black;
-  font-size: 1em;
+  bottom: 15px;
+  right: 15px;
+  font-size: 3em;
   text-align: center;
   cursor: pointer;
-  display: none; }
-
-#scrollToTop:hover {
-  background: green; }
+  display: none;
+  transition: all 0.5s;
+  color: #eee;
+  border-radius: 5px; }
+  .scrollToTop:hover {
+    background: #2f2f2f;
+    padding-top: 4px; }
 
 .cookies {
   display: none; }
+
+.cookies-styles {
+  position: fixed;
+  bottom: 0;
+  background-color: #222;
+  padding: 1em 3em;
+  text-align: justify;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  color: #eee; }
+  .cookies-styles a {
+    text-decoration: none;
+    color: #eee;
+    transition: all 0.5s; }
+    .cookies-styles a:hover {
+      color: #ba4436; }
 
 .game-background-board {
   position: fixed;
