@@ -28,6 +28,11 @@
                         <div class="button game-button game-button--exit">
                             <span>Wyjście</span>
                         </div>
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-info btn-md" data-toggle="modal"
+                                data-target="#game-instruction"
+                                data-backdrop="true">Modal with Overlay (true)
+                        </button>
                         <p>The Game</p>
                     </div>
                 </div>
@@ -142,10 +147,6 @@
             </a>
         </div>
     </section>
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#game-instruction"
-            data-backdrop="true">Modal with Overlay (true)
-    </button>
     <!--Spot for TASK 6: "Spis planowanych funckcji produktu"-->
     <section id="function">
         <div class="container-fluid">
@@ -491,28 +492,6 @@
             </div>
             <div class="modal-footer center-block">
                 <button type="button" class="btn btn-success btn-lg center-block" data-dismiss="modal">Zagraj!</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<!-- Modal udający grę-->
-<div class="modal fade" id="game" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">nowuy modal</h4>
-            </div>
-            <div class="modal-body">
-                <p>This modal has a dark overlay.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
