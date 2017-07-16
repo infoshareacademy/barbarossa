@@ -10,11 +10,11 @@ body {
   padding: 15px 0;
   background-color: #222;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-  transition: all 1s; }
+  transition: padding 1s; }
 
 .nav-menu__brand-img {
   max-width: 100px;
-  transition: all 1s; }
+  transition: max-width 1s; }
 
 .nav-menu__brand {
   height: auto;
@@ -34,7 +34,7 @@ body {
         color: #eee;
         font-family: Roboto, sans-serif;
         margin: 5.5px 0 5.5px 30px;
-        transition: all 1s; }
+        transition: font-size 1s, margin 1s, background-color 1s, color 1s; }
         .nav-menu .nav-menu__list > li > a:hover {
           cursor: pointer;
           color: #222;

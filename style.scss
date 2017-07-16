@@ -30,12 +30,12 @@ body {
   padding: 15px 0;
   background-color: $colorAccent;
   @include shadow-content();
-  transition: all 1s;
+  transition: padding 1s;
 }
 
 .nav-menu__brand-img {
   max-width: 100px;
-  transition: all 1s;
+  transition: max-width 1s;
 }
 
 .nav-menu__brand {
@@ -58,7 +58,7 @@ body {
         color: #eee;
         font-family: Roboto, sans-serif;
         margin: 5.5px 0 5.5px 30px; // center vertically in navbar, space between items
-        transition: all 1s;
+        transition: font-size 1s, margin 1s, background-color 1s, color 1s;
         &:hover {
           cursor: pointer;
           color: $colorAccent;
