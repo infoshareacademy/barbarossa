@@ -164,10 +164,10 @@ body {
     display: none; }
 
   .zajawka-head {
-    font-size: 30px; }
+    font-size: 1.8em; }
 
   .zajawka-txt {
-    font-size: 10px; } }
+    font-size: 1.1em; } }
 #function {
   background-color: #FBEAD0;
   font-weight: bold;
@@ -433,8 +433,7 @@ footer {
   color: #eee;
   border-radius: 5px; }
   .scrollToTop:hover {
-    background: #2f2f2f;
-    padding-top: 4px; }
+    background: #2f2f2f; }
 
 .cookies {
   display: none; }

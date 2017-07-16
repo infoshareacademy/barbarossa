@@ -228,10 +228,10 @@ body {
     display: none;
   }
   .zajawka-head {
-    font-size: 30px;
+    font-size: 1.8em;
   }
   .zajawka-txt {
-    font-size: 10px;
+    font-size: 1.1em;
   }
 }
 
@@ -575,7 +575,6 @@ footer {
   border-radius: 5px;
   &:hover {
     background: lighten($colorAccent,5%);
-    padding-top: 4px;
   }
 }
 
