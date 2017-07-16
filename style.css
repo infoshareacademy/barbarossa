@@ -112,8 +112,19 @@ body {
 .nav-menu .navbar-collapse {
   border: 0; }
 
-.teaser .carousel {
-  margin-bottom: 60px; }
+.carousel {
+  position: relative; }
+
+.carousel-overlay {
+  background: linear-gradient(to bottom, transparent, #000, #000, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 1;
+  opacity: 0.8; }
 
 .teaser .carousel-caption {
   z-index: 10; }
@@ -122,8 +133,9 @@ body {
   background-color: #777; }
 
 .teaser .zajawka-head {
-  font-size: 60px;
+  font-size: 4.5em;
   font-weight: 800;
+  padding: 0.2em;
   color: #eee;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -132,30 +144,22 @@ body {
   text-shadow: 0 0 50px #000; }
 
 .teaser .zajawka-txt {
-  font-size: 20px;
+  font-size: 1.3em;
   font-weight: 600;
+  padding: 1.5em;
   color: #eee;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
-  padding-top: 10px;
-  padding-bottom: 20px;
   text-shadow: 0 0 50px #000; }
 
 .teaser .button {
-  background-color: transparent;
-  border: solid;
-  border-color: #FBEAD0;
-  margin-top: 20px;
-  text-align: center; }
-
-.teaser .button:hover {
   background-color: #ba4436;
   border: none;
   margin: 20px;
-  padding: 0.8em 1.3em;
-  border-color: #ba4436; }
+  text-align: center;
+  padding: 0.7em 1.5em; }
 
 .teaser .button-txt {
   text-align: center;
@@ -174,10 +178,10 @@ body {
     display: none; }
 
   .teaser .zajawka-head {
-    font-size: 30px; }
+    font-size: 2.3em; }
 
   .teaser .zajawka-txt {
-    font-size: 10px; } }
+    font-size: 1em; } }
 .game-instruction .carousel .item {
   background-color: white; }
 
@@ -480,6 +484,7 @@ footer {
 .cookies-wrapper {
   position: fixed;
   bottom: 0;
+  z-index: 1000;
   background-color: #222;
   padding: 1em 3em;
   text-align: justify;
