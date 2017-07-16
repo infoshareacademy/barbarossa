@@ -3,6 +3,8 @@
 (function () {
     $(document).ready(function () {
 
+        // Board
+
         var game = $('#game');
 
         function times(n, callback) {
@@ -12,7 +14,7 @@
         }
 
         var gameBoard = $('<table>');
-        var size = 30;
+        var size = 10;
         var score = 0;
 
         times(size, function () {
@@ -26,6 +28,16 @@
 
         game.append(gameBoard);
         gameBoard.focus();
+
+
+        (function startPositionOfCarAndBuildings() {
+            $('tr:nth-child(10) td:nth-child(1)').addClass('car');
+            $('tr:nth-child(5) td:nth-child(5)').addClass('building');
+            $('tr:nth-child(5) td:nth-child(6)').addClass('building');
+
+        })();
+
+        // Passengers
 
         (function addPassengers() {
             var counter = 0;
@@ -50,12 +62,7 @@
             }, 2000)
         })();
 
-        (function startPositionOfCarAndBuildings() {
-            $('tr:nth-child(10) td:nth-child(1)').addClass('car');
-            $('tr:nth-child(odd) td:nth-child(odd)').addClass('building');
-            $('tr:nth-child(5) td:nth-child(6)').addClass('building');
-
-        })();
+        // Car
 
         gameBoard.keydown(function moveCar(event) {
             event.preventDefault();
@@ -66,21 +73,18 @@
             switch (whatKeyIsPressed) {
                 case 37:
                     nextPositionOfCar = $(this).find('td.car').prev();
-                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
                     break;
                 case 38:
                     nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
                     break;
                 case 39:
                     nextPositionOfCar = $(this).find('td.car').next();
-                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
                     break;
                 case 40:
                     nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
                     break;
             }
+            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
         });
 
         function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar) {

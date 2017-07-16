@@ -1,6 +1,7 @@
 (function () {
 
     var $navMenuItems = $('.nav-menu__list li a');
+    var $navMenuItemTeam = $("a[href='#team']");
 
     function changeActiveState() {
         var scrollPosition = $(document).scrollTop();
@@ -11,7 +12,7 @@
 
             if (scrollPosition === $(document).height() - $(window).height()) { // when page ends active last link
                 $navMenuItems.removeClass("nav-menu__item--active");
-                $("a[href='#team']").addClass("nav-menu__item--active");
+                $navMenuItemTeam.addClass("nav-menu__item--active");
             }
 
             else if (refOfCurrentLink.length) {
