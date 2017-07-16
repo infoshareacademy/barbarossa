@@ -41,14 +41,25 @@
 
         (function addPassengers() {
             var counter = 0;
-            var interval = setInterval(function() {
-                counter++;
+            var interval = setInterval(function () {
+
                 var x = (Math.floor(Math.random() * size - 1) + 1);
                 var y = (Math.floor(Math.random() * size - 1) + 1);
+                if ($('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('building') ||
+                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('passenger') ||
+                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('car')
+                ) {}
+                else {
+                    counter++;
                 $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').addClass('passenger');
+                var clearClass = setInterval(function () {
+                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').removeClass('passenger');
+
+                }, 10000)
                 if (counter > 10)
                     clearInterval(interval);
-            },2000)
+            }
+            }, 2000)
         })();
 
         // Car
