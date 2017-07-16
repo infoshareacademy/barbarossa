@@ -518,7 +518,7 @@ footer {
   height: 500px;
   display: block;
   background: linear-gradient(to right, #222, #090909, #222);
-  padding-top: 130px;
+  padding-top: 40px;
   border: 30px dashed #ba4436;
   border-radius: 10px;
   text-align: center;
@@ -526,11 +526,13 @@ footer {
   align-items: center;
   justify-content: center; }
   .game-begin-board img {
-    width: 150px;
+    width: 130px;
     position: absolute;
-    top: 50px; }
+    top: 40px; }
   .game-begin-board p {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 45px;
     font-size: 4em;
     font-weight: bold;
     letter-spacing: 2px;
@@ -556,7 +558,8 @@ footer {
   letter-spacing: 1px;
   border-radius: 10px;
   transition: all 0.5s;
-  text-shadow: 0 0 15px #000; }
+  text-shadow: 0 0 15px #000;
+  text-align: center; }
 
 .game-button--entry {
   background-color: #186218; }
@@ -568,6 +571,19 @@ footer {
   background-color: #580000; }
   .game-button--exit:hover {
     background-color: darkred;
+    color: #eee; }
+
+.game-button--instruction {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.1em;
+  padding: 1em;
+  width: auto;
+  border-radius: 5px;
+  background-color: #1347a5; }
+  .game-button--instruction:hover {
+    background-color: #185bd3;
     color: #eee; }
 
 .game-board-visible {
