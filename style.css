@@ -455,7 +455,7 @@ footer {
       justify-content: center; }
       .footer-contact div.footer-contact-container a {
         padding: 0 15px; } }
-.scrollToTop {
+.arrow-to-top {
   width: 75px;
   height: 75px;
   padding-top: 8px;
@@ -470,13 +470,10 @@ footer {
   transition: all 0.5s;
   color: #eee;
   border-radius: 5px; }
-  .scrollToTop:hover {
+  .arrow-to-top:hover {
     background: #2f2f2f; }
 
-.cookies {
-  display: none; }
-
-.cookies-styles {
+.cookies-wrapper {
   position: fixed;
   bottom: 0;
   background-color: #222;
@@ -485,11 +482,11 @@ footer {
   font-size: 1.1em;
   line-height: 1.5em;
   color: #eee; }
-  .cookies-styles a {
+  .cookies-wrapper a {
     text-decoration: none;
     color: #eee;
     transition: all 0.5s; }
-    .cookies-styles a:hover {
+    .cookies-wrapper a:hover {
       color: #6f6f6f; }
 
 .game-background-board {

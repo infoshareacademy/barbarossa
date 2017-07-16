@@ -607,7 +607,7 @@ footer {
 
 ///////////////////////////////////////////// Scroll Top //////////////////////////////////////////////
 
-.scrollToTop {
+.arrow-to-top {
   width: 75px;
   height: 75px;
   padding-top: 8px;
@@ -629,10 +629,7 @@ footer {
 
 ///////////////////////////////////////////// Cookies //////////////////////////////////////////////
 
-.cookies {
-  display: none;
-}
-.cookies-styles {
+.cookies-wrapper {
   position: fixed;
   bottom: 0;
   background-color: $colorAccent;

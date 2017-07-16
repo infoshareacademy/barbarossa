@@ -4,7 +4,7 @@
     // console.log('data ciasteczka ', localStorage.getItem('data ciasteczka'));
     // console.log('data dzisiejsza ', todayDate);
     // console.log('mineło ', expireTime);
-    var $cookiesWrapper = $('div#div-cookies');
+    var $cookiesWrapper = $('div#cookies');
     var $cookiesLink = $('a#cookies-link');
 
     if (expireTime > 10000000000000000) {
