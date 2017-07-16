@@ -598,7 +598,7 @@ footer {
     color: $colorFont;
     transition: all 0.5s;
     &:hover {
-      color: $colorMain;
+      color: darken($colorFont, 50%);
     }
   }
 }
