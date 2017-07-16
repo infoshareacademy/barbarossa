@@ -29,12 +29,16 @@
 
         (function addPassengers() {
             var counter = 0;
-            var licznik = 0;
             var interval = setInterval(function () {
-                counter++;
+
                 var x = (Math.floor(Math.random() * size - 1) + 1);
                 var y = (Math.floor(Math.random() * size - 1) + 1);
-
+                if ($('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('building') ||
+                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('passenger') ||
+                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('car')
+                ) {}
+                else {
+                    counter++;
                 $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').addClass('passenger');
                 var clearClass = setInterval(function () {
                     $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').removeClass('passenger');
@@ -42,12 +46,13 @@
                 }, 10000)
                 if (counter > 10)
                     clearInterval(interval);
+            }
             }, 2000)
         })();
 
         (function startPositionOfCarAndBuildings() {
             $('tr:nth-child(10) td:nth-child(1)').addClass('car');
-            $('tr:nth-child(5) td:nth-child(5)').addClass('building');
+            $('tr:nth-child(odd) td:nth-child(odd)').addClass('building');
             $('tr:nth-child(5) td:nth-child(6)').addClass('building');
 
         })();
