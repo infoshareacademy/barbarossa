@@ -1,12 +1,14 @@
 $(document).ready(function () {
+    var $navMenuItems = $('.nav-menu__list  a');
 
     $('a[href^="#"]').on('click', function (event) {
 
         var target = $($(this).attr('href'));
 
-        $('.nav-menu__list  a').each(function () {
+        $navMenuItems.each(function () {
             $(this).removeClass('nav-menu__item--active');
         });
+
         $(this).addClass('nav-menu__item--active');
 
         if (target.length) {

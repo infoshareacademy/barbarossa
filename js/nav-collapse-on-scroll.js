@@ -1,9 +1,10 @@
 (function () {
     var $navbar = $(".nav-menu");
     var lastKnownScrollPosition = 0;
+    var scrollPosition = 0;
 
     $(window).scroll(function () {
-        var scrollPosition = $(this).scrollTop();
+        scrollPosition = $(this).scrollTop();
 
         if (scrollPosition > lastKnownScrollPosition) {
             $navbar.addClass("nav-menu--collapse");
