@@ -187,7 +187,7 @@ body {
   bottom: 0;
   display: block;
   z-index: 1;
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 .teaser .carousel-caption {
@@ -640,7 +640,7 @@ footer {
   color: $colorFont;
   border-radius: 5px;
   &:hover {
-    background: lighten($colorAccent, 5%);
+    background: lighten($colorAccent, 25%);
   }
 }
 
@@ -666,7 +666,7 @@ footer {
   }
 }
 
-///////////////////////////////////////////// The Game //////////////////////////////////////////////
+///////////////////////////////////////////// The Game - Questions Board //////////////////////////////////////////////
 
 .game-background-board {
   position: fixed;
@@ -725,7 +725,7 @@ footer {
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 10px;
-  transition: all 0.5s;
+  transition: all 0.3s;
   text-shadow: 0 0 15px #000;
   text-align: center;
 }
@@ -754,11 +754,15 @@ footer {
   padding: 1em;
   width: auto;
   border-radius: 5px;
-  background-color: darken(cornflowerblue, 30%);
+  background-color: $colorAccent;
+  border: 1px solid lighten($colorAccent, 10%);
+  @include shadow-content();
   &:hover {
-    background-color: darken(cornflowerblue, 20%);
     color: $colorFont;
+    background-color: darken($colorAccent, 20%);
+    border-color: transparent;
   }
+
 }
 
 .game-board-visible {
@@ -769,3 +773,72 @@ footer {
   display: none !important;
 }
 
+///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
+
+.game-main {
+  @include flex-align();
+  padding-top: 40px;
+}
+.game-main table {
+  border-color: transparent;
+  border-spacing: 0;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+.game-main tbody {
+  @include shadow-content();
+  background: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/asfalt.png');
+}
+.game-main td{
+  width: 20px;
+  height: 20px;
+}
+
+.car {
+  background: url('pictures/gameBus.png') center center;
+  background-size: 25px;
+}
+
+.building {
+  background-color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.building-skycraper {
+  background: #555;
+  border: 1px solid #999;
+  @include shadow-content();
+}
+.building-parking {
+  background: #777;
+  border-right: 2px dashed white;
+}
+
+.building-fountain {
+  background: url('pictures/gameFountain.png') center center #306225;
+  background-size: 20px;
+}
+
+.building-parking--last {
+  background: #777;
+}
+.building-grass {
+  background: url('pictures/gameGrass.png') center center;
+  background-size: 25px;
+}
+.building-grass--cornercut {
+  background: url('pictures/gameGrassCornerOnly.png') center center;
+  background-size: 25px;
+}
+.building-tree {
+  background: url('pictures/gameTree.png') center center #111;
+  background-size: 25px;
+}
+
+.passenger {
+  background: url('pictures/gamePassenger.png') center center;
+  background-size: 25px;
+}
