@@ -174,18 +174,34 @@ body {
 }
 
 ///////////////////////////////////////// Zajawka - Home //////////////////////////////////////////
-.teaser .carousel {
-  margin-bottom: 60px;
+.carousel {
+  position: relative;
 }
+
+.carousel-overlay {
+  background: linear-gradient(to bottom, transparent, #000, #000, #000, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 1;
+  opacity: 0.8;
+}
+
 .teaser .carousel-caption {
   z-index: 10;
 }
+
 .teaser .carousel .item {
   background-color: #777;
 }
+
 .teaser .zajawka-head {
-  font-size: 60px;
+  font-size: 4.5em;
   font-weight: 800;
+  padding: 0.2em;
   color: $colorFont;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -193,33 +209,27 @@ body {
   margin: -10px 0 0 0;
   text-shadow: 0 0 50px #000;
 }
+
 .teaser .zajawka-txt {
-  font-size: 20px;
+  font-size: 1.3em;
   font-weight: 600;
+  padding: 1.5em;
   color: $colorFont;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
-  padding-top: 10px;
-  padding-bottom: 20px;
   text-shadow: 0 0 50px #000;
 }
 
 .teaser .button {
-  background-color: transparent;
-  border: solid;
-  border-color: $colorSecondary;
-  margin-top: 20px;
-  text-align: center;
-}
-.teaser .button:hover {
   background-color: $colorMain;
   border: none;
   margin: 20px;
-  padding: 0.8em 1.3em;
-  border-color: $colorMain;
+  text-align: center;
+  padding: 0.7em 1.5em;
 }
+
 .teaser .button-txt {
   text-align: center;
   border-radius: 5px;
@@ -233,15 +243,16 @@ body {
     color: $colorFont;
   }
 }
-@media screen and (max-width: 600px ){
+
+@media screen and (max-width: 600px) {
   .teaser .button {
     display: none;
   }
   .teaser .zajawka-head {
-    font-size: 30px;
+    font-size: 2.3em;
   }
   .teaser .zajawka-txt {
-    font-size: 10px;
+    font-size: 1em;
   }
 }
 
@@ -260,7 +271,7 @@ body {
 }
 
 .game-instruction .glyphicon {
- color: #0f0f0f;
+  color: #0f0f0f;
 }
 
 .game-instruction .carousel-indicators li {
@@ -272,8 +283,9 @@ body {
 }
 
 .game-instruction .zajawka-head {
-color: #0f0f0f;
+  color: #0f0f0f;
 }
+
 .game-instruction .zajawka-txt {
   color: #0f0f0f;
 }
@@ -283,6 +295,10 @@ color: #0f0f0f;
   height: 500px;
 }
 
+.modal {
+  position: fixed;
+  z-index: 2000;
+}
 
 //////////////////////////////////////////// Function /////////////////////////////////////////////
 
@@ -334,7 +350,7 @@ color: #0f0f0f;
   text-align: center;
   padding-bottom: 30px;
   padding-top: 20px;
-  font-size: 1.4em;
+  font-size: 1.1em;
   font-family: Roboto, sans-serif;
 }
 
@@ -431,7 +447,7 @@ form.premiere input {
 }
 
 ////////////////////////////////////////////// Team ///////////////////////////////////////////////
-@mixin teamAnimateEffect(){
+@mixin teamAnimateEffect() {
   filter: brightness(40%) blur(2px) grayscale(10%);
 }
 
@@ -535,6 +551,7 @@ form.premiere input {
   overflow: hidden;
   transform: translateX(-200%)
 }
+
 .animation-visible {
   transition: all 1s;
   opacity: 1;
@@ -623,7 +640,7 @@ footer {
   color: $colorFont;
   border-radius: 5px;
   &:hover {
-    background: lighten($colorAccent,5%);
+    background: lighten($colorAccent, 5%);
   }
 }
 
@@ -632,6 +649,7 @@ footer {
 .cookies-wrapper {
   position: fixed;
   bottom: 0;
+  z-index: 1000;
   background-color: $colorAccent;
   padding: 1em 3em;
   text-align: justify;
@@ -669,18 +687,20 @@ footer {
   height: 500px;
   display: block;
   background: linear-gradient(to right, $colorAccent, darken($colorAccent, 10%), $colorAccent);
-  padding-top: 130px;
+  padding-top: 40px;
   border: 30px dashed $colorMain;
   border-radius: 10px;
   text-align: center;
   @include flex-align();
   img {
-    width: 150px;
+    width: 130px;
     position: absolute;
-    top: 50px;
+    top: 40px;
   }
   p {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 45px;
     font-size: 4em;
     font-weight: bold;
     letter-spacing: 2px;
@@ -707,7 +727,9 @@ footer {
   border-radius: 10px;
   transition: all 0.5s;
   text-shadow: 0 0 15px #000;
+  text-align: center;
 }
+
 .game-button--entry {
   background-color: darken(forestgreen, 10%);
   &:hover {
@@ -724,9 +746,25 @@ footer {
   }
 }
 
+.game-button--instruction {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.1em;
+  padding: 1em;
+  width: auto;
+  border-radius: 5px;
+  background-color: darken(cornflowerblue, 30%);
+  &:hover {
+    background-color: darken(cornflowerblue, 20%);
+    color: $colorFont;
+  }
+}
+
 .game-board-visible {
   display: block !important;
 }
+
 .game-board-hidden {
   display: none !important;
 }
