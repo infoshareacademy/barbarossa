@@ -17,6 +17,9 @@
         var gameBoard = $('<table>');
         var size = 10;
         var score = 0;
+        var scoreBoard = $('<p>');
+
+
 
         times(size, function () {
             var tr = $('<tr>');
@@ -27,37 +30,63 @@
             gameBoard.append(tr).attr('tabindex', 0)
         });
 
-        game.append(gameBoard);
+        game.append(gameBoard).append(scoreBoard);
+        scoreBoard.text('Zebrani pasażerowie: ' + score);
         gameBoard.focus();
 
 
         (function startPositionOfCarAndObstacles() {
             $('tr:nth-child(10) td:nth-child(1)').addClass('car');
-            $('tr:nth-child(5) td:nth-child(5)').addClass('obstacle').addClass('obstacle--building');
+            $('tr:nth-child(odd) td:nth-child(odd)').addClass('obstacle').addClass('obstacle--building');
             $('tr:nth-child(5) td:nth-child(6)').addClass('obstacle').addClass('obstacle--building');
         })();
 
         // Passengers and bottles
 
-        addElements('passenger',20,100,5000);
-        addElements('bottle',3,5000,60000);
+        addElements('passenger', 60, 1000, true, 5000);
+        addElements('bottle', 3, 5000, false);
 
-        function addElements(elementClass, counterLimit, intervalTime, disappearTime) {
+        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
             var counter = 0;
             var interval = setInterval(function () {
 
                 var x = (Math.floor(Math.random() * size) + 1);
                 var y = (Math.floor(Math.random() * size) + 1);
                 var $nextPositionOfElement = $('tr:nth-child(' + x + ') td:nth-child(' + y + '):not(.obstacle):not(.passenger):not(.car):not(.bottle)');
-
+                if ($nextPositionOfElement.length === 0) {
+                    return console.log('nie ma')
+                }
                 if ($nextPositionOfElement.length) {
+                    console.log('jest')
                     counter++;
                     $nextPositionOfElement.addClass(elementClass);
-                    setTimeout(function disappearElement() {
-                        $nextPositionOfElement.removeClass(elementClass);
-                    }, disappearTime);
+
+                    if (shouldDisapper === true) {
+                        setTimeout(function delayInterval() {
+                            var timeToShow = disappearTime/1000 - 2;
+                            var lastSeconds = setInterval( function showLastSeconds() {
+                                if ($nextPositionOfElement.hasClass('passenger')) {
+                                    $nextPositionOfElement.text(timeToShow);
+                                    timeToShow--;
+                                    if (timeToShow === 0) {
+                                        score--;
+                                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+                                        clearInterval(lastSeconds)
+                                    }
+                                }
+                                else {
+                                    clearInterval(lastSeconds)
+                                }
+                            }, 1000);
+                        }, 1000);
+                        setTimeout(function disappearElement() {
+                            $nextPositionOfElement.text('');
+                            $nextPositionOfElement.removeClass(elementClass);
+                        }, disappearTime);
+                    }
                     if (counter >= counterLimit) {
-                        clearInterval(interval)}
+                        clearInterval(interval)
+                    }
                 }
 
             }, intervalTime)
@@ -107,10 +136,10 @@
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar);
+                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar).text('');
                 lastPositionOfCar.removeClass();
                 score += 1;
-                console.log(score);
+                scoreBoard.text('Zebrani pasażerowie: ' + score);
             }
             else if (nextPositionOfCar.hasClass('bottle')) {
                 nextPositionOfCar.removeClass('bottle').addClass('car').addClass(setupOfCar);
