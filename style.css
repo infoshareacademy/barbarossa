@@ -637,8 +637,9 @@ footer {
   box-sizing: border-box; }
 
 .obstacle-skycraper {
-  background: #555;
-  border: 1px solid #999; }
+  background: linear-gradient(to left bottom, #333, #666, #222, #333);
+  border: 1px solid #999;
+  box-shadow: 0 0 10px #000; }
 
 .obstacle-fountain {
   background: url("pictures/gameFountain.png") center #306225;
