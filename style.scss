@@ -790,6 +790,7 @@ footer {
 .game-main tbody {
   @include shadow-content();
   background: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/asfalt.png');
+  box-shadow: 0 0 80px green inset;
 }
 .game-main td{
   width: 20px;
@@ -798,47 +799,64 @@ footer {
 
 .car {
   background: url('pictures/gameBus.png') center center;
-  background-size: 25px;
+  background-size: 20px;
 }
 
-.building {
+.car--right {
+  transform: rotate(90deg);
+}
+
+.car--left {
+  transform: rotate(-90deg);
+}
+
+.car--inverse {
+  transform: rotate(180deg);
+}
+
+.obstacle {
   background-color: #333;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.building-skycraper {
+.obstacle-skycraper {
   background: #555;
   border: 1px solid #999;
-  @include shadow-content();
 }
-.building-parking {
-  background: #777;
-  border-right: 2px dashed white;
+.obstacle-fountain {
+  background: url('pictures/gameFountain.png') center #306225;
+  background-size: 20px;
 }
-
-.building-fountain {
-  background: url('pictures/gameFountain.png') center center #306225;
+.obstacle-repair--sign {
+  background: url('pictures/gameRepairSign.png') center #111;
+  background-size: 20px;
+}
+.obstacle-repair--blockade {
+  background: url('pictures/gameRepairBlockade.png') center #111;
   background-size: 20px;
 }
 
-.building-parking--last {
+.obstacle-parking--last {
   background: #777;
 }
-.building-grass {
+.obstacle-grass {
   background: url('pictures/gameGrass.png') center center;
   background-size: 25px;
 }
-.building-grass--cornercut {
-  background: url('pictures/gameGrassCornerOnly.png') center center;
-  background-size: 25px;
-}
-.building-tree {
+.obstacle-tree {
   background: url('pictures/gameTree.png') center center #111;
-  background-size: 25px;
+  background-size: 20px;
 }
-
+.obstacle-tree--lighter {
+  background: url('pictures/gameTreeLighter.png') center center #111;
+  background-size: 20px;
+}
+.obstacle-tree--gold {
+  background: url('pictures/gameTreeGold.png') center center #111;
+  background-size: 20px;
+}
 .passenger {
   background: url('pictures/gamePassenger.png') center center;
-  background-size: 25px;
+  background-size: 20px;
 }
