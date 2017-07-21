@@ -20,7 +20,6 @@
         var scoreBoard = $('<p>');
 
 
-
         times(size, function () {
             var tr = $('<tr>');
             times(size, function () {
@@ -43,52 +42,51 @@
 
         // Passengers and bottles
 
-        addElements('passenger', 60, 1000, true, 5000);
+        addElements('passenger', 10, 1000, true, 5000);
         addElements('bottle', 3, 5000, false);
 
         function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
             var counter = 0;
             var interval = setInterval(function () {
 
-                var x = (Math.floor(Math.random() * size) + 1);
-                var y = (Math.floor(Math.random() * size) + 1);
-                var $nextPositionOfElement = $('tr:nth-child(' + x + ') td:nth-child(' + y + '):not(.obstacle):not(.passenger):not(.car):not(.bottle)');
-                if ($nextPositionOfElement.length === 0) {
-                    return console.log('nie ma')
-                }
-                if ($nextPositionOfElement.length) {
-                    console.log('jest')
-                    counter++;
-                    $nextPositionOfElement.addClass(elementClass);
+                var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
+                var numberOfPossibility = $possiblePositionOfElement.length;
 
-                    if (shouldDisapper === true) {
-                        setTimeout(function delayInterval() {
-                            var timeToShow = disappearTime/1000 - 2;
-                            var lastSeconds = setInterval( function showLastSeconds() {
-                                if ($nextPositionOfElement.hasClass('passenger')) {
-                                    $nextPositionOfElement.text(timeToShow);
-                                    timeToShow--;
-                                    if (timeToShow === 0) {
-                                        score--;
-                                        scoreBoard.text('Zebrani pasażerowie: ' + score);
-                                        clearInterval(lastSeconds)
-                                    }
-                                }
-                                else {
+                if (numberOfPossibility === 0) {
+                    return
+                }
+
+                var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
+                var $nextPositionOfElement = $possiblePositionOfElement[randomPositionIndex];
+
+                counter++;
+                $nextPositionOfElement.classList.add(elementClass);
+                if (shouldDisapper === true) {
+                    setTimeout(function delayInterval() {
+                        var timeToShow = -(3 - disappearTime / 1000);
+                        var lastSeconds = setInterval(function showLastSeconds() {
+                            if ($nextPositionOfElement.classList.contains('passenger')) {
+                                $nextPositionOfElement.innerText = timeToShow;
+                                timeToShow--;
+                                if (timeToShow === 0) {
                                     clearInterval(lastSeconds)
                                 }
-                            }, 1000);
+                            }
+                            else {
+                                clearInterval(lastSeconds)
+                            }
                         }, 1000);
-                        setTimeout(function disappearElement() {
-                            $nextPositionOfElement.text('');
-                            $nextPositionOfElement.removeClass(elementClass);
-                        }, disappearTime);
-                    }
-                    if (counter >= counterLimit) {
-                        clearInterval(interval)
-                    }
+                    }, 1000);
+                    setTimeout(function disappearElement() {
+                        $nextPositionOfElement.innerText = ('');
+                        $nextPositionOfElement.classList.remove(elementClass);
+                        score--;
+                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+                    }, disappearTime);
                 }
-
+                if (counter >= counterLimit) {
+                    clearInterval(interval)
+                }
             }, intervalTime)
         }
 
