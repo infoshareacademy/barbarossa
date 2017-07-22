@@ -477,7 +477,8 @@ footer {
   display: none;
   transition: all 0.5s;
   color: #eee;
-  border-radius: 5px; }
+  border-radius: 5px;
+  z-index: 2000; }
   .arrow-to-top:hover {
     background: #2f2f2f; }
 

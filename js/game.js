@@ -17,6 +17,8 @@
         var gameBoard = $('<table>');
         var size = 10;
         var score = 0;
+        var scoreBoard = $('<p>');
+
 
         times(size, function () {
             var tr = $('<tr>');
@@ -27,71 +29,70 @@
             gameBoard.append(tr).attr('tabindex', 0)
         });
 
-        game.append(gameBoard);
+        game.append(gameBoard).append(scoreBoard);
+        scoreBoard.text('Zebrani pasażerowie: ' + score);
         gameBoard.focus();
 
 
-        (function startPositionOfCarAndBuildings() {
+        (function startPositionOfCarAndObstacles() {
             $('tr:nth-child(10) td:nth-child(1)').addClass('car');
-            $('tr:nth-child(5) td:nth-child(5)').addClass('building');
-            $('tr:nth-child(5) td:nth-child(6)').addClass('building');
+            $('tr:nth-child(odd) td:nth-child(odd)').addClass('obstacle').addClass('obstacle--building');
+            $('tr:nth-child(5) td:nth-child(6)').addClass('obstacle').addClass('obstacle--building');
         })();
 
-        // Passengers
+        // Passengers and bottles
 
-        (function addPassengers() {
+        addElements('passenger', 10, 1000, true, 5000);
+        addElements('bottle', 3, 5000, false);
+
+        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
             var counter = 0;
-            var interval = setInterval(function () {
+            var addElementsInterval = setInterval(function () {
 
-                var x = (Math.floor(Math.random() * size - 1) + 1);
-                var y = (Math.floor(Math.random() * size - 1) + 1);
-                var $nextPositionOfPassenger = $('tr:nth-child(' + x + ') td:nth-child(' + y + '):not(.building):not(.passenger):not(.car):not(.bottle)');
+                var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
+                var numberOfPossibility = $possiblePositionOfElement.length;
 
-                // if ($nextPositionOfPassenger.hasClass('building') ||
-                //     $nextPositionOfPassenger.hasClass('passenger') ||
-                //     $nextPositionOfPassenger.hasClass('car') ||
-                //     $nextPositionOfPassenger.hasClass('bottle')
-                // ) {
-                // } // do nothing
-                if ($nextPositionOfPassenger.length) {
-                    counter++;
-                    $nextPositionOfPassenger.addClass('passenger');
-                    setTimeout(function clearClass() {
-                        $nextPositionOfPassenger.removeClass('passenger');
-                    }, 10000);
-                    if (counter > 20) {
-                        clearInterval(interval)}
+                if (numberOfPossibility === 0) {
+                    return
                 }
+                counter++;
+                var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
+                var $nextPositionOfElement = $($possiblePositionOfElement[randomPositionIndex]);
 
-            }, 1000)
-        })();
-
-
-        // Bottles
-
-        (function addBottles() {
-            var counter = 0;
-            var interval = setInterval(function () {
-                var x = (Math.floor(Math.random() * size - 1) + 1);
-                var y = (Math.floor(Math.random() * size - 1) + 1);
-                var $nextPositionOfBottle = $('tr:nth-child(' + x + ') td:nth-child(' + y + '):not(.building):not(.passenger):not(.car):not(.bottle)');
-
-                // if ($nextPositionOfBottle.hasClass('building') ||
-                //     $nextPositionOfBottle.hasClass('passenger') ||
-                //     $nextPositionOfBottle.hasClass('car') ||
-                //     $nextPositionOfBottle.hasClass('bottle')
-                // ) {
-                // } // do nothing
-                if ($nextPositionOfBottle.length) {
-                    counter++;
-                    $nextPositionOfBottle.addClass('bottle');
-                    if (counter > 3) {
-                        clearInterval(interval)}
+                $nextPositionOfElement.addClass(elementClass);
+                if (shouldDisapper === true) {
+                    setTimeout(function delayInterval() {
+                        var timeToShow = (disappearTime / 1000) - 2;
+                        var lastSecondsInterval = setInterval(function showLastSeconds() {
+                            if ($nextPositionOfElement.hasClass('passenger')) {
+                                // $nextPositionOfElement.html('<span class="last-seconds">' + timeToShow + '</span>');
+                                // var lastSecondsText =  $('span.last-seconds');
+                                // var blinkLastSecondsInterval = setInterval( function blinkLastSecondsText() {
+                                //     lastSecondsText.fadeIn(500).fadeOut(500);
+                                // });
+                                $nextPositionOfElement.text(timeToShow);
+                                timeToShow--;
+                                if (timeToShow === 0) {
+                                    clearInterval(lastSecondsInterval);
+                                }
+                            }
+                            else {
+                                clearInterval(lastSecondsInterval);
+                            }
+                        }, 1000);
+                    }, 1000);
+                    setTimeout(function disappearElement() {
+                        $nextPositionOfElement.text('');
+                        $nextPositionOfElement.removeClass(elementClass);
+                        score--;
+                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+                    }, disappearTime);
                 }
-
-            }, 1000)
-        })();
-
+                if (counter >= counterLimit) {
+                    clearInterval(addElementsInterval)
+                }
+            }, intervalTime)
+        }
 
         // Car
 
@@ -99,11 +100,12 @@
             event.preventDefault();
             var lastPositionOfCar = $(this).find('td.car');
             var nextPositionOfCar;
+            var setupOfCar = 'car';
             var whatKeyIsPressed = event.which || event.keyCode;
-            var moveDirection = resolveDirection(whatKeyIsPressed);
+            var moveDirection = setDirection(whatKeyIsPressed);
 
             if (!moveDirection) {
-                return
+                return // when click other key return
             }
 
             if (IS_DRUNK) {
@@ -113,45 +115,49 @@
             switch (moveDirection) {
                 case 'LEFT':
                     nextPositionOfCar = $(this).find('td.car').prev();
+                    setupOfCar = 'car--left';
                     break;
                 case 'UP':
                     nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                    setupOfCar = 'car--up';
                     break;
                 case 'RIGHT':
                     nextPositionOfCar = $(this).find('td.car').next();
+                    setupOfCar = 'car--right';
                     break;
                 case 'DOWN':
                     nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                    setupOfCar = 'car--down';
                     break;
             }
-            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
+            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
         });
 
-        function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar) {
-            if (nextPositionOfCar.hasClass('building') || nextPositionOfCar.length === 0) {
+        function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar) {
+            if (nextPositionOfCar.hasClass('obstacle') || nextPositionOfCar.length === 0) {
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car');
-                lastPositionOfCar.removeClass('car');
+                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar).text('');
+                lastPositionOfCar.removeClass();
                 score += 1;
-                console.log(score);
+                scoreBoard.text('Zebrani pasażerowie: ' + score);
             }
             else if (nextPositionOfCar.hasClass('bottle')) {
-                nextPositionOfCar.removeClass('bottle').addClass('car');
-                lastPositionOfCar.removeClass('car');
+                nextPositionOfCar.removeClass('bottle').addClass('car').addClass(setupOfCar);
+                lastPositionOfCar.removeClass();
                 IS_DRUNK = true;
                 setTimeout(function () {
                     IS_DRUNK = false;
                 }, 3000);
             }
             else {
-                nextPositionOfCar.addClass('car');
-                lastPositionOfCar.removeClass('car');
+                nextPositionOfCar.addClass('car').addClass(setupOfCar);
+                lastPositionOfCar.removeClass();
             }
         }
 
-        function resolveDirection(whatKeyIsPressed) {
+        function setDirection(whatKeyIsPressed) {
             switch (whatKeyIsPressed) {
                 case 37:
                     return 'LEFT';
