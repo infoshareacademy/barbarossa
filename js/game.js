@@ -6,6 +6,7 @@
         // Board
 
         var game = $('#game');
+        var IS_DRUNK = false;
 
         function times(n, callback) {
             for (var i = 0; i < n; i += 1) {
@@ -16,6 +17,8 @@
         var gameBoard = $('<table>');
         var size = 25;
         var score = 0;
+        var scoreBoard = $('<p>');
+
 
         times(size, function () {
             var tr = $('<tr>');
@@ -26,7 +29,8 @@
             gameBoard.append(tr).attr('tabindex', 0)
         });
 
-        game.append(gameBoard);
+        game.append(gameBoard).append(scoreBoard);
+        scoreBoard.text('Zebrani pasażerowie: ' + score);
         gameBoard.focus();
 
 
@@ -112,30 +116,54 @@
             $('tr:nth-child(25) td:nth-child(n)').addClass('obstacle obstacle-grass');
         })();
 
-        // Passengers
+        // Passengers and bottles
 
-        (function addPassengers() {
+        addElements('passenger', 10, 1000, true, 5000);
+        addElements('bottle', 3, 5000, false);
+
+        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
             var counter = 0;
             var interval = setInterval(function () {
 
-                var x = (Math.floor(Math.random() * size - 1) + 1);
-                var y = (Math.floor(Math.random() * size - 1) + 1);
-                if ($('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('obstacle') ||
-                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('passenger') ||
-                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').hasClass('car')
-                ) {}
-                else {
-                    counter++;
-                $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').addClass('passenger');
-                var clearClass = setInterval(function () {
-                    $('tr:nth-child(' + x + ') td:nth-child(' + y + ')').removeClass('passenger');
+                var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
+                var numberOfPossibility = $possiblePositionOfElement.length;
 
-                }, 10000)
-                if (counter > 10)
-                    clearInterval(interval);
-            }
-            }, 2000)
-        })();
+                if (numberOfPossibility === 0) {
+                    return
+                }
+                counter++;
+                var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
+                var nextPositionOfElement = $possiblePositionOfElement[randomPositionIndex];
+
+                nextPositionOfElement.classList.add(elementClass);
+                if (shouldDisapper === true) {
+                    setTimeout(function delayInterval() {
+                        var timeToShow = (disappearTime / 1000) - 3;
+                        var lastSeconds = setInterval(function showLastSeconds() {
+                            if (nextPositionOfElement.classList.contains('passenger')) {
+                                nextPositionOfElement.innerText = timeToShow;
+                                timeToShow--;
+                                if (timeToShow === 0) {
+                                    clearInterval(lastSeconds)
+                                }
+                            }
+                            else {
+                                clearInterval(lastSeconds)
+                            }
+                        }, 1000);
+                    }, 1000);
+                    setTimeout(function disappearElement() {
+                        nextPositionOfElement.innerText = ('');
+                        nextPositionOfElement.classList.remove(elementClass);
+                        score--;
+                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+                    }, disappearTime);
+                }
+                if (counter >= counterLimit) {
+                    clearInterval(interval)
+                }
+            }, intervalTime)
+        }
 
         // Car
 
@@ -143,38 +171,88 @@
             event.preventDefault();
             var lastPositionOfCar = $(this).find('td.car');
             var nextPositionOfCar;
+            var setupOfCar = 'car';
             var whatKeyIsPressed = event.which || event.keyCode;
+            var moveDirection = setDirection(whatKeyIsPressed);
 
-            switch (whatKeyIsPressed) {
-                case 37:
+            if (!moveDirection) {
+                return // when click other key return
+            }
+
+            if (IS_DRUNK) {
+                moveDirection = invertDirection(moveDirection);
+            }
+
+            switch (moveDirection) {
+                case 'LEFT':
                     nextPositionOfCar = $(this).find('td.car').prev();
+                    setupOfCar = 'car--left';
                     break;
-                case 38:
+                case 'UP':
                     nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                    setupOfCar = 'car--up';
                     break;
-                case 39:
+                case 'RIGHT':
                     nextPositionOfCar = $(this).find('td.car').next();
+                    setupOfCar = 'car--right';
                     break;
-                case 40:
+                case 'DOWN':
                     nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                    setupOfCar = 'car--down';
                     break;
             }
-            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar);
+            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
         });
 
-        function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar) {
+        function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar) {
             if (nextPositionOfCar.hasClass('obstacle') || nextPositionOfCar.length === 0) {
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car');
-                lastPositionOfCar.removeClass('car');
+                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar).text('');
+                lastPositionOfCar.removeClass();
                 score += 1;
-                console.log(score);
+                scoreBoard.text('Zebrani pasażerowie: ' + score);
+            }
+            else if (nextPositionOfCar.hasClass('bottle')) {
+                nextPositionOfCar.removeClass('bottle').addClass('car').addClass(setupOfCar);
+                lastPositionOfCar.removeClass();
+                IS_DRUNK = true;
+                setTimeout(function () {
+                    IS_DRUNK = false;
+                }, 3000);
             }
             else {
-                nextPositionOfCar.addClass('car');
-                lastPositionOfCar.removeClass('car');
+                nextPositionOfCar.addClass('car').addClass(setupOfCar);
+                lastPositionOfCar.removeClass();
+            }
+        }
+
+        function setDirection(whatKeyIsPressed) {
+            switch (whatKeyIsPressed) {
+                case 37:
+                    return 'LEFT';
+                case 38:
+                    return 'UP';
+                case 39:
+                    return 'RIGHT';
+                case 40:
+                    return 'DOWN';
+            }
+        }
+
+        function invertDirection(direction) {
+            if (direction === 'LEFT') {
+                return 'RIGHT'
+            }
+            if (direction === 'UP') {
+                return 'DOWN'
+            }
+            if (direction === 'RIGHT') {
+                return 'LEFT'
+            }
+            if (direction === 'DOWN') {
+                return 'UP'
             }
         }
 

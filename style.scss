@@ -639,6 +639,7 @@ footer {
   transition: all 0.5s;
   color: $colorFont;
   border-radius: 5px;
+  z-index:2000;
   &:hover {
     background: lighten($colorAccent, 25%);
   }
