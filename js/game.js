@@ -55,18 +55,17 @@
                 if (numberOfPossibility === 0) {
                     return
                 }
-
-                var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
-                var $nextPositionOfElement = $possiblePositionOfElement[randomPositionIndex];
-
                 counter++;
-                $nextPositionOfElement.classList.add(elementClass);
+                var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
+                var nextPositionOfElement = $possiblePositionOfElement[randomPositionIndex];
+
+                nextPositionOfElement.classList.add(elementClass);
                 if (shouldDisapper === true) {
                     setTimeout(function delayInterval() {
-                        var timeToShow = -(3 - disappearTime / 1000);
+                        var timeToShow = (disappearTime / 1000) - 3;
                         var lastSeconds = setInterval(function showLastSeconds() {
-                            if ($nextPositionOfElement.classList.contains('passenger')) {
-                                $nextPositionOfElement.innerText = timeToShow;
+                            if (nextPositionOfElement.classList.contains('passenger')) {
+                                nextPositionOfElement.innerText = timeToShow;
                                 timeToShow--;
                                 if (timeToShow === 0) {
                                     clearInterval(lastSeconds)
@@ -78,8 +77,8 @@
                         }, 1000);
                     }, 1000);
                     setTimeout(function disappearElement() {
-                        $nextPositionOfElement.innerText = ('');
-                        $nextPositionOfElement.classList.remove(elementClass);
+                        nextPositionOfElement.innerText = ('');
+                        nextPositionOfElement.classList.remove(elementClass);
                         score--;
                         scoreBoard.text('Zebrani pasażerowie: ' + score);
                     }, disappearTime);

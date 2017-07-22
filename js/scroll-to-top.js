@@ -1,11 +1,11 @@
 (function () {
-    var $arrowToTop = $('#scroll-to-top')
+    var $arrowToTop = $('#scroll-to-top');
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 1) {
-            $arrowToTop.fadeIn();
+            $arrowToTop.fadeIn('slow');
         } else {
-            $arrowToTop.fadeOut();
+            $arrowToTop.fadeOut('slow');
         }
     });
 
