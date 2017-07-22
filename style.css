@@ -124,7 +124,7 @@ body {
   bottom: 0;
   display: block;
   z-index: 1;
-  opacity: 0.8; }
+  opacity: 0.4; }
 
 .teaser .carousel-caption {
   z-index: 10; }
@@ -480,7 +480,7 @@ footer {
   border-radius: 5px;
   z-index: 2000; }
   .arrow-to-top:hover {
-    background: #2f2f2f; }
+    background: #626262; }
 
 .cookies-wrapper {
   position: fixed;
@@ -558,7 +558,7 @@ footer {
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 10px;
-  transition: all 0.5s;
+  transition: all 0.3s;
   text-shadow: 0 0 15px #000;
   text-align: center; }
 
@@ -582,15 +582,99 @@ footer {
   padding: 1em;
   width: auto;
   border-radius: 5px;
-  background-color: #1347a5; }
+  background-color: #222;
+  border: 1px solid #3c3c3c;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
   .game-button--instruction:hover {
-    background-color: #185bd3;
-    color: #eee; }
+    color: #eee;
+    background-color: black;
+    border-color: transparent; }
 
 .game-board-visible {
   display: block !important; }
 
 .game-board-hidden {
   display: none !important; }
+
+.game-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px; }
+
+.game-main table {
+  border-color: transparent;
+  border-spacing: 0; }
+  .game-main table:focus {
+    border: none;
+    outline: none; }
+
+.game-main tbody {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/asfalt.png");
+  box-shadow: 0 0 80px green inset; }
+
+.game-main td {
+  width: 20px;
+  height: 20px; }
+
+.car {
+  background: url("pictures/gameBus.png") center center;
+  background-size: 20px; }
+
+.car--right {
+  transform: rotate(90deg); }
+
+.car--left {
+  transform: rotate(-90deg); }
+
+.car--inverse {
+  transform: rotate(180deg); }
+
+.obstacle {
+  background-color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.obstacle-skycraper {
+  background: linear-gradient(to left bottom, #333, #666, #222, #333);
+  border: 1px solid #999;
+  box-shadow: 0 0 10px #000; }
+
+.obstacle-fountain {
+  background: url("pictures/gameFountain.png") center #306225;
+  background-size: 20px; }
+
+.obstacle-repair--sign {
+  background: url("pictures/gameRepairSign.png") center #111;
+  background-size: 20px; }
+
+.obstacle-repair--blockade {
+  background: url("pictures/gameRepairBlockade.png") center #111;
+  background-size: 20px; }
+
+.obstacle-parking--last {
+  background: #777; }
+
+.obstacle-grass {
+  background: url("pictures/gameGrass.png") center center;
+  background-size: 25px; }
+
+.obstacle-tree {
+  background: url("pictures/gameTree.png") center center #111;
+  background-size: 20px; }
+
+.obstacle-tree--lighter {
+  background: url("pictures/gameTreeLighter.png") center center #111;
+  background-size: 20px; }
+
+.obstacle-tree--gold {
+  background: url("pictures/gameTreeGold.png") center center #111;
+  background-size: 20px; }
+
+.passenger {
+  background: url("pictures/gamePassenger.png") center center;
+  background-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,57 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<style>
-
-    #game td {
-        height: 50px;
-        width: 50px;
-        border: 1px solid #000;
-    }
-
-    .car {
-        background: red;
-    }
-
-    .car--left {
-        background: #db8b00;
-    }
-    .car--up {
-        background: #cfcf00;
-    }
-    .car--right {
-        background: #95372a;
-    }
-    .car--down {
-        background: #ffdf8a;
-    }
-
-    .obstacle--building {
-        background: black;
-    }
-
-    .passenger {
-        background: blue;
-        text-align: center;
-        color: red;
-        font-weight: 200;
-        font-size: 2em;
-    }
-
-    .passenger span {
-        padding: 0;
-        margin: 0;
-    }
-
-    .bottle {
-        background: green;
-        text-align: center;
-    }
-</style>
 <body>
 <!--Spot for TASK 22: Gra za maila-->
-<div id="game"></div>
+<div id="game" class="game-main"></div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
