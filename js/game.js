@@ -47,7 +47,7 @@
 
         function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
             var counter = 0;
-            var interval = setInterval(function () {
+            var addElementsInterval = setInterval(function () {
 
                 var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
                 var numberOfPossibility = $possiblePositionOfElement.length;
@@ -57,34 +57,39 @@
                 }
                 counter++;
                 var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
-                var nextPositionOfElement = $possiblePositionOfElement[randomPositionIndex];
+                var $nextPositionOfElement = $($possiblePositionOfElement[randomPositionIndex]);
 
-                nextPositionOfElement.classList.add(elementClass);
+                $nextPositionOfElement.addClass(elementClass);
                 if (shouldDisapper === true) {
                     setTimeout(function delayInterval() {
-                        var timeToShow = (disappearTime / 1000) - 3;
-                        var lastSeconds = setInterval(function showLastSeconds() {
-                            if (nextPositionOfElement.classList.contains('passenger')) {
-                                nextPositionOfElement.innerText = timeToShow;
+                        var timeToShow = (disappearTime / 1000) - 2;
+                        var lastSecondsInterval = setInterval(function showLastSeconds() {
+                            if ($nextPositionOfElement.hasClass('passenger')) {
+                                // $nextPositionOfElement.html('<span class="last-seconds">' + timeToShow + '</span>');
+                                // var lastSecondsText =  $('span.last-seconds');
+                                // var blinkLastSecondsInterval = setInterval( function blinkLastSecondsText() {
+                                //     lastSecondsText.fadeIn(500).fadeOut(500);
+                                // });
+                                $nextPositionOfElement.text(timeToShow);
                                 timeToShow--;
                                 if (timeToShow === 0) {
-                                    clearInterval(lastSeconds)
+                                    clearInterval(lastSecondsInterval);
                                 }
                             }
                             else {
-                                clearInterval(lastSeconds)
+                                clearInterval(lastSecondsInterval);
                             }
                         }, 1000);
                     }, 1000);
                     setTimeout(function disappearElement() {
-                        nextPositionOfElement.innerText = ('');
-                        nextPositionOfElement.classList.remove(elementClass);
+                        $nextPositionOfElement.text('');
+                        $nextPositionOfElement.removeClass(elementClass);
                         score--;
                         scoreBoard.text('Zebrani pasażerowie: ' + score);
                     }, disappearTime);
                 }
                 if (counter >= counterLimit) {
-                    clearInterval(interval)
+                    clearInterval(addElementsInterval)
                 }
             }, intervalTime)
         }
