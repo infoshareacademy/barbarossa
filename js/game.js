@@ -118,10 +118,10 @@
 
         // Passengers and bottles
 
-        addElements('passenger', 10, 1000, true, 5000);
-        addElements('bottle', 3, 5000, false);
+        addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
+        addElements('bottle', 3, 6000, false);
 
-        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime) {
+        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
             var counter = 0;
             var addElementsInterval = setInterval(function () {
 
@@ -137,28 +137,18 @@
 
                 $nextPositionOfElement.addClass(elementClass);
                 if (shouldDisapper === true) {
-                    setTimeout(function delayInterval() {
-                        var timeToShow = (disappearTime / 1000) - 2;
-                        var lastSecondsInterval = setInterval(function showLastSeconds() {
-                            if ($nextPositionOfElement.hasClass('passenger')) {
-                                // $nextPositionOfElement.html('<span class="last-seconds">' + timeToShow + '</span>');
-                                // var lastSecondsText =  $('span.last-seconds');
-                                // var blinkLastSecondsInterval = setInterval( function blinkLastSecondsText() {
-                                //     lastSecondsText.fadeIn(500).fadeOut(500);
-                                // });
-                                $nextPositionOfElement.text(timeToShow);
-                                timeToShow--;
-                                if (timeToShow === 0) {
-                                    clearInterval(lastSecondsInterval);
-                                }
+                    setTimeout(function delayBlinkInterval() {
+                        var blinkInterval = setInterval(function blinkPassenger() {
+                            if ($nextPositionOfElement.hasClass(elementClass)) {
+                                $nextPositionOfElement.toggleClass(elementClassBlink);
                             }
                             else {
-                                clearInterval(lastSecondsInterval);
+                                clearInterval(blinkInterval);
+                                $nextPositionOfElement.removeClass(elementClassBlink);
                             }
-                        }, 1000);
-                    }, 1000);
+                        }, 500);
+                    }, disappearTime - 3000);
                     setTimeout(function disappearElement() {
-                        $nextPositionOfElement.text('');
                         $nextPositionOfElement.removeClass(elementClass);
                         score--;
                         scoreBoard.text('Zebrani pasażerowie: ' + score);
@@ -195,7 +185,7 @@
                     break;
                 case 'UP':
                     nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car--up';
+                    setupOfCar = 'car';
                     break;
                 case 'RIGHT':
                     nextPositionOfCar = $(this).find('td.car').next();
@@ -203,7 +193,7 @@
                     break;
                 case 'DOWN':
                     nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car--down';
+                    setupOfCar = 'car--inverse';
                     break;
             }
             checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);

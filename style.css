@@ -677,4 +677,10 @@ footer {
   background: url("pictures/gamePassenger.png") center center;
   background-size: 20px; }
 
+.passenger--red {
+  background: red; }
+
+.bottle {
+  background: green; }
+
 /*# sourceMappingURL=style.css.map */
