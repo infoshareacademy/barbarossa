@@ -198,13 +198,21 @@ body {
   border: 1px solid #0f0f0f; }
 
 .game-instruction .modal-title {
-  text-align: center; }
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+  font-size: 30px;
+  font-weight: 600; }
 
 .game-instruction .zajawka-head {
-  color: #0f0f0f; }
+  color: #0f0f0f;
+  font-family: 'Viga', sans-serif;
+  font-size: 30px;
+  font-weight: 300; }
 
 .game-instruction .zajawka-txt {
-  color: #0f0f0f; }
+  color: #0f0f0f;
+  font-family: 'Viga', sans-serif;
+  font-size: 15px; }
 
 .game-instruction .item {
   max-width: 100%;
@@ -213,6 +221,10 @@ body {
 .modal {
   position: fixed;
   z-index: 2000; }
+
+.instruction-slide {
+  margin-left: auto;
+  margin-right: auto; }
 
 #function {
   background-color: #FBEAD0;
@@ -678,10 +690,6 @@ footer {
 
 .obstacle-tree--lighter {
   background: url("pictures/gameTreeLighter.png") center #111;
-  background-size: 30px; }
-
-.obstacle-tree--gold {
-  background: url("pictures/gameTreeGold.png") center #111;
   background-size: 30px; }
 
 .passenger {
