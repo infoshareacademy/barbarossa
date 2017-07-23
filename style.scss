@@ -286,11 +286,12 @@ body {
 }
 
 .game-instruction .zajawka-head {
-color: #0f0f0f;
+  color: #0f0f0f;
   font-family: 'Viga', sans-serif;
   font-size: 30px;
   font-weight: 300;
 }
+
 .game-instruction .zajawka-txt {
   color: #0f0f0f;
   font-family: 'Viga', sans-serif;
@@ -306,6 +307,7 @@ color: #0f0f0f;
   position: fixed;
   z-index: 2000;
 }
+
 .instruction-slide {
   margin-left: auto;
   margin-right: auto;
@@ -650,7 +652,7 @@ footer {
   transition: all 0.5s;
   color: $colorFont;
   border-radius: 5px;
-  z-index:2000;
+  z-index: 1100;
   &:hover {
     background: lighten($colorAccent, 25%);
   }
@@ -680,6 +682,8 @@ footer {
 
 ///////////////////////////////////////////// The Game - Questions Board //////////////////////////////////////////////
 
+$cellSize: 30px;
+
 .game-background-board {
   position: fixed;
   width: 100%;
@@ -694,7 +698,8 @@ footer {
 }
 
 .game-begin-board {
-  position: relative;
+  position: absolute;
+  z-index: 1300;
   width: 500px;
   height: 500px;
   display: block;
@@ -787,7 +792,50 @@ footer {
 
 ///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
 
-$cellSize: 30px;
+@mixin game-info-field() {
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 1em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.3em;
+  border-radius: 5px;
+  color: $colorFont;
+  background-color: $colorAccent;
+}
+
+.game-main-wrapper-switch {
+  z-index: 2000;
+  position: absolute;
+}
+
+.game-main-wrapper-visible {
+  display: block;
+}
+
+.game-main-wrapper-hidden {
+  display: none;
+}
+
+.score-board {
+  @include game-info-field();
+  top: -25px;
+  left: 0;
+}
+
+.game-exit-button {
+  @include game-info-field();
+  outline: none;
+  border: none;
+  bottom: -65px;
+  right: 0;
+  transition: all 0.5s;
+    &:hover {
+      background-color: $colorFont;
+      color: $colorMain;
+    }
+}
 
 .countdown {
   font-size: 10em;
@@ -798,6 +846,7 @@ $cellSize: 30px;
   @include flex-align();
   padding-top: 40px;
 }
+
 .game-main table {
   border-color: transparent;
   border-spacing: 0;
@@ -806,12 +855,14 @@ $cellSize: 30px;
     outline: none;
   }
 }
+
 .game-main tbody {
   @include shadow-content();
   background: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/asfalt.png');
   box-shadow: 0 0 80px green inset;
 }
-.game-main td{
+
+.game-main td {
   width: $cellSize;
   height: $cellSize;
 }
@@ -844,19 +895,23 @@ $cellSize: 30px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .obstacle-skycraper {
   background: linear-gradient(to left bottom, #333, #666, #222, #333);
   border: 1px solid #999;
   box-shadow: 0 0 10px #000;
 }
+
 .obstacle-fountain {
   background: url('pictures/gameFountain.png') center #306225;
   background-size: $cellSize;
 }
+
 .obstacle-repair--sign {
   background: url('pictures/gameRepairSign.png') center #111;
   background-size: $cellSize;
 }
+
 .obstacle-repair--blockade {
   background: url('pictures/gameRepairBlockade.png') center #111;
   background-size: $cellSize;
@@ -865,22 +920,27 @@ $cellSize: 30px;
 .obstacle-parking--last {
   background: #777;
 }
+
 .obstacle-grass {
   background: url('pictures/gameGrass.png') center;
   background-size: $cellSize;
 }
+
 .obstacle-tree {
   background: url('pictures/gameTree.png') center #111;
   background-size: $cellSize;
 }
+
 .obstacle-tree--lighter {
   background: url('pictures/gameTreeLighter.png') center #111;
   background-size: $cellSize;
 }
+
 .passenger {
   background: url('pictures/gamePassenger.png') center;
   background-size: $cellSize;
 }
+
 .passenger--red {
   background: url('pictures/gamePassengerRed.png') center #111;
   background-size: $cellSize;
@@ -890,3 +950,4 @@ $cellSize: 30px;
   background: url('pictures/gameBottle.png') center #111;
   background-size: $cellSize;
 }
+

@@ -490,7 +490,7 @@ footer {
   transition: all 0.5s;
   color: #eee;
   border-radius: 5px;
-  z-index: 2000; }
+  z-index: 1100; }
   .arrow-to-top:hover {
     background: #626262; }
 
@@ -526,7 +526,8 @@ footer {
   justify-content: center; }
 
 .game-begin-board {
-  position: relative;
+  position: absolute;
+  z-index: 1300;
   width: 500px;
   height: 500px;
   display: block;
@@ -608,9 +609,49 @@ footer {
 .game-board-hidden {
   display: none !important; }
 
-.countdown {
-  font-size: 10em;
-  color: #eee; }
+.game-main-wrapper-switch {
+  z-index: 2000;
+  position: absolute; }
+
+.game-main-wrapper-visible {
+  display: block; }
+
+.game-main-wrapper-hidden {
+  display: none; }
+
+.score-board {
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 1em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.3em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  top: -25px;
+  left: 0; }
+
+.game-exit-button {
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 1em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.3em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  outline: none;
+  border: none;
+  bottom: -65px;
+  right: 0;
+  transition: all 0.5s; }
+  .game-exit-button:hover {
+    background-color: #eee;
+    color: #ba4436; }
 
 .game-main {
   display: flex;
@@ -636,11 +677,7 @@ footer {
 
 .car {
   background: url("pictures/gameBus.png") center center;
-  background-size: 30px;
-  transition: transform 1s; }
-
-.car--up {
-  transform: rotate(0deg); }
+  background-size: 30px; }
 
 .car--right {
   transform: rotate(90deg); }
@@ -648,7 +685,7 @@ footer {
 .car--left {
   transform: rotate(-90deg); }
 
-.car--down {
+.car--inverse {
   transform: rotate(180deg); }
 
 .obstacle {
