@@ -3,6 +3,8 @@
 (function () {
     $(document).ready(function () {
 
+        // Start game
+
         // Board
 
         var game = $('#game');
@@ -131,33 +133,42 @@
                 if (numberOfPossibility === 0) {
                     return
                 }
-                counter++;
                 var randomPositionIndex = Math.floor(numberOfPossibility * Math.random());
                 var $nextPositionOfElement = $($possiblePositionOfElement[randomPositionIndex]);
-
                 $nextPositionOfElement.addClass(elementClass);
+
+                counter++;
                 if (shouldDisapper === true) {
-                    setTimeout(function delayBlinkInterval() {
-                        var blinkInterval = setInterval(function blinkPassenger() {
-                            if ($nextPositionOfElement.hasClass(elementClass)) {
-                                $nextPositionOfElement.toggleClass(elementClassBlink);
-                            }
-                            else {
-                                clearInterval(blinkInterval);
-                                $nextPositionOfElement.removeClass(elementClassBlink);
-                            }
-                        }, 500);
-                    }, disappearTime - 3000);
-                    setTimeout(function disappearElement() {
-                        $nextPositionOfElement.removeClass(elementClass);
-                        score--;
-                        scoreBoard.text('Zebrani pasażerowie: ' + score);
-                    }, disappearTime);
+                    disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime);
                 }
                 if (counter >= counterLimit) {
                     clearInterval(addElementsInterval)
                 }
             }, intervalTime)
+        }
+
+        function disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime) {
+            setTimeout(function delayBlinkElement() {
+                blinkElement(elementClass,elementClassBlink);
+            }, disappearTime - 3000);
+
+            setTimeout(function disappearElement() {
+                $nextPositionOfElement.removeClass(elementClass);
+                score--;
+                scoreBoard.text('Zebrani pasażerowie: ' + score);
+            }, disappearTime);
+        }
+
+        function blinkElement(elementClass,elementClassBlink) {
+            var blinkInterval = setInterval(function () {
+                if ($nextPositionOfElement.hasClass(elementClass)) {
+                    $nextPositionOfElement.toggleClass(elementClassBlink);
+                }
+                else {
+                    clearInterval(blinkInterval);
+                    $nextPositionOfElement.removeClass(elementClassBlink);
+                }
+            }, 500);
         }
 
         // Car
