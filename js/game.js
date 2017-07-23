@@ -118,23 +118,28 @@
         var $countdown = $('<p class="countdown">');
         game.append($countdown);
 
-        $startGameButton.click(function() {
+        // $startGameButton.click
+        (function() {
             event.preventDefault();
             var timeToShow = 3;
             var countdownToStart = setInterval( function () {
                 $countdown.text(timeToShow);
                 timeToShow--;
-                if (timeToShow = 0) {
+                if (timeToShow === 0) {
                     clearInterval(countdownToStart);
+                    $countdown.remove();
+                    startGame();
                 }
             }, 1000)
-        });
+        })();
 
+        function startGame () {
+            addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
+            addElements('bottle', 3, 6000, false);
+            moveCar();
+        }
 
         // Passengers and bottles
-
-        addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
-        addElements('bottle', 3, 6000, false);
 
         function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
             var counter = 0;
@@ -186,42 +191,44 @@
 
         // Car
 
-        gameBoard.keydown(function moveCar(event) {
-            event.preventDefault();
-            var lastPositionOfCar = $(this).find('td.car');
-            var nextPositionOfCar;
-            var setupOfCar = 'car';
-            var whatKeyIsPressed = event.which || event.keyCode;
-            var moveDirection = setDirection(whatKeyIsPressed);
+        function moveCar() {
+            gameBoard.keydown(function moveCar(event) {
+                event.preventDefault();
+                var lastPositionOfCar = $(this).find('td.car');
+                var nextPositionOfCar;
+                var setupOfCar = 'car';
+                var whatKeyIsPressed = event.which || event.keyCode;
+                var moveDirection = setDirection(whatKeyIsPressed);
 
-            if (!moveDirection) {
-                return // when click other key return
-            }
+                if (!moveDirection) {
+                    return // when click other key return
+                }
 
-            if (IS_DRUNK) {
-                moveDirection = invertDirection(moveDirection);
-            }
+                if (IS_DRUNK) {
+                    moveDirection = invertDirection(moveDirection);
+                }
 
-            switch (moveDirection) {
-                case 'LEFT':
-                    nextPositionOfCar = $(this).find('td.car').prev();
-                    setupOfCar = 'car--left';
-                    break;
-                case 'UP':
-                    nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car--up';
-                    break;
-                case 'RIGHT':
-                    nextPositionOfCar = $(this).find('td.car').next();
-                    setupOfCar = 'car--right';
-                    break;
-                case 'DOWN':
-                    nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car--down';
-                    break;
-            }
-            checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-        });
+                switch (moveDirection) {
+                    case 'LEFT':
+                        nextPositionOfCar = $(this).find('td.car').prev();
+                        setupOfCar = 'car--left';
+                        break;
+                    case 'UP':
+                        nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--up';
+                        break;
+                    case 'RIGHT':
+                        nextPositionOfCar = $(this).find('td.car').next();
+                        setupOfCar = 'car--right';
+                        break;
+                    case 'DOWN':
+                        nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--down';
+                        break;
+                }
+                checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
+            });
+        }
 
         function checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar) {
             if (nextPositionOfCar.hasClass('obstacle') || nextPositionOfCar.length === 0) {
