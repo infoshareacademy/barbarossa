@@ -615,12 +615,12 @@ footer {
   box-shadow: 0 0 80px green inset; }
 
 .game-main td {
-  width: 20px;
-  height: 20px; }
+  width: 30px;
+  height: 30px; }
 
 .car {
   background: url("pictures/gameBus.png") center center;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .car--right {
   transform: rotate(90deg); }
@@ -644,38 +644,38 @@ footer {
 
 .obstacle-fountain {
   background: url("pictures/gameFountain.png") center #306225;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .obstacle-repair--sign {
   background: url("pictures/gameRepairSign.png") center #111;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .obstacle-repair--blockade {
   background: url("pictures/gameRepairBlockade.png") center #111;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .obstacle-parking--last {
   background: #777; }
 
 .obstacle-grass {
   background: url("pictures/gameGrass.png") center center;
-  background-size: 25px; }
+  background-size: 30px; }
 
 .obstacle-tree {
   background: url("pictures/gameTree.png") center center #111;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .obstacle-tree--lighter {
   background: url("pictures/gameTreeLighter.png") center center #111;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .obstacle-tree--gold {
   background: url("pictures/gameTreeGold.png") center center #111;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .passenger {
   background: url("pictures/gamePassenger.png") center center;
-  background-size: 20px; }
+  background-size: 30px; }
 
 .passenger--red {
   background: red; }

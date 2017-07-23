@@ -776,6 +776,8 @@ footer {
 
 ///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
 
+$cellSize: 30px;
+
 .game-main {
   @include flex-align();
   padding-top: 40px;
@@ -794,13 +796,13 @@ footer {
   box-shadow: 0 0 80px green inset;
 }
 .game-main td{
-  width: 20px;
-  height: 20px;
+  width: $cellSize;
+  height: $cellSize;
 }
 
 .car {
   background: url('pictures/gameBus.png') center center;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 
 .car--right {
@@ -828,15 +830,15 @@ footer {
 }
 .obstacle-fountain {
   background: url('pictures/gameFountain.png') center #306225;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .obstacle-repair--sign {
   background: url('pictures/gameRepairSign.png') center #111;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .obstacle-repair--blockade {
   background: url('pictures/gameRepairBlockade.png') center #111;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 
 .obstacle-parking--last {
@@ -844,23 +846,23 @@ footer {
 }
 .obstacle-grass {
   background: url('pictures/gameGrass.png') center center;
-  background-size: 25px;
+  background-size: $cellSize;
 }
 .obstacle-tree {
   background: url('pictures/gameTree.png') center center #111;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .obstacle-tree--lighter {
   background: url('pictures/gameTreeLighter.png') center center #111;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .obstacle-tree--gold {
   background: url('pictures/gameTreeGold.png') center center #111;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .passenger {
   background: url('pictures/gamePassenger.png') center center;
-  background-size: 20px;
+  background-size: $cellSize;
 }
 .passenger--red {
   background: red;
