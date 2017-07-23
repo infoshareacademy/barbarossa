@@ -112,8 +112,19 @@ body {
 .nav-menu .navbar-collapse {
   border: 0; }
 
-.teaser .carousel {
-  margin-bottom: 60px; }
+.carousel {
+  position: relative; }
+
+.carousel-overlay {
+  background: linear-gradient(to bottom, transparent, #000, #000, #000, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 1;
+  opacity: 0.4; }
 
 .teaser .carousel-caption {
   z-index: 10; }
@@ -122,8 +133,9 @@ body {
   background-color: #777; }
 
 .teaser .zajawka-head {
-  font-size: 60px;
+  font-size: 4.5em;
   font-weight: 800;
+  padding: 0.2em;
   color: #eee;
   font-family: 'Viga', sans-serif;
   text-align: center;
@@ -132,30 +144,22 @@ body {
   text-shadow: 0 0 50px #000; }
 
 .teaser .zajawka-txt {
-  font-size: 20px;
+  font-size: 1.3em;
   font-weight: 600;
+  padding: 1.5em;
   color: #eee;
   display: block;
   font-family: 'Viga', sans-serif;
   text-align: center;
   margin: -5px 0 0 0;
-  padding-top: 10px;
-  padding-bottom: 20px;
   text-shadow: 0 0 50px #000; }
 
 .teaser .button {
-  background-color: transparent;
-  border: solid;
-  border-color: #FBEAD0;
-  margin-top: 20px;
-  text-align: center; }
-
-.teaser .button:hover {
   background-color: #ba4436;
   border: none;
   margin: 20px;
-  padding: 0.8em 1.3em;
-  border-color: #ba4436; }
+  text-align: center;
+  padding: 0.7em 1.5em; }
 
 .teaser .button-txt {
   text-align: center;
@@ -174,10 +178,10 @@ body {
     display: none; }
 
   .teaser .zajawka-head {
-    font-size: 30px; }
+    font-size: 2.3em; }
 
   .teaser .zajawka-txt {
-    font-size: 10px; } }
+    font-size: 1em; } }
 .game-instruction .carousel .item {
   background-color: white; }
 
@@ -194,21 +198,13 @@ body {
   border: 1px solid #0f0f0f; }
 
 .game-instruction .modal-title {
-  text-align: center;
-  font-family: 'Viga', sans-serif;
-  font-size: 30px;
-  font-weight: 600; }
+  text-align: center; }
 
 .game-instruction .zajawka-head {
-  color: #0f0f0f;
-  font-family: 'Viga', sans-serif;
-  font-size: 30px;
-  font-weight: 300; }
+  color: #0f0f0f; }
 
 .game-instruction .zajawka-txt {
-  color: #0f0f0f;
-  font-family: 'Viga', sans-serif;
-  font-size: 15px; }
+  color: #0f0f0f; }
 
 .game-instruction .item {
   max-width: 100%;
@@ -217,10 +213,6 @@ body {
 .modal {
   position: fixed;
   z-index: 2000; }
-
-.instruction-slide {
-  margin-left: auto;
-  margin-right: auto; }
 
 #function {
   background-color: #FBEAD0;
@@ -261,7 +253,7 @@ body {
   text-align: center;
   padding-bottom: 30px;
   padding-top: 20px;
-  font-size: 1.4em;
+  font-size: 1.1em;
   font-family: Roboto, sans-serif; }
 
 section#sign {
@@ -485,13 +477,15 @@ footer {
   display: none;
   transition: all 0.5s;
   color: #eee;
-  border-radius: 5px; }
+  border-radius: 5px;
+  z-index: 2000; }
   .arrow-to-top:hover {
-    background: #2f2f2f; }
+    background: #626262; }
 
 .cookies-wrapper {
   position: fixed;
   bottom: 0;
+  z-index: 1000;
   background-color: #222;
   padding: 1em 3em;
   text-align: justify;
@@ -525,7 +519,7 @@ footer {
   height: 500px;
   display: block;
   background: linear-gradient(to right, #222, #090909, #222);
-  padding-top: 130px;
+  padding-top: 40px;
   border: 30px dashed #ba4436;
   border-radius: 10px;
   text-align: center;
@@ -533,11 +527,13 @@ footer {
   align-items: center;
   justify-content: center; }
   .game-begin-board img {
-    width: 150px;
+    width: 130px;
     position: absolute;
-    top: 50px; }
+    top: 40px; }
   .game-begin-board p {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 45px;
     font-size: 4em;
     font-weight: bold;
     letter-spacing: 2px;
@@ -562,8 +558,9 @@ footer {
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 10px;
-  transition: all 0.5s;
-  text-shadow: 0 0 15px #000; }
+  transition: all 0.3s;
+  text-shadow: 0 0 15px #000;
+  text-align: center; }
 
 .game-button--entry {
   background-color: #186218; }
@@ -577,10 +574,111 @@ footer {
     background-color: darkred;
     color: #eee; }
 
+.game-button--instruction {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.1em;
+  padding: 1em;
+  width: auto;
+  border-radius: 5px;
+  background-color: #222;
+  border: 1px solid #3c3c3c;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
+  .game-button--instruction:hover {
+    color: #eee;
+    background-color: black;
+    border-color: transparent; }
+
 .game-board-visible {
   display: block !important; }
 
 .game-board-hidden {
   display: none !important; }
+
+.game-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px; }
+
+.game-main table {
+  border-color: transparent;
+  border-spacing: 0; }
+  .game-main table:focus {
+    border: none;
+    outline: none; }
+
+.game-main tbody {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/asfalt.png");
+  box-shadow: 0 0 80px green inset; }
+
+.game-main td {
+  width: 30px;
+  height: 30px; }
+
+.car {
+  background: url("pictures/gameBus.png") center center;
+  background-size: 30px; }
+
+.car--right {
+  transform: rotate(90deg); }
+
+.car--left {
+  transform: rotate(-90deg); }
+
+.car--inverse {
+  transform: rotate(180deg); }
+
+.obstacle {
+  background-color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.obstacle-skycraper {
+  background: linear-gradient(to left bottom, #333, #666, #222, #333);
+  border: 1px solid #999;
+  box-shadow: 0 0 10px #000; }
+
+.obstacle-fountain {
+  background: url("pictures/gameFountain.png") center #306225;
+  background-size: 30px; }
+
+.obstacle-repair--sign {
+  background: url("pictures/gameRepairSign.png") center #111;
+  background-size: 30px; }
+
+.obstacle-repair--blockade {
+  background: url("pictures/gameRepairBlockade.png") center #111;
+  background-size: 30px; }
+
+.obstacle-parking--last {
+  background: #777; }
+
+.obstacle-grass {
+  background: url("pictures/gameGrass.png") center;
+  background-size: 30px; }
+
+.obstacle-tree {
+  background: url("pictures/gameTree.png") center #111;
+  background-size: 30px; }
+
+.obstacle-tree--lighter {
+  background: url("pictures/gameTreeLighter.png") center #111;
+  background-size: 30px; }
+
+.passenger {
+  background: url("pictures/gamePassenger.png") center;
+  background-size: 30px; }
+
+.passenger--red {
+  background: url("pictures/gamePassengerRed.png") center #111;
+  background-size: 30px; }
+
+.bottle {
+  background: url("pictures/gameBottle.png") center #111;
+  background-size: 30px; }
 
 /*# sourceMappingURL=style.css.map */
