@@ -845,29 +845,31 @@ $cellSize: 30px;
   background: #777;
 }
 .obstacle-grass {
-  background: url('pictures/gameGrass.png') center center;
+  background: url('pictures/gameGrass.png') center;
   background-size: $cellSize;
 }
 .obstacle-tree {
-  background: url('pictures/gameTree.png') center center #111;
+  background: url('pictures/gameTree.png') center #111;
   background-size: $cellSize;
 }
 .obstacle-tree--lighter {
-  background: url('pictures/gameTreeLighter.png') center center #111;
+  background: url('pictures/gameTreeLighter.png') center #111;
   background-size: $cellSize;
 }
 .obstacle-tree--gold {
-  background: url('pictures/gameTreeGold.png') center center #111;
+  background: url('pictures/gameTreeGold.png') center #111;
   background-size: $cellSize;
 }
 .passenger {
-  background: url('pictures/gamePassenger.png') center center;
+  background: url('pictures/gamePassenger.png') center;
   background-size: $cellSize;
 }
 .passenger--red {
-  background: red;
+  background: url('pictures/gamePassengerRed.png') center #111;
+  background-size: $cellSize;
 }
 
 .bottle {
-  background: green;
+  background: url('pictures/gameBottle.png') center #111;
+  background-size: $cellSize;
 }
