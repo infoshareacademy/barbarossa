@@ -19,7 +19,7 @@
         var gameBoard = $('<table>');
         var size = 25;
         var score = 0;
-        var scoreBoard = $('<p>');
+        var scoreBoard = $('<p class="score-board">');
 
 
         times(size, function () {
