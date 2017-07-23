@@ -149,7 +149,7 @@
 
         function disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime) {
             setTimeout(function delayBlinkElement() {
-                blinkElement(elementClass,elementClassBlink);
+                blinkElement($nextPositionOfElement, elementClass,elementClassBlink);
             }, disappearTime - 3000);
 
             setTimeout(function disappearElement() {
@@ -159,7 +159,7 @@
             }, disappearTime);
         }
 
-        function blinkElement(elementClass,elementClassBlink) {
+        function blinkElement($nextPositionOfElement, elementClass,elementClassBlink) {
             var blinkInterval = setInterval(function () {
                 if ($nextPositionOfElement.hasClass(elementClass)) {
                     $nextPositionOfElement.toggleClass(elementClassBlink);
