@@ -801,6 +801,22 @@ footer {
   display: none;
 }
 
+.score-board {
+  @include shadow-content();
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 1em;
+  top: -25px;
+  left: 0;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: $colorFont;
+  background-color: $colorAccent;
+  z-index: 2200;
+}
+
 $cellSize: 30px;
 
 .game-main {
