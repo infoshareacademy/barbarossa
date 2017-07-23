@@ -12,6 +12,9 @@
         localStorage.setItem('ciastko', 'puste');
         // console.log(localStorage);
     }
+    if (localStorage.getItem('ciastko') === 'zapamietane') {
+        $cookiesWrapper.hide();
+    }
 
     $cookiesLink.click(function () {
         var cookiesDate = (new Date().getTime()) / 1000;
