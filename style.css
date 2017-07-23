@@ -608,6 +608,10 @@ footer {
 .game-board-hidden {
   display: none !important; }
 
+.countdown {
+  font-size: 10em;
+  color: #eee; }
+
 .game-main {
   display: flex;
   align-items: center;
@@ -632,7 +636,11 @@ footer {
 
 .car {
   background: url("pictures/gameBus.png") center center;
-  background-size: 30px; }
+  background-size: 30px;
+  transition: transform 1s; }
+
+.car--up {
+  transform: rotate(0deg); }
 
 .car--right {
   transform: rotate(90deg); }
@@ -640,7 +648,7 @@ footer {
 .car--left {
   transform: rotate(-90deg); }
 
-.car--inverse {
+.car--down {
   transform: rotate(180deg); }
 
 .obstacle {

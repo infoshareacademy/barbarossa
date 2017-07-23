@@ -789,6 +789,11 @@ footer {
 
 $cellSize: 30px;
 
+.countdown {
+  font-size: 10em;
+  color: $colorFont;
+}
+
 .game-main {
   @include flex-align();
   padding-top: 40px;
@@ -814,6 +819,11 @@ $cellSize: 30px;
 .car {
   background: url('pictures/gameBus.png') center center;
   background-size: $cellSize;
+  transition: transform 1s;
+}
+
+.car--up {
+  transform: rotate(0deg);
 }
 
 .car--right {
@@ -824,7 +834,7 @@ $cellSize: 30px;
   transform: rotate(-90deg);
 }
 
-.car--inverse {
+.car--down {
   transform: rotate(180deg);
 }
 

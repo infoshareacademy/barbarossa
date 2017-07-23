@@ -1,9 +1,5 @@
-// Moving vehicle
-
 (function () {
     $(document).ready(function () {
-
-        // Start game
 
         // Board
 
@@ -21,7 +17,6 @@
         var score = 0;
         var scoreBoard = $('<p>');
 
-
         times(size, function () {
             var tr = $('<tr>');
             times(size, function () {
@@ -32,9 +27,8 @@
         });
 
         game.append(gameBoard).append(scoreBoard);
-        scoreBoard.text('Zebrani pasażerowie: ' + score);
         gameBoard.focus();
-
+        scoreBoard.text('Zebrani pasażerowie: ' + score);
 
         (function startPositionOfCarAndBuildings() {
             // Samochód
@@ -118,6 +112,25 @@
             $('tr:nth-child(25) td:nth-child(n)').addClass('obstacle obstacle-grass');
         })();
 
+        // Start game
+
+        var $startGameButton = $('.game-button--entry');
+        var $countdown = $('<p class="countdown">');
+        game.append($countdown);
+
+        $startGameButton.click(function() {
+            event.preventDefault();
+            var timeToShow = 3;
+            var countdownToStart = setInterval( function () {
+                $countdown.text(timeToShow);
+                timeToShow--;
+                if (timeToShow = 0) {
+                    clearInterval(countdownToStart);
+                }
+            }, 1000)
+        });
+
+
         // Passengers and bottles
 
         addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
@@ -196,7 +209,7 @@
                     break;
                 case 'UP':
                     nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car';
+                    setupOfCar = 'car--up';
                     break;
                 case 'RIGHT':
                     nextPositionOfCar = $(this).find('td.car').next();
@@ -204,7 +217,7 @@
                     break;
                 case 'DOWN':
                     nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                    setupOfCar = 'car--inverse';
+                    setupOfCar = 'car--down';
                     break;
             }
             checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
