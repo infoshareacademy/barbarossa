@@ -669,10 +669,6 @@ footer {
   background: url("pictures/gameTreeLighter.png") center #111;
   background-size: 30px; }
 
-.obstacle-tree--gold {
-  background: url("pictures/gameTreeGold.png") center #111;
-  background-size: 30px; }
-
 .passenger {
   background: url("pictures/gamePassenger.png") center;
   background-size: 30px; }
