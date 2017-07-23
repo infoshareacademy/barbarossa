@@ -840,6 +840,7 @@ $cellSize: 30px;
 .countdown {
   font-size: 10em;
   color: $colorFont;
+
 }
 
 .game-main {
@@ -870,6 +871,8 @@ $cellSize: 30px;
 .car {
   background: url('pictures/gameBus.png') center center;
   background-size: $cellSize;
+}
+.car--animated {
   transition: transform 1s;
 }
 

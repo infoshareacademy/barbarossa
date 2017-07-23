@@ -125,7 +125,7 @@
             var countdownToStart = setInterval( function () {
                 $countdown.text(timeToShow);
                 timeToShow--;
-                if (timeToShow === 0) {
+                if (timeToShow === -1) {
                     clearInterval(countdownToStart);
                     $countdown.remove();
                     startGame();
@@ -208,22 +208,24 @@
                     moveDirection = invertDirection(moveDirection);
                 }
 
+
+
                 switch (moveDirection) {
                     case 'LEFT':
                         nextPositionOfCar = $(this).find('td.car').prev();
-                        setupOfCar = 'car--left';
+                        setupOfCar = foo('car--left', lastPositionOfCar);
                         break;
                     case 'UP':
                         nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--up';
+                        setupOfCar = foo('car--up', lastPositionOfCar);
                         break;
                     case 'RIGHT':
                         nextPositionOfCar = $(this).find('td.car').next();
-                        setupOfCar = 'car--right';
+                        setupOfCar = foo('car--right', lastPositionOfCar);
                         break;
                     case 'DOWN':
                         nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--down';
+                        setupOfCar = foo('car--down', lastPositionOfCar);
                         break;
                 }
                 checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -265,6 +267,10 @@
                 case 40:
                     return 'DOWN';
             }
+        }
+
+        function foo(prefix, node) {
+            return prefix + ' ' + (node.hasClass(prefix) ? '' : 'car--animated');
         }
 
         function invertDirection(direction) {
