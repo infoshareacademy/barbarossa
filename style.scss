@@ -683,7 +683,8 @@ footer {
 }
 
 .game-begin-board {
-  position: relative;
+  position: absolute;
+  z-index: 1300;
   width: 500px;
   height: 500px;
   display: block;
@@ -775,6 +776,19 @@ footer {
 }
 
 ///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
+
+.game-main-wrapper-switch {
+  z-index: 2000;
+  position: absolute;
+}
+
+.game-main-wrapper-visible {
+  display: block;
+}
+
+.game-main-wrapper-hidden {
+  display: none;
+}
 
 $cellSize: 30px;
 

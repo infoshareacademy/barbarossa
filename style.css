@@ -514,7 +514,8 @@ footer {
   justify-content: center; }
 
 .game-begin-board {
-  position: relative;
+  position: absolute;
+  z-index: 1300;
   width: 500px;
   height: 500px;
   display: block;
@@ -595,6 +596,16 @@ footer {
 
 .game-board-hidden {
   display: none !important; }
+
+.game-main-wrapper-switch {
+  z-index: 2000;
+  position: absolute; }
+
+.game-main-wrapper-visible {
+  display: block; }
+
+.game-main-wrapper-hidden {
+  display: none; }
 
 .game-main {
   display: flex;
