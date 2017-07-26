@@ -682,8 +682,6 @@ footer {
 
 ///////////////////////////////////////////// The Game - Questions Board //////////////////////////////////////////////
 
-$cellSize: 30px;
-
 .game-background-board {
   position: fixed;
   width: 100%;
@@ -792,6 +790,8 @@ $cellSize: 30px;
 
 ///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
 
+$cellSize: 30px;
+
 @mixin game-info-field() {
   text-transform: uppercase;
   position: absolute;
@@ -824,6 +824,12 @@ $cellSize: 30px;
   left: 0;
 }
 
+.time-board {
+  @include game-info-field();
+  top: -25px;
+  right: 0;
+}
+
 .game-exit-button {
   @include game-info-field();
   outline: none;
@@ -838,9 +844,11 @@ $cellSize: 30px;
 }
 
 .countdown {
-  font-size: 10em;
+  font-size: 15em;
+  margin: 0;
   color: $colorFont;
-
+  position: absolute;
+  text-shadow: 10px 10px 5px rgba(0,0,0,1);
 }
 
 .game-main {

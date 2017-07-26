@@ -1,10 +1,9 @@
 (function () {
     $(document).ready(function () {
 
-        // Board
-
         var game = $('#game');
-        var IS_DRUNK = false;
+
+        // Board
 
         function times(n, callback) {
             for (var i = 0; i < n; i += 1) {
@@ -16,6 +15,8 @@
         var size = 25;
         var score = 0;
         var scoreBoard = $('<p class="score-board">');
+        var timeBoard = $('<p class="time-board">');
+        var buttonExit  = $('<button class="game-exit-button">')
 
         times(size, function () {
             var tr = $('<tr>');
@@ -26,9 +27,10 @@
             gameBoard.append(tr).attr('tabindex', 0)
         });
 
-        game.append(gameBoard).append(scoreBoard);
-        gameBoard.focus();
+        game.append(gameBoard).append(scoreBoard).append(timeBoard).append(buttonExit);
         scoreBoard.text('Zebrani pasażerowie: ' + score);
+        timeBoard.text('1:00');
+        buttonExit.text('ZAKOŃCZ');
 
         (function startPositionOfCarAndBuildings() {
             // Samochód
@@ -118,8 +120,7 @@
         var $countdown = $('<p class="countdown">');
         game.append($countdown);
 
-        // $startGameButton.click
-        (function() {
+        $startGameButton.click(function() {
             event.preventDefault();
             var timeToShow = 3;
             var countdownToStart = setInterval( function () {
@@ -131,12 +132,20 @@
                     startGame();
                 }
             }, 1000)
-        })();
+        });
 
         function startGame () {
+
+            gameBoard.focus();
             addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
             addElements('bottle', 3, 6000, false);
             moveCar();
+            // setTimeout( function gameTime() {
+            //     setInterval( function () {
+            //
+            //
+            //     })
+            // },60000)
         }
 
         // Passengers and bottles
@@ -190,6 +199,8 @@
         }
 
         // Car
+
+        var IS_DRUNK = false;
 
         function moveCar() {
             gameBoard.keydown(function moveCar(event) {

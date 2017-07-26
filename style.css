@@ -633,6 +633,20 @@ footer {
   top: -25px;
   left: 0; }
 
+.time-board {
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 1em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.3em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  top: -25px;
+  right: 0; }
+
 .game-exit-button {
   text-transform: uppercase;
   position: absolute;
@@ -654,8 +668,11 @@ footer {
     color: #ba4436; }
 
 .countdown {
-  font-size: 10em;
-  color: #eee; }
+  font-size: 15em;
+  margin: 0;
+  color: #eee;
+  position: absolute;
+  text-shadow: 10px 10px 5px black; }
 
 .game-main {
   display: flex;
