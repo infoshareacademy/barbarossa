@@ -29,7 +29,7 @@
 
         game.append(gameBoard).append(scoreBoard).append(timeBoard).append(buttonExit);
         scoreBoard.text('Zebrani pasażerowie: ' + score);
-        timeBoard.text('1:00');
+        timeBoard.text('2:00');
         buttonExit.text('ZAKOŃCZ');
 
         (function startPositionOfCarAndBuildings() {
@@ -114,7 +114,7 @@
             $('tr:nth-child(25) td:nth-child(n)').addClass('obstacle obstacle-grass');
         })();
 
-        // Start game
+        // Start and end game
 
         var $startGameButton = $('.game-button--entry');
         var $countdown = $('<p class="countdown">');
@@ -123,7 +123,7 @@
         $startGameButton.click(function() {
             event.preventDefault();
             var timeToShow = 3;
-            var countdownToStart = setInterval( function () {
+            var countdownToStart = setInterval( function showCountdown() {
                 $countdown.text(timeToShow);
                 timeToShow--;
                 if (timeToShow === -1) {
@@ -135,27 +135,49 @@
         });
 
         function startGame () {
+            var gameTime = 60;
 
             gameBoard.focus();
-            addElements('passenger', 30, 2000, true, 8000, 'passenger--red');
-            addElements('bottle', 3, 6000, false);
+            addElements('passenger', 3000, true, 10000, 'passenger--red');
+            addElements('bottle', 10000, false);
             moveCar();
-            // setTimeout( function gameTime() {
-            //     setInterval( function () {
-            //
-            //
-            //     })
-            // },60000)
+            var gameTimeInterval = setInterval( function showGameTime() {
+                gameTime--;
+                if (gameTime < -50) {
+                    timeBoard.text('0:0' + (60 + gameTime));
+                }
+                else if (gameTime < 0) {
+                    timeBoard.text('0:' + (60 + gameTime));
+                }
+                else if (gameTime < 10) {
+                    timeBoard.text('1:0' + gameTime);
+                }
+                else {
+                    timeBoard.text('1:' + gameTime);
+                }
+            },1000);
+            setTimeout( function clearGameTime() {
+                clearInterval(gameTimeInterval);
+                timeBoard.text('0:00');
+                endGame();
+            },120000)
+        }
+
+        function endGame() {
+            // game.animate({
+            //     opacity: 0.5
+            // });
+            // spot to show ranking
         }
 
         // Passengers and bottles
 
-        function addElements(elementClass, counterLimit, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
+        function addElements(elementClass, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
             var counter = 0;
             var addElementsInterval = setInterval(function () {
-
                 var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
                 var numberOfPossibility = $possiblePositionOfElement.length;
+                counter++;
 
                 if (numberOfPossibility === 0) {
                     return
@@ -164,14 +186,23 @@
                 var $nextPositionOfElement = $($possiblePositionOfElement[randomPositionIndex]);
                 $nextPositionOfElement.addClass(elementClass);
 
-                counter++;
                 if (shouldDisapper === true) {
                     disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime);
                 }
-                if (counter >= counterLimit) {
-                    clearInterval(addElementsInterval)
+
+                if (intervalTime * counter > 120000) {
+                    clearInterval(addElementsInterval);
                 }
-            }, intervalTime)
+
+            }, intervalTime);
+
+            var levelUpInterval = setInterval( function () {
+                disappearTime = disappearTime - 1000;
+                if (disappearTime < 3000) {
+                    clearInterval(levelUpInterval);
+                }
+            }, 20000);
+
         }
 
         function disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime) {
@@ -219,24 +250,22 @@
                     moveDirection = invertDirection(moveDirection);
                 }
 
-
-
                 switch (moveDirection) {
                     case 'LEFT':
                         nextPositionOfCar = $(this).find('td.car').prev();
-                        setupOfCar = foo('car--left', lastPositionOfCar);
+                        setupOfCar = 'car--left';
                         break;
                     case 'UP':
                         nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = foo('car--up', lastPositionOfCar);
+                        setupOfCar = 'car--up';
                         break;
                     case 'RIGHT':
                         nextPositionOfCar = $(this).find('td.car').next();
-                        setupOfCar = foo('car--right', lastPositionOfCar);
+                        setupOfCar = 'car--right';
                         break;
                     case 'DOWN':
                         nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = foo('car--down', lastPositionOfCar);
+                        setupOfCar = 'car--down';
                         break;
                 }
                 checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -267,6 +296,10 @@
             }
         }
 
+        // function foo(prefix, node) {
+        //     return prefix + ' ' + (node.hasClass(prefix) ? '' : 'car--animated');
+        // }
+
         function setDirection(whatKeyIsPressed) {
             switch (whatKeyIsPressed) {
                 case 37:
@@ -278,10 +311,6 @@
                 case 40:
                     return 'DOWN';
             }
-        }
-
-        function foo(prefix, node) {
-            return prefix + ' ' + (node.hasClass(prefix) ? '' : 'car--animated');
         }
 
         function invertDirection(direction) {

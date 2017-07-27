@@ -609,6 +609,12 @@ footer {
 .game-board-hidden {
   display: none !important; }
 
+.arrow-buttons {
+  display: none; }
+
+@media screen and (max-width: 991px) {
+  .arrow-buttons {
+    display: block; } }
 .game-main-wrapper-switch {
   z-index: 2000;
   position: absolute; }
@@ -699,9 +705,6 @@ footer {
 .car {
   background: url("pictures/gameBus.png") center center;
   background-size: 30px; }
-
-.car--animated {
-  transition: transform 1s; }
 
 .car--up {
   transform: rotate(0deg); }

@@ -792,6 +792,20 @@ footer {
 
 $cellSize: 30px;
 
+.arrow-buttons {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  $cellSize: 15px;
+  .arrow-buttons {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  $cellSize: 30px;
+}
+
 @mixin game-info-field() {
   text-transform: uppercase;
   position: absolute;
@@ -880,9 +894,6 @@ $cellSize: 30px;
   background: url('pictures/gameBus.png') center center;
   background-size: $cellSize;
 }
-.car--animated {
-  transition: transform 1s;
-}
 
 .car--up {
   transform: rotate(0deg);
@@ -961,4 +972,3 @@ $cellSize: 30px;
   background: url('pictures/gameBottle.png') center #111;
   background-size: $cellSize;
 }
-
