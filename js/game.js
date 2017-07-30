@@ -16,7 +16,7 @@
         var score = 0;
         var scoreBoard = $('<p class="score-board">');
         var timeBoard = $('<p class="time-board">');
-        var buttonExit  = $('<button class="game-exit-button">')
+        var buttonExit = $('<button class="game-exit-button">')
 
         times(size, function () {
             var tr = $('<tr>');
@@ -120,10 +120,10 @@
         var $countdown = $('<p class="countdown">');
         game.append($countdown);
 
-        $startGameButton.click(function() {
+        $startGameButton.click(function () {
             event.preventDefault();
             var timeToShow = 3;
-            var countdownToStart = setInterval( function showCountdown() {
+            var countdownToStart = setInterval(function showCountdown() {
                 $countdown.text(timeToShow);
                 timeToShow--;
                 if (timeToShow === -1) {
@@ -134,14 +134,16 @@
             }, 1000)
         });
 
-        function startGame () {
+        function startGame() {
             var gameTime = 60;
 
             gameBoard.focus();
             addElements('passenger', 3000, true, 10000, 'passenger--red');
             addElements('bottle', 10000, false);
             moveCar();
-            var gameTimeInterval = setInterval( function showGameTime() {
+            moveCarForSmallDevice();
+
+            var gameTimeInterval = setInterval(function showGameTime() {
                 gameTime--;
                 if (gameTime < -50) {
                     timeBoard.text('0:0' + (60 + gameTime));
@@ -155,12 +157,12 @@
                 else {
                     timeBoard.text('1:' + gameTime);
                 }
-            },1000);
-            setTimeout( function clearGameTime() {
+            }, 1000);
+            setTimeout(function clearGameTime() {
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            },120000)
+            }, 120000)
         }
 
         function endGame() {
@@ -196,7 +198,7 @@
 
             }, intervalTime);
 
-            var levelUpInterval = setInterval( function () {
+            var levelUpInterval = setInterval(function () {
                 disappearTime = disappearTime - 1000;
                 if (disappearTime < 3000) {
                     clearInterval(levelUpInterval);
@@ -207,7 +209,7 @@
 
         function disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime) {
             setTimeout(function delayBlinkElement() {
-                blinkElement($nextPositionOfElement, elementClass,elementClassBlink);
+                blinkElement($nextPositionOfElement, elementClass, elementClassBlink);
             }, disappearTime - 3000);
 
             setTimeout(function disappearElement() {
@@ -217,7 +219,7 @@
             }, disappearTime);
         }
 
-        function blinkElement($nextPositionOfElement, elementClass,elementClassBlink) {
+        function blinkElement($nextPositionOfElement, elementClass, elementClassBlink) {
             var blinkInterval = setInterval(function () {
                 if ($nextPositionOfElement.hasClass(elementClass)) {
                     $nextPositionOfElement.toggleClass(elementClassBlink);
@@ -296,10 +298,6 @@
             }
         }
 
-        // function foo(prefix, node) {
-        //     return prefix + ' ' + (node.hasClass(prefix) ? '' : 'car--animated');
-        // }
-
         function setDirection(whatKeyIsPressed) {
             switch (whatKeyIsPressed) {
                 case 37:
@@ -328,5 +326,76 @@
             }
         }
 
+
+        function moveCarForSmallDevice() {
+            var lastPositionOfCar;
+            var nextPositionOfCar;
+            var stillClickInterval;
+
+            $('.arrow--up').bind("touchstart", function () {
+                stillClickInterval = setInterval(function () {
+                    lastPositionOfCar = gameBoard.find('td.car');
+                    if (IS_DRUNK) {
+                        nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--down';
+                    }
+                    else {
+                        nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--up';
+                    }
+                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
+                }, 100);
+            }).bind("touchend", function () {
+                clearInterval(stillClickInterval);
+            });
+            $('.arrow--down').bind("touchstart", function () {
+                stillClickInterval = setInterval(function () {
+                    lastPositionOfCar = gameBoard.find('td.car');
+                    if (IS_DRUNK) {
+                        nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--up';
+                    }
+                    else {
+                        nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        setupOfCar = 'car--down';
+                    }
+                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
+                }, 100);
+            }).bind("touchend", function () {
+                clearInterval(stillClickInterval);
+            });
+            $('.arrow--right').bind("touchstart", function () {
+                stillClickInterval = setInterval(function () {
+                    lastPositionOfCar = gameBoard.find('td.car');
+                    if (IS_DRUNK) {
+                        nextPositionOfCar = gameBoard.find('td.car').prev();
+                        setupOfCar = 'car--left';
+                    }
+                    else {
+                        nextPositionOfCar = gameBoard.find('td.car').next();
+                        setupOfCar = 'car--right';
+                    }
+                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
+                }, 100);
+            }).bind("touchend", function () {
+                clearInterval(stillClickInterval);
+            });
+            $('.arrow--left').bind("touchstart", function () {
+                stillClickInterval = setInterval(function () {
+                    lastPositionOfCar = gameBoard.find('td.car');
+                    if (IS_DRUNK) {
+                        nextPositionOfCar = gameBoard.find('td.car').next();
+                        setupOfCar = 'car--right';
+                    }
+                    else {
+                        nextPositionOfCar = gameBoard.find('td.car').prev();
+                        setupOfCar = 'car--left';
+                    }
+                    checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
+                }, 100);
+            }).bind("touchend", function () {
+                clearInterval(stillClickInterval);
+            });
+        }
     });
 })();

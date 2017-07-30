@@ -609,12 +609,6 @@ footer {
 .game-board-hidden {
   display: none !important; }
 
-.arrow-buttons {
-  display: none; }
-
-@media screen and (max-width: 991px) {
-  .arrow-buttons {
-    display: block; } }
 .game-main-wrapper-switch {
   z-index: 2000;
   position: absolute; }
@@ -629,46 +623,46 @@ footer {
   text-transform: uppercase;
   position: absolute;
   display: block;
-  padding: 1em;
+  padding: 0.75em;
   letter-spacing: 1px;
   font-weight: 900;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border-radius: 5px;
   color: #eee;
   background-color: #222;
-  top: -25px;
+  top: -50px;
   left: 0; }
 
 .time-board {
   text-transform: uppercase;
   position: absolute;
   display: block;
-  padding: 1em;
+  padding: 0.75em;
   letter-spacing: 1px;
   font-weight: 900;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border-radius: 5px;
   color: #eee;
   background-color: #222;
-  top: -25px;
+  top: -50px;
   right: 0; }
 
 .game-exit-button {
   text-transform: uppercase;
   position: absolute;
   display: block;
-  padding: 1em;
+  padding: 0.75em;
   letter-spacing: 1px;
   font-weight: 900;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border-radius: 5px;
   color: #eee;
   background-color: #222;
   outline: none;
   border: none;
-  bottom: -65px;
+  bottom: -50px;
   right: 0;
-  transition: all 0.5s; }
+  transition: color 0.5s, background-color 0.5s; }
   .game-exit-button:hover {
     background-color: #eee;
     color: #ba4436; }
@@ -683,8 +677,7 @@ footer {
 .game-main {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 40px; }
+  justify-content: center; }
 
 .game-main table {
   border-color: transparent;
@@ -699,12 +692,12 @@ footer {
   box-shadow: 0 0 80px green inset; }
 
 .game-main td {
-  width: 30px;
-  height: 30px; }
+  width: 22px;
+  height: 22px; }
 
 .car {
   background: url("pictures/gameBus.png") center center;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .car--up {
   transform: rotate(0deg); }
@@ -727,45 +720,101 @@ footer {
 .obstacle-skycraper {
   background: linear-gradient(to left bottom, #333, #666, #222, #333);
   border: 1px solid #999;
-  box-shadow: 0 0 10px #000; }
+  box-shadow: 0 0 10px #000;
+  background-size: 22px; }
 
 .obstacle-fountain {
   background: url("pictures/gameFountain.png") center #306225;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .obstacle-repair--sign {
   background: url("pictures/gameRepairSign.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .obstacle-repair--blockade {
   background: url("pictures/gameRepairBlockade.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .obstacle-parking--last {
-  background: #777; }
+  background: #777;
+  background-size: 22px; }
 
 .obstacle-grass {
   background: url("pictures/gameGrass.png") center;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .obstacle-tree {
   background: url("pictures/gameTree.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .obstacle-tree--lighter {
   background: url("pictures/gameTreeLighter.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .passenger {
   background: url("pictures/gamePassenger.png") center;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .passenger--red {
   background: url("pictures/gamePassengerRed.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
 
 .bottle {
   background: url("pictures/gameBottle.png") center #111;
-  background-size: 30px; }
+  background-size: 22px; }
+
+.arrow-buttons {
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.1em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  display: none;
+  margin-top: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px; }
+  .arrow-buttons:active {
+    background-color: #eee;
+    color: #ba4436; }
+
+.game-main-wrapper-switch .arrow--up {
+  left: 100px; }
+
+.game-main-wrapper-switch .arrow--down {
+  left: 100px;
+  bottom: -85px; }
+
+.game-main-wrapper-switch .arrow--left {
+  left: 67px;
+  bottom: -85px; }
+
+.game-main-wrapper-switch .arrow--right {
+  left: 138px;
+  bottom: -85px; }
+
+@media screen and (max-width: 991px) {
+  .game-main td {
+    width: 15px;
+    height: 15px; }
+
+  .car, .obstacle, .passenger, .bottle {
+    background-size: 15px; }
+
+  .arrow-buttons {
+    display: block; }
+
+  .score-board {
+    font-size: 1em; }
+
+  .time-board {
+    font-size: 1em; }
+
+  .game-exit-button {
+    font-size: 1em; } }
 
 /*# sourceMappingURL=style.css.map */

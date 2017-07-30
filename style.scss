@@ -790,34 +790,20 @@ footer {
 
 ///////////////////////////////////////////// The Game - Main Board //////////////////////////////////////////////
 
-$cellSize: 30px;
-
-.arrow-buttons {
-  display: none;
-}
-
-@media screen and (max-width: 991px) {
-  $cellSize: 15px;
-  .arrow-buttons {
-    display: block;
-  }
-}
-@media screen and (min-width: 992px) {
-  $cellSize: 30px;
-}
-
 @mixin game-info-field() {
   text-transform: uppercase;
   position: absolute;
   display: block;
-  padding: 1em;
+  padding: 0.75em;
   letter-spacing: 1px;
   font-weight: 900;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border-radius: 5px;
   color: $colorFont;
   background-color: $colorAccent;
 }
+
+$cellSize: 22px;
 
 .game-main-wrapper-switch {
   z-index: 2000;
@@ -834,13 +820,13 @@ $cellSize: 30px;
 
 .score-board {
   @include game-info-field();
-  top: -25px;
+  top: -50px;
   left: 0;
 }
 
 .time-board {
   @include game-info-field();
-  top: -25px;
+  top: -50px;
   right: 0;
 }
 
@@ -848,9 +834,9 @@ $cellSize: 30px;
   @include game-info-field();
   outline: none;
   border: none;
-  bottom: -65px;
+  bottom: -50px;
   right: 0;
-  transition: all 0.5s;
+  transition: color 0.5s, background-color 0.5s;
     &:hover {
       background-color: $colorFont;
       color: $colorMain;
@@ -867,7 +853,6 @@ $cellSize: 30px;
 
 .game-main {
   @include flex-align();
-  padding-top: 40px;
 }
 
 .game-main table {
@@ -922,6 +907,7 @@ $cellSize: 30px;
   background: linear-gradient(to left bottom, #333, #666, #222, #333);
   border: 1px solid #999;
   box-shadow: 0 0 10px #000;
+  background-size: $cellSize;
 }
 
 .obstacle-fountain {
@@ -941,6 +927,7 @@ $cellSize: 30px;
 
 .obstacle-parking--last {
   background: #777;
+  background-size: $cellSize;
 }
 
 .obstacle-grass {
@@ -971,4 +958,56 @@ $cellSize: 30px;
 .bottle {
   background: url('pictures/gameBottle.png') center #111;
   background-size: $cellSize;
+}
+
+.arrow-buttons {
+  @include game-info-field();
+  display: none;
+  margin-top: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  &:active {
+    background-color: $colorFont;
+    color: $colorMain;
+  }
+}
+
+.game-main-wrapper-switch .arrow--up {
+  left: 100px;
+}
+.game-main-wrapper-switch .arrow--down {
+  left: 100px;
+  bottom: -85px;
+}
+.game-main-wrapper-switch .arrow--left {
+  left: 67px;
+  bottom: -85px;
+}
+.game-main-wrapper-switch .arrow--right {
+  left: 138px;
+  bottom: -85px;
+}
+
+@media screen and (max-width: 991px) {
+  $cellSize: 15px;
+  .game-main td {
+    width: $cellSize;
+    height: $cellSize;
+  }
+  .car, .obstacle, .passenger, .bottle {
+    background-size: $cellSize;
+  }
+  .arrow-buttons {
+    display: block;
+  }
+  .score-board {
+    font-size: 1em;
+  }
+
+  .time-board {
+    font-size: 1em;
+  }
+  .game-exit-button {
+    font-size: 1em;
+  }
 }
