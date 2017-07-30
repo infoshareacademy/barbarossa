@@ -157,6 +157,7 @@
                 else {
                     timeBoard.text('1:' + gameTime);
                 }
+                gameBoard.focus(); // get focus after 1 second to prevent click off the game board
             }, 1000);
             setTimeout(function clearGameTime() {
                 clearInterval(gameTimeInterval);
@@ -213,9 +214,11 @@
             }, disappearTime - 3000);
 
             setTimeout(function disappearElement() {
+                if ($nextPositionOfElement.hasClass(elementClass)) {
                 $nextPositionOfElement.removeClass(elementClass);
                 score--;
                 scoreBoard.text('Zebrani pasażerowie: ' + score);
+                }
             }, disappearTime);
         }
 
