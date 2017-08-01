@@ -175,12 +175,12 @@
 
             var timeStamp = Math.floor(Date.now() / 1000);
 
+            // Ranking
+
             localStorage.setItem( 'ranking-' + timeStamp.toString(), score);
 
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
-
-            // Ranking
 
             showRanking();
             // game.animate({
