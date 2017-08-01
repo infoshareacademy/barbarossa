@@ -175,7 +175,7 @@
 
             var timeStamp = Math.floor(Date.now() / 1000);
 
-            // Ranking
+            // Ranking //
 
             localStorage.setItem( 'ranking-' + timeStamp.toString(), score);
 
