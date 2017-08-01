@@ -7,4 +7,5 @@ $('.game-button--exit').click(function() {
     $( ".modal-backdrop.in" ).animate({
         opacity: 0
     });
+
 });
