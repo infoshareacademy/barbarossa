@@ -167,6 +167,10 @@
         }
 
         function endGame() {
+
+            var timeStamp = Math.floor(Date.now() / 1000);
+            var result = score;
+            localStorage.setItem( toString(timeStamp), result);
             // game.animate({
             //     opacity: 0.5
             // });
