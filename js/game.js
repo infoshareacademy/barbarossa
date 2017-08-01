@@ -329,6 +329,7 @@
             }
         }
 
+        // Car for small devices
 
         function moveCarForSmallDevice() {
             var lastPositionOfCar;
@@ -347,7 +348,7 @@
                         setupOfCar = 'car--up';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -363,7 +364,7 @@
                         setupOfCar = 'car--down';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -379,7 +380,7 @@
                         setupOfCar = 'car--right';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -395,7 +396,7 @@
                         setupOfCar = 'car--left';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
