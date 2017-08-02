@@ -204,12 +204,12 @@
                 }
             }
 
-            console.log(results);
             times(tableWidth, function () {
                 var tr = $('<tr>');
                 times(tableHeight, function () {
                     var td = $('<td>');
-                    tr.append(td)
+                    tr.append(td);
+                    td.append(results['0'].id)
                 });
                 rankingBoard.append(tr);
             });

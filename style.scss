@@ -845,10 +845,10 @@ $cellSize: 22px;
   bottom: -50px;
   right: 0;
   transition: color 0.5s, background-color 0.5s;
-    &:hover {
-      background-color: $colorFont;
-      color: $colorMain;
-    }
+  &:hover {
+    background-color: $colorFont;
+    color: $colorMain;
+  }
 }
 
 .countdown {
@@ -856,7 +856,7 @@ $cellSize: 22px;
   margin: 0;
   color: $colorFont;
   position: absolute;
-  text-shadow: 10px 10px 5px rgba(0,0,0,1);
+  text-shadow: 10px 10px 5px rgba(0, 0, 0, 1);
 }
 
 .game-main {
@@ -983,14 +983,17 @@ $cellSize: 22px;
 .game-main-wrapper-switch .arrow--up {
   left: 100px;
 }
+
 .game-main-wrapper-switch .arrow--down {
   left: 100px;
   bottom: -85px;
 }
+
 .game-main-wrapper-switch .arrow--left {
   left: 67px;
   bottom: -85px;
 }
+
 .game-main-wrapper-switch .arrow--right {
   left: 138px;
   bottom: -85px;
@@ -1017,5 +1020,40 @@ $cellSize: 22px;
   }
   .game-exit-button {
     font-size: 1em;
+  }
+}
+
+///////////////////////////////////////////// The Game - Ranking //////////////////////////////////////////////
+
+#rank-board {
+  @include shadow-content();
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  min-height: 150px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: $colorAccent;
+  h1 {
+    color: $colorFont;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  img.crown {
+    width: 100px;
+    position: absolute;
+    top: -80px;
+    right: -21px;
+  }
+  img.ribbon {
+    width: 75px;
+    bottom: -18px;
+    left: -3px;
+    position: absolute;
   }
 }
