@@ -119,6 +119,9 @@
 
         var $startGameButton = $('.game-button--entry');
         var $countdown = $('<p class="countdown">');
+        var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true"width="2" height="0">');
+        var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
+
         game.append($countdown);
 
         $startGameButton.click(function () {
@@ -141,6 +144,8 @@
 
         function startGame() {
             var gameTime = 60;
+
+            $('body').append($music).append($musicForOperaAndIE);
 
             gameBoard.focus();
             addElements('passenger', 3000, true, 10000, 'passenger--red');
@@ -172,6 +177,9 @@
         }
 
         function endGame() {
+
+            $music.remove();
+            $musicForOperaAndIE.remove();
 
             var timeStamp = Math.floor(Date.now() / 1000);
 
@@ -264,7 +272,6 @@
                     if (score > 0) {
                         score--;
                         scoreBoard.text('Zebrani pasażerowie: ' + score);
-
                     }
                 }
             }, disappearTime);
@@ -389,7 +396,7 @@
                     lastPositionOfCar = gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--down';
+                        setupOfCar = 'car--drunk car--down';
                     }
                     else {
                         nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
@@ -405,7 +412,7 @@
                     lastPositionOfCar = gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--up';
+                        setupOfCar = 'car--drunk car--up';
                     }
                     else {
                         nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
@@ -421,7 +428,7 @@
                     lastPositionOfCar = gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = gameBoard.find('td.car').prev();
-                        setupOfCar = 'car--left';
+                        setupOfCar = 'car--drunk car--left';
                     }
                     else {
                         nextPositionOfCar = gameBoard.find('td.car').next();
@@ -437,7 +444,7 @@
                     lastPositionOfCar = gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = gameBoard.find('td.car').next();
-                        setupOfCar = 'car--right';
+                        setupOfCar = 'car--drunk car--right';
                     }
                     else {
                         nextPositionOfCar = gameBoard.find('td.car').prev();
