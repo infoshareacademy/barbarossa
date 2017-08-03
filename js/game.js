@@ -119,7 +119,7 @@
 
         var $startGameButton = $('.game-button--entry');
         var $countdown = $('<p class="countdown">');
-        var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true"width="2" height="0">');
+        var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true" width="0" height="0">');
         var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
 
         game.append($countdown);
@@ -231,7 +231,7 @@
         function addElements(elementClass, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
             var counter = 0;
             var addElementsInterval = setInterval(function () {
-                var $possiblePositionOfElement = $('td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
+                var $possiblePositionOfElement = $('#game td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
                 var numberOfPossibility = $possiblePositionOfElement.length;
                 counter++;
 
