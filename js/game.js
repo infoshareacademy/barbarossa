@@ -177,16 +177,12 @@
 
             // Ranking //
 
-            localStorage.setItem( 'ranking-' + timeStamp.toString(), score);
+            localStorage.setItem('ranking-' + timeStamp.toString(), score);
 
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
 
             showRanking();
-            // game.animate({
-            //     opacity: 0.5
-            // });
-            // spot to show ranking
         }
 
         function showRanking() {
@@ -195,10 +191,14 @@
             var tableHeight = 11;
             var results = [];
 
-            for(var i in window.localStorage){
-                if(results.length < 10) {
+            for (var i in window.localStorage) {
+                if (results.length < 10) {
                     if (i.match(/^ranking-/)) {
-                        results.push({id: results.length + 1, time: i.replace('ranking-',""), score: localStorage.getItem(i)});
+                        results.push({
+                            id: results.length + 1,
+                            time: i.replace('ranking-', ""),
+                            score: localStorage.getItem(i)
+                        });
 
                     }
                 }
@@ -260,9 +260,12 @@
 
             setTimeout(function disappearElement() {
                 if ($nextPositionOfElement.hasClass(elementClass)) {
-                $nextPositionOfElement.removeClass(elementClass);
-                score--;
-                scoreBoard.text('Zebrani pasażerowie: ' + score);
+                    $nextPositionOfElement.removeClass(elementClass);
+                    if (score > 0) {
+                        score--;
+                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+
+                    }
                 }
             }, disappearTime);
         }
@@ -327,7 +330,7 @@
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar).text('');
+                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
                 score += 1;
                 scoreBoard.text('Zebrani pasażerowie: ' + score);
@@ -374,6 +377,7 @@
             }
         }
 
+        // Car for small devices
 
         function moveCarForSmallDevice() {
             var lastPositionOfCar;
@@ -392,7 +396,7 @@
                         setupOfCar = 'car--up';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -408,7 +412,7 @@
                         setupOfCar = 'car--down';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -424,7 +428,7 @@
                         setupOfCar = 'car--right';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -440,7 +444,7 @@
                         setupOfCar = 'car--left';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 100);
+                }, 50);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
