@@ -2,6 +2,7 @@
     $(document).ready(function () {
 
         var game = $('#game');
+        var ranking = $('#rank-board');
 
         // Board
 
@@ -134,6 +135,10 @@
             }, 1000)
         });
 
+        buttonExit.click(function () {
+            endGame();
+        });
+
         function startGame() {
             var gameTime = 60;
 
@@ -167,10 +172,50 @@
         }
 
         function endGame() {
+
+            var timeStamp = Math.floor(Date.now() / 1000);
+
+            // Ranking //
+
+            localStorage.setItem( 'ranking-' + timeStamp.toString(), score);
+
+            $gameSwitch.children().removeClass('game-main-wrapper-visible');
+            $gameSwitch.children().addClass('game-main-wrapper-hidden');
+
+            showRanking();
             // game.animate({
             //     opacity: 0.5
             // });
             // spot to show ranking
+        }
+
+        function showRanking() {
+            var rankingBoard = $('<table>');
+            var tableWidth = 3;
+            var tableHeight = 11;
+            var results = [];
+
+            for(var i in window.localStorage){
+                if(results.length < 10) {
+                    if (i.match(/^ranking-/)) {
+                        results.push({id: results.length + 1, time: i.replace('ranking-',""), score: localStorage.getItem(i)});
+
+                    }
+                }
+            }
+
+            times(tableWidth, function () {
+                var tr = $('<tr>');
+                times(tableHeight, function () {
+                    var td = $('<td>');
+                    tr.append(td);
+                    td.append(results['0'].id)
+                });
+                rankingBoard.append(tr);
+            });
+
+            ranking.append(rankingBoard);
+
         }
 
         // Passengers and bottles

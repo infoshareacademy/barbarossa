@@ -185,6 +185,11 @@ body {
 .game-instruction .carousel .item {
   background-color: white; }
 
+@media screen and (min-width: 768px) {
+  .game-instruction .carousel-caption {
+    right: 10%;
+    left: 10%;
+    padding-bottom: 30px; } }
 .game-instruction .carousel-control.left {
   background-image: none; }
 
@@ -206,13 +211,13 @@ body {
 .game-instruction .zajawka-head {
   color: #0f0f0f;
   font-family: 'Viga', sans-serif;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 300; }
 
 .game-instruction .zajawka-txt {
   color: #0f0f0f;
   font-family: 'Viga', sans-serif;
-  font-size: 15px; }
+  font-size: 13px; }
 
 .game-instruction .item {
   max-width: 100%;
@@ -816,5 +821,33 @@ footer {
 
   .game-exit-button {
     font-size: 1em; } }
+#rank-board {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  min-height: 150px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: #222; }
+  #rank-board h1 {
+    color: #eee;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold; }
+  #rank-board img.crown {
+    width: 100px;
+    position: absolute;
+    top: -80px;
+    right: -21px; }
+  #rank-board img.ribbon {
+    width: 75px;
+    bottom: -18px;
+    left: -3px;
+    position: absolute; }
 
 /*# sourceMappingURL=style.css.map */
