@@ -148,7 +148,7 @@
             $('body').append($music).append($musicForOperaAndIE);
 
             gameBoard.focus();
-            addElements('passenger', 3000, true, 10000, 'passenger--red');
+            addElements('passenger', 3000, true, 8000, 'passenger--red', 20000);
             addElements('bottle', 10000, false);
             moveCar();
             moveCarForSmallDevice();
@@ -228,7 +228,7 @@
 
         // Passengers and bottles
 
-        function addElements(elementClass, intervalTime, shouldDisapper, disappearTime, elementClassBlink) {
+        function addElements(elementClass, intervalTime, shouldDisapper, disappearTime, elementClassBlink, levelUpTime) {
             var counter = 0;
             var addElementsInterval = setInterval(function () {
                 var $possiblePositionOfElement = $('#game td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
@@ -257,7 +257,7 @@
                 if (disappearTime < 3000) {
                     clearInterval(levelUpInterval);
                 }
-            }, 20000);
+            }, levelUpTime);
 
         }
 
@@ -298,7 +298,7 @@
                 event.preventDefault();
                 var lastPositionOfCar = $(this).find('td.car');
                 var nextPositionOfCar;
-                var setupOfCar = 'car';
+                var setupOfCar = '';
                 var whatKeyIsPressed = event.which || event.keyCode;
                 var moveDirection = setDirection(whatKeyIsPressed);
 
@@ -308,24 +308,25 @@
 
                 if (IS_DRUNK) {
                     moveDirection = invertDirection(moveDirection);
+                    setupOfCar = 'car--drunk '
                 }
 
                 switch (moveDirection) {
                     case 'LEFT':
                         nextPositionOfCar = $(this).find('td.car').prev();
-                        setupOfCar = 'car--left';
+                        setupOfCar += 'car--left';
                         break;
                     case 'UP':
                         nextPositionOfCar = $(this).find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--up';
+                        setupOfCar += 'car--up';
                         break;
                     case 'RIGHT':
                         nextPositionOfCar = $(this).find('td.car').next();
-                        setupOfCar = 'car--right';
+                        setupOfCar += 'car--right';
                         break;
                     case 'DOWN':
                         nextPositionOfCar = $(this).find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--down';
+                        setupOfCar += 'car--down';
                         break;
                 }
                 checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -403,7 +404,7 @@
                         setupOfCar = 'car--up';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 50);
+                }, 100);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -419,7 +420,7 @@
                         setupOfCar = 'car--down';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 50);
+                }, 100);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -435,7 +436,7 @@
                         setupOfCar = 'car--right';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 50);
+                }, 100);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
@@ -451,7 +452,7 @@
                         setupOfCar = 'car--left';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
-                }, 50);
+                }, 100);
             }).bind("touchend", function () {
                 clearInterval(stillClickInterval);
             });
