@@ -282,7 +282,7 @@
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar).text('');
+                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
                 score += 1;
                 scoreBoard.text('Zebrani pasażerowie: ' + score);
