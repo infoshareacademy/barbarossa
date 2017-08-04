@@ -127,6 +127,9 @@
         var IS_END = false;
         var gameTime = 60;
 
+        moveCar();
+        moveCarForSmallDevice();
+
         game.append($countdown);
 
         $startGameButton.click(function () {
@@ -150,7 +153,9 @@
         });
 
         buttonExit.click(function () {
-            endGame();
+            IS_END = true;
+            $music.remove();
+            $musicForOperaAndIE.remove();
         });
 
         function startGame() {
@@ -160,8 +165,6 @@
             gameBoard.focus();
             addElements('passenger', 3000, true, 10000, 'passenger--red', 20000);
             addElements('bottle', 10000, false);
-            moveCar();
-            moveCarForSmallDevice();
 
             var gameTimeInterval = setInterval(function showGameTime() {
                 gameTime--;
