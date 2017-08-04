@@ -4,7 +4,6 @@
         var game = $('#game');
         var ranking = $('#rank-board');
 
-
         // Board
 
         function times(n, callback) {
@@ -13,7 +12,7 @@
             }
         }
 
-        var gameBoard = $('<table>');
+        var gameBoard = $('<table class="game-board">');
         var size = 25;
         var score = 0;
         var scoreBoard = $('<p class="score-board">');
@@ -37,7 +36,7 @@
         buttonExit.text('ZAKOŃCZ');
         buttonRanking.text('Pokaż ranking');
 
-        (function startPositionOfCarAndBuildings() {
+        (function startPositionOfCarAndObstacles() {
             // Samochód
             $('tr:nth-child(10) td:nth-child(2)').addClass('car');
 
@@ -125,18 +124,26 @@
         var $countdown = $('<p class="countdown">');
         var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true" width="0" height="0">');
         var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
+        var IS_END = false;
+        var gameTime = 60;
 
         game.append($countdown);
 
         $startGameButton.click(function () {
             event.preventDefault();
+
+            resetGame();
+
             var timeToShow = 3;
+            $countdown.text(timeToShow);
+            $countdown.show();
+
             var countdownToStart = setInterval(function showCountdown() {
                 $countdown.text(timeToShow);
                 timeToShow--;
                 if (timeToShow === -1) {
                     clearInterval(countdownToStart);
-                    $countdown.remove();
+                    $countdown.hide();
                     startGame();
                 }
             }, 1000)
@@ -147,18 +154,21 @@
         });
 
         function startGame() {
-            var gameTime = 60;
 
             $('body').append($music).append($musicForOperaAndIE);
 
             gameBoard.focus();
-            addElements('passenger', 3000, true, 8000, 'passenger--red', 20000);
+            addElements('passenger', 3000, true, 10000, 'passenger--red', 20000);
             addElements('bottle', 10000, false);
             moveCar();
             moveCarForSmallDevice();
 
             var gameTimeInterval = setInterval(function showGameTime() {
                 gameTime--;
+                if (IS_END) {
+                    clearInterval(gameTimeInterval);
+                    clearTimeout(gameTimeout);
+                }
                 if (gameTime < -50) {
                     timeBoard.text('0:0' + (60 + gameTime));
                 }
@@ -173,20 +183,43 @@
                 }
                 gameBoard.focus(); // get focus after 1 second to prevent click off the game board
             }, 1000);
-            setTimeout(function clearGameTime() {
+
+
+            var gameTimeout = setTimeout(function clearGameTime() {
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
             }, 120000)
         }
 
+        function resetGame() {
+            IS_END = false;
+            gameTime = 60;
+            score = 0;
+            scoreBoard.text('Zebrani pasażerowie: ' + score);
+            timeBoard.text('2:00');
+            endText.hide();
+            buttonRanking.hide();
+
+            var $bottles = $(gameBoard).find('td.bottle');
+            var $passengers = $(gameBoard).find('td.passenger');
+            var $car = $(gameBoard).find('td.car');
+
+            $bottles.removeClass('bottle');
+            $passengers.removeClass('passenger');
+            $car.removeClass('car');
+
+            $('tr:nth-child(10) td:nth-child(2)').addClass('car');
+        }
+
         function endGame() {
 
+            IS_END = true;
             $music.remove();
             $musicForOperaAndIE.remove();
 
             var timeStamp = Math.floor(Date.now() / 1000);
-            endText.html('Gratulacje !<br> Zdobyłeś ' + score + ' punktów.');
+            endText.html('Gratulacje !<br> Zdobyłeś/aś ' + score + ' punktów.');
             endText.show();                 // Show score when game is finished
             buttonRanking.show();
 
@@ -214,7 +247,6 @@
                             time: i.replace('ranking-', ""),
                             score: localStorage.getItem(i)
                         });
-
                     }
                 }
             }
@@ -228,15 +260,21 @@
                 });
                 rankingBoard.append(tr);
             });
-
             ranking.append(rankingBoard);
-
         }
 
         // Passengers and bottles
 
         function addElements(elementClass, intervalTime, shouldDisapper, disappearTime, elementClassBlink, levelUpTime) {
             var counter = 0;
+            var checkIsEnd = setInterval(function () {
+                if (IS_END) {
+                    clearInterval(addElementsInterval);
+                    clearInterval(levelUpInterval);
+                    clearInterval(checkIsEnd);
+                }
+            }, 500);
+
             var addElementsInterval = setInterval(function () {
                 var $possiblePositionOfElement = $('#game td:not(.obstacle):not(.passenger):not(.car):not(.bottle)');
                 var numberOfPossibility = $possiblePositionOfElement.length;
@@ -252,11 +290,6 @@
                 if (shouldDisapper === true) {
                     disappearElement($nextPositionOfElement, elementClass, elementClassBlink, disappearTime);
                 }
-
-                if (intervalTime * counter > 120000) {
-                    clearInterval(addElementsInterval);
-                }
-
             }, intervalTime);
 
             var levelUpInterval = setInterval(function () {
@@ -276,7 +309,10 @@
             setTimeout(function disappearElement() {
                 if ($nextPositionOfElement.hasClass(elementClass)) {
                     $nextPositionOfElement.removeClass(elementClass);
-                    if (score > 0) {
+                    if (IS_END) {
+                        // do not lose points
+                    }
+                    else if (score > 0) {
                         score--;
                         scoreBoard.text('Zebrani pasażerowie: ' + score);
                     }
