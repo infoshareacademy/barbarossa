@@ -19,7 +19,7 @@
         var scoreBoard = $('<p class="score-board">');
         var timeBoard = $('<p class="time-board">');
         var buttonExit = $('<button class="game-exit-button">');
-        var endText = $('<button class = "end-text">');
+        var endText = $('<p class = "end-text">');
 
 
 
@@ -174,7 +174,7 @@
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            }, 12000)
+            }, 120000)
         }
 
         function endGame() {
