@@ -4,6 +4,7 @@
         var game = $('#game');
         var ranking = $('#rank-board');
 
+
         // Board
 
         function times(n, callback) {
@@ -17,7 +18,10 @@
         var score = 0;
         var scoreBoard = $('<p class="score-board">');
         var timeBoard = $('<p class="time-board">');
-        var buttonExit = $('<button class="game-exit-button">')
+        var buttonExit = $('<button class="game-exit-button">');
+        var endText = $('<button class = "end-text">');
+
+
 
         times(size, function () {
             var tr = $('<tr>');
@@ -25,13 +29,15 @@
                 var td = $('<td>');
                 tr.append(td)
             });
-            gameBoard.append(tr).attr('tabindex', 0)
+            gameBoard.append(tr).attr('tabindex', 0);
         });
 
-        game.append(gameBoard).append(scoreBoard).append(timeBoard).append(buttonExit);
+        game.append(gameBoard).append(scoreBoard).append(timeBoard).append(buttonExit).append(endText);
         scoreBoard.text('Zebrani pasażerowie: ' + score);
         timeBoard.text('2:00');
         buttonExit.text('ZAKOŃCZ');
+        endText.text('Gratulacje !!! Zdobyłeś ' + score + ' punktów');
+
 
         (function startPositionOfCarAndBuildings() {
             // Samochód
@@ -168,19 +174,21 @@
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            }, 120000)
+            }, 12000)
         }
 
         function endGame() {
 
             var timeStamp = Math.floor(Date.now() / 1000);
+            //
 
             // Ranking //
-
+            $('.end-text').css('display','block');                             // Wyświetl komunikat o zakończeniu gry
             localStorage.setItem('ranking-' + timeStamp.toString(), score);
 
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
+
 
             showRanking();
         }
