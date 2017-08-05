@@ -838,48 +838,6 @@ $cellSize: 22px;
   right: 0;
 }
 
-.end-text {
-  text-transform: uppercase;
-  text-align: center;
-  position: absolute;
-  display: none;
-  padding: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 1.5em;
-  border-radius: 5px;
-  color: $colorFont;
-  background-color: $colorAccent;
-  z-index: 3000;
-}
-
-.ranking-show-button {
-  text-transform: uppercase;
-  position: absolute;
-  display: none;
-  outline: none;
-  border: none;
-  bottom: 180px;
-  padding: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 1em;
-  border-radius: 5px;
-  color: $colorFont;
-  background-color: $colorAccent;
-  z-index: 3000;
-  &:hover {
-    background-color: $colorFont;
-    color: $colorMain;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .ranking-show-button {
-    bottom: 100px;
-  }
-}
-
 .game-exit-button {
   @include game-info-field();
   outline: none;
@@ -1060,7 +1018,6 @@ $cellSize: 22px;
   .score-board {
     font-size: 1em;
   }
-
   .time-board {
     font-size: 1em;
   }
@@ -1068,7 +1025,49 @@ $cellSize: 22px;
     font-size: 1em;
   }
 }
+///////////////////////////////////////////// The Game - End Game /////////////////////////////////////////////
 
+.end-text {
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  display: none;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.5em;
+  border-radius: 5px;
+  color: $colorFont;
+  background-color: $colorAccent;
+  z-index: 3000;
+}
+
+.ranking-show-button {
+  text-transform: uppercase;
+  position: absolute;
+  display: none;
+  outline: none;
+  border: none;
+  bottom: 180px;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 5px;
+  color: $colorFont;
+  background-color: $colorAccent;
+  z-index: 3000;
+  &:hover {
+    background-color: $colorFont;
+    color: $colorMain;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .ranking-show-button {
+    bottom: 100px;
+  }
+}
 ///////////////////////////////////////////// The Game - Ranking //////////////////////////////////////////////
 
 #rank-board {
@@ -1080,8 +1079,6 @@ $cellSize: 22px;
   min-width: 150px;
   min-height: 150px;
   position: absolute;
-  bottom: 30px;
-  left: 30px;
   background-color: $colorAccent;
   h1 {
     color: $colorFont;
@@ -1101,5 +1098,23 @@ $cellSize: 22px;
     bottom: -18px;
     left: -3px;
     position: absolute;
+  }
+}
+
+.menu-show-button {
+  text-transform: uppercase;
+  position: absolute;
+  outline: none;
+  border: none;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 5px;
+  color: $colorFont;
+  background-color: $colorAccent;
+  &:hover {
+    background-color: $colorFont;
+    color: $colorMain;
   }
 }

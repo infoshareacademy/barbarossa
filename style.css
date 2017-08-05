@@ -652,42 +652,6 @@ footer {
   top: -50px;
   right: 0; }
 
-.end-text {
-  text-transform: uppercase;
-  text-align: center;
-  position: absolute;
-  display: none;
-  padding: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 1.5em;
-  border-radius: 5px;
-  color: #eee;
-  background-color: #222;
-  z-index: 3000; }
-
-.ranking-show-button {
-  text-transform: uppercase;
-  position: absolute;
-  display: none;
-  outline: none;
-  border: none;
-  bottom: 180px;
-  padding: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 1em;
-  border-radius: 5px;
-  color: #eee;
-  background-color: #222;
-  z-index: 3000; }
-  .ranking-show-button:hover {
-    background-color: #eee;
-    color: #ba4436; }
-
-@media screen and (max-width: 991px) {
-  .ranking-show-button {
-    bottom: 100px; } }
 .game-exit-button {
   text-transform: uppercase;
   position: absolute;
@@ -857,6 +821,42 @@ footer {
 
   .game-exit-button {
     font-size: 1em; } }
+.end-text {
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  display: none;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1.5em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  z-index: 3000; }
+
+.ranking-show-button {
+  text-transform: uppercase;
+  position: absolute;
+  display: none;
+  outline: none;
+  border: none;
+  bottom: 180px;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222;
+  z-index: 3000; }
+  .ranking-show-button:hover {
+    background-color: #eee;
+    color: #ba4436; }
+
+@media screen and (max-width: 991px) {
+  .ranking-show-button {
+    bottom: 100px; } }
 #rank-board {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   display: none;
@@ -866,8 +866,6 @@ footer {
   min-width: 150px;
   min-height: 150px;
   position: absolute;
-  bottom: 30px;
-  left: 30px;
   background-color: #222; }
   #rank-board h1 {
     color: #eee;
@@ -885,5 +883,21 @@ footer {
     bottom: -18px;
     left: -3px;
     position: absolute; }
+
+.menu-show-button {
+  text-transform: uppercase;
+  position: absolute;
+  outline: none;
+  border: none;
+  padding: 0.75em;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #222; }
+  .menu-show-button:hover {
+    background-color: #eee;
+    color: #ba4436; }
 
 /*# sourceMappingURL=style.css.map */

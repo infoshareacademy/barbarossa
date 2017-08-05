@@ -17,9 +17,11 @@
         var score = 0;
         var scoreBoard = $('<p class="score-board">');
         var timeBoard = $('<p class="time-board">');
-        var buttonExit = $('<button class="game-exit-button">');
+        var $buttonExit = $('<button class="game-exit-button">');
         var endText = $('<p class = "end-text">');
-        var buttonRanking = $('<button class="ranking-show-button">');
+        var $buttonShowRanking = $('<button class="ranking-show-button">');
+        var $buttonBackToMenu = $('button.menu-show-button');
+
 
         times(size, function () {
             var tr = $('<tr>');
@@ -30,11 +32,11 @@
             gameBoard.append(tr).attr('tabindex', 0);
         });
 
-        game.append(gameBoard).append(scoreBoard).append(timeBoard).append(buttonExit).append(endText).append(buttonRanking);
+        game.append(gameBoard).append(scoreBoard).append(timeBoard).append($buttonExit).append(endText).append($buttonShowRanking);
         scoreBoard.text('Zebrani pasażerowie: ' + score);
         timeBoard.text('2:00');
-        buttonExit.text('ZAKOŃCZ');
-        buttonRanking.text('Pokaż ranking');
+        $buttonExit.text('ZAKOŃCZ');
+        $buttonShowRanking.text('Pokaż ranking');
 
         (function startPositionOfCarAndObstacles() {
             // Samochód
@@ -118,7 +120,7 @@
             $('tr:nth-child(25) td:nth-child(n)').addClass('obstacle obstacle-grass');
         })();
 
-        // Start and end game
+        // Start, end, reset game and ranking
 
         var $startGameButton = $('.game-button--entry');
         var $countdown = $('<p class="countdown">');
@@ -152,10 +154,19 @@
             }, 1000)
         });
 
-        buttonExit.click(function () {
+        $buttonExit.click(function () {
             IS_END = true;
             $music.remove();
             $musicForOperaAndIE.remove();
+        });
+
+        $buttonShowRanking.click(showRanking);
+
+        $buttonBackToMenu.click(function () {
+            event.preventDefault();
+            $('.game-begin-board').show();
+            $gameSwitch.children().removeClass('game-main-wrapper-visible');
+            $gameSwitch.children().addClass('game-main-wrapper-hidden');
         });
 
         function startGame() {
@@ -192,7 +203,7 @@
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            }, 120000)
+            }, 3000)
         }
 
         function resetGame() {
@@ -202,7 +213,7 @@
             scoreBoard.text('Zebrani pasażerowie: ' + score);
             timeBoard.text('2:00');
             endText.hide();
-            buttonRanking.hide();
+            $buttonShowRanking.hide();
 
             var $bottles = $(gameBoard).find('td.bottle');
             var $passengers = $(gameBoard).find('td.passenger');
@@ -222,20 +233,21 @@
             $musicForOperaAndIE.remove();
 
             var timeStamp = Math.floor(Date.now() / 1000);
-            endText.html('Gratulacje !<br> Zdobyłeś/aś ' + score + ' punktów.');
+            endText.html('Gratulacje !<br> Zdobyłeś/aś' + score + ' punktów.');
             endText.show();                 // Show score when game is finished
-            buttonRanking.show();
+            $buttonShowRanking.show();
 
             // Ranking //
 
             localStorage.setItem('ranking-' + timeStamp.toString(), score);
-            buttonRanking.click(showRanking);
         }
 
         function showRanking() {
 
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
+            ranking.show();
+
 
             var rankingBoard = $('<table>');
             var tableWidth = 3;
@@ -264,6 +276,11 @@
                 rankingBoard.append(tr);
             });
             ranking.append(rankingBoard);
+
+            // Set back to menu button to be under ranking
+            var buttonBackToMenuOffset = -(ranking.height()/2) +'px';
+            $buttonBackToMenu.css('bottom', buttonBackToMenuOffset);
+
         }
 
         // Passengers and bottles
