@@ -884,7 +884,12 @@ $cellSize: 22px;
 }
 
 .car {
-  background: url('pictures/gameBus.png') center center;
+  background: url('pictures/gameBus.png') center;
+  background-size: $cellSize;
+}
+
+.car--drunk {
+  background: url('pictures/gameBusDrunk.png') center;
   background-size: $cellSize;
 }
 
