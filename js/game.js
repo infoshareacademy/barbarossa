@@ -203,7 +203,7 @@
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            }, 3000)
+            }, 120000)
         }
 
         function resetGame() {
@@ -233,7 +233,7 @@
             $musicForOperaAndIE.remove();
 
             var timeStamp = Math.floor(Date.now() / 1000);
-            endText.html('Gratulacje !<br> Zdobyłeś/aś' + score + ' punktów.');
+            endText.html('Gratulacje !<br> Zdobyłeś/aś ' + score + ' punktów.');
             endText.show();                 // Show score when game is finished
             $buttonShowRanking.show();
 
