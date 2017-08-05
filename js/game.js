@@ -123,6 +123,7 @@
         // Start, end, reset game and ranking
 
         var $startGameButton = $('.game-button--entry');
+        var $gameSwitch = $('.game-main-wrapper-switch');
         var $countdown = $('<p class="countdown">');
         var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true" width="0" height="0">');
         var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
@@ -136,6 +137,13 @@
 
         $startGameButton.click(function () {
             event.preventDefault();
+
+
+            $('.game-begin-board').hide();
+            $('.game-main').show();
+            $('.arrow-buttons').show();
+            $gameSwitch.children().removeClass('game-main-wrapper-hidden');
+            $gameSwitch.children().addClass('game-main-wrapper-visible');
 
             resetGame();
 
@@ -245,7 +253,6 @@
         }
 
         function showRanking() {
-
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
             ranking.show();

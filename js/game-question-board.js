@@ -4,7 +4,6 @@ var playerName;
 
     var $gameAllBoard = $('.game-all-boards');
 
-
     $('.game-submit').click(function () {
         document.body.style.overflow = 'hidden';
     });
