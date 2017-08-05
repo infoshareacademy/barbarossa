@@ -863,14 +863,22 @@ footer {
     bottom: 100px; } }
 #rank-board {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: white;
   display: none;
   text-align: center;
   padding: 0;
   margin: 0;
   min-width: 150px;
   min-height: 150px;
+  padding-bottom: 40px;
   position: absolute;
   background-color: #222; }
+  #rank-board tr:nth-child(1) {
+    color: yellow; }
+  #rank-board tr:nth-child(2) {
+    color: gray; }
+  #rank-board tr:nth-child(3) {
+    color: brown; }
   #rank-board h1 {
     color: #eee;
     font-size: 1.2em;

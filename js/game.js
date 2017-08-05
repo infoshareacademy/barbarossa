@@ -203,7 +203,7 @@
                 clearInterval(gameTimeInterval);
                 timeBoard.text('0:00');
                 endGame();
-            }, 120000)
+            }, 3000)
         }
 
         function resetGame() {
@@ -239,7 +239,9 @@
 
             // Ranking //
 
-            localStorage.setItem('ranking-' + timeStamp.toString(), score);
+
+
+            localStorage.setItem('ranking-' + playerName, score);
         }
 
         function showRanking() {
@@ -250,8 +252,6 @@
 
 
             var rankingBoard = $('<table>');
-            var tableWidth = 3;
-            var tableHeight = 11;
             var results = [];
 
             for (var i in window.localStorage) {
@@ -259,22 +259,35 @@
                     if (i.match(/^ranking-/)) {
                         results.push({
                             id: results.length + 1,
-                            time: i.replace('ranking-', ""),
+                            name: i.replace('ranking-', ""),
                             score: localStorage.getItem(i)
                         });
                     }
                 }
             }
 
-            times(tableWidth, function () {
-                var tr = $('<tr>');
-                times(tableHeight, function () {
-                    var td = $('<td>');
-                    tr.append(td);
-                    td.append(results['0'].id)
-                });
-                rankingBoard.append(tr);
+            results.sort(function(a, b) {
+                return b.score - a.score;
             });
+
+            function createRanking() {
+                rankingBoard.empty();
+                results.forEach(function (result) {
+                    rankingBoard.append(
+                        $('<tr>').append(
+                            $('<td>').html(
+                                '<p>' + result.name + '</p>'
+                            )
+                        ).append(
+                            $('<td>').html(
+                                '<p>' + result.score + '</p>'
+                            )
+                        )
+                    );
+                });
+            }
+            console.log(results);
+            createRanking();
             ranking.append(rankingBoard);
 
             // Set back to menu button to be under ranking
