@@ -248,7 +248,6 @@
             // Ranking //
 
 
-
             localStorage.setItem('ranking-' + playerName, score);
         }
 
@@ -273,7 +272,7 @@
                 }
             }
 
-            results.sort(function(a, b) {
+            results.sort(function (a, b) {
                 return b.score - a.score;
             });
 
@@ -283,22 +282,24 @@
                     rankingBoard.append(
                         $('<tr>').append(
                             $('<td>').html(
-                                '<p>' + result.name + '</p>'
-                            )
-                        ).append(
-                            $('<td>').html(
-                                '<p>' + result.score + '</p>'
+                                '<p class="score-label">' + result.score + ' pkt.    ' + '</p>'
                             )
                         )
+                            .append(
+                                $('<td>').html(
+                                    '<p>' + result.name + '</p>'
+                                )
+                            )
                     );
                 });
             }
+
             console.log(results);
             createRanking();
             ranking.append(rankingBoard);
 
             // Set back to menu button to be under ranking
-            var buttonBackToMenuOffset = -(ranking.height()/2) +'px';
+            var buttonBackToMenuOffset = -(ranking.height() / 5) + 'px';
             $buttonBackToMenu.css('bottom', buttonBackToMenuOffset);
 
         }

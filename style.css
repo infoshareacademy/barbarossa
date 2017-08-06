@@ -866,19 +866,43 @@ footer {
   color: white;
   display: none;
   text-align: center;
-  padding: 0;
+  padding: 20px;
   margin: 0;
-  min-width: 150px;
-  min-height: 150px;
-  padding-bottom: 40px;
+  min-width: 200px;
+  min-height: 200px;
+  padding-bottom: 45px;
   position: absolute;
-  background-color: #222; }
-  #rank-board tr:nth-child(1) {
-    color: yellow; }
-  #rank-board tr:nth-child(2) {
-    color: gray; }
-  #rank-board tr:nth-child(3) {
-    color: brown; }
+  background-color: #222;
+  font-weight: bold;
+  letter-spacing: 1.5px; }
+  #rank-board .score-label {
+    background-color: #444;
+    padding: 2px 10px;
+    margin-right: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 10px #000; }
+  #rank-board tr {
+    display: flex; }
+    #rank-board tr:nth-child(1) {
+      color: yellow; }
+      #rank-board tr:nth-child(1):after {
+        font-family: FontAwesome;
+        content: "\f091";
+        margin: 0 10px; }
+    #rank-board tr:nth-child(2) {
+      color: gray; }
+      #rank-board tr:nth-child(2):after {
+        font-family: FontAwesome;
+        content: "\f091";
+        margin: 0 10px; }
+    #rank-board tr:nth-child(3) {
+      color: #c43535; }
+      #rank-board tr:nth-child(3):after {
+        font-family: FontAwesome;
+        content: "\f091";
+        margin: 0 10px; }
+  #rank-board p {
+    display: flex; }
   #rank-board h1 {
     color: #eee;
     font-size: 1.2em;
@@ -899,6 +923,7 @@ footer {
 .menu-show-button {
   text-transform: uppercase;
   position: absolute;
+  left: 0;
   outline: none;
   border: none;
   padding: 0.75em;
