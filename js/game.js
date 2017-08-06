@@ -1,8 +1,8 @@
 (function () {
     $(document).ready(function () {
 
-        var game = $('#game');
-        var ranking = $('#rank-board');
+        var $game = $('#game');
+        var $ranking = $('#rank-board');
 
         // Board
 
@@ -12,13 +12,13 @@
             }
         }
 
-        var gameBoard = $('<table class="game-board">');
+        var $gameBoard = $('<table class="game-board">');
         var size = 25;
         var score = 0;
-        var scoreBoard = $('<p class="score-board">');
-        var timeBoard = $('<p class="time-board">');
+        var $scoreBoard = $('<p class="score-board">');
+        var $timeBoard = $('<p class="time-board">');
         var $buttonExit = $('<button class="game-exit-button">');
-        var endText = $('<p class = "end-text">');
+        var $endText = $('<p class = "end-text">');
         var $buttonShowRanking = $('<button class="ranking-show-button">');
         var $buttonBackToMenu = $('button.menu-show-button');
 
@@ -29,12 +29,12 @@
                 var td = $('<td>');
                 tr.append(td)
             });
-            gameBoard.append(tr).attr('tabindex', 0);
+            $gameBoard.append(tr).attr('tabindex', 0);
         });
 
-        game.append(gameBoard).append(scoreBoard).append(timeBoard).append($buttonExit).append(endText).append($buttonShowRanking);
-        scoreBoard.text('Zebrani pasażerowie: ' + score);
-        timeBoard.text('2:00');
+        $game.append($gameBoard).append($scoreBoard).append($timeBoard).append($buttonExit).append($endText).append($buttonShowRanking);
+        $scoreBoard.text('Zebrani pasażerowie: ' + score);
+        $timeBoard.text('2:00');
         $buttonExit.text('ZAKOŃCZ');
         $buttonShowRanking.text('Pokaż ranking');
 
@@ -133,12 +133,12 @@
         moveCar();
         moveCarForSmallDevice();
 
-        game.append($countdown);
+        $game.append($countdown);
 
         $startGameButton.click(function () {
             event.preventDefault();
 
-
+            $('body').append($music).append($musicForOperaAndIE);
             $('.game-begin-board').hide();
             $('.game-main').show();
             $('.arrow-buttons').show();
@@ -152,6 +152,9 @@
             $countdown.show();
 
             var countdownToStart = setInterval(function showCountdown() {
+                if (IS_END) {
+                    clearInterval(countdownToStart);
+                }
                 $countdown.text(timeToShow);
                 timeToShow--;
                 if (timeToShow === -1) {
@@ -175,13 +178,12 @@
             $('.game-begin-board').show();
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
+            $ranking.hide();
+            $(this).hide();
         });
 
         function startGame() {
-
-            $('body').append($music).append($musicForOperaAndIE);
-
-            gameBoard.focus();
+            $gameBoard.focus();
             addElements('passenger', 3000, true, 10000, 'passenger--red', 20000);
             addElements('bottle', 10000, false);
 
@@ -192,40 +194,40 @@
                     clearTimeout(gameTimeout);
                 }
                 if (gameTime < -50) {
-                    timeBoard.text('0:0' + (60 + gameTime));
+                    $timeBoard.text('0:0' + (60 + gameTime));
                 }
                 else if (gameTime < 0) {
-                    timeBoard.text('0:' + (60 + gameTime));
+                    $timeBoard.text('0:' + (60 + gameTime));
                 }
                 else if (gameTime < 10) {
-                    timeBoard.text('1:0' + gameTime);
+                    $timeBoard.text('1:0' + gameTime);
                 }
                 else {
-                    timeBoard.text('1:' + gameTime);
+                    $timeBoard.text('1:' + gameTime);
                 }
-                gameBoard.focus(); // get focus after 1 second to prevent click off the game board
+                $gameBoard.focus(); // get focus after 1 second to prevent click off the game board
             }, 1000);
 
 
             var gameTimeout = setTimeout(function clearGameTime() {
                 clearInterval(gameTimeInterval);
-                timeBoard.text('0:00');
+                $timeBoard.text('0:00');
                 endGame();
-            }, 3000)
+            }, 120000)
         }
 
         function resetGame() {
             IS_END = false;
             gameTime = 60;
             score = 0;
-            scoreBoard.text('Zebrani pasażerowie: ' + score);
-            timeBoard.text('2:00');
-            endText.hide();
+            $scoreBoard.text('Zebrani pasażerowie: ' + score);
+            $timeBoard.text('2:00');
+            $endText.hide();
             $buttonShowRanking.hide();
 
-            var $bottles = $(gameBoard).find('td.bottle');
-            var $passengers = $(gameBoard).find('td.passenger');
-            var $car = $(gameBoard).find('td.car');
+            var $bottles = $($gameBoard).find('td.bottle');
+            var $passengers = $($gameBoard).find('td.passenger');
+            var $car = $($gameBoard).find('td.car');
 
             $bottles.removeClass('bottle');
             $passengers.removeClass('passenger');
@@ -235,18 +237,15 @@
         }
 
         function endGame() {
-
             IS_END = true;
             $music.remove();
             $musicForOperaAndIE.remove();
 
-            var timeStamp = Math.floor(Date.now() / 1000);
-            endText.html('Gratulacje !<br> Zdobyłeś/aś ' + score + ' punktów.');
-            endText.show();                 // Show score when game is finished
+            $endText.html('Gratulacje !<br> Zdobyłeś/aś ' + score + ' punktów.');
+            $endText.show();
             $buttonShowRanking.show();
 
-            // Ranking //
-
+            // Ranking add score//
 
             localStorage.setItem('ranking-' + playerName, score);
         }
@@ -254,8 +253,9 @@
         function showRanking() {
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
-            ranking.show();
-
+            $ranking.show();
+            $buttonBackToMenu.show();
+            $buttonShowRanking.hide();
 
             var rankingBoard = $('<table>');
             var results = [];
@@ -296,12 +296,11 @@
 
             console.log(results);
             createRanking();
-            ranking.append(rankingBoard);
+            $ranking.append(rankingBoard);
 
             // Set back to menu button to be under ranking
-            var buttonBackToMenuOffset = -(ranking.height() / 5) + 'px';
+            var buttonBackToMenuOffset = -($ranking.height() / 3) + 'px';
             $buttonBackToMenu.css('bottom', buttonBackToMenuOffset);
-
         }
 
         // Passengers and bottles
@@ -355,7 +354,7 @@
                     }
                     else if (score > 0) {
                         score--;
-                        scoreBoard.text('Zebrani pasażerowie: ' + score);
+                        $scoreBoard.text('Zebrani pasażerowie: ' + score);
                     }
                 }
             }, disappearTime);
@@ -378,7 +377,7 @@
         var IS_DRUNK = false;
 
         function moveCar() {
-            gameBoard.keydown(function moveCar(event) {
+            $gameBoard.keydown(function moveCar(event) {
                 event.preventDefault();
                 var lastPositionOfCar = $(this).find('td.car');
                 var nextPositionOfCar;
@@ -425,7 +424,7 @@
                 nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
                 score += 1;
-                scoreBoard.text('Zebrani pasażerowie: ' + score);
+                $scoreBoard.text('Zebrani pasażerowie: ' + score);
             }
             else if (nextPositionOfCar.hasClass('bottle')) {
                 nextPositionOfCar.removeClass('bottle').addClass('car').addClass(setupOfCar);
@@ -478,13 +477,13 @@
 
             $('.arrow--up').bind("touchstart", function () {
                 stillClickInterval = setInterval(function () {
-                    lastPositionOfCar = gameBoard.find('td.car');
+                    lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
-                        nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        nextPositionOfCar = $gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
                         setupOfCar = 'car--drunk car--down';
                     }
                     else {
-                        nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        nextPositionOfCar = $gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
                         setupOfCar = 'car--up';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -494,13 +493,13 @@
             });
             $('.arrow--down').bind("touchstart", function () {
                 stillClickInterval = setInterval(function () {
-                    lastPositionOfCar = gameBoard.find('td.car');
+                    lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
-                        nextPositionOfCar = gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        nextPositionOfCar = $gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
                         setupOfCar = 'car--drunk car--up';
                     }
                     else {
-                        nextPositionOfCar = gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
+                        nextPositionOfCar = $gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
                         setupOfCar = 'car--down';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -510,13 +509,13 @@
             });
             $('.arrow--right').bind("touchstart", function () {
                 stillClickInterval = setInterval(function () {
-                    lastPositionOfCar = gameBoard.find('td.car');
+                    lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
-                        nextPositionOfCar = gameBoard.find('td.car').prev();
+                        nextPositionOfCar = $gameBoard.find('td.car').prev();
                         setupOfCar = 'car--drunk car--left';
                     }
                     else {
-                        nextPositionOfCar = gameBoard.find('td.car').next();
+                        nextPositionOfCar = $gameBoard.find('td.car').next();
                         setupOfCar = 'car--right';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
@@ -526,13 +525,13 @@
             });
             $('.arrow--left').bind("touchstart", function () {
                 stillClickInterval = setInterval(function () {
-                    lastPositionOfCar = gameBoard.find('td.car');
+                    lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
-                        nextPositionOfCar = gameBoard.find('td.car').next();
+                        nextPositionOfCar = $gameBoard.find('td.car').next();
                         setupOfCar = 'car--drunk car--right';
                     }
                     else {
-                        nextPositionOfCar = gameBoard.find('td.car').prev();
+                        nextPositionOfCar = $gameBoard.find('td.car').prev();
                         setupOfCar = 'car--left';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
