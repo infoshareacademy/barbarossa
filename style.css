@@ -640,7 +640,7 @@ footer {
   top: -50px;
   right: 0; }
 
-.game-exit-button {
+.in-game-exit-button {
   text-transform: uppercase;
   position: absolute;
   display: block;
@@ -656,7 +656,7 @@ footer {
   bottom: -50px;
   right: 0;
   transition: color 0.5s, background-color 0.5s; }
-  .game-exit-button:hover {
+  .in-game-exit-button:hover {
     background-color: #eee;
     color: #ba4436; }
 
@@ -811,7 +811,7 @@ footer {
   .time-board {
     font-size: 1em; }
 
-  .game-exit-button {
+  .in-game-exit-button {
     font-size: 1em; } }
 .end-text {
   text-transform: uppercase;

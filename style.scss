@@ -814,7 +814,7 @@ $cellSize: 22px;
   right: 0;
 }
 
-.game-exit-button {
+.in-game-exit-button {
   @include game-info-field();
   outline: none;
   border: none;
@@ -1002,7 +1002,7 @@ $cellSize: 22px;
   .time-board {
     font-size: 1em;
   }
-  .game-exit-button {
+  .in-game-exit-button {
     font-size: 1em;
   }
 }

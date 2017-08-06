@@ -6,23 +6,21 @@
 
         // Board
 
-        function times(n, callback) {
-            for (var i = 0; i < n; i += 1) {
-                callback(i);
-            }
-        }
-
         var $gameBoard = $('<table class="game-board">');
         var size = 25;
         var score = 0;
         var $scoreBoard = $('<p class="score-board">');
         var $timeBoard = $('<p class="time-board">');
-        var $buttonExit = $('<button class="game-exit-button">');
+        var $buttonExit = $('<button class="in-game-exit-button">');
         var $endText = $('<p class = "end-text">');
         var $buttonShowRanking = $('<button class="ranking-show-button">');
         var $buttonBackToMenu = $('button.menu-show-button');
 
-
+        function times(n, callback) {
+            for (var i = 0; i < n; i += 1) {
+                callback(i);
+            }
+        }
         times(size, function () {
             var tr = $('<tr>');
             times(size, function () {
@@ -141,7 +139,6 @@
             $('body').append($music).append($musicForOperaAndIE);
             $('.game-begin-board').hide();
             $('.game-main').show();
-            $('.arrow-buttons').show();
             $gameSwitch.children().removeClass('game-main-wrapper-hidden');
             $gameSwitch.children().addClass('game-main-wrapper-visible');
 
@@ -169,6 +166,9 @@
             IS_END = true;
             $music.remove();
             $musicForOperaAndIE.remove();
+            $('.game-main').hide();
+            $('.arrow-buttons').hide();
+            $('.game-begin-board').show();
         });
 
         $buttonShowRanking.click(showRanking);
