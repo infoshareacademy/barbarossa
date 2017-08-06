@@ -8,8 +8,6 @@ var playerName;
         $gameAllBoard.children().removeClass('game-board-visible');
         $gameAllBoard.children().addClass('game-board-hidden');
         document.body.style.overflow = 'visible';
-        $(".modal-backdrop.in").animate({
-            opacity: 0
-        });
+        $(".modal-backdrop.in").hide();
     });
 })();
