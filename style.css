@@ -354,7 +354,7 @@ form.premiere input {
   padding: 8em 0; }
   #team .team-single {
     background-color: #ba4436;
-    min-height: 580px;
+    min-height: 600px;
     margin: 0.5em;
     margin-top: 4em; }
   #team .content {
@@ -408,29 +408,17 @@ form.premiere input {
       font-size: 1.1em; }
 
 .Klimek, .Richert, .Ostrowska, .Paczkowski {
-  transition: all 0.7s;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: opacity 1s; }
 
-.background-klimek .Richert, .background-klimek .Paczkowski, .background-klimek .Ostrowska {
-  filter: brightness(40%) blur(2px) grayscale(10%); }
-
-.background-richert .Klimek, .background-richert .Paczkowski, .background-richert .Ostrowska {
-  filter: brightness(40%) blur(2px) grayscale(10%); }
-
-.background-ostrowska .Klimek, .background-ostrowska .Richert, .background-ostrowska .Paczkowski {
-  filter: brightness(40%) blur(2px) grayscale(10%); }
-
-.background-paczkowski .Klimek, .background-paczkowski .Richert, .background-paczkowski .Ostrowska {
-  filter: brightness(40%) blur(2px) grayscale(10%); }
-
-.animation-hidden {
+.team-fly-out {
   opacity: 0;
-  transition: all 1s;
+  transition: all 2s;
   overflow: hidden;
-  transform: translateX(-200%); }
+  transform: translateY(300%); }
 
-.animation-visible {
-  transition: all 1s;
+.team-fly-in {
+  transition: all 2s;
   opacity: 1; }
 
 footer {

@@ -477,7 +477,7 @@ form.premiere input {
   padding: 8em 0;
   .team-single {
     background-color: $colorMain;
-    min-height: 580px;
+    min-height: 600px;
     margin: 0.5em;
     margin-top: 4em;
   }
@@ -538,43 +538,19 @@ form.premiere input {
 }
 
 .Klimek, .Richert, .Ostrowska, .Paczkowski {
-  transition: all 0.7s;
   cursor: pointer;
+  transition: opacity 1s;
 }
 
-.background-klimek {
-  .Richert, .Paczkowski, .Ostrowska {
-    @include teamAnimateEffect();
-  }
-}
-
-.background-richert {
-  .Klimek, .Paczkowski, .Ostrowska {
-    @include teamAnimateEffect();
-  }
-}
-
-.background-ostrowska {
-  .Klimek, .Richert, .Paczkowski {
-    @include teamAnimateEffect();
-  }
-}
-
-.background-paczkowski {
-  .Klimek, .Richert, .Ostrowska {
-    @include teamAnimateEffect();
-  }
-}
-
-.animation-hidden {
+.team-fly-out {
   opacity: 0;
-  transition: all 1s;
+  transition: all 2s;
   overflow: hidden;
-  transform: translateX(-200%)
+  transform: translateY(300%)
 }
 
-.animation-visible {
-  transition: all 1s;
+.team-fly-in {
+  transition: all 2s;
   opacity: 1;
 }
 
