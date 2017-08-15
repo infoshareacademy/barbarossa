@@ -1,5 +1,3 @@
-var playerName;
-
 (function () {
 
     var $gameAllBoard = $('.game-all-boards');

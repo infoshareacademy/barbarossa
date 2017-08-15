@@ -1,6 +1,8 @@
-var IS_FORM_VALID;
+var playerName;
+
 (function () {
 
+    var IS_FORM_VALID;
     var $gameAllBoard = $('.game-all-boards');
     $nameInput = $("input[name=firstName]");
     $secondNameInput = $("input[name=secondName]");
