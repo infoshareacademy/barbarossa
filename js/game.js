@@ -225,6 +225,7 @@
             $timeBoard.text('2:00');
             $endText.hide();
             $buttonShowRanking.hide();
+            $('.arrow-buttons').show();
 
             var $bottles = $($gameBoard).find('td.bottle');
             var $passengers = $($gameBoard).find('td.passenger');
@@ -486,11 +487,11 @@
                     lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = $gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--drunk car--down';
+                        setupOfCar = 'car car--drunk car--down';
                     }
                     else {
                         nextPositionOfCar = $gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--up';
+                        setupOfCar = 'car car--up';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
                 }, 100);
@@ -502,11 +503,11 @@
                     lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = $gameBoard.find('td.car').parent().prev().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--drunk car--up';
+                        setupOfCar = 'car car--drunk car--up';
                     }
                     else {
                         nextPositionOfCar = $gameBoard.find('td.car').parent().next().find(':nth-child(' + (lastPositionOfCar.index() + 1) + ')');
-                        setupOfCar = 'car--down';
+                        setupOfCar = 'car car--down';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
                 }, 100);
@@ -518,11 +519,11 @@
                     lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = $gameBoard.find('td.car').prev();
-                        setupOfCar = 'car--drunk car--left';
+                        setupOfCar = 'car car--drunk car--left';
                     }
                     else {
                         nextPositionOfCar = $gameBoard.find('td.car').next();
-                        setupOfCar = 'car--right';
+                        setupOfCar = 'car car--right';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
                 }, 100);
@@ -534,11 +535,11 @@
                     lastPositionOfCar = $gameBoard.find('td.car');
                     if (IS_DRUNK) {
                         nextPositionOfCar = $gameBoard.find('td.car').next();
-                        setupOfCar = 'car--drunk car--right';
+                        setupOfCar = 'car car--drunk car--right';
                     }
                     else {
                         nextPositionOfCar = $gameBoard.find('td.car').prev();
-                        setupOfCar = 'car--left';
+                        setupOfCar = 'car car--left';
                     }
                     checkPossibilityOfMove(nextPositionOfCar, lastPositionOfCar, setupOfCar);
                 }, 100);
