@@ -21,6 +21,7 @@
                 callback(i);
             }
         }
+
         times(size, function () {
             var tr = $('<tr>');
             times(size, function () {
@@ -259,6 +260,7 @@
 
             var rankingBoard = $('<table>');
             var results = [];
+            rankingBoard.empty();
 
             for (var i in window.localStorage) {
                 if (results.length < 10) {
@@ -277,7 +279,6 @@
             });
 
             function createRanking() {
-                rankingBoard.empty();
                 results.forEach(function (result) {
                     rankingBoard.append(
                         $('<tr>').append(
@@ -294,7 +295,6 @@
                 });
             }
 
-            console.log(results);
             createRanking();
             $ranking.append(rankingBoard);
 
@@ -375,13 +375,14 @@
         // Car
 
         var IS_DRUNK = false;
+        var getSober;
 
         function moveCar() {
             $gameBoard.keydown(function moveCar(event) {
                 event.preventDefault();
                 var lastPositionOfCar = $(this).find('td.car');
                 var nextPositionOfCar;
-                var setupOfCar = '';
+                var setupOfCar = 'car ';
                 var whatKeyIsPressed = event.which || event.keyCode;
                 var moveDirection = setDirection(whatKeyIsPressed);
 
@@ -391,7 +392,7 @@
 
                 if (IS_DRUNK) {
                     moveDirection = invertDirection(moveDirection);
-                    setupOfCar = 'car--drunk '
+                    setupOfCar += 'car--drunk '
                 }
 
                 switch (moveDirection) {
@@ -421,21 +422,26 @@
                 // do nothing -> break
             }
             else if (nextPositionOfCar.hasClass('passenger')) {
-                nextPositionOfCar.removeClass('passenger').addClass('car').addClass(setupOfCar);
+                nextPositionOfCar.removeClass('passenger').addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
                 score += 1;
                 $scoreBoard.text('Zebrani pasażerowie: ' + score);
             }
             else if (nextPositionOfCar.hasClass('bottle')) {
-                nextPositionOfCar.removeClass('bottle').addClass('car').addClass(setupOfCar);
+                nextPositionOfCar.removeClass('bottle').addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
-                IS_DRUNK = true;
-                setTimeout(function () {
+                if (IS_DRUNK) {
+                    clearTimeout(getSober);
+                }
+                else {
+                    IS_DRUNK = true;
+                }
+                getSober = setTimeout(function () {
                     IS_DRUNK = false;
-                }, 3000);
+                }, 5000);
             }
             else {
-                nextPositionOfCar.addClass('car').addClass(setupOfCar);
+                nextPositionOfCar.addClass(setupOfCar);
                 lastPositionOfCar.removeClass();
             }
         }
