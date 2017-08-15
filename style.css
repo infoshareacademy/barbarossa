@@ -597,7 +597,7 @@ footer {
     border-color: transparent; }
 
 .game-board-visible {
-  display: block !important; }
+  display: block; }
 
 .game-board-hidden {
   display: none !important; }
