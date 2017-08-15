@@ -123,7 +123,9 @@
 
         var $startGameButton = $('.game-button--entry');
         var $gameSwitch = $('.game-main-wrapper-switch');
+        var $beginBoard = $('.game-begin-board');
         var $countdown = $('<p class="countdown">');
+        var $buttonArrows = $('.arrow-buttons');
         var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true" width="0" height="0">');
         var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
         var IS_END = false;
@@ -138,8 +140,7 @@
             event.preventDefault();
 
             $('body').append($music).append($musicForOperaAndIE);
-            $('.game-begin-board').hide();
-            $('.game-main').show();
+            $beginBoard.hide();
             $gameSwitch.children().removeClass('game-main-wrapper-hidden');
             $gameSwitch.children().addClass('game-main-wrapper-visible');
 
@@ -167,16 +168,17 @@
             IS_END = true;
             $music.remove();
             $musicForOperaAndIE.remove();
-            $('.game-main').hide();
-            $('.arrow-buttons').hide();
-            $('.game-begin-board').show();
+            $gameSwitch.children().removeClass('game-main-wrapper-visible');
+            $gameSwitch.children().addClass('game-main-wrapper-hidden');
+            $buttonArrows.hide();
+            $beginBoard.show();
         });
 
         $buttonShowRanking.click(showRanking);
 
         $buttonBackToMenu.click(function () {
             event.preventDefault();
-            $('.game-begin-board').show();
+            $beginBoard.show();
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
             $ranking.hide();
@@ -225,7 +227,7 @@
             $timeBoard.text('2:00');
             $endText.hide();
             $buttonShowRanking.hide();
-            $('.arrow-buttons').show();
+            $buttonArrows.show();
 
             var $bottles = $($gameBoard).find('td.bottle');
             var $passengers = $($gameBoard).find('td.passenger');
