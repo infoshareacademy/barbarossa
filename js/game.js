@@ -125,7 +125,6 @@
         var $gameSwitch = $('.game-main-wrapper-switch');
         var $beginBoard = $('.game-begin-board');
         var $countdown = $('<p class="countdown">');
-        var $buttonArrows = $('.arrow-buttons');
         var $music = $('<embed src="music/bonanza.mp3" autostart="true" loop="true" width="0" height="0">');
         var $musicForOperaAndIE = $('<bgsound src="music/bonanza.mp3" loop="infinite">');
         var IS_END = false;
@@ -170,7 +169,6 @@
             $musicForOperaAndIE.remove();
             $gameSwitch.children().removeClass('game-main-wrapper-visible');
             $gameSwitch.children().addClass('game-main-wrapper-hidden');
-            $buttonArrows.hide();
             $beginBoard.show();
         });
 
@@ -227,7 +225,6 @@
             $timeBoard.text('2:00');
             $endText.hide();
             $buttonShowRanking.hide();
-            $buttonArrows.show();
 
             var $bottles = $($gameBoard).find('td.bottle');
             var $passengers = $($gameBoard).find('td.passenger');

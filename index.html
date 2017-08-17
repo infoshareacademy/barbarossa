@@ -268,7 +268,7 @@
     <!--Spot for TASK 7: "Zapis na premierę"-->
     <section id="sign">
         <div class="container-fluid">
-            <form class="premiere" method="post">
+            <form class="premiere" method="post" autocomplete="on">
                 <div class="row">
                     <h2 data-lang="Get known our app!">Poznaj naszą aplikację!</h2>
                     <div class="col-xs-offset-1 col-xs-10 col-md-3 col-md-offset-3">
@@ -278,7 +278,9 @@
                         </div>
                     </div>
                     <div class="col-xs-offset-2 col-xs-8 col-md-3 col-md-offset-0">
-                        <div class="text-info"><input id="firstName" type="text" name="firstName"></div>
+                        <div class="text-info"><input id="firstName" type="text" name="firstName" minlength="2"
+                                                      pattern="[A-Za-z]{2,20}" title="Can only contain letters" required>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -289,7 +291,8 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
-                        <div class="text-info"><input type="text" name="secondName"></div>
+                        <div class="text-info"><input type="text" name="secondName" minlength="2" pattern="[A-Za-z]{2,20}"
+                                                      title="Can only contain letters" required></div>
                     </div>
                 </div>
                 <div class="row">
@@ -300,7 +303,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-md-offset-0 col-xs-offset-2 col-xs-8">
-                        <div class="text-info"><input type="email" name="email"></div>
+                        <div class="text-info"><input type="email" name="email" required></div>
                     </div>
                 </div>
 
@@ -475,8 +478,10 @@
                                     <p class="zajawka-txt">
                                         Gra polega na zebraniu jak największej liczby pasażerów. Pasażerowie będą
                                         pojawiać się na ekranie gry w losowo wybranych miejscach. Każdy z nich będzie
-                                        widoczny przez 10 sekund (by nie było zbyt łatwo - z czasem zaczną oni znikać szybciej). Przed zniknięciem pasażera z planszy zacznie on migać na czerwono.
-                                        Gdy nie uda Ci się zebrać któregoś z pasażerów to będzie on bardzo smutny :( stracisz też przez to jeden punkt.</p>
+                                        widoczny przez 10 sekund (by nie było zbyt łatwo - z czasem zaczną oni znikać
+                                        szybciej). Przed zniknięciem pasażera z planszy zacznie on migać na czerwono.
+                                        Gdy nie uda Ci się zebrać któregoś z pasażerów to będzie on bardzo smutny :(
+                                        stracisz też przez to jeden punkt.</p>
                                 </div>
                             </div>
                         </div>
@@ -487,7 +492,8 @@
                                     <h1 class="zajawka-head">Instrukcja do gry</h1>
                                     <p class="zajawka-txt">
                                         Po planszy poruszamy się żółtym autobusem. Na mapie widoczne są przeszkody -
-                                        przez co nie wszystkie ulice są całkowiecie przejezdne. Omijaj pojawiające się na planszy butelki!
+                                        przez co nie wszystkie ulice są całkowiecie przejezdne. Omijaj pojawiające się
+                                        na planszy butelki!
                                         Zbierając je będziesz kompletnie pijany i moga pomylić Ci się kierunki;) </p>
                                 </div>
                             </div>
@@ -498,7 +504,9 @@
                                 <div class="carousel-caption">
                                     <h1 class="zajawka-head">Instrukcja do gry</h1>
                                     <p class="zajawka-txt">Po planszy poruszamy się strzałkami (góra, dół, prawo, lewo)
-                                        umieszczonymi na klawiaturze lub pod planszą (w przypadku tabletów). Całkowity czas jedenj gry wynosi 2 minuty. Jednak nie krępuj się grać w nią wielokrotnie! Twoje wyniki będą zapisywane w rankingu!
+                                        umieszczonymi na klawiaturze lub pod planszą (w przypadku tabletów). Całkowity
+                                        czas jedenj gry wynosi 2 minuty. Jednak nie krępuj się grać w nią wielokrotnie!
+                                        Twoje wyniki będą zapisywane w rankingu!
                                     </p>
                                 </div>
                             </div>
@@ -533,6 +541,5 @@
 <script src="js/smooth.js"></script>
 <script src="js/game-question-board.js"></script>
 <script src="js/game.js"></script>
-<script src="js/validate.js"></script>
 </body>
 </html>
