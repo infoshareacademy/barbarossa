@@ -285,6 +285,7 @@ section#sign {
   margin-top: 5em; }
   section#sign h2 {
     margin-bottom: 1.7em;
+    font-size: 1em;
     font-weight: bold;
     letter-spacing: 0.1em; }
   section#sign .icon-box {
@@ -406,10 +407,11 @@ form.premiere input {
       text-align: center;
       margin-bottom: 1em;
       letter-spacing: 0.07em;
-      font-weight: bold; }
+      font-weight: bold;
+      font-size: 1.3em; }
     #team .description p {
       text-align: justify;
-      font-size: 1.1em; }
+      font-size: 1em; }
 
 .Klimek, .Richert, .Ostrowska, .Paczkowski {
   cursor: pointer;
