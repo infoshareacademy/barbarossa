@@ -284,13 +284,17 @@ section#sign {
   padding: 5em 0;
   margin-top: 5em; }
   section#sign h2 {
-    margin-bottom: 1.7em;
-    font-size: 1em;
-    font-weight: bold;
+    margin-bottom: 2em;
+    font-size: 2em;
+    line-height: 1.5em;
     letter-spacing: 0.1em; }
+  section#sign .highlight {
+    color: #222;
+    font-weight: 600; }
   section#sign .icon-box {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-content: center; }
   section#sign .row {
     padding: 1em 0; }
   section#sign i {
@@ -318,15 +322,15 @@ form.premiere {
   margin-top: 1em; }
 
 form.premiere input {
-  margin-top: 1.5em;
+  margin: 2em 0;
   border: none;
   outline: none;
   transition: 0.3s all;
   text-align: center;
-  color: #742b1d; }
-  form.premiere input[type=text], form.premiere input[type=email] {
-    width: 100%;
-    height: 3em; }
+  color: #742b1d;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%; }
   form.premiere input:hover {
     cursor: pointer; }
   form.premiere input:active {
@@ -354,6 +358,9 @@ form.premiere input {
     form.premiere input[type=submit]:active {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2); }
 
+@media screen and (max-width: 600px) {
+  form.premiere input {
+    width: 75%; } }
 #team {
   color: #eee;
   padding: 8em 0; }
