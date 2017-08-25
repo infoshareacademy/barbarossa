@@ -237,7 +237,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 #function img {
-  height: 100px; }
+  height: 75px; }
 
 #function ul {
   color: #eee;
@@ -250,9 +250,7 @@ body {
   margin-top: 10px; }
 
 .long-info {
-  margin-top: 10px;
-  font-size: 1.3em;
-  text-align: justify; }
+  margin-top: 10px; }
 
 #function .first_info {
   background-color: #222; }
@@ -261,9 +259,9 @@ body {
   color: #eee;
   background-color: #ba4436;
   padding: 40px;
-  padding-bottom: 90px;
-  text-align: justify;
-  margin-bottom: 1em; }
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1em; }
 
 .function_title {
   text-transform: uppercase;
@@ -273,6 +271,12 @@ body {
   font-size: 1.1em;
   font-family: Roboto, sans-serif; }
 
+@media screen and (min-width: 991px) {
+  .short-info {
+    min-height: 700px; } }
+@media screen and (min-width: 1200px) {
+  .short-info {
+    min-height: 550px; } }
 section#sign {
   background-color: #ba4436;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -600,7 +604,7 @@ footer {
   display: block; }
 
 .game-board-hidden {
-  display: none !important; }
+  display: none; }
 
 .game-main-wrapper-switch {
   z-index: 2000;

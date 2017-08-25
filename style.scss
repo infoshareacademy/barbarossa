@@ -330,7 +330,7 @@ body {
 }
 
 #function img {
-  height: 100px;
+  height: 75px;
 }
 
 #function ul {
@@ -343,14 +343,11 @@ body {
 #function ul li {
   font-size: 1em;
   list-style-type: none;
-
   margin-top: 10px;
 }
 
 .long-info {
   margin-top: 10px;
-  font-size: 1.3em;
-  text-align: justify;
 }
 
 #function .first_info {
@@ -361,9 +358,9 @@ body {
   color: $colorFont;
   background-color: #ba4436;
   padding: 40px;
-  padding-bottom: 90px;
-  text-align: justify;
+  text-align: center;
   margin-bottom: 1em;
+  font-size: 1em;
 }
 
 .function_title {
@@ -373,6 +370,18 @@ body {
   padding-top: 20px;
   font-size: 1.1em;
   font-family: Roboto, sans-serif;
+}
+
+@media screen and (min-width: 991px) {
+  .short-info {
+    min-height: 700px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .short-info {
+    min-height: 550px;
+  }
 }
 
 ////////////////////////////////////////////// Sign ///////////////////////////////////////////////
